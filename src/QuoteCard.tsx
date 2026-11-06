@@ -1,3 +1,4 @@
+import {TapSummary} from './TouchControls';
 import type {Quote} from './quotes';
 import SwipeCard from './SwipeCard';
 export default function QuoteCard({quote:q,browse}:{quote:Quote;browse?:{onNext:()=>void;onPrevious:()=>void}}) {
@@ -13,6 +14,6 @@ export default function QuoteCard({quote:q,browse}:{quote:Quote;browse?:{onNext:
  </>;
  return <article className={`quote-card ${q.type==='sentence'?'sentence-card':''}`} data-testid="quote" data-quote-id={q.id}>
   {browse?<SwipeCard {...browse}>{content}</SwipeCard>:content}
-  <details className="source-details"><summary>ต้นฉบับและคำแปลร่าง</summary><p className="source-text">{q.original}</p><p>คำแปลไทย (ร่าง): {q.translation}</p></details>
+  <details className="source-details"><TapSummary>ต้นฉบับและคำแปลร่าง</TapSummary><p className="source-text">{q.original}</p><p>คำแปลไทย (ร่าง): {q.translation}</p></details>
  </article>;
 }

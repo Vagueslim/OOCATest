@@ -1,21 +1,25 @@
-# Touch sequence diagnosis
+# Touch sequence: diagnosis and application fix
 
-The failure was reproduced on an isolated native HTML `<details>` control with no React, app code or event cancellation. A short raw-CDP touch drag was sufficient: the next tap delivered pointer/touch events but no click. Three raw-input runs failed; three runs using Chromium-generated touch gestures passed. Evidence: [event log](touch-diagnosis.json).
+## Cause and reproduction
 
-This identifies the **raw input injection path used by the old test harness** as the source of the observed false failure. It does not identify the exact internal Chromium defect. Waiting longer, a separate/same CDP session and mobile mode did not reliably fix the raw path. Replacing the gesture generator changed the outcome with app code held unchanged, including on native controls.
+The exact fast raw-touch sequence reproduced missing clicks both in the app and on isolated native HTML `<details>` with no React or app handlers. Pointerdown/up and touchstart/end arrived, but no compatibility click was generated. Three native raw-input runs failed: [captured events](touch-diagnosis.json). This establishes the missing browser click beneath React; the precise Chromium internal cause is not established.
 
-The fix is in `tests/swipe.spec.ts`: use `Input.synthesizeScrollGesture` with `gestureSourceType: touch` and `preventFling: true`, then use normal Playwright taps. The generator delivers real touch/pointer events, verified by actual next/previous card changes and native vertical scroll. No DOM state is forced and no click fallback is added to the app.
+A stationary pause before release avoided the omission. Browser-generated gestures also let taps work, but a stricter probe found they did not reliably produce actual native vertical scrolling in this runtime. Therefore the final regression **uses raw touch again, releases while moving with no dwell, and measures scroll change from before the gesture**. Centered coordinates keep the whole gesture inside the viewport. Earlier positive scrollY assertions could be satisfied by programmatic positioning and have been replaced.
 
-Regression now runs in **one page/session**: left/right browsing → short drag → vertical scroll → drag on details → tap details open/closed, repeated three times, then tap Select and End. It verifies unchanged quote during vertical/details gestures and no implicit save. This restores the previously omitted combined sequence instead of treating isolated tests as proof for it.
+## Application fix
 
-Reproduction of the native comparison:
+`src/TouchControls.tsx` provides native button/summary wrappers. A primary touch ending inside the same control with no movement over 12px activates it through `.click()`. A trusted compatibility click arriving afterward is suppressed to prevent double activation. Drag, cancellation, secondary touch and release outside do not activate. New mouse input and keyboard input retain normal click behavior. This is an application fix for the missing-click symptom, not a claim that Chromium itself was repaired.
 
-```powershell
-node tests/diagnostics/touch-input.mjs
-```
+App and history buttons and the quote-details summary use these wrappers. Storage schema, catalog text, selection and saving rules are unchanged. The details control remains outside the card's swipe surface.
 
-The diagnostic intentionally records failures in the raw injection case; those are not claimed fixed inside Chromium. The browser-generated path must pass. Raw fixture has no handlers capable of suppressing clicks.
+## Regression coverage
 
-Limitations: Chromium emulation only. Physical iOS/Android and Safari remain untested. This diagnosis supersedes the earlier unresolved-emulation explanation in `swipe-verification.md`; it does not establish device-level behavior.
+The original fast sequence runs in one page: left/right → short drag → vertical scroll → drag details → tap details open/close, repeated three times, then tap Select and End. No dwell, forced DOM toggle, second compensating tap, reload or replacement page is used. The test verifies actual scroll delta, unchanged quote for vertical/control gestures, and no implicit save.
 
-Local verification: build passed; 23/23 tests passed, including A01–A12 and the combined sequence (40.2s).
+Additional checks cover no duplicate detail toggle after delayed compatibility events, dragging on Select without activation, Enter keyboard activation, both swipe directions, deck seam, old history, and A01–A12.
+
+Native diagnostic reproduction: `node tests/diagnostics/touch-input.mjs`. It intentionally retains the raw native control failure; the application regression is `npm test`.
+
+## Limitations
+
+All touch evidence uses Chromium emulation on Windows. No physical iOS/Android or Safari verification. Raw native controls without the application wrappers can still reproduce the omitted-click behavior; do not call that browser behavior fixed. The application must pass the fast sequence after deployment before live success is claimed.

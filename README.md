@@ -8,7 +8,7 @@
 
 รับเฉพาะ gesture แนวนอนอย่างน้อย 60px และมากกว่าแนวตั้ง 1.5 เท่า ยกเลิก gesture ที่เริ่มเลื่อนแนวตั้งหรือถูก browser cancel รองรับ native vertical scrolling และ pinch zoom ไม่รับการปัดจาก controls หรือส่วนรายละเอียดต้นฉบับ ไม่มีการแก้ storage schema
 
-Build ผ่าน; Playwright **23/23 ผ่าน** รวม A01–A12, swipe ซ้าย/ขวา, ขอบคำแรก/รอยต่อสำรับ, การย้อนและเดินหน้า, vertical touch scroll, short drag, แตะรายละเอียดและปุ่ม, ไม่เก็บข้อมูลจากการปัด และประวัติ v1 เดิม Visual lint ผ่านทั้ง 7 snapshots ผล swipe เป็น Chromium touch emulation ไม่ใช่มือถือจริง
+Build ผ่าน; Playwright **24/24 ผ่าน** รวม A01–A12, swipe ซ้าย/ขวา, ขอบคำแรก/รอยต่อสำรับ, การย้อนและเดินหน้า, vertical touch scroll, short drag, แตะรายละเอียดและปุ่ม, ไม่เก็บข้อมูลจากการปัด และประวัติ v1 เดิม Visual lint ผ่านทั้ง 7 snapshots ผล swipe เป็น Chromium touch emulation ไม่ใช่มือถือจริง
 
 ## รัน
 
@@ -40,7 +40,7 @@ ID ใหม่ใช้ `catalog-v1:ooca-XXX` เพื่อไม่ชนก
 ## ผลตรวจ
 
 Build: **ผ่าน** (`tsc -b && vite build`, Vite 7.3.7)
-Playwright: **23 ผ่าน / 0 ไม่ผ่าน** (Chromium, 40.2 วินาที)
+Playwright: **24 ผ่าน / 0 ไม่ผ่าน** (Chromium; ดูรายงานผลล่าสุด)
 Visual lint: **ผ่าน 7 snapshots** ไม่มี findings หลังเพิ่ม line-height หัวคำ; ไม่พบ runtime errors
 
 | เกณฑ์ | ผล | สิ่งที่ตรวจ |
@@ -77,6 +77,6 @@ Visual lint: **ผ่าน 7 snapshots** ไม่มี findings หลัง�
 
 ภาพ swipe: [มือถือ](evidence/swipe-mobile.png)
 
-ผลวินิจฉัย touch sequence: พบความล้มเหลวจากเส้นทาง raw CDP touch injection ในชุดทดสอบเดิม โดย native HTML ที่ไม่มี React หรือ handler ของแอปก็ไม่สร้าง click 3/3 ครั้ง เปลี่ยนตัวช่วยทดสอบเป็น gesture ที่ Chromium สร้างเองแล้ว native control ผ่าน 3/3 ครั้ง และเพิ่ม regression ลำดับต่อเนื่องสามรอบใน session เดียว ดู [หลักฐานและวิธีทำซ้ำ](evidence/touch-sequence-diagnosis.md) ไม่ได้เพิ่ม workaround ที่เปลี่ยนการคลิกของแอป ยังต้องทดสอบอุปกรณ์จริงก่อนอ้างผลข้ามเบราว์เซอร์
+แก้ touch sequence ในแอป: `TouchControls.tsx` เปิดรายละเอียดและกดปุ่มจาก stationary touch pointerup เมื่อ browser ไม่ส่ง click หลัง gesture พร้อมกัน compatibility click ซ้ำ ลากเกิน 12px, pointercancel, หลายนิ้ว และปล่อยนอก control ไม่ activate คีย์บอร์ด/เมาส์ยังใช้ click ปกติ ดู [ผลวินิจฉัยและ regression](evidence/touch-sequence-diagnosis.md)
 
 ผลตรวจ live รุ่น swipe และข้อจำกัดที่ยังไม่ยืนยัน: [รายงาน swipe](evidence/swipe-verification.md)
