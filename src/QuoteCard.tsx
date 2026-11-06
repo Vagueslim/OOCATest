@@ -1,1 +1,14 @@
-export default function QuoteCard({text}:{text:string}) {return <div className="quote-card"><span className="quote-mark" aria-hidden="true">“</span><p data-testid="quote">{text}</p><span className="card-line" aria-hidden="true" /></div>;}
+import type {Quote} from './quotes';
+export default function QuoteCard({quote:q}:{quote:Quote}) {
+ return <article className={`quote-card ${q.type==='sentence'?'sentence-card':''}`} data-testid="quote" data-quote-id={q.id}>
+  <span className="quote-type">{q.type==='sentence'?'ประโยค / ข้อความ':'คำ / นิยาม'}</span>
+  <h2 className="quote-headword" lang={q.language}>{q.headword}</h2>
+  <span className="card-line" aria-hidden="true"/>
+  {(q.reading||q.partOfSpeech)&&<p className="quote-reading">{q.reading&&<span title={q.readingKind}>/ {q.reading} /</span>}{q.reading&&q.partOfSpeech?' ':null}{q.partOfSpeech&&<span lang="en">{q.partOfSpeech}</span>}</p>}
+  <p className="quote-thai" lang="th">{q.text}</p>
+  <p className="quote-status">ข้อความไทยเรียบเรียง · ร่างยังไม่ตรวจ</p>
+  {q.reading&&<p className="reading-status">{q.readingKind} · ยังต้องตรวจเสียงอ่าน</p>}
+  <ul className="quote-tags" aria-label="แท็กเนื้อหาร่าง">{q.tags.map(tag=><li key={tag}>{tag}</li>)}</ul>
+  <details className="source-details"><summary>ต้นฉบับและคำแปลร่าง</summary><p className="source-text">{q.original}</p><p>คำแปลไทย (ร่าง): {q.translation}</p></details>
+ </article>;
+}

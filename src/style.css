@@ -3,3 +3,19 @@
 
 
 
+/* Catalog cards use accessible variants of OOCA colors. */
+.quote-card{align-items:stretch;text-align:left;padding:26px 22px;gap:0}
+.quote-type{font-size:12px;color:var(--muted);margin-bottom:16px}
+.quote-card .quote-headword{color:#007F75;font-size:38px;line-height:1.35;margin:0 0 16px;overflow-wrap:anywhere;white-space:pre-wrap}
+.quote-card.sentence-card .quote-headword{font-size:26px;line-height:1.65}
+.quote-card .card-line{width:100%;height:2px;background:#007F75;margin:0 0 16px}
+.quote-card .quote-reading{color:var(--muted);font-size:16px;line-height:1.7;margin:0 0 22px;overflow-wrap:anywhere}
+.quote-card .quote-thai{font-size:23px;line-height:1.85;color:#1763B6;margin:0 0 20px;white-space:pre-wrap}
+.quote-card .quote-status,.quote-card .reading-status{font-size:12px;line-height:1.7;color:var(--muted);margin:0 0 8px}
+.quote-tags{padding:0;margin:10px 0 18px;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.quote-tags li{font-size:12px;line-height:1.6;background:#E0F8F6;color:#27615B;padding:4px 9px;border-radius:12px}
+.quote-card .source-details{margin:0;padding:0;border:0;border-top:1px solid var(--line);border-radius:0;background:transparent}
+.quote-card .source-details summary{font-size:13px;color:var(--muted);padding-top:14px}
+.quote-card .source-details p{font-size:15px;line-height:1.8;margin:14px 0;white-space:pre-wrap}
+.history-day details p,.history-day summary{white-space:pre-wrap}
+.quote-card .quote-headword{line-height:1.65}
