@@ -1,6 +1,7 @@
 import type {Quote} from './quotes';
-export default function QuoteCard({quote:q}:{quote:Quote}) {
- return <article className={`quote-card ${q.type==='sentence'?'sentence-card':''}`} data-testid="quote" data-quote-id={q.id}>
+import SwipeCard from './SwipeCard';
+export default function QuoteCard({quote:q,browse}:{quote:Quote;browse?:{onNext:()=>void;onPrevious:()=>void}}) {
+ const content=<>
   <span className="quote-type">{q.type==='sentence'?'ประโยค / ข้อความ':'คำ / นิยาม'}</span>
   <h2 className="quote-headword" lang={q.language}>{q.headword}</h2>
   <span className="card-line" aria-hidden="true"/>
@@ -9,6 +10,9 @@ export default function QuoteCard({quote:q}:{quote:Quote}) {
   <p className="quote-status">ข้อความไทยเรียบเรียง · ร่างยังไม่ตรวจ</p>
   {q.reading&&<p className="reading-status">{q.readingKind} · ยังต้องตรวจเสียงอ่าน</p>}
   <ul className="quote-tags" aria-label="แท็กเนื้อหาร่าง">{q.tags.map(tag=><li key={tag}>{tag}</li>)}</ul>
+ </>;
+ return <article className={`quote-card ${q.type==='sentence'?'sentence-card':''}`} data-testid="quote" data-quote-id={q.id}>
+  {browse?<SwipeCard {...browse}>{content}</SwipeCard>:content}
   <details className="source-details"><summary>ต้นฉบับและคำแปลร่าง</summary><p className="source-text">{q.original}</p><p>คำแปลไทย (ร่าง): {q.translation}</p></details>
  </article>;
 }

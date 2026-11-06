@@ -1,16 +1,17 @@
-import {test,expect,type Page} from '@playwright/test';
-test.use({hasTouch:true,viewport:{width:360,height:800}});
+import {test,expect,type Page,type CDPSession} from '@playwright/test';
+test.use({hasTouch:true,isMobile:true,viewport:{width:360,height:800}});
 const button=(p:Page,name:string)=>p.getByRole('button',{name,exact:true});
+const sessions=new WeakMap<Page,CDPSession>();
 const id=(p:Page)=>p.getByTestId('quote').getAttribute('data-quote-id');
 async function swipe(p:Page,dx:number,dy=0,selector='.quote-headword'){
  const target=p.locator(selector);await target.scrollIntoViewIfNeeded();const b=(await target.boundingBox())!;
  const x=dx<0?b.x+b.width-15:b.x+15,y=b.y+Math.min(b.height/2,45);
- const c=await p.context().newCDPSession(p);
+ let c=sessions.get(p);if(!c){c=await p.context().newCDPSession(p);sessions.set(p,c);}
  await c.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});
  for(let i=1;i<=6;i++){await c.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:x+dx*i/6,y:y+dy*i/6}]});await p.waitForTimeout(20);}
- await c.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await p.waitForTimeout(100);await c.detach();
+ await c.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await p.waitForTimeout(150);
 }
-test.beforeEach(async({page})=>{await page.goto('/');await button(page,'เริ่ม').click();});
+test.beforeEach(async({page})=>{await page.goto(process.env.TEST_BASE_URL||'/',{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);await button(page,'เริ่ม').click();});
 test('swipe: left next, right previous, first boundary, replay and no save',async({page})=>{
  const first=await id(page);await expect(button(page,'ข้อความก่อนหน้า')).toBeDisabled();await swipe(page,140);expect(await id(page)).toBe(first);
  await swipe(page,-140);const second=await id(page);expect(second).not.toBe(first);await expect(button(page,'ข้อความก่อนหน้า')).toBeEnabled();
@@ -22,9 +23,13 @@ test('swipe: left next, right previous, first boundary, replay and no save',asyn
  await button(page,'เลือกข้อความนี้').click();expect(await id(page)).toBe(second);await button(page,'จบเมื่อพร้อม').first().click();await expect(page.getByRole('heading',{name:'จบรอบนี้แล้ว'})).toBeVisible();
 });
 test('swipe: vertical scroll, short drag and details touch never browse',async({page})=>{
- const first=await id(page);await swipe(page,-25);expect(await id(page)).toBe(first);
+ for(let i=0;i<53&&await id(page)!=='catalog-v1:ooca-042';i++)await button(page,'เปลี่ยนข้อความ').click();const first=await id(page);await swipe(page,-25);expect(await id(page)).toBe(first);
  await swipe(page,0,-150);expect(await id(page)).toBe(first);expect(await page.evaluate(()=>scrollY)).toBeGreaterThan(0);
  await swipe(page,-140,0,'.source-details summary');expect(await id(page)).toBe(first);
+
+});
+test('touch: native details and select button do not browse',async({page})=>{
+ const first=await id(page);
  const wasOpen=await page.locator('.source-details').evaluate(el=>(el as HTMLDetailsElement).open);await page.locator('.source-details summary').tap();await expect.poll(()=>page.locator('.source-details').evaluate(el=>(el as HTMLDetailsElement).open)).toBe(!wasOpen);expect(await id(page)).toBe(first);
  await button(page,'เลือกข้อความนี้').tap();await expect(page.getByRole('heading',{name:'ข้อความที่เราเลือก'})).toBeVisible();expect(await id(page)).toBe(first);
 });
