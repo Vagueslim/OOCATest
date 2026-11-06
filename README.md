@@ -4,6 +4,8 @@
 
 URL สำหรับเดโม: **https://vagueslim.github.io/OOCATest/**
 
+ตรวจเปิดเว็บจริงและ flow หลักผ่านแล้ววันที่ 2026-11-06: [ผลตรวจ GitHub Pages](evidence/pages-verification.md) รวมจบก่อนเลือก ข้ามทั้งหมดหลังเลือก และจบเมื่อเก็บไม่สำเร็จ
+
 Workflow `.github/workflows/pages.yml` build ด้วย `npm ci` และ `npm run build` แล้วเผยแพร่เฉพาะ `dist` ผ่าน GitHub Pages เมื่อซอร์สบน `main` เปลี่ยน หรือสั่ง `workflow_dispatch` ไม่เปลี่ยน visibility ของ repository
 
 `vite.config.ts` ใช้ base `/OOCATest/` สำหรับ production build/preview และ `/` สำหรับ dev server Vite ปรับ URL ของ JavaScript, CSS และฟอนต์ local ให้ตรงกับ repository path หน้าต่าง ๆ ใช้ React state จึงคง URL เดิมและรีโหลดกลับหน้าเริ่มต้นได้โดยไม่ต้องตั้ง SPA fallback
