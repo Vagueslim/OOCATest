@@ -19,3 +19,4 @@
 .quote-card .source-details p{font-size:15px;line-height:1.8;margin:14px 0;white-space:pre-wrap}
 .history-day details p,.history-day summary{white-space:pre-wrap}
 .quote-card .quote-headword{line-height:1.65}
+.swipe-surface{touch-action:pan-y pinch-zoom}button:disabled{color:#686868;background:#F5F5F5;cursor:default}button:disabled:hover{background:transparent}

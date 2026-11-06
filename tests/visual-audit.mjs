@@ -23,7 +23,7 @@ async function check(name,viewport='360x800'){
  results.push({name,exit:result.status,output:result.stdout,error:result.stderr});
 }
 try{
- await page.goto('http://127.0.0.1:5173');await check('welcome');
+ await page.goto(process.env.TEST_BASE_URL||'http://127.0.0.1:5181');await check('welcome');
  await page.getByRole('button',{name:'เริ่ม',exact:true}).click();await check('discover');
  await page.getByRole('button',{name:'เลือกข้อความนี้',exact:true}).click();
  await page.getByRole('radio',{name:'สิ่งอื่น',exact:true}).check();await page.getByRole('textbox').fill('คำนี้ทำให้นึกถึงเพลงที่ชอบ');await check('reflect');
