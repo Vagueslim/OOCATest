@@ -37,4 +37,3 @@ test('legacy snapshots survive catalog save, reload, focus update and deletion',
  await page.getByRole('combobox').selectOption('2025-01');await expect(page.locator('summary')).toHaveText(old.quoteText);
  expect((await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).entries,key))).toEqual([old]);
 });
-

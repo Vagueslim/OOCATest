@@ -1,6 +1,6 @@
 # เลือกคำ แล้วแต่เรา — catalog card draft
 
-อัปเดต 2026-11-06 ตามตัวอย่าง Winner: หัวคำสีเขียว เส้นคั่น คำอ่าน/ชนิดคำสีเทา และข้อความไทยสีน้ำเงิน ผู้ใช้อนุญาตให้นำเวอร์ชันนี้ขึ้น GitHub Pages แล้ว: https://vagueslim.github.io/OOCATest/ ผลตรวจ live ของเวอร์ชันนี้จะบันทึกใน `evidence/catalog-live-verification.md` หลัง deployment สำเร็จ
+อัปเดต 2026-11-06 ตามตัวอย่าง Winner: หัวคำสีเขียว เส้นคั่น คำอ่าน/ชนิดคำสีเทา และข้อความไทยสีน้ำเงิน ผู้ใช้อนุญาตให้นำเวอร์ชันนี้ขึ้น GitHub Pages แล้ว: https://vagueslim.github.io/OOCATest/ **deploy และตรวจ live สำเร็จแล้ว** ดู [ผลตรวจเว็บจริง](evidence/catalog-live-verification.md)
 
 ## รัน
 

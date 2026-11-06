@@ -94,5 +94,3 @@ Visual lint ใช้ shared visual-runtime กับ HTML snapshot ของท
 - [หน้าอ่านทวนเดสก์ท็อป — 1440 px](evidence/reflect-1440.png)
 
 ภาพมาจาก Chromium ที่กำหนด viewport มือถือ ไม่ใช่ภาพจากโทรศัพท์จริง ยังไม่ได้ตรวจ Safari/iOS, Android และคีย์บอร์ดบนจออุปกรณ์จริง หรือทดสอบกับ screen reader ผลตรวจการทำงานนี้ไม่ใช่หลักฐานประสิทธิผลด้านสุขภาพหรือ usability กับผู้ใช้จริง
-
-
