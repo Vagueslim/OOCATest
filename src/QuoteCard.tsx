@@ -1,0 +1,1 @@
+export default function QuoteCard({text}:{text:string}) {return <div className="quote-card"><span className="quote-mark" aria-hidden="true">“</span><p data-testid="quote">{text}</p><span className="card-line" aria-hidden="true" /></div>;}

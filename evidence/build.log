@@ -1,0 +1,13 @@
+
+> ooca-react-demo@1.0.0 build
+> tsc -b && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+Γ£ô 33 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.44 kB Γöé gzip:  0.33 kB
+dist/assets/index-DXjvWu_2.css    5.23 kB Γöé gzip:  1.81 kB
+dist/assets/index-BzulsUpF.js   235.64 kB Γöé gzip: 73.53 kB
+Γ£ô built in 2.72s

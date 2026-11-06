@@ -1,0 +1,33 @@
+{
+  "pairs": [
+    {
+      "label": "primary default",
+      "foreground": "rgb(39, 39, 39)",
+      "background": "rgb(0, 196, 179)",
+      "ratio": 6.79,
+      "AA_normal_text": true
+    },
+    {
+      "label": "primary hover",
+      "foreground": "rgb(39, 39, 39)",
+      "background": "rgb(0, 178, 163)",
+      "ratio": 5.62,
+      "AA_normal_text": true
+    },
+    {
+      "label": "finish action",
+      "foreground": "rgb(39, 39, 39)",
+      "background": "rgb(224, 248, 246)",
+      "ratio": 13.46,
+      "AA_normal_text": true
+    },
+    {
+      "label": "selected radio",
+      "foreground": "rgb(39, 39, 39)",
+      "background": "rgb(224, 248, 246)",
+      "ratio": 13.46,
+      "AA_normal_text": true
+    }
+  ],
+  "fontLoaded": true
+}
