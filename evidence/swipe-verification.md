@@ -1,3 +1,5 @@
+> Historical report: the combined-sequence issue was subsequently diagnosed. See [updated diagnosis](touch-sequence-diagnosis.md).
+
 # Swipe release — verified results and remaining limitation
 
 Live: https://vagueslim.github.io/OOCATest/

@@ -1,0 +1,183 @@
+{
+  "browser": "149.0.7827.55",
+  "checkedAt": "2026-11-06T12:14:40.532Z",
+  "results": [
+    {
+      "method": "raw",
+      "run": 0,
+      "opened": false,
+      "events": [
+        {
+          "type": "pointerdown",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchstart",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "pointerup",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchend",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        }
+      ]
+    },
+    {
+      "method": "raw",
+      "run": 1,
+      "opened": false,
+      "events": [
+        {
+          "type": "pointerdown",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchstart",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "pointerup",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchend",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        }
+      ]
+    },
+    {
+      "method": "raw",
+      "run": 2,
+      "opened": false,
+      "events": [
+        {
+          "type": "pointerdown",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchstart",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "pointerup",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchend",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        }
+      ]
+    },
+    {
+      "method": "browser",
+      "run": 0,
+      "opened": true,
+      "events": [
+        {
+          "type": "pointerdown",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchstart",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "pointerup",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchend",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "click",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        }
+      ]
+    },
+    {
+      "method": "browser",
+      "run": 1,
+      "opened": true,
+      "events": [
+        {
+          "type": "pointerdown",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchstart",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "pointerup",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchend",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "click",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        }
+      ]
+    },
+    {
+      "method": "browser",
+      "run": 2,
+      "opened": true,
+      "events": [
+        {
+          "type": "pointerdown",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchstart",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "pointerup",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "touchend",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        },
+        {
+          "type": "click",
+          "target": "SUMMARY",
+          "defaultPrevented": false
+        }
+      ]
+    }
+  ]
+}
