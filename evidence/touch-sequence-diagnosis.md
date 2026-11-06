@@ -23,3 +23,17 @@ Native diagnostic reproduction: `node tests/diagnostics/touch-input.mjs`. It int
 ## Limitations
 
 All touch evidence uses Chromium emulation on Windows. No physical iOS/Android or Safari verification. Raw native controls without the application wrappers can still reproduce the omitted-click behavior; do not call that browser behavior fixed. The application must pass the fast sequence after deployment before live success is claimed.
+
+## Final post-deployment verification
+
+- Live URL: https://vagueslim.github.io/OOCATest/
+- Deployed application commit: `633e0714382105e947495c641ba7b09ddff2d4a1`
+- [Successful deployment](https://github.com/Vagueslim/OOCATest/actions/runs/42218405864)
+- Checked after deployment: 2026-11-06T12:34:52.883Z
+- Local build and all **24 tests passed** (42.0s), including A01–A12.
+- Live touch suite: **18/18 passed**, no skips or unexpected failures. Six cases repeated three times. The fast combined-sequence case itself performs three loops per run: **nine consecutive-sequence loops total**, with normal taps afterward, not a separate fresh page for the tap.
+- Live raw gestures release while moving, without the stationary dwell that avoided the earlier native failure. Vertical scroll must increase from the pre-gesture scroll position; programmatic positioning does not count as scrolling success.
+- The 53-card smoke check passed: catalog content/draft labels, end before selecting, skip everything after selecting, hug/end, save/update/reload/history/delete with synthetic legacy v1 records, and end after failed save without false success. No runtime/network errors.
+- [Latest mobile screenshot](swipe-mobile.png).
+
+No remaining failure in the tested application sequences. Physical device/Safari behavior remains unverified; this is not a claim of device testing or repair of native Chromium controls outside this app.

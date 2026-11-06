@@ -80,3 +80,5 @@ Visual lint: **ผ่าน 7 snapshots** ไม่มี findings หลัง�
 แก้ touch sequence ในแอป: `TouchControls.tsx` เปิดรายละเอียดและกดปุ่มจาก stationary touch pointerup เมื่อ browser ไม่ส่ง click หลัง gesture พร้อมกัน compatibility click ซ้ำ ลากเกิน 12px, pointercancel, หลายนิ้ว และปล่อยนอก control ไม่ activate คีย์บอร์ด/เมาส์ยังใช้ click ปกติ ดู [ผลวินิจฉัยและ regression](evidence/touch-sequence-diagnosis.md)
 
 ผลตรวจ live รุ่น swipe และข้อจำกัดที่ยังไม่ยืนยัน: [รายงาน swipe](evidence/swipe-verification.md)
+
+รีเช็คหลัง deploy รุ่นแก้ tap controls แล้ว: live 18/18 ผ่าน รวม fast sequence 9 รอบและโฟลว์ประวัติ/ทางจบ ดู [ผลตรวจล่าสุด](evidence/touch-sequence-diagnosis.md#final-post-deployment-verification) ยังเป็น Chromium emulation ไม่ใช่มือถือจริง
