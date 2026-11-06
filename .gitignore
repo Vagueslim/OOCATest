@@ -18,3 +18,4 @@ evidence/visual-audit.json
 evidence/lint-*.json
 .DS_Store
 Thumbs.db
+evidence/live/

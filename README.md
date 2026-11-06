@@ -1,6 +1,16 @@
 # เลือกคำ แล้วแต่เรา
 
-เดโมมือถือภาษาไทย React + TypeScript + Vite ตามสเปก `docs/superpowers/specs/2026-11-06-ooca-react-demo-design.md` (2026-11-06) ใช้ข้อความทั้ง 15 ข้อตามสเปก ไม่มีบัญชีหรือ backend และไม่ได้ deploy
+## GitHub Pages
+
+URL สำหรับเดโม: **https://vagueslim.github.io/OOCATest/**
+
+Workflow `.github/workflows/pages.yml` build ด้วย `npm ci` และ `npm run build` แล้วเผยแพร่เฉพาะ `dist` ผ่าน GitHub Pages เมื่อซอร์สบน `main` เปลี่ยน หรือสั่ง `workflow_dispatch` ไม่เปลี่ยน visibility ของ repository
+
+`vite.config.ts` ใช้ base `/OOCATest/` สำหรับ production build/preview และ `/` สำหรับ dev server Vite ปรับ URL ของ JavaScript, CSS และฟอนต์ local ให้ตรงกับ repository path หน้าต่าง ๆ ใช้ React state จึงคง URL เดิมและรีโหลดกลับหน้าเริ่มต้นได้โดยไม่ต้องตั้ง SPA fallback
+
+ตรวจเว็บที่เผยแพร่แล้วด้วย `node tests/pages-smoke.mjs https://vagueslim.github.io/OOCATest/` ผลและภาพจะอยู่ใน `evidence/live/` ซึ่งไม่ commit ข้อมูลที่เก็บใน localhost จะไม่ย้ายไปเว็บจริง เพราะเป็นคนละ origin
+
+เดโมมือถือภาษาไทย React + TypeScript + Vite ตามสเปก `docs/superpowers/specs/2026-11-06-ooca-react-demo-design.md` (2026-11-06) ใช้ข้อความทั้ง 15 ข้อตามสเปก ไม่มีบัญชีหรือ backend
 
 ## ธีม OOCA — ปรับ 2026-11-06
 
@@ -82,4 +92,5 @@ Visual lint ใช้ shared visual-runtime กับ HTML snapshot ของท
 - [หน้าอ่านทวนเดสก์ท็อป — 1440 px](evidence/reflect-1440.png)
 
 ภาพมาจาก Chromium ที่กำหนด viewport มือถือ ไม่ใช่ภาพจากโทรศัพท์จริง ยังไม่ได้ตรวจ Safari/iOS, Android และคีย์บอร์ดบนจออุปกรณ์จริง หรือทดสอบกับ screen reader ผลตรวจการทำงานนี้ไม่ใช่หลักฐานประสิทธิผลด้านสุขภาพหรือ usability กับผู้ใช้จริง
+
 
