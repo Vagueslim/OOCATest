@@ -1,4 +1,12 @@
-# เลือกคำ แล้วแต่เรา — catalog card draft
+# Peek a word!
+
+อัปเดต 2026-11-07: เปลี่ยนชื่อเป็น **Peek a word!** และใช้ **Swiper React 14.4.0 / EffectCards** แสดงการ์ดหน้าและการ์ดถัดไปซ้อนด้านขวา 2 ใบตามองค์ประกอบภาพแนบ ภาพที่ได้รับเป็น PNG หนึ่งเฟรม จึงใช้เป็นอ้างอิงการจัดวาง ไม่ใช่หลักฐานของ motion ใน GIF
+
+ปัดซ้าย/ขวาหรือลองปุ่ม “เปลี่ยนข้อความ” / “ข้อความก่อนหน้า” เพื่อเลื่อนการ์ดแบบมี animation รองรับ reduced motion และยังต้องกดเลือก/เก็บแยกจากการปัด ชื่อ repo, URL และคีย์เก็บข้อมูลเดิมไม่เปลี่ยน: https://vagueslim.github.io/OOCATest/
+
+ผลตรวจ release นี้: [Swiper cards verification](evidence/swiper-cards-verification.md)
+
+## ประวัติงานก่อนหน้า
 
 อัปเดต 2026-11-06 ตามตัวอย่าง Winner: หัวคำสีเขียว เส้นคั่น คำอ่าน/ชนิดคำสีเทา และข้อความไทยสีน้ำเงิน ผู้ใช้อนุญาตให้นำเวอร์ชันนี้ขึ้น GitHub Pages แล้ว: https://vagueslim.github.io/OOCATest/ **deploy และตรวจ live สำเร็จแล้ว** ดู [ผลตรวจเว็บจริง](evidence/catalog-live-verification.md)
 

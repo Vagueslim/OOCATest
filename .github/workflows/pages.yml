@@ -1,4 +1,4 @@
-name: Deploy OOCA demo to GitHub Pages
+name: Deploy Peek a word! to GitHub Pages
 
 on:
   push:

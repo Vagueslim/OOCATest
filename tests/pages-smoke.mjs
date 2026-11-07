@@ -18,7 +18,7 @@ await mkdir('evidence/live', { recursive: true });
 try {
   const response = await page.goto(url, { waitUntil: 'networkidle' });
   assert.equal(response.status(), 200);
-  await heading('เลือกคำ แล้วแต่เรา');
+  await heading('Peek a word!');
   await page.evaluate(() => document.fonts.ready);
   assert(await page.evaluate(() => document.fonts.check('16px Prompt')));
   checks.push('Page and Prompt font loaded');
@@ -37,7 +37,7 @@ try {
   assert(!JSON.stringify(await stored()).includes('PRIVATE'));
   await button('ดูข้อความที่เก็บไว้').click(); await page.locator('summary').first().click();
   await page.getByText('นึกถึง: ตนเอง', { exact: true }).waitFor();
-  await page.reload({ waitUntil: 'networkidle' }); await heading('เลือกคำ แล้วแต่เรา');
+  await page.reload({ waitUntil: 'networkidle' }); await heading('Peek a word!');
   assert.equal((await stored()).length, 1); checks.push('Save, history, draft privacy and reload at repository URL');
   await button('เริ่ม').click(); await button('วันนี้ยังไม่เลือก').click();
   await button('รับกอด').click(); await page.getByText('ไว้ค่อยกลับมาเมื่อพร้อม').waitFor();

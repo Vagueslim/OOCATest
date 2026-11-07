@@ -4,8 +4,10 @@ import type {Quote} from '../src/quotes';
 const catalog:Quote[]=JSON.parse(readFileSync(new URL('../src/catalog.json',import.meta.url),'utf8'));
 const key='ooca-demo:saved-quotes:v1';
 test('catalog: 53 cards, missing readings, Japanese, mobile overflow and evidence',async({page})=>{
+ // 53 actual card transitions plus opening every source disclosure exceed the default 30-second budget.
+ test.setTimeout(90000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto('/');await page.getByRole('button',{name:'เริ่ม',exact:true}).click();
+ await page.goto(process.env.TEST_BASE_URL||'/');await page.getByRole('button',{name:'เริ่ม',exact:true}).click();
  const seen=new Set<string>();
  for(let i=0;i<53;i++){
   const card=page.getByTestId('quote');const id=await card.getAttribute('data-quote-id');seen.add(id!);
@@ -24,7 +26,7 @@ test('catalog: 53 cards, missing readings, Japanese, mobile overflow and evidenc
  expect(seen.size).toBe(53);expect(errors).toEqual([]);
 });
 test('legacy snapshots survive catalog save, reload, focus update and deletion',async({page})=>{
- await page.goto('/');
+ await page.goto(process.env.TEST_BASE_URL||'/');
  const old={id:'legacy',quoteId:'self-rest',quoteText:'วันนี้ขอพักก่อน',focus:null,savedAt:'2025-01-01T00:00:00Z',localDay:'2025-01-01'};
  await page.evaluate(({key,old})=>localStorage.setItem(key,JSON.stringify({version:1,entries:[old]})),{key,old});
  await page.getByRole('button',{name:'เริ่ม',exact:true}).click();await page.getByRole('button',{name:'เลือกข้อความนี้',exact:true}).click();
@@ -37,3 +39,4 @@ test('legacy snapshots survive catalog save, reload, focus update and deletion',
  await page.getByRole('combobox').selectOption('2025-01');await expect(page.locator('summary')).toHaveText(old.quoteText);
  expect((await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).entries,key))).toEqual([old]);
 });
+

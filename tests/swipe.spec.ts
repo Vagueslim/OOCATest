@@ -1,10 +1,11 @@
 import {test,expect,type Page,type CDPSession} from '@playwright/test';
+test.setTimeout(90000);
 test.use({hasTouch:true,isMobile:true,viewport:{width:360,height:800}});
 const button=(p:Page,name:string)=>p.getByRole('button',{name,exact:true});
 const sessions=new WeakMap<Page,CDPSession>();
 const id=(p:Page)=>p.getByTestId('quote').getAttribute('data-quote-id');
 async function swipe(p:Page,dx:number,dy=0,selector='.quote-headword'){
- const target=p.locator(selector);await target.evaluate(el=>el.scrollIntoView({block:'center',behavior:'instant'}));await p.evaluate(()=>new Promise<void>(r=>requestAnimationFrame(()=>r())));const b=(await target.boundingBox())!;
+ const target=selector==='[data-testid="select-control"]'?p.locator(selector):p.getByTestId('quote').locator(selector);await target.evaluate(el=>el.scrollIntoView({block:'center',behavior:'instant'}));await p.evaluate(()=>new Promise<void>(r=>requestAnimationFrame(()=>r())));const b=(await target.boundingBox())!;
  const x=dx<0?b.x+b.width-15:b.x+15,y=Math.max(180,Math.min((p.viewportSize()?.height||800)-180,b.y+b.height/2));
  const beforeScroll=await p.evaluate(()=>scrollY);
  let c=sessions.get(p);if(!c){c=await p.context().newCDPSession(p);sessions.set(p,c);}
@@ -35,7 +36,7 @@ test('swipe: vertical scroll, short drag and details touch never browse',async({
 });
 test('touch: native details and select button do not browse',async({page})=>{
  const first=await id(page);
- const wasOpen=await page.locator('.source-details').evaluate(el=>(el as HTMLDetailsElement).open);await page.locator('.source-details summary').tap();await expect.poll(()=>page.locator('.source-details').evaluate(el=>(el as HTMLDetailsElement).open)).toBe(!wasOpen);expect(await id(page)).toBe(first);
+ const wasOpen=await page.getByTestId('quote').locator('.source-details').evaluate(el=>(el as HTMLDetailsElement).open);await page.getByTestId('quote').locator('.source-details summary').tap();await expect.poll(()=>page.getByTestId('quote').locator('.source-details').evaluate(el=>(el as HTMLDetailsElement).open)).toBe(!wasOpen);expect(await id(page)).toBe(first);
  await button(page,'เลือกข้อความนี้').tap();await expect(page.getByRole('heading',{name:'ข้อความที่เราเลือก'})).toBeVisible();expect(await id(page)).toBe(first);
 });
 test('swipe: deck seam and previous/next reuse visited cards',async({page})=>{
@@ -53,7 +54,7 @@ test('regression: repeated swipes, vertical scroll, details drag, tap and select
   await swipe(page,-25);expect(await id(page)).toBe(first);
   await swipe(page,0,-150);expect(await id(page)).toBe(first);await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(0);
   await swipe(page,-140,0,'.source-details summary');expect(await id(page)).toBe(first);
-  const details=page.locator('.source-details');const before=await details.evaluate(el=>(el as HTMLDetailsElement).open);
+  const details=page.getByTestId('quote').locator('.source-details');const before=await details.evaluate(el=>(el as HTMLDetailsElement).open);
   await details.locator('summary').tap();await expect.poll(()=>details.evaluate(el=>(el as HTMLDetailsElement).open)).toBe(!before);
   await details.locator('summary').tap();await expect.poll(()=>details.evaluate(el=>(el as HTMLDetailsElement).open)).toBe(before);
  }
@@ -63,7 +64,7 @@ test('regression: repeated swipes, vertical scroll, details drag, tap and select
 });
 
 test('touch activation: no duplicate toggle, no activation from button drag, keyboard still works',async({page})=>{
- const first=await id(page),details=page.locator('.source-details');
+ const first=await id(page),details=page.getByTestId('quote').locator('.source-details');
  await details.locator('summary').tap();await page.waitForTimeout(600);await expect(details).toHaveAttribute('open','');
  await details.locator('summary').focus();await page.keyboard.press('Enter');await expect(details).not.toHaveAttribute('open','');
  const select=button(page,'เลือกข้อความนี้');await select.evaluate(el=>el.setAttribute('data-testid','select-control'));
