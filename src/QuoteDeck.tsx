@@ -5,13 +5,14 @@ import {EffectCards} from 'swiper/modules';
 import type {Swiper as SwiperInstance} from 'swiper';
 import {quotes} from './quotes';
 import QuoteCard from './QuoteCard';
+import type {PreviewRequest} from './QuotePreview';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 
 export type QuoteDeckHandle={next:()=>void;previous:()=>void};
-type Props={ids:string[];cursor:number;onBrowse:(index:number)=>void;ref:Ref<QuoteDeckHandle>};
+type Props={ids:string[];cursor:number;onBrowse:(index:number)=>void;onExpand:(request:PreviewRequest)=>void;ref:Ref<QuoteDeckHandle>};
 
-export default function QuoteDeck({ids,cursor,onBrowse,ref}:Props){
+export default function QuoteDeck({ids,cursor,onBrowse,onExpand,ref}:Props){
  const swiper=useRef<SwiperInstance|null>(null);
  const [reducedMotion,setReducedMotion]=useState(()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches);
  useEffect(()=>{
@@ -48,7 +49,7 @@ export default function QuoteDeck({ids,cursor,onBrowse,ref}:Props){
    initialSlide={cursor} speed={reducedMotion?0:420}
    cardsEffect={{rotate:false,perSlideOffset:9,slideShadows:false}}
    threshold={35} touchAngle={34} longSwipesRatio={0.18}
-   touchStartPreventDefault={false} noSwipingSelector="details,button,a,input,textarea,select"
+   touchStartPreventDefault={false} focusableElements="input,select,option,textarea,button:not(.card-expand-control),video,label" noSwipingSelector="details,button:not(.card-expand-control),a,input,textarea,select"
    resistanceRatio={0} preventClicks preventClicksPropagation
    onSwiper={instance=>{swiper.current=instance;}}
    onSlideChange={instance=>onBrowse(instance.activeIndex)}
@@ -57,7 +58,7 @@ export default function QuoteDeck({ids,cursor,onBrowse,ref}:Props){
    {ids.map((id,index)=>{
     const quote=quotes.find(q=>q.id===id)!;
     return <SwiperSlide key={index+':'+id} inert={index!==cursor} aria-hidden={index!==cursor} data-deck-index={index} className={index<cursor?'is-past':index>cursor+2?'is-distant':''}>
-     <QuoteCard quote={quote} active={index===cursor}/>
+     <QuoteCard quote={quote} active={index===cursor} onExpand={index===cursor?(source,opener)=>onExpand({quote,source,opener}):undefined}/>
     </SwiperSlide>;
    })}
   </Swiper>

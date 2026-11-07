@@ -42,3 +42,31 @@
 
 .quote-swiper .swiper-slide{height:var(--card-height,auto)}
 .quote-swiper .swiper-slide:not(.swiper-slide-active) .quote-card{height:100%;min-height:100%;overflow:hidden}
+
+/* The front card is a real keyboard target; its source disclosure remains independent. */
+.quote-card-content{position:relative}
+.card-expand-control{position:absolute;inset:-26px -22px 0;z-index:1;min-height:44px;padding:0;border:0;border-radius:28px 28px 0 0;background:transparent;cursor:zoom-in}
+.card-expand-control:hover,.card-expand-control:active{background:transparent}
+.card-expand-control:focus-visible{outline-offset:-4px}
+.quote-preview{position:fixed;inset:0;margin:auto;padding:0;width:100%;max-width:480px;height:100dvh;max-height:100dvh;border:0;border-radius:0;background:var(--surface);color:inherit;overflow:hidden;transform-origin:top left;box-shadow:0 20px 80px #173e3a33}
+.quote-preview[open]{display:flex;flex-direction:column}
+.quote-preview::backdrop{background:#183a354d;animation:preview-backdrop-in .28s ease both}
+.quote-preview[data-phase="closing"]::backdrop{animation:preview-backdrop-out .32s ease both}
+.preview-top{display:flex;align-items:center;gap:16px;padding:16px 20px 10px;border-bottom:1px solid var(--line);flex-shrink:0}
+.preview-top h2{margin:0;font-size:14px;color:var(--muted);font-weight:400}
+.preview-back{display:flex;align-items:center;gap:8px;min-width:80px;padding:9px 12px;border-color:transparent}
+.preview-back span{font-size:24px;line-height:1}
+.preview-reading{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:4px 6px 12px}
+.quote-preview .quote-card{margin:0;min-height:0;border:0;border-radius:0;box-shadow:none;padding:28px 24px;justify-content:flex-start}
+.quote-preview .quote-headword{font-size:44px}
+.quote-preview .sentence-card .quote-headword{font-size:28px}
+.quote-preview .quote-thai{font-size:25px}
+.preview-bottom{flex-shrink:0;padding:12px 24px max(20px,env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--surface)}
+.preview-bottom .hint{margin:0 0 10px;font-size:12px;text-align:center}
+.quote-preview[data-phase="opening"] .preview-chrome{animation:preview-chrome-in .32s .12s both}
+.quote-preview[data-phase="closing"] .preview-chrome{opacity:0;transition:opacity .12s}
+@keyframes preview-chrome-in{from{opacity:0}to{opacity:1}}
+@keyframes preview-backdrop-in{from{background:#183a3500}to{background:#183a354d}}
+@keyframes preview-backdrop-out{from{background:#183a354d}to{background:#183a3500}}
+@media(min-width:700px){.quote-preview{height:min(900px,calc(100dvh - 48px));max-width:480px;border:1px solid var(--line);border-radius:28px}}
+@media(prefers-reduced-motion:reduce){.quote-preview::backdrop,.quote-preview .preview-chrome{animation:none!important;transition:none!important}}

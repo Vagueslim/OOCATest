@@ -1,5 +1,11 @@
 # Peek a word!
 
+## Tap to expand
+
+Tap or click the front card to expand it into a full-height reading view. The back arrow or Escape collapses it to the same card and restores keyboard focus. Swiping remains browsing only; choosing and saving a quote are still separate, explicit actions. The expanded view keeps its select button visible while long content scrolls, supports reduced motion, and preserves the original source disclosure.
+
+Verification: [card expansion checks](evidence/card-expansion-verification.md).
+
 อัปเดต 2026-11-07: เปลี่ยนชื่อเป็น **Peek a word!** และใช้ **Swiper React 14.4.0 / EffectCards** แสดงการ์ดหน้าและการ์ดถัดไปซ้อนด้านขวา 2 ใบตามองค์ประกอบภาพแนบ ภาพที่ได้รับเป็น PNG หนึ่งเฟรม จึงใช้เป็นอ้างอิงการจัดวาง ไม่ใช่หลักฐานของ motion ใน GIF
 
 ปัดซ้าย/ขวาหรือลองปุ่ม “เปลี่ยนข้อความ” / “ข้อความก่อนหน้า” เพื่อเลื่อนการ์ดแบบมี animation รองรับ reduced motion และยังต้องกดเลือก/เก็บแยกจากการปัด ชื่อ repo, URL และคีย์เก็บข้อมูลเดิมไม่เปลี่ยน: https://vagueslim.github.io/OOCATest/
