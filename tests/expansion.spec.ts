@@ -6,18 +6,23 @@ const preview=(page:Page)=>page.getByRole('dialog',{name:'อ่านข้อ�
 const open=(page:Page)=>page.getByRole('button',{name:/^ขยายข้อความ/});
 test.beforeEach(async({page})=>{
  await page.goto(process.env.TEST_BASE_URL||'/');
- await button(page,'เริ่ม').click();
+ await button(page,'ลองเปิดอ่าน').click();
 });
 
 test('expand: front card grows from its position, then returns to the same card without selecting',async({page})=>{
  const first=await id(page);
  await active(page).scrollIntoViewIfNeeded();
  const rect=(await active(page).boundingBox())!;
- const scroll=await page.evaluate(()=>scrollY);
+ // Playwright may scroll a long tap target by a pixel before pointerdown.
+ // Measure the actual activation position, not the earlier auto-scroll setup.
+ await page.evaluate(()=>document.addEventListener('pointerdown',()=>{(window as any).previewActivationScroll=scrollY;},{once:true}));
+ // Record the real animation when created; slow CI can inspect it after it has finished.
+ await page.evaluate(()=>{const animate=Element.prototype.animate;Element.prototype.animate=function(keyframes,options){const animation=animate.call(this,keyframes,options);if(this.matches('.quote-preview'))(window as any).previewAnimationDuration=animation.effect?.getComputedTiming().duration;return animation;};});
  const historyLength=await page.evaluate(()=>history.length);
  await open(page).click();
+ const scroll=await page.evaluate(()=>(window as any).previewActivationScroll as number);
  await expect(preview(page)).toBeVisible();
- expect(await preview(page).evaluate(el=>el.getAnimations().some(a=>Number(a.effect?.getComputedTiming().duration)>0))).toBe(true);
+ expect(await page.evaluate(()=>(window as any).previewAnimationDuration)).toBeGreaterThan(0);
  await expect(preview(page)).toHaveAttribute('data-phase','open');
  const expanded=(await preview(page).boundingBox())!;
  expect(expanded.width).toBeGreaterThan(rect.width);
@@ -96,7 +101,7 @@ test('expand: reduced motion opens and closes immediately and reload resets the 
  await button(page,'กลับไปดูการ์ด').click();await expect(preview(page)).toHaveCount(0);
  await open(page).click();await page.reload();
  await expect(preview(page)).toHaveCount(0);
- await expect(page.getByRole('heading',{name:'Peek a word!',exact:true})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'ค่อย ๆ อยู่กับคำหนึ่งคำ',exact:true})).toBeVisible();
 });
 
 test.describe('touch',()=>{

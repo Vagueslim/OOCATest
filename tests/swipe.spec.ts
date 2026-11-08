@@ -17,7 +17,7 @@ async function swipe(p:Page,dx:number,dy=0,selector='.quote-headword'){
  if(dy<0)await expect.poll(()=>p.evaluate(()=>scrollY)).toBeGreaterThan(beforeScroll);
 
 }
-test.beforeEach(async({page})=>{await page.goto(process.env.TEST_BASE_URL||'/',{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);await button(page,'เริ่ม').click();});
+test.beforeEach(async({page})=>{await page.goto(process.env.TEST_BASE_URL||'/',{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);await button(page,'ลองเปิดอ่าน').click();});
 test('swipe: left next, right previous, first boundary, replay and no save',async({page})=>{
  const first=await id(page);await expect(button(page,'ข้อความก่อนหน้า')).toBeDisabled();await swipe(page,140);expect(await id(page)).toBe(first);
  await swipe(page,-140);const second=await id(page);expect(second).not.toBe(first);await expect(button(page,'ข้อความก่อนหน้า')).toBeEnabled();

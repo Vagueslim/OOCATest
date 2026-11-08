@@ -6,8 +6,8 @@ const settled=(page:Page)=>expect.poll(()=>page.locator('.quote-swiper').evaluat
 test.beforeEach(async({page})=>{
  await page.goto(process.env.TEST_BASE_URL||'/');
  await expect(page).toHaveTitle('Peek a word!');
- await expect(page.getByRole('heading',{name:'Peek a word!',exact:true})).toBeVisible();
- await button(page,'เริ่ม').click();
+ await expect(page.getByRole('heading',{name:'ค่อย ๆ อยู่กับคำหนึ่งคำ',exact:true})).toBeVisible();
+ await button(page,'ลองเปิดอ่าน').click();
 });
 
 test('cards: desktop mouse drag, button animation, active accessibility and source expansion',async({page})=>{
@@ -68,4 +68,3 @@ test('cards: reduced motion keeps browsing without animated transitions',async({
  expect(await page.locator('.swiper-slide-active').evaluate(el=>getComputedStyle(el).transitionDuration)).toBe('0s');
  await button(page,'ข้อความก่อนหน้า').click();expect(await id(page)).toBe(first);
 });
-

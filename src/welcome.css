@@ -1,0 +1,63 @@
+/* Welcome is intentionally isolated from the existing Mooca card flow. */
+main.welcome-screen{
+  --welcome-ink:#063f50;
+  width:100%;max-width:none;min-height:100svh;margin:0;padding:0;
+  border:0;border-radius:0;color:var(--welcome-ink);
+  background-color:#c8e9ff;
+  background-image:linear-gradient(180deg,rgba(255,255,255,.58),rgba(255,255,255,.3) 42%,rgba(255,255,255,.04)),url('./assets/welcome/sky.png');
+  background-size:100% 100%,cover;background-position:center top;background-repeat:no-repeat;
+}
+.welcome-header{
+  width:100%;max-width:620px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:18px 22px 0;
+}
+.welcome-wordmark{margin:0;font-size:21px;line-height:1.35;letter-spacing:-.035em;font-weight:600;white-space:nowrap}
+.welcome-wordmark span:first-child{color:#005f5c}
+.welcome-wordmark span:last-child{color:#0b5496}
+.welcome-history{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  padding:4px 0 4px 6px;min-width:100px;min-height:44px;
+  border:0;border-radius:12px;font-size:15px;line-height:1.4;font-weight:600;color:var(--welcome-ink);
+}
+.welcome-history svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.welcome-history:hover{background:#ffffff4d}
+.welcome-content{width:100%;max-width:620px;margin:0 auto;flex:1;padding:41px 22px 80px}
+.welcome-content h1{font-size:25px;line-height:1.65;letter-spacing:-.02em;margin:0 5px 18px;font-weight:600;text-align:left}
+.welcome-envelope{position:relative;margin:0 -22px 26px;isolation:isolate}
+.welcome-envelope>img{display:block;width:100%;height:auto;object-fit:contain}
+.welcome-card-word{position:absolute;left:49%;top:30%;transform:translate(-50%,-50%) rotate(-6deg);font-family:Georgia,'Times New Roman',serif;font-size:clamp(39px,12vw,66px);font-style:italic;font-weight:400;line-height:1.1;color:#705a43;white-space:nowrap;text-shadow:0 1px 1px #fff6}
+.welcome-actions{display:flex;flex-direction:column;align-items:center;gap:13px}
+.welcome-start{width:82%;max-width:360px;min-height:54px;border:1px solid #005d60;border-radius:999px;padding:9px 20px;background:linear-gradient(110deg,#006568,#006064);color:#fff;font-size:25px;font-weight:600;line-height:1.4;box-shadow:inset 0 1px 1px #ffffff20}
+.welcome-start:hover{background:#004f54}
+.welcome-reassurance{margin:0;text-align:center;font-size:16px;line-height:1.7;font-weight:600}
+.welcome-screen button:focus-visible{outline:3px solid #063f50;outline-offset:4px;box-shadow:0 0 0 7px #ffffffd9}
+.welcome-screen h1:focus-visible{outline:3px solid #063f50;outline-offset:4px}
+@media(min-width:700px){
+  main.welcome-screen{background-position:center}
+  .welcome-header{max-width:760px;padding-top:28px}
+  .welcome-wordmark{font-size:26px}
+  .welcome-history{font-size:17px;gap:8px}
+  .welcome-content{max-width:530px;padding-top:38px;padding-bottom:70px}
+  .welcome-content h1{font-size:30px}
+  .welcome-envelope{margin-bottom:24px}
+  .welcome-start{min-height:58px}
+  .welcome-reassurance{font-size:18px}
+}
+@media(max-width:374px){
+  .welcome-header{padding-right:18px;padding-left:18px;gap:8px}
+  .welcome-wordmark{font-size:20px}
+  .welcome-history{font-size:14px;min-width:96px}
+  .welcome-content{padding-right:19px;padding-left:19px}
+  .welcome-content h1{font-size:23px;margin-left:4px;margin-right:0}
+  .welcome-envelope{margin-left:-19px;margin-right:-19px}
+  .welcome-reassurance{font-size:15px}
+}
+@media(max-height:700px){
+  .welcome-content{padding-top:22px;padding-bottom:32px}
+  .welcome-content h1{margin-bottom:10px}
+  .welcome-envelope{max-width:330px;margin:0 auto 15px}
+  .welcome-card-word{font-size:clamp(37px,11vw,55px)}
+  .welcome-actions{gap:10px}
+}
+@media(prefers-reduced-motion:reduce){.welcome-screen button{transition:none}}

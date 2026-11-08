@@ -1,7 +1,9 @@
 import catalog from './catalog.json';
+import {characterByQuote} from './characters';
+import type {Character} from './characters';
 export type Focus = 'self' | 'other' | 'things' | null;
-export type Quote = {id:string;type:string;headword:string;language:string;reading:string|null;readingKind:string;partOfSpeech:string|null;original:string;translation:string;text:string;tags:string[]};
-export const quotes:Quote[]=catalog;
+export type Quote = {id:string;type:string;headword:string;language:string;reading:string|null;readingKind:string;partOfSpeech:string|null;original:string;translation:string;text:string;tags:string[];character?:Character};
+export const quotes:Quote[]=catalog.map(quote=>({...quote,character:characterByQuote[quote.id]}));
 export const snapshotText=(q:Quote)=>[q.headword,[q.reading?`/ ${q.reading} /`:null,q.partOfSpeech].filter(Boolean).join(' '),'ข้อความไทยเรียบเรียง · ร่างยังไม่ตรวจ',q.text].filter(Boolean).join('\n');
 export const focusLabel = (focus: Focus) => ({self:'ตนเอง', other:'คนอื่น', things:'สิ่งอื่น'}[focus ?? 'self']);
 export function shuffled(previous?: string) {

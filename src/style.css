@@ -70,3 +70,29 @@
 @keyframes preview-backdrop-out{from{background:#183a354d}to{background:#183a3500}}
 @media(min-width:700px){.quote-preview{height:min(900px,calc(100dvh - 48px));max-width:480px;border:1px solid var(--line);border-radius:28px}}
 @media(prefers-reduced-motion:reduce){.quote-preview::backdrop,.quote-preview .preview-chrome{animation:none!important;transition:none!important}}
+
+/* One responsive header is shared by browsing, reading and the selected card.
+   Character artwork is optional: never substitute an unrelated pose. */
+.quote-header,.quote-word{min-width:0}
+.quote-card.has-character{background:linear-gradient(145deg,#F7FCFB 0,#EEF5F6 32%,#FFFFFF 62%)}
+.character-tag{display:inline-flex;align-items:center;gap:8px;width:fit-content;max-width:100%;padding:6px 13px;margin-bottom:23px;border-radius:24px;background:#E0F4ED;color:#17615B;font-size:13px;font-weight:600;line-height:1.6;overflow-wrap:anywhere}
+.character-tag>span{width:6px;height:6px;border-radius:50%;background:#008575;flex-shrink:0}
+.has-character .quote-header{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:6px;align-items:center;margin:0 0 22px}
+.has-character .quote-headword{font-size:clamp(30px,10vw,44px);line-height:1.25;margin:0 0 8px;color:#007F75}
+.has-character .quote-reading{font-size:16px;line-height:1.7;margin:0;color:#536F78}
+.quote-character{display:block;width:100%;height:auto;max-width:220px;object-fit:contain;justify-self:end;user-select:none;pointer-events:none}
+.has-character .card-line{position:relative;height:1px;background:#C7DFDA;margin-bottom:23px}
+.has-character .card-line:before{position:absolute;content:'';left:0;top:-1px;height:3px;width:12%;background:#00AE9F}
+.has-character .quote-thai{color:#234B62;font-size:24px;line-height:1.85;margin-bottom:24px;overflow-wrap:anywhere}
+.has-character.sentence-card .quote-header{grid-template-columns:minmax(0,1fr)}
+.has-character.sentence-card .quote-character{grid-row:1;max-width:160px;margin-bottom:12px}
+.has-character.sentence-card .quote-headword{font-size:26px;line-height:1.65}
+.quote-preview .has-character .quote-header{margin-bottom:28px}
+.quote-preview .has-character .quote-thai{font-size:26px}
+.quote-preview .has-character .character-tag{margin-bottom:30px}
+@media(max-width:340px){.has-character .quote-header{gap:3px}.has-character .quote-reading{font-size:14px}.has-character .quote-thai{font-size:22px}}
+.character-tile{background-repeat:no-repeat;border-radius:8px;max-width:148px}
+.has-character.sentence-card .quote-character.character-tile{max-width:136px}
+.has-character.long-word-card .quote-header{grid-template-columns:minmax(0,1fr);gap:12px}
+.has-character.long-word-card .quote-character{grid-row:1;max-width:136px}
+.has-character.long-word-card .quote-headword{font-size:clamp(24px,8vw,32px);line-height:1.4}

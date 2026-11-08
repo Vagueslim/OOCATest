@@ -7,7 +7,7 @@ test('catalog: 53 cards, missing readings, Japanese, mobile overflow and evidenc
  // 53 actual card transitions plus opening every source disclosure exceed the default 30-second budget.
  test.setTimeout(90000);
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto(process.env.TEST_BASE_URL||'/');await page.getByRole('button',{name:'เริ่ม',exact:true}).click();
+ await page.goto(process.env.TEST_BASE_URL||'/');await page.getByRole('button',{name:'ลองเปิดอ่าน',exact:true}).click();
  const seen=new Set<string>();
  for(let i=0;i<53;i++){
   const card=page.getByTestId('quote');const id=await card.getAttribute('data-quote-id');seen.add(id!);
@@ -29,14 +29,13 @@ test('legacy snapshots survive catalog save, reload, focus update and deletion',
  await page.goto(process.env.TEST_BASE_URL||'/');
  const old={id:'legacy',quoteId:'self-rest',quoteText:'วันนี้ขอพักก่อน',focus:null,savedAt:'2025-01-01T00:00:00Z',localDay:'2025-01-01'};
  await page.evaluate(({key,old})=>localStorage.setItem(key,JSON.stringify({version:1,entries:[old]})),{key,old});
- await page.getByRole('button',{name:'เริ่ม',exact:true}).click();await page.getByRole('button',{name:'เลือกข้อความนี้',exact:true}).click();
+ await page.getByRole('button',{name:'ลองเปิดอ่าน',exact:true}).click();await page.getByRole('button',{name:'เลือกข้อความนี้',exact:true}).click();
  const title=await page.locator('.quote-headword').innerText();
  await page.getByRole('button',{name:'เก็บข้อความไว้',exact:true}).click();
  await page.getByRole('radio',{name:'คนอื่น',exact:true}).check();await page.getByRole('button',{name:'อัปเดตบันทึก',exact:true}).click();
  await page.reload();const data=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),key);
  expect(data.version).toBe(1);expect(data.entries[0]).toEqual(old);expect(data.entries[1].quoteText).toContain(title);expect(data.entries[1].quoteText).toContain('ร่างยังไม่ตรวจ');expect(data.entries[1].focus).toBe('other');
- await page.getByRole('button',{name:'ดูข้อความที่เก็บไว้',exact:true}).click();await page.locator('summary').click();await page.getByRole('button',{name:'ลบข้อความ',exact:true}).click();await page.getByRole('button',{name:'ยืนยันลบ',exact:true}).click();
+ await page.getByRole('button',{name:'ดูย้อนหลัง',exact:true}).click();await page.locator('summary').click();await page.getByRole('button',{name:'ลบข้อความ',exact:true}).click();await page.getByRole('button',{name:'ยืนยันลบ',exact:true}).click();
  await page.getByRole('combobox').selectOption('2025-01');await expect(page.locator('summary')).toHaveText(old.quoteText);
  expect((await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).entries,key))).toEqual([old]);
 });
-
