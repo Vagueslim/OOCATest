@@ -4,6 +4,12 @@ const active=(page:Page)=>page.getByTestId('quote');
 const id=(page:Page)=>active(page).getAttribute('data-quote-id');
 const preview=(page:Page)=>page.getByRole('dialog',{name:'อ่านข้อความเต็ม'});
 const open=(page:Page)=>page.getByRole('button',{name:/^ขยายข้อความ/});
+test.afterEach(async({page},testInfo)=>{
+ if(testInfo.status!==testInfo.expectedStatus){
+  await testInfo.attach('focus-diagnostic',{body:JSON.stringify(await page.evaluate(()=>({activeTag:document.activeElement?.tagName,activeText:document.activeElement?.textContent?.slice(0,160),activeClass:(document.activeElement as HTMLElement)?.className,documentFocused:document.hasFocus(),screen:document.querySelector('main')?.className}))),contentType:'application/json'});
+ }
+});
+
 test.beforeEach(async({page})=>{
  await page.goto(process.env.TEST_BASE_URL||'/');
  await button(page,'ลองเปิดอ่าน').click();
@@ -50,10 +56,12 @@ test('expand: selection is explicit and opens the same existing reflection flow'
  expect(await id(page)).toBe(current);
  await expect(page.getByRole('radio',{name:'ไม่ระบุ',exact:true})).toBeChecked();
  expect(await page.evaluate(()=>localStorage.getItem('ooca-demo:saved-quotes:v1'))).toBeNull();
+ await button(page,'ต่อไป').click();
+ await page.locator('.keep-disclosure > summary').click();
  await button(page,'เก็บข้อความไว้').click();
  await expect(page.getByRole('status')).toHaveText('เก็บข้อความไว้แล้ว');
- await button(page,'จบเมื่อพร้อม').first().click();
- await button(page,'เริ่มรอบใหม่').click();
+ await button(page,'จบ').click();
+ await button(page,'เลือกคำใหม่').click();
  await expect(button(page,'ข้อความก่อนหน้า')).toBeDisabled();
 });
 

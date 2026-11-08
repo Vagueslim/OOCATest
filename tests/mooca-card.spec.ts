@@ -1,12 +1,11 @@
 import {test,expect,type Page} from '@playwright/test';
-import {readFileSync} from 'node:fs';
+import {catalog,deckSize,shownIds,shownCatalog,deckTimeout} from './catalog-test-data';
 import {characterByQuote} from '../src/characters';
-const catalog=JSON.parse(readFileSync(new URL('../src/catalog.json',import.meta.url),'utf8'));
 const button=(page:Page,name:string)=>page.getByRole('button',{name,exact:true});
 const active=(page:Page)=>page.getByTestId('quote');
 const key='ooca-demo:saved-quotes:v1';
 async function browseTo(page:Page,id:string){
- for(let i=0;i<53;i++){
+ for(let i=0;i<deckSize;i++){
   if(await active(page).getAttribute('data-quote-id')===id)return;
   await button(page,'เปลี่ยนข้อความ').click();
  }
@@ -33,8 +32,10 @@ test('Mooca: CALM uses exact Relaxing asset, keeps original tags and matches exp
  await expect.poll(()=>img.evaluate(el=>(el as HTMLImageElement).naturalWidth)).toBe(364);
  const geometry=await img.evaluate(el=>{const r=el.getBoundingClientRect();return{width:r.width,height:r.height,naturalHeight:(el as HTMLImageElement).naturalHeight};});
  expect(geometry.naturalHeight).toBe(225);expect(geometry.width/geometry.height).toBeCloseTo(364/225,2);
- const header=await active(page).locator('.quote-headword').boundingBox();
- const picture=await img.boundingBox();expect(header!.x+header!.width).toBeLessThanOrEqual(picture!.x+1);
+ await expect(active(page).locator('.quote-headword')).toHaveText(q.headword);
+ const text=await active(page).locator('.quote-thai').boundingBox();
+ const picture=await img.boundingBox();expect(text!.y+text!.height).toBeLessThanOrEqual(picture!.y+1);
+ const card=await active(page).boundingBox();expect(picture!.x).toBeGreaterThanOrEqual(card!.x);expect(picture!.x+picture!.width).toBeLessThanOrEqual(card!.x+card!.width);
  await noOverflow(page);await page.evaluate(()=>scrollTo(0,0));
  await page.screenshot({path:'evidence/mooca-calm-browse-390.png',fullPage:true});
  const src=await img.getAttribute('src');
@@ -55,7 +56,7 @@ test('Mooca: CALM uses exact Relaxing asset, keeps original tags and matches exp
  }
 });
 test('Mooca: long sentence remains complete with its matched character in browse and expanded views',async({page})=>{
- test.setTimeout(60000);
+ test.setTimeout(deckTimeout());
  await browseTo(page,'catalog-v1:ooca-041');
  const q=catalog.find((q:any)=>q.id==='catalog-v1:ooca-041');
  await expect(active(page).locator('.quote-headword')).toHaveText(q.headword);
@@ -84,9 +85,9 @@ test('Mooca: long sentence remains complete with its matched character in browse
 
 
 test('Mooca: every catalog card has one matched pose, preserved content tags and contained artwork',async({page})=>{
- test.setTimeout(90000);
+ test.setTimeout(deckTimeout(90000,1500));
  const seen=new Set<string>(),captured=new Set<string>();
- for(let i=0;i<53;i++){
+ for(let i=0;i<deckSize;i++){
   const card=active(page),id=await card.getAttribute('data-quote-id');
   const q=catalog.find((q:any)=>q.id===id),character=characterByQuote[id!];
   expect(character).toBeTruthy();seen.add(id!);
@@ -116,6 +117,6 @@ test('Mooca: every catalog card has one matched pose, preserved content tags and
   await expect(active(page)).toHaveAttribute('data-quote-id',id!);
   await button(page,'เปลี่ยนข้อความ').click();
  }
- expect(seen.size).toBe(53);expect(captured.size).toBe(21);
+ expect(seen.size).toBe(deckSize);expect([...seen].sort()).toEqual([...shownIds].sort());expect([...captured].sort()).toEqual([...new Set(shownCatalog.map(q=>characterByQuote[q.id].name))].sort());
  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBeNull();
 });

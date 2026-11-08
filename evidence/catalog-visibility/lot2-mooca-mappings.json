@@ -1,0 +1,426 @@
+[
+  {
+    "id": "catalog-v1:ooca-054",
+    "character": "Safe Bubble",
+    "confidence": "high",
+    "rationale": "ภาพฟองปกป้องสอดคล้องกับการรักษาขอบเขตจากการบงการ",
+    "status": "draft",
+    "sourceFile": "008b05dde02cc3d933bf9baa5b8bf138.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-055",
+    "character": "Heart Hug",
+    "confidence": "high",
+    "rationale": "ท่ากอดหัวใจเหมาะกับการอ่อนโยนต่อตนเองท่ามกลางความกลัวว่าไม่ดีพอ",
+    "status": "draft",
+    "sourceFile": "07d636a9c3eac0b144dee1e9b69b28e9.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-056",
+    "character": "Moon Dreamer",
+    "confidence": "high",
+    "rationale": "ตัวละครนอนบนดวงจันทร์ตรงกับเรื่องการนอน",
+    "status": "draft",
+    "sourceFile": "17bf436a1e1e0387ec50c70e33db476f.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-057",
+    "character": "Caring Listener",
+    "confidence": "medium",
+    "rationale": "ท่ารับฟังเหมาะกับความเจ็บปวดและความรู้สึกผิด แม้ภาพไม่แสดงรอยแผล",
+    "status": "draft",
+    "sourceFile": "1d46beaae6223158bf7cf895de19b682.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-058",
+    "character": "Glowing Heart",
+    "confidence": "medium",
+    "rationale": "หัวใจที่เปล่งแสงสื่อถึงตัวตนและความรู้สึกภายใน ไม่ได้ยืนยันความเชื่อเรื่องวิญญาณ",
+    "status": "draft",
+    "sourceFile": "1f4c90966378695295e8192b11f249fd.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-059",
+    "character": "Back View",
+    "confidence": "medium",
+    "rationale": "ท่าหันหลังเหมาะกับความห่างและการไม่ถูกเลือก ไม่มีท่าเศร้าตรงตัว",
+    "status": "draft",
+    "sourceFile": "22ffe96fd8cb0c5a56d3928e09e6f041.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-060",
+    "character": "Sunny Friend",
+    "confidence": "medium",
+    "rationale": "ภาพอยู่ร่วมกับเพื่อนดวงอาทิตย์สื่อการผสมผสานสิ่งต่างกัน",
+    "status": "draft",
+    "sourceFile": "297f7996ef64950b7b973e2a2ac1a816.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-061",
+    "character": "Bookworm",
+    "confidence": "high",
+    "rationale": "ท่าอ่านหนังสือตรงกับภาพลักษณ์คนรักการเรียนรู้",
+    "status": "draft",
+    "sourceFile": "3043738c375f014ce6fe3255702a58cb.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-062",
+    "character": "Curious",
+    "confidence": "medium",
+    "rationale": "ท่าสงสัยเหมาะกับการมองหาเหตุผลและความหมาย",
+    "status": "draft",
+    "sourceFile": "356368ab026265d2ea3c569ad07a4560.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-063",
+    "character": "Mirror Peek",
+    "confidence": "medium",
+    "rationale": "ท่ามองกระจกสื่อการมองตัวเองและการเปรียบเทียบ ไม่มีท่าอิจฉาโดยตรง",
+    "status": "draft",
+    "sourceFile": "3589c3a3ad2c10adb3d1bbef5a285d03.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-064",
+    "character": "Heart Hug",
+    "confidence": "medium",
+    "rationale": "การกอดหัวใจสื่อความไว้วางใจและความผูกพัน ไม่ใช่ท่าสัญญาตรงตัว",
+    "status": "draft",
+    "sourceFile": "38821d48a6999607727638c0227467cf.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-065",
+    "character": "Bookworm",
+    "confidence": "medium",
+    "rationale": "ภาพอ่านหนังสือสื่อการพัฒนาความคิดและวินัย",
+    "status": "draft",
+    "sourceFile": "50a23b40a4e087b8387cc32682c3cd72.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-066",
+    "character": "Heart Hug",
+    "confidence": "high",
+    "rationale": "ท่ากอดหัวใจสื่อความต้องการให้ใครอยู่ใกล้",
+    "status": "draft",
+    "sourceFile": "59c4d19b3dfffaa100f7235703dcb1bd.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-067",
+    "character": "Quiet Moment",
+    "confidence": "high",
+    "rationale": "ภาพนั่งสงบตรงกับการเลือกความสงบ",
+    "status": "draft",
+    "sourceFile": "5ab573e2999ef9e045a994645657fa35.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-068",
+    "character": "Playful Tilt",
+    "confidence": "medium",
+    "rationale": "ท่าเอียงขี้เล่นเข้ากับมุกเล่นตัวอักษร ไม่มีท่าเงินโดยตรง",
+    "status": "draft",
+    "sourceFile": "5ccd2e4971f267545e214b0fd14c7989.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-069",
+    "character": "Quiet Moment",
+    "confidence": "high",
+    "rationale": "ท่านั่งสงบตรงกับความเงียบ",
+    "status": "draft",
+    "sourceFile": "5d0eef366dc279bf2b6368486eac07e4.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-070",
+    "character": "Mirror Peek",
+    "confidence": "medium",
+    "rationale": "ภาพมองตัวเองในกระจกสื่อความขัดแย้งภายใน ไม่มีท่าปีศาจโดยตรง",
+    "status": "draft",
+    "sourceFile": "6324d6988bf36666dcec9e1028bfa280.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-071",
+    "character": "Balloon Explorer",
+    "confidence": "high",
+    "rationale": "ท่าออกเดินทางด้วยบอลลูนตรงกับการเริ่มต้น",
+    "status": "draft",
+    "sourceFile": "72c5c0f468d1c1c59aa9fbf3441df72c.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-072",
+    "character": "Mirror Peek",
+    "confidence": "high",
+    "rationale": "ภาพส่องกระจกตรงกับการบอกว่าตัวเองเป็นอย่างไร",
+    "status": "draft",
+    "sourceFile": "7724c76b845e3feedac2342990a7ebbd.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-073",
+    "character": "Rainy Day",
+    "confidence": "medium",
+    "rationale": "ร่มในวันฝนตกสื่อการรับมือวันยาก ๆ ไม่มีท่าปิญาตาตรงตัว",
+    "status": "draft",
+    "sourceFile": "7aae195e36265acadbdbd348bb55f23b.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-074",
+    "character": "Curious",
+    "confidence": "medium",
+    "rationale": "ท่าครุ่นคิดใช้กับอาการงงหรือสถานะผิดพลาด ไม่มีท่า error โดยตรง",
+    "status": "draft",
+    "sourceFile": "7be19bf3f9532c7e9f4617eab35a1699.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-075",
+    "character": "Sunny Friend",
+    "confidence": "high",
+    "rationale": "ตัวละครกับดวงอาทิตย์สื่อความสุขและความอบอุ่น",
+    "status": "draft",
+    "sourceFile": "820e63de5ff7ee1ea5339fd008faa8e2.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-076",
+    "character": "Rainy Day",
+    "confidence": "medium",
+    "rationale": "ภาพวันฝนตกสื่อความยากของความจริง ไม่แสดงทั้งฝันและจริงพร้อมกัน",
+    "status": "draft",
+    "sourceFile": "8379791b9bb6db3a61db2f183eb56457.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-077",
+    "character": "Balloon Explorer",
+    "confidence": "high",
+    "rationale": "บอลลูนเคลื่อนไปข้างหน้าสื่อการเติบโตและเป้าหมาย",
+    "status": "draft",
+    "sourceFile": "8b1e85310d9cfaab301576710d5bac9d.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-078",
+    "character": "Playful Tilt",
+    "confidence": "medium",
+    "rationale": "ท่าขี้เล่นเหมาะกับมุกการตอบแชต",
+    "status": "draft",
+    "sourceFile": "8c935500f8bc4d3ad57843b1b95c1aa4.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-079",
+    "character": "Rainy Day",
+    "confidence": "medium",
+    "rationale": "วันฝนตกเชื่อมกับความผิดหวังอย่างอ่อนโยน",
+    "status": "draft",
+    "sourceFile": "8ef579f173a8adaa02adfc15e715afa8.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-080",
+    "character": "Back View",
+    "confidence": "medium",
+    "rationale": "ท่าหันหลังสื่อการเว้นระยะจากการติดต่อ ไม่มีท่าโทรศัพท์",
+    "status": "draft",
+    "sourceFile": "8fbaf42a2a60ca00b85de636bbca4a52.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-081",
+    "character": "Friendly Stand",
+    "confidence": "low",
+    "rationale": "คำสั้นไม่บอกอารมณ์ชัด จึงเลือกท่ายืนกลาง ๆ; ควรตรวจบริบทก่อนใช้",
+    "status": "draft",
+    "sourceFile": "960dafafb7d4ed6b1c6dd1343e0b525b.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-082",
+    "character": "Rainy Day",
+    "confidence": "medium",
+    "rationale": "ท่าถือร่มในวันฝนสื่อทั้งความยากและการดูแลตนเอง ไม่มีภาพโลกตรงตัว",
+    "status": "draft",
+    "sourceFile": "99bed88c1b5d458a652377c3bd4acdfb.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-083",
+    "character": "Bookworm",
+    "confidence": "medium",
+    "rationale": "ท่าอ่านหนังสือสื่อการจดจ่อทำงาน แม้ข้อความไม่จำกัดเรื่องการเรียน",
+    "status": "draft",
+    "sourceFile": "99d88a14af2403ac0dc1aefb601e5129.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-084",
+    "character": "Heart Hug",
+    "confidence": "high",
+    "rationale": "ท่ากอดหัวใจสื่อการปลอบและเมตตาต่อตนเอง",
+    "status": "draft",
+    "sourceFile": "9eb651e6471544025768a1a53e6c8180.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-085",
+    "character": "Bench Break",
+    "confidence": "medium",
+    "rationale": "ท่านั่งพักเข้ากับการยอมรับว่าเหนื่อยและยังพอไหว",
+    "status": "draft",
+    "sourceFile": "aabc9f020d07694c2f7ec80ed4c25578.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-086",
+    "character": "Balloon Explorer",
+    "confidence": "high",
+    "rationale": "ท่าออกสำรวจสื่อความกล้าและการไปหาเป้าหมาย",
+    "status": "draft",
+    "sourceFile": "af2a1814eda1783779761d6bafb70488.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-087",
+    "character": "Playful Tilt",
+    "confidence": "medium",
+    "rationale": "ท่าเอียงคล้ายเคลื่อนไหวเข้ากับภาพเปรียบการเต้นรำ แต่ไม่มีปีศาจในชุดภาพ",
+    "status": "draft",
+    "sourceFile": "b8a416875a637f9eb3604e3724362f4f.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-088",
+    "character": "Sunny Friend",
+    "confidence": "high",
+    "rationale": "ภาพมีเพื่อนอยู่ข้าง ๆ ตรงกับการไม่อยู่คนเดียว",
+    "status": "draft",
+    "sourceFile": "b99f43f1922034ce28a1355473565210.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-089",
+    "character": "Bookworm",
+    "confidence": "high",
+    "rationale": "ท่าอ่านหนังสือเข้ากับการเรียนรู้และมุกสูตรคณิตศาสตร์",
+    "status": "draft",
+    "sourceFile": "bcd37260b7efcf3e515342a20d0a3eb2.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-090",
+    "character": "Rainy Day",
+    "confidence": "medium",
+    "rationale": "ภาพฝนสื่อความเสียใจจากความสัมพันธ์โดยไม่เพิ่มท่าทางที่ไม่มีในต้นฉบับ",
+    "status": "draft",
+    "sourceFile": "cde32852d0349b731aeccb715397d4f3.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-091",
+    "character": "Back View",
+    "confidence": "medium",
+    "rationale": "ท่าหันหลังสื่อการหันกลับมองตัวเองและความเปราะบาง ไม่มีท่าปีกโดยตรง",
+    "status": "draft",
+    "sourceFile": "cf3d4546e173e474da09ba127fe53699.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-092",
+    "character": "Curious",
+    "confidence": "medium",
+    "rationale": "ท่าครุ่นคิดเข้ากับการทบทวนเหตุผลและการตัดสินใจ",
+    "status": "draft",
+    "sourceFile": "d0dd674ff293e38bf547d10e17424f92.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-093",
+    "character": "Mirror Peek",
+    "confidence": "medium",
+    "rationale": "ท่าส่องกระจกเข้ากับการมองความรับผิดชอบของตัวเอง",
+    "status": "draft",
+    "sourceFile": "d2da61777246bbc97a4830118dfb56d9.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-094",
+    "character": "Curious",
+    "confidence": "high",
+    "rationale": "ท่าสงสัยตรงกับการตั้งคำถาม",
+    "status": "draft",
+    "sourceFile": "d61f93df45dc499d481152882f85eda9.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-095",
+    "character": "Back View",
+    "confidence": "medium",
+    "rationale": "ท่าหันหลังสื่อการเว้นระยะจากผู้คน แต่ไม่ตีความว่าโมโหหรือเกลียดจากภาพ",
+    "status": "draft",
+    "sourceFile": "d9c714aa03e6ee4b85c67cd1620ca095.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-096",
+    "character": "Playful Tilt",
+    "confidence": "medium",
+    "rationale": "ท่าขี้เล่นเข้ากับน้ำเสียงมีชั้นเชิง ไม่ใช่ท่าหลอกลวงโดยตรง",
+    "status": "draft",
+    "sourceFile": "dd3f3826b2f12366603911ca811337f7.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-097",
+    "character": "Back View",
+    "confidence": "high",
+    "rationale": "ท่าหันหลังสื่อส่วนของตัวตนที่คนอื่นยังมองไม่เห็น",
+    "status": "draft",
+    "sourceFile": "download.png"
+  },
+  {
+    "id": "catalog-v1:ooca-098",
+    "character": "Curious",
+    "confidence": "low",
+    "rationale": "ท่ารอฟังคำตอบพอเชื่อมกับการสัมภาษณ์ แต่ไม่มีภาพสัมภาษณ์หรือมุกโกหกตรงตัว",
+    "status": "draft",
+    "sourceFile": "e88dd12275e1cc011cedb6a7583cc552.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-099",
+    "character": "Quiet Moment",
+    "confidence": "high",
+    "rationale": "ท่านั่งสงบเข้ากับการตั้งหลักและกลับมาหาสมดุล",
+    "status": "draft",
+    "sourceFile": "e8a4f41655c38e11771dd1310b7ebed8.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-100",
+    "character": "Caring Listener",
+    "confidence": "high",
+    "rationale": "ท่ารับฟังตรงกับความต้องการให้เข้าใจความรู้สึก",
+    "status": "draft",
+    "sourceFile": "ee3f03d73bcf268d788781842d459a19.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-101",
+    "character": "Quiet Moment",
+    "confidence": "high",
+    "rationale": "ท่านั่งเงียบเข้ากับการเลือกไม่พูด",
+    "status": "draft",
+    "sourceFile": "ee6d028cc26e7f5979a30b8145a98c14.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-102",
+    "character": "Back View",
+    "confidence": "high",
+    "rationale": "การหันหลังสื่อการไม่พร้อมเปิดเผยเรื่องหนึ่ง",
+    "status": "draft",
+    "sourceFile": "f1a0ddaf9b5d347e4eecd4e283b04f7b.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-103",
+    "character": "Friendly Stand",
+    "confidence": "high",
+    "rationale": "ท่ายืนเรียบง่ายเป็นธรรมชาติเข้ากับความจริงแท้",
+    "status": "draft",
+    "sourceFile": "f22ee13bc3d354554947217b3d4c4b4e.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-104",
+    "character": "Moon Dreamer",
+    "confidence": "high",
+    "rationale": "ตัวละครหลับบนดวงจันทร์ตรงกับการพบกันในฝัน",
+    "status": "draft",
+    "sourceFile": "f408359dd14b866db66359dc9905d95c.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-105",
+    "character": "Quiet Moment",
+    "confidence": "high",
+    "rationale": "ท่านั่งสงบตรงกับการหยุดและหายใจ",
+    "status": "draft",
+    "sourceFile": "f7726e6ccb6249b021cc801f6407918b.jpg"
+  },
+  {
+    "id": "catalog-v1:ooca-106",
+    "character": "Relaxing",
+    "confidence": "medium",
+    "rationale": "ท่านอนสบายสื่อการพักและดูอะไรต่อ ไม่มีอุปกรณ์ดูวิดีโอในภาพ",
+    "status": "draft",
+    "sourceFile": "fcbbb00e4bafc6be394f8878cf96b9a2.jpg"
+  }
+]

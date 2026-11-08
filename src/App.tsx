@@ -1,4 +1,4 @@
-import {TapButton} from './TouchControls';
+import {TapButton,TapSummary} from './TouchControls';
 import {useEffect,useRef,useState} from 'react';
 import {quotes,shuffled,focusLabel,snapshotText} from './quotes';
 import type {Focus} from './quotes';
@@ -11,42 +11,196 @@ import type {PreviewRequest} from './QuotePreview';
 import type {QuoteDeckHandle} from './QuoteDeck';
 import HistoryView from './HistoryView';
 import WelcomeScreen from './WelcomeScreen';
-type Screen='welcome'|'discover'|'reflect'|'noSelection'|'done'|'history';
+import CharacterArtwork from './CharacterArtwork';
+import CalendarReminder from './CalendarReminder';
+import type {CalendarSession} from './CalendarReminder';
+import {characters} from './characters';
+import type {Character} from './characters';
+
+type Screen='welcome'|'discover'|'reflect'|'write'|'noSelection'|'done'|'history';
 type Round={id:string;deck:string[];visited:string[];cursor:number;currentQuoteId:string;selectedQuoteId:string|null;focus:Focus;draft:string;hugShown:boolean};
-const titles:Record<Screen,string>={welcome:'Peek a word!',discover:'พบข้อความ',reflect:'ข้อความที่เราเลือก',noSelection:'วันนี้ยังไม่เลือก',done:'จบรอบนี้แล้ว',history:'ข้อความที่เก็บไว้'};
+const titles:Record<Screen,string>={welcome:'Peek a word!',discover:'พบข้อความ',reflect:'ข้อความที่เราเลือก',write:'เขียนถึงตัวเอง',noSelection:'วันนี้ยังไม่เลือก',done:'จบรอบนี้แล้ว',history:'ข้อความที่เก็บไว้'};
+
+function Arrow({direction}:{direction:'left'|'right'}) {
+ return <svg viewBox="0 0 24 24" aria-hidden="true"><path d={direction==='left'?'m14 6-6 6 6 6':'m10 6 6 6-6 6'}/></svg>;
+}
 export default function App(){
  const deckRef=useRef<QuoteDeckHandle>(null);
- const [preview,setPreview]=useState<PreviewRequest|null>(null);
+ const heading=useRef<HTMLHeadingElement>(null);
  const previousPreview=useRef<PreviewRequest|null>(null);
- useEffect(()=>{if(!preview&&previousPreview.current&&screen==='discover')document.querySelector<HTMLElement>('.swiper-slide-active .card-expand-control')?.focus({preventScroll:true});previousPreview.current=preview;},[preview]);
- function selectQuote(id:string){setPreview(null);patch({selectedQuoteId:id});setScreen('reflect');}
- const [screen,setScreen]=useState<Screen>('welcome');const [round,setRound]=useState<Round|null>(null);const [saved,setSaved]=useState<SavedQuote|null>(null);const [doneSaved,setDoneSaved]=useState(false);const [message,setMessage]=useState('');const [origin,setOrigin]=useState<'welcome'|'done'>('welcome');const heading=useRef<HTMLHeadingElement>(null);
- useEffect(()=>{heading.current?.focus();window.scrollTo(0,0);const frame=requestAnimationFrame(()=>{if(document.activeElement===document.body)heading.current?.focus({preventScroll:true});});return()=>cancelAnimationFrame(frame);},[screen]);
- function start(){const [first,...deck]=shuffled();setRound({id:crypto.randomUUID(),deck,visited:[first],cursor:0,currentQuoteId:first,selectedQuoteId:null,focus:null,draft:'',hugShown:false});setSaved(null);setDoneSaved(false);setMessage('');setScreen('discover');}
- function end(){setDoneSaved(!!saved);setRound(null);setSaved(null);setMessage('');setScreen('done');}
+ const [preview,setPreview]=useState<PreviewRequest|null>(null);
+ const [screen,setScreen]=useState<Screen>('welcome');
+ const [round,setRound]=useState<Round|null>(null);
+ const [saved,setSaved]=useState<SavedQuote|null>(null);
+ const [doneSaved,setDoneSaved]=useState(false);
+ const [closingCharacter,setClosingCharacter]=useState<Character>(characters['Quiet Moment']);
+ const [message,setMessage]=useState('');
+ const [calendarBusy,setCalendarBusy]=useState(false);
+ const [calendarSession,setCalendarSession]=useState<CalendarSession|null>(null);
+ const [origin,setOrigin]=useState<Screen>('welcome');
+
+
+ useEffect(()=>{
+  if(!preview&&previousPreview.current&&screen==='discover')
+   document.querySelector<HTMLElement>('.swiper-slide-active .card-expand-control')?.focus({preventScroll:true});
+  previousPreview.current=preview;
+ },[preview,screen]);
+ useEffect(()=>{
+  heading.current?.focus();
+  window.scrollTo(0,0);
+  const frame=requestAnimationFrame(()=>{if(document.activeElement===document.body)heading.current?.focus({preventScroll:true});});
+  return()=>cancelAnimationFrame(frame);
+ },[screen]);
+
  function patch(changes:Partial<Round>){setRound(r=>r?{...r,...changes}:r);}
- function next(){deckRef.current?.next();}
- function previous(){deckRef.current?.previous();}
- function browse(index:number){setRound(r=>{
-  if(!r)return r;
-  const timeline=[...r.visited,...r.deck];
-  if(index<0||index>=timeline.length)return r;
-  const visitedCount=Math.max(r.visited.length,index+1);
-  const visited=timeline.slice(0,visitedCount);
-  let deck=timeline.slice(visitedCount);
-  // Keep two real upcoming cards behind the front card, including at the deck seam.
-  if(deck.length<2)deck=[...deck,...shuffled(timeline[timeline.length-1])];
-  return {...r,visited,deck,cursor:index,currentQuoteId:timeline[index]};
- });}
- function save(){if(!round)return;const quote=quotes.find(q=>q.id===round.selectedQuoteId)!;try{const entry=saveQuote({id:round.id,quoteId:quote.id,quoteText:snapshotText(quote),focus:round.focus});setSaved(entry);setMessage('เก็บข้อความไว้แล้ว');}catch(e){setMessage((e as Error).message);}}
- function history(){setOrigin(screen==='done'?'done':'welcome');setScreen('history');}
- const quote=round?quotes.find(q=>q.id===(round.selectedQuoteId??round.currentQuoteId)):null;
+ function start(){
+  const [first,...deck]=shuffled();
+  setRound(first?{id:crypto.randomUUID(),deck,visited:[first],cursor:0,currentQuoteId:first,selectedQuoteId:null,focus:null,draft:'',hugShown:false}:null);
+  setSaved(null);setDoneSaved(false);setMessage('');setPreview(null);setCalendarSession(null);setCalendarBusy(false);setScreen('discover');
+ }
+ function selectQuote(id:string){
+  setPreview(null);
+  if(round?.selectedQuoteId!==id){
+   // A different card begins a new selection; never attach an old reflection to it.
+   patch({id:crypto.randomUUID(),selectedQuoteId:id,focus:null,draft:''});
+   setSaved(null);setMessage('');setCalendarSession(null);
+  }
+  setScreen('reflect');
+ }
+ function end(){
+  const selected=quotes.find(q=>q.id===round?.selectedQuoteId);
+  setClosingCharacter(selected?.character??characters['Quiet Moment']);
+  setCalendarSession(null);setCalendarBusy(false);setDoneSaved(!!saved);setRound(null);setSaved(null);setMessage('');setPreview(null);setScreen('done');
+ }
+ function skip(){setCalendarSession(null);setCalendarBusy(false);setPreview(null);setRound(null);setSaved(null);setMessage('');setScreen('noSelection');}
+ function browse(index:number){
+  setRound(r=>{
+   if(!r)return r;
+   const timeline=[...r.visited,...r.deck];
+   if(index<0||index>=timeline.length)return r;
+   const visitedCount=Math.max(r.visited.length,index+1);
+   const visited=timeline.slice(0,visitedCount);
+   let deck=timeline.slice(visitedCount);
+   if(deck.length<2)deck=[...deck,...shuffled(timeline[timeline.length-1])];
+   return {...r,visited,deck,cursor:index,currentQuoteId:timeline[index]};
+  });
+ }
+ function save(){
+  if(!round?.selectedQuoteId)return;
+  const selected=quotes.find(q=>q.id===round.selectedQuoteId)!;
+  try{
+   const entry=saveQuote({id:round.id,quoteId:selected.id,quoteText:snapshotText(selected),focus:round.focus});
+   setSaved(entry);setMessage('เก็บข้อความไว้แล้ว');
+  }catch(e){setMessage((e as Error).message);}
+ }
+ function history(){setOrigin(screen);setScreen('history');}
+ const quote=round?quotes.find(q=>q.id===(screen==='discover'?round.currentQuoteId:round.selectedQuoteId??round.currentQuoteId)):null;
+ const multipleCards=!!round&&round.visited.length+round.deck.length>1;
+ const quietHeading=screen==='discover'||screen==='done'||screen==='noSelection';
  if(screen==='welcome')return <WelcomeScreen headingRef={heading} onStart={start} onHistory={history}/>;
- return <main inert={!!preview} aria-hidden={preview?true:undefined}><header className="brand"><span className="brand-symbol" aria-hidden="true">◌</span><span>พื้นที่เล็ก ๆ ของเรา</span><span className="brand-dot" aria-hidden="true"/></header><div className="page"><p className="eyebrow">{screen==='done'?'พักตรงนี้ได้':'Peek a word!'}</p><h1 ref={heading} tabIndex={-1}>{titles[screen]}</h1>
- {screen==='discover'&&quote&&<><p className="subtle">อ่านข้อความนี้ แล้วเลือกทางของคุณ</p><p className="hint" id="swipe-help">ปัดซ้ายดูคำถัดไป · ปัดขวาดูคำก่อนหน้า<br/>แตะการ์ดเพื่อขยายอ่าน ยังไม่เลือกหรือเก็บ</p><QuoteDeck ref={deckRef} ids={[...round!.visited,...round!.deck]} cursor={round!.cursor} onBrowse={browse} onExpand={setPreview}/><div className="actions"><TapButton className="primary" onClick={()=>selectQuote(quote.id)}>เลือกข้อความนี้</TapButton><TapButton onClick={next}>เปลี่ยนข้อความ</TapButton><TapButton onClick={previous} disabled={!round||round.cursor===0}>ข้อความก่อนหน้า</TapButton><TapButton className="text-button" onClick={()=>setScreen('noSelection')}>วันนี้ยังไม่เลือก</TapButton><TapButton className="finish" onClick={end}>จบได้เลย</TapButton></div></>}
- {screen==='reflect'&&round&&quote&&<><div className="finish-top"><span>ทุกส่วนด้านล่างข้ามได้</span><TapButton className="finish" onClick={end}>จบเมื่อพร้อม</TapButton></div><QuoteCard quote={quote}/><section className="review" aria-label="อ่านทวน"><h2>อ่านทวน</h2>{round.focus&&<p>นึกถึง: {focusLabel(round.focus)}</p>}{round.draft.trim()&&<p className="draft-preview">{round.draft}</p>}{!round.focus&&!round.draft.trim()&&<p className="subtle">มีเพียงคำที่คุณเลือก</p>}</section><fieldset><legend>นึกถึงใครหรืออะไร <span>· ข้ามได้</span></legend><div className="choices">{([['self','ตนเอง'],['other','คนอื่น'],['things','สิ่งอื่น'],[null,'ไม่ระบุ']] as [Focus,string][]).map(([value,label])=><label key={label}><input type="radio" name="focus" value={value??''} checked={round.focus===value} onChange={()=>patch({focus:value})}/><span>{label}</span></label>)}</div><p className="hint">สิ่งอื่น เช่น สัตว์ เพลง ธรรมชาติ หรือสิ่งที่ผูกพัน</p></fieldset><section className="writing"><label htmlFor="draft">พิมพ์เพิ่ม <span>· ข้ามได้</span></label><p className="hint" id="draft-prompt">พิมพ์ตามคำที่เลือก หรือเขียนด้วยคำของคุณก็ได้</p><textarea id="draft" maxLength={500} value={round.draft} onChange={e=>patch({draft:e.target.value})} aria-describedby="draft-prompt draft-help"/><p className="hint" id="draft-help">อยู่ในรอบนี้เท่านั้น · คำที่พิมพ์จะหายเมื่อจบรอบ</p></section><section className="save-section"><p className="hint">เก็บคำที่เลือกและมุมที่ระบุในเบราว์เซอร์นี้</p><TapButton onClick={save}>{saved&&saved.focus!==round.focus?'อัปเดตบันทึก':'เก็บข้อความไว้'}</TapButton><p role="status">{message}</p></section><TapButton className="primary full" onClick={end}>จบเมื่อพร้อม</TapButton></>}
- {screen==='noSelection'&&round&&<><p className="intro">วันนี้จบตรงนี้ได้เลย</p><TapButton className="primary full" onClick={end}>จบได้เลย</TapButton><div className="hug-area">{round.hugShown?<div role="status"><svg aria-hidden="true" viewBox="0 0 180 150" width="150" height="125"><path d="M35 108Q0 64 42 69Q37 13 66 27Q92 6 119 29Q150 19 143 68Q184 62 150 111Q92 154 35 108" fill="#E0F8F6" stroke="#007F75" strokeWidth="2"/><circle cx="72" cy="65" r="3" fill="#272727"/><circle cx="106" cy="65" r="3" fill="#272727"/><path d="M80 80Q89 88 98 80" fill="none" stroke="#272727" strokeWidth="2"/></svg><p>ไว้ค่อยกลับมาเมื่อพร้อม</p></div>:<TapButton onClick={()=>patch({hugShown:true})}>รับกอด</TapButton>}</div></>}
- {screen==='done'&&<><div className="done-art" aria-hidden="true">✓</div>{doneSaved&&<p className="saved-note">เก็บข้อความไว้แล้ว</p>}<div className="actions"><TapButton className="primary" onClick={start}>เริ่มรอบใหม่</TapButton><TapButton onClick={history}>ดูข้อความที่เก็บไว้</TapButton></div></>}
- {screen==='history'&&<HistoryView back={()=>setScreen(origin)}/>}
- </div><footer>เลือกได้ ข้ามได้ จบได้เมื่อพร้อม</footer>{preview&&<QuotePreview {...preview} onClose={()=>setPreview(null)} onSelect={selectQuote}/>}</main>;
+ return <main className={'journey-screen screen-'+screen} inert={!!preview} aria-hidden={preview?true:undefined}>
+  <header className="brand journey-brand">
+   <span className="journey-mark" aria-hidden="true">a</span>
+   <span className="journey-wordmark">Pick a word!</span>
+   <span className="brand-dot" aria-hidden="true"/>
+  </header>
+  <div className="page">
+   <h1 ref={heading} tabIndex={-1} className={quietHeading?'visually-hidden':undefined}>{titles[screen]}</h1>
+   {screen==='discover'&&!quote&&<section className="catalog-empty" aria-label="ยังไม่มีข้อความพร้อมอ่าน">
+    <h2>ตอนนี้ยังไม่มีข้อความพร้อมให้อ่าน</h2>
+    <p>กลับมาลองอีกครั้งภายหลังได้ ข้อความที่เคยเก็บไว้ยังอยู่ในหน้าดูย้อนหลัง</p>
+    <TapButton className="primary full" onClick={()=>setScreen('welcome')}>กลับไปหน้าแรก</TapButton>
+   </section>}
+   {screen==='discover'&&quote&&<>
+    <nav className="browse-controls" aria-label="เลือกดูข้อความ">
+     <TapButton className="arrow-button" aria-label="ข้อความก่อนหน้า" title="ข้อความก่อนหน้า" disabled={!round||round.cursor===0} onClick={()=>deckRef.current?.previous()}><Arrow direction="left"/></TapButton>
+     <p id="swipe-help">{multipleCards?<>ปัดซ้ายดูคำถัดไป<br/><span>ปัดขวาดูคำก่อนหน้า</span></>:<>มีข้อความให้เลือก 1 ข้อความ</>}</p>
+     <TapButton className="arrow-button" aria-label="เปลี่ยนข้อความ" title="เปลี่ยนข้อความ" disabled={!multipleCards} onClick={()=>deckRef.current?.next()}><Arrow direction="right"/></TapButton>
+    </nav>
+    <QuoteDeck ref={deckRef} ids={[...round!.visited,...round!.deck]} cursor={round!.cursor} onBrowse={browse} onExpand={setPreview}/>
+    <p className="deck-instruction">แตะการ์ดเพื่อขยายอ่าน ยังไม่เลือกหรือเก็บ</p>
+    <div className="actions browse-actions">
+     <TapButton className="primary" onClick={()=>selectQuote(quote.id)}>เลือกข้อความนี้</TapButton>
+     <TapButton className="text-button" onClick={skip}>วันนี้ยังไม่เลือก</TapButton>
+    </div>
+   </>}
+   {screen==='reflect'&&round&&quote&&<>
+    <div className="step-navigation">
+     <TapButton className="back-button" onClick={()=>setScreen('discover')}><Arrow direction="left"/>กลับไปเลือกคำ</TapButton>
+     <span className="step-count" aria-label="ขั้นตอน 1 จาก 2">1 / 2</span>
+    </div>
+    <QuoteCard quote={quote} expanded/>
+    <fieldset>
+     <legend>นึกถึงใครหรืออะไร <span>· ข้ามได้</span></legend>
+     <div className="choices">{([['self','ตนเอง'],['other','คนอื่น'],['things','สิ่งอื่น'],[null,'ไม่ระบุ']] as [Focus,string][]).map(([value,label])=><label key={label}>
+      <input type="radio" name="focus" value={value??''} checked={round.focus===value} onChange={e=>{if(e.target.checked)patch({focus:value});}}/><span>{label}</span>
+     </label>)}</div>
+     <p className="hint">สิ่งอื่น เช่น สัตว์ เพลง ธรรมชาติ หรือสิ่งที่ผูกพัน</p>
+    </fieldset>
+    <div className="step-actions">
+     <TapButton className="primary full" onClick={()=>setScreen('write')}>ต่อไป</TapButton>
+     <TapButton className="text-button full" onClick={end}>จบเมื่อพร้อม</TapButton>
+    </div>
+   </>}
+   {screen==='write'&&round&&quote&&<>
+    <div className="step-navigation">
+     <TapButton className="back-button" disabled={calendarBusy} onClick={()=>setScreen('reflect')}><Arrow direction="left"/>กลับไปเลือกมุม</TapButton>
+     <span className="step-count" aria-label="ขั้นตอน 2 จาก 2">2 / 2</span>
+    </div>
+    <QuoteCard quote={quote} compact/>
+    {round.focus&&<p className="focus-note">นึกถึง: {focusLabel(round.focus)}</p>}
+    <section className="writing">
+     <label htmlFor="draft">พิมพ์เพิ่ม <span>· ข้ามได้</span></label>
+     <p className="hint" id="draft-prompt">พิมพ์ตามคำที่เลือก หรือเขียนด้วยคำของคุณก็ได้</p>
+     <textarea id="draft" disabled={calendarBusy} maxLength={500} value={round.draft} onChange={e=>patch({draft:e.target.value})} aria-describedby="draft-prompt draft-help"/>
+     <p className="hint" id="draft-help">อยู่ในรอบนี้เท่านั้น · คำที่พิมพ์จะหายเมื่อจบรอบ</p>
+    </section>
+    <CalendarReminder content={{headword:quote.headword,text:quote.text}} session={calendarSession} onSession={setCalendarSession} onBusyChange={setCalendarBusy}/>
+    <p className="journey-reassurance">เลือกได้ ข้ามได้ จบได้เมื่อพร้อม</p>
+    <div className="writing-actions">
+     <TapButton className="primary finish-primary full" disabled={calendarBusy} onClick={end}>จบ</TapButton>
+    </div>
+    <TapButton className="text-button full skip-writing" disabled={calendarBusy} onClick={skip}>วันนี้ยังไม่เลือก</TapButton>
+    <details className="keep-disclosure">
+     <TapSummary>เก็บคำนี้ไว้อ่านย้อนหลัง</TapSummary>
+     <section className="review" aria-label="อ่านทวน">
+      <h2>อ่านทวน</h2>
+      {round.focus&&<p>นึกถึง: {focusLabel(round.focus)}</p>}
+      {round.draft.trim()&&<p className="draft-preview">{round.draft}</p>}
+      {!round.focus&&!round.draft.trim()&&<p className="subtle">มีเพียงคำที่คุณเลือก</p>}
+     </section>
+     <section className="save-section">
+      <p className="hint">เก็บเฉพาะคำที่เลือกและมุมที่ระบุในเบราว์เซอร์นี้ ไม่เก็บข้อความที่พิมพ์</p>
+      <TapButton onClick={save}>{saved&&saved.focus!==round.focus?'อัปเดตบันทึก':'เก็บข้อความไว้'}</TapButton>
+      <p role="status">{message}</p>
+     </section>
+    </details>
+   </>}
+   {screen==='noSelection'&&<>
+    <section className="closing-card rest-card" aria-label="พักตรงนี้ได้">
+     <CharacterArtwork character={characters['Heart Hug']}/>
+     <span className="character-tag"><span aria-hidden="true"/>Heart Hug</span>
+     <p>เหนื่อยละสินะวันนี้</p>
+    </section>
+    <div className="actions browse-actions">
+     <TapButton className="primary" onClick={()=>setScreen('welcome')}>กลับไปหน้าแรก</TapButton>
+    </div>
+   </>}
+   {screen==='done'&&<>
+    <section className="closing-card" aria-label="พักตรงนี้ได้">
+     <CharacterArtwork character={closingCharacter}/>
+     <span className="character-tag"><span aria-hidden="true"/>{closingCharacter.name}</span>
+     <p>คิดถึงเค้าแล้ว<br/>คิดถึงเราด้วย</p>
+    </section>
+    {doneSaved&&<p className="saved-note">เก็บข้อความไว้แล้ว</p>}
+    <div className="actions browse-actions">
+     <TapButton className="primary" onClick={start}>เลือกคำใหม่</TapButton>
+     <TapButton className="text-button" onClick={history}>ดูข้อความที่เก็บไว้</TapButton>
+    </div>
+   </>}
+   {screen==='history'&&<HistoryView back={()=>setScreen(origin)}/>}
+  </div>
+  <footer>เลือกได้ ข้ามได้ จบได้เมื่อพร้อม</footer>
+  {preview&&<QuotePreview {...preview} onClose={()=>setPreview(null)} onSelect={selectQuote}/>}
+ </main>;
 }

@@ -59,4 +59,3 @@ try {
   await writeFile('evidence/live/results.json', JSON.stringify(result, null, 2));
   console.log(JSON.stringify(result, null, 2));
 } finally { await browser.close(); }
-

@@ -1,0 +1,850 @@
+[
+  {
+    "id": "catalog-v1:ooca-001",
+    "type": "sentence",
+    "headword": "猿も木から落ちる。",
+    "language": "ja",
+    "reading": "saru mo ki kara ochiru",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "猿も木から落ちる。\nNO ONE’S PERFECT.",
+    "translation": "แม้แต่ลิงยังตกต้นไม้ได้ / ไม่มีใครสมบูรณ์แบบ",
+    "text": "ลิงยังตกต้นไม้",
+    "tags": [
+      "คุณค่าตนเอง",
+      "การเติบโตและความพยายาม"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-002",
+    "type": "word-definition",
+    "headword": "CALM",
+    "language": "en",
+    "reading": "คาล์ม",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "CALM\n/Kaam/\nA response, not a weakness",
+    "translation": "ความสงบ: การตอบสนองอย่างหนึ่ง ไม่ใช่ความอ่อนแอ",
+    "text": "การนิ่งไว้ อาจเป็นวิธีตอบกลับที่เราเลือกเอง",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "การพักและดูแลตนเอง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-003",
+    "type": "word-definition",
+    "headword": "Weakness",
+    "language": "en",
+    "reading": "วีกเนส",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Weakness\nnoun /'wēknəs/\nA soft ache beneath the armor; the one thing or person that makes even the strongest heart fall gently.",
+    "translation": "ความอ่อนแอ: ความเจ็บปวดอ่อน ๆ ใต้เกราะ บางสิ่งหรือบางคนที่ทำให้แม้แต่หัวใจที่เข้มแข็งที่สุดก็อ่อนลง",
+    "text": "ต่อให้เข้มแข็งแค่ไหน เราก็มีบางสิ่งที่ทำให้ใจอ่อนลง",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "ความสัมพันธ์"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-004",
+    "type": "word-definition",
+    "headword": "overthinking",
+    "language": "en",
+    "reading": "โอเวอร์ธิงคิง",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "verb",
+    "original": "overthinking\n[əʊvə'θɪŋk] verb\n\nThe ability to turning a simple “OK” into a\npsychological thriller.",
+    "translation": "การคิดมาก: ความสามารถในการเปลี่ยนคำว่า “โอเค” ง่าย ๆ ให้กลายเป็นเรื่องระทึกขวัญทางจิตวิทยา",
+    "text": "บางครั้งคำว่าโอเคคำเดียว ก็กลายเป็นเรื่องยาวในหัวเรา",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "ตัวตน"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-005",
+    "type": "sentence",
+    "headword": "「もう、疲れたの。」",
+    "language": "ja",
+    "reading": "mou, tsukareta no.",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "「もう、疲れたの。」\n「Aah, I’m tired.」",
+    "translation": "“เหนื่อยแล้ว” / “อา ฉันเหนื่อย”",
+    "text": "วันนี้เหนื่อยแล้ว ขอพูดแค่นี้ก่อนก็ได้",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "การพักและดูแลตนเอง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-006",
+    "type": "word-definition",
+    "headword": "SILENCE",
+    "language": "en",
+    "reading": "ไซเลนซ์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "SILENCE\n/’sai-lence/\nWhen you stop explaining and start protecting your\nenergy.",
+    "translation": "ความเงียบ: เมื่อคุณหยุดอธิบายและเริ่มปกป้องพลังงานของตัวเอง",
+    "text": "บางครั้งการเงียบ คือการเก็บแรงไว้ให้ตัวเอง",
+    "tags": [
+      "ขอบเขต",
+      "การพักและดูแลตนเอง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-007",
+    "type": "word-definition",
+    "headword": "freedom",
+    "language": "en",
+    "reading": "ฟรีดัม",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "freedom\n/ˈfrēdəm/ noun\nthe power or right to act, speak, or think as\none wants without hindrance or restraint.",
+    "translation": "อิสรภาพ: อำนาจหรือสิทธิที่จะทำ พูด หรือคิดตามที่ต้องการ โดยไม่มีการขัดขวางหรือจำกัด",
+    "text": "มีพื้นที่ให้คิด พูด และเป็นตัวเอง โดยไม่ต้องถูกขวางไว้",
+    "tags": [
+      "อิสระและการเลือก",
+      "ขอบเขต"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-008",
+    "type": "word-definition",
+    "headword": "dream",
+    "language": "en",
+    "reading": "ดรีม",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "dream: |drēm| - n.\n1. a series of mental images,\nideas, and emotions occurring\nin certain stages of sleep 2. an\nambition 3. one that is extremely\npleasant, beautiful, or fine.",
+    "translation": "ความฝัน: 1. ภาพ ความคิด และอารมณ์ในใจที่เกิดขึ้นระหว่างการนอนบางช่วง 2. ความใฝ่ฝัน 3. สิ่งหรือบุคคลที่น่าพึงพอใจ งดงาม หรือดีเลิศอย่างยิ่ง",
+    "text": "บางฝันมาในตอนหลับ บางฝันทำให้เราอยากตื่นขึ้นมาเริ่มใหม่",
+    "tags": [
+      "ความหมายและเป้าหมาย",
+      "ความหวังและศรัทธา"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-009",
+    "type": "word-definition",
+    "headword": "Focus",
+    "language": "en",
+    "reading": "โฟกัส",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Focus\n/ˈfōkəs/ noun\nSeeing the light at the end of the tunnel.\nIgnoring the noise. Putting energy into\nwhat is important. Not where you are\nbut where you want to be.",
+    "translation": "การจดจ่อ: มองเห็นแสงที่ปลายอุโมงค์ เพิกเฉยต่อเสียงรบกวน ทุ่มแรงให้สิ่งสำคัญ ไม่ใช่จุดที่คุณอยู่ แต่เป็นจุดที่คุณอยากไป",
+    "text": "ค่อย ๆ ใส่ใจกับสิ่งสำคัญ แม้รอบตัวจะมีเสียงมากมาย",
+    "tags": [
+      "ความหมายและเป้าหมาย",
+      "การเติบโตและความพยายาม"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-010",
+    "type": "word-definition",
+    "headword": "Kindness",
+    "language": "en",
+    "reading": "ไคนด์เนส",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Kindness\nnoun /'kʌɪn(d)nəs/\nThe quality of being friendly,\ngenerous, and considerate.",
+    "translation": "ความมีน้ำใจ: คุณลักษณะของการเป็นมิตร เอื้อเฟื้อ และคำนึงถึงผู้อื่น",
+    "text": "ความใส่ใจเล็ก ๆ อาจทำให้อีกคนรู้สึกว่าเขาไม่ถูกมองข้าม",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความใส่ใจ"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-011",
+    "type": "word-definition",
+    "headword": "vision",
+    "language": "en",
+    "reading": "วิชัน",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "vision\n/ˈvɪʒn/\nnoun\nseeing beyond today to create tomorrow",
+    "translation": "วิสัยทัศน์: การมองให้ไกลกว่าวันนี้เพื่อสร้างวันพรุ่งนี้",
+    "text": "มองให้ไกลกว่าวันนี้ แล้วค่อยเริ่มสร้างวันพรุ่งนี้",
+    "tags": [
+      "ความหมายและเป้าหมาย",
+      "ความหวังและศรัทธา"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-012",
+    "type": "word-definition",
+    "headword": "Pride.",
+    "language": "en",
+    "reading": "ไพรด์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "Pride.\nAn inflated sense of self-importance. You\nbelieve you are superior. You dismiss criticism\nand undervalue others.",
+    "translation": "ความหยิ่งทะนง: ความรู้สึกว่าตนสำคัญเกินจริง คุณเชื่อว่าตนเหนือกว่า ไม่รับคำวิจารณ์ และลดคุณค่าผู้อื่น",
+    "text": "วันที่คิดว่าเราถูกเสมอ อาจเป็นวันที่เราเผลอไม่ได้ฟังใคร",
+    "tags": [
+      "ตัวตน",
+      "ความสัมพันธ์"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-013",
+    "type": "word-definition",
+    "headword": "the goals",
+    "language": "en",
+    "reading": "เดอะ โกลส์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "the goals\n/gōl/ noun\nthe object of a person's ambition or effort; an aim or desired result.",
+    "translation": "เป้าหมาย: สิ่งที่ความทะเยอทะยานหรือความพยายามของบุคคลมุ่งไปหา จุดหมายหรือผลลัพธ์ที่ต้องการ",
+    "text": "สิ่งที่เราอยากไปถึง อาจเริ่มจากการรู้ว่าเราอยากไปทางไหน",
+    "tags": [
+      "ความหมายและเป้าหมาย",
+      "การเติบโตและความพยายาม"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-014",
+    "type": "word-definition",
+    "headword": "euphoria",
+    "language": "en",
+    "reading": "ยูฟอเรีย",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "euphoria\n(n.) a feeling or state of intense excitement and happiness.",
+    "translation": "ความอิ่มเอมอย่างแรงกล้า: ความรู้สึกหรือภาวะที่ตื่นเต้นและมีความสุขอย่างมาก",
+    "text": "ความสุขก็เอ่อล้น จนอยากเก็บช่วงเวลานั้นไว้นาน ๆ",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "ความสุขในชีวิตประจำวัน"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-015",
+    "type": "word-definition",
+    "headword": "rainy days",
+    "language": "en",
+    "reading": "เรนนี เดย์ส",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "rainy days\n/ˌself'ker/ noun\nthe best days in which curling up while watching tv and drinking tea is one of the greatest joys in life",
+    "translation": "วันฝนตก: วันที่ดีที่สุดซึ่งการขดตัวดูทีวีและดื่มชาเป็นหนึ่งในความสุขที่ยิ่งใหญ่ของชีวิต",
+    "text": "วันฝนตกที่ได้ดูอะไรเพลิน ๆ อาจเป็นวันธรรมดา",
+    "tags": [
+      "ความสุขในชีวิตประจำวัน",
+      "การพักและดูแลตนเอง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-016",
+    "type": "word-definition",
+    "headword": "friend",
+    "language": "en",
+    "reading": "เฟรนด์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "friend\n[frend] noun\n\na favoured companion. a person attached to another\nby feelings of affection or personal regard. a person\nwho gives assistance. someone who knows me and\nloves me just the same. you.",
+    "translation": "เพื่อน: คนที่เราชื่นชอบจะอยู่ด้วย บุคคลที่ผูกพันกับอีกคนด้วยความรักใคร่หรือความนับถือ คนที่ช่วยเหลือ คนที่รู้จักฉันและยังรักฉันเหมือนเดิม — คุณนั่นเอง",
+    "text": "คนที่รู้จักเราในหลายมุม แล้วยังเลือกอยู่ข้างกัน",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความใส่ใจ"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-017",
+    "type": "word-definition",
+    "headword": "manipulation",
+    "language": "en",
+    "reading": "มะนิพิวเลชัน",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "manipulation\n/məˌnipyə'lāSHən/noun\nThe action of manipulating someone to get them to act or feel a certain way. If someone blames you and makes you feel guilty for reacting to their lack of respect, you are probably being manipulated.",
+    "translation": "การบงการ: การชักใยผู้อื่นให้กระทำหรือรู้สึกตามต้องการ หากใครโทษคุณและทำให้คุณรู้สึกผิดที่ตอบโต้การไม่ให้เกียรติของเขา คุณอาจกำลังถูกบงการอยู่ (คำกล่าวตามต้นฉบับ ไม่ใช่เกณฑ์วินิจฉัย)",
+    "text": "เมื่อใครทำให้เรารู้สึกผิดที่ไม่ยอมตามเขา เราอาจต้องกลับมาทบทวนตัวเอง",
+    "tags": [
+      "ขอบเขต",
+      "ความสัมพันธ์"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-018",
+    "type": "word-definition",
+    "headword": "ambition",
+    "language": "en",
+    "reading": "แอมบิชัน",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "ambition\n[am-bih-shon] noun\nrelentless pursuit of exceptional goals\ndriven\nby determination, aspiration, and the\nhunger\nfor achievement.",
+    "translation": "ความทะเยอทะยาน: การไล่ตามเป้าหมายอันโดดเด่นอย่างไม่หยุดยั้ง ขับเคลื่อนด้วยความมุ่งมั่น ความใฝ่ฝัน และความกระหายความสำเร็จ",
+    "text": "ความอยากไปให้ไกล อาจเป็นแรงที่พาเรากลับมาลองอีกครั้ง",
+    "tags": [
+      "ความหมายและเป้าหมาย",
+      "การเติบโตและความพยายาม"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-019",
+    "type": "word-definition",
+    "headword": "Lazy perfectionist",
+    "language": "en",
+    "reading": "เลซี เพอร์เฟกชันนิสต์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Lazy\nperfectionist\n(n.) When you don't give a\nshit about anything but at\nthe same time care too much\nabout everything.",
+    "translation": "คนขี้เกียจที่ยึดความสมบูรณ์แบบ: เมื่อคุณไม่สนอะไรเลย แต่ในขณะเดียวกันก็ใส่ใจทุกอย่างมากเกินไป (ต้นฉบับใช้คำหยาบ)",
+    "text": "เหมือนไม่สนใจอะไร แต่ในใจก็อยากให้ทุกอย่างออกมาดี",
+    "tags": [
+      "ตัวตน",
+      "อารมณ์และความรู้สึก"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-020",
+    "type": "word-definition",
+    "headword": "consistency",
+    "language": "en",
+    "reading": "คอนซิสเทนซี",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "consistency\n[kən-si-stən-sē] noun • English\nthe ability to replicate a process or activity with the same level or quality over and over again. the adherence of the same principles in a steadfast way. consistency is what transforms average into excellence.",
+    "translation": "ความสม่ำเสมอ: ความสามารถในการทำกระบวนการหรือกิจกรรมซ้ำด้วยระดับหรือคุณภาพเดิม การยึดหลักการเดิมอย่างมั่นคง ความสม่ำเสมอคือสิ่งที่เปลี่ยนความธรรมดาให้เป็นความยอดเยี่ยม",
+    "text": "สิ่งเล็กๆ ที่กลับมาทำซ้ำ อาจค่อยๆ กลายเป็นสิ่งที่เราไว้ใจในตัวเอง",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหมายและเป้าหมาย"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-021",
+    "type": "sentence",
+    "headword": "月って綺麗ですよね？",
+    "language": "ja",
+    "reading": "tsuki tte kirei desu yo ne?",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "月って綺麗ですよね？\nThe moon is beautiful isn’t it?",
+    "translation": "พระจันทร์สวยใช่ไหม",
+    "text": "พระจันทร์คืนนี้สวยนะ  ออกไปดูไหม",
+    "tags": [
+      "ความสุขในชีวิตประจำวัน",
+      "ความเชื่อมโยง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-022",
+    "type": "word-definition",
+    "headword": "family",
+    "language": "en",
+    "reading": "แฟมิลี",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "family\n[ fam-uh-lee ] noun\n\na group of people that love and support one another yet often drive each other crazy.",
+    "translation": "ครอบครัว: กลุ่มคนที่รักและสนับสนุนกัน แต่ก็มักทำให้อีกฝ่ายแทบคลั่ง",
+    "text": "คนที่รักและคอยพยุงกัน แม้บางวันจะทำให้ปวดหัวบ้างก็ตาม",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความใส่ใจ"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-023",
+    "type": "word-definition",
+    "headword": "Success",
+    "language": "en",
+    "reading": "ซักเซส",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Success\n/səkˈses/ noun\nSuccess is measured by achieving\nyour own goals and ambitions.\nAlways do your best in everything and\nyou will achieve success. Overcoming\na fear of failure will lead to success in\nthe future. If you believe you can,\nyou will succeed.",
+    "translation": "ความสำเร็จ: วัดจากการบรรลุเป้าหมายและความใฝ่ฝันของคุณเอง จงทำทุกอย่างให้ดีที่สุดแล้วคุณจะสำเร็จ การเอาชนะความกลัวความล้มเหลวจะนำไปสู่ความสำเร็จในอนาคต หากเชื่อว่าทำได้ คุณจะสำเร็จ (เป็นคำกล่าวของต้นฉบับ ไม่ใช่การรับรองผล)",
+    "text": "ฝันไม่ได้มีแค่อย่างเดียว",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหมายและเป้าหมาย"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-024",
+    "type": "word-definition",
+    "headword": "self-care",
+    "language": "en",
+    "reading": "เซลฟ์แคร์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "self-care\n/ˌself'ker/ noun\nthe practice of taking action to preserve or improve one's own health.",
+    "translation": "การดูแลตนเอง: การลงมือทำสิ่งต่าง ๆ เพื่อรักษาหรือปรับปรุงสุขภาพของตนเอง",
+    "text": "การดูแลตัวเอง คือการทำบางอย่างเพื่อสุขภาพและชีวิตของเรา",
+    "tags": [
+      "การพักและดูแลตนเอง",
+      "ความใส่ใจ"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-025",
+    "type": "word-definition",
+    "headword": "philomath",
+    "language": "en",
+    "reading": null,
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "philomath ['fil•uh•math]\n(n.) a lover of learning",
+    "translation": "ผู้รักการเรียนรู้",
+    "text": "คนที่ยังอยากรู้อะไรใหม่ ๆ แม้ไม่มีใครบอกให้เรียน",
+    "tags": [
+      "ตัวตน",
+      "การเติบโตและความพยายาม"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-026",
+    "type": "word-definition",
+    "headword": "Home",
+    "language": "en",
+    "reading": "โฮม",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Home\n[həʊm] noun\n\nA place that feels like a tight hug: Where time\nstands still for just a moment, where the noise of\nthe outside world is blocked out and where you can\nbreathe it all out after being tense all day. From the\nmoment you enter the door, you are safe, you are\nwarm and you are exceptionally loved.",
+    "translation": "บ้าน: สถานที่ที่รู้สึกเหมือนอ้อมกอดแน่น ๆ เวลาหยุดลงชั่วครู่ เสียงโลกภายนอกถูกกั้นไว้ และคุณได้ระบายลมหายใจหลังตึงเครียดมาทั้งวัน เมื่อก้าวผ่านประตู คุณปลอดภัย อบอุ่น และเป็นที่รักอย่างยิ่ง",
+    "text": "ที่ที่เราวางความเหนื่อยลงได้ และรู้สึกว่าตัวเองได้รับการต้อนรับ",
+    "tags": [
+      "ความสัมพันธ์",
+      "การพักและดูแลตนเอง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-027",
+    "type": "sentence",
+    "headword": "そばにいてね？",
+    "language": "ja",
+    "reading": "soba ni ite ne?",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "そばにいてね？\nstay by my side, okay?",
+    "translation": "อยู่ข้าง ๆ กันนะ ได้ไหม",
+    "text": "อยู่ข้าง ๆ กันก่อน ได้ไหม",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความเชื่อมโยง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-028",
+    "type": "word-definition",
+    "headword": "faith",
+    "language": "en",
+    "reading": "เฟธ",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "faith\n/fāth/ • noun\n\nUnshakable confidence and trust in something or someone.\nBelief in and loyalty to God.",
+    "translation": "ศรัทธา: ความมั่นใจและความไว้วางใจในบางสิ่งหรือบางคนอย่างไม่สั่นคลอน ความเชื่อและความภักดีต่อพระเจ้า",
+    "text": "ความวางใจที่เราฝากไว้กับบางคน บางสิ่ง หรือพระเจ้าที่เราเชื่อ",
+    "tags": [
+      "ความหวังและศรัทธา",
+      "ความเชื่อมโยง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-029",
+    "type": "word-definition",
+    "headword": "Introvert",
+    "language": "en",
+    "reading": "อินโทรเวิร์ต",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Introvert\n/ˌintro vet/ noun\nmay not speak often, but when they do, their\nwords carry weight",
+    "translation": "คนเก็บตัว: อาจไม่พูดบ่อย แต่เมื่อพูด คำพูดของเขามีน้ำหนัก",
+    "text": "อาจไม่ได้พูดบ่อย แต่เมื่อพูดก็อยากให้คำนั้นมีความหมาย",
+    "tags": [
+      "ตัวตน",
+      "ความเชื่อมโยง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-030",
+    "type": "word-definition",
+    "headword": "No.",
+    "language": "en",
+    "reading": "โน",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "No.\n/nou/ noun\n\nsomething you should learn how to say without explaining yourself.",
+    "translation": "ไม่: สิ่งที่คุณควรเรียนรู้ที่จะพูดโดยไม่ต้องอธิบายตัวเอง",
+    "text": "บางครั้งคำว่าไม่ ก็เป็นคำตอบได้ โดยไม่ต้องอธิบายตัวเองทั้งหมด",
+    "tags": [
+      "ขอบเขต",
+      "อิสระและการเลือก"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-031",
+    "type": "word-definition",
+    "headword": "free·dom",
+    "language": "en",
+    "reading": "ฟรีดัม",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "free·dom\nnoun\n1. the state of being free or at liberty rather than in confinement or under\nphysical restraint: He won his freedom after a retrial.\n2. exemption from external control, interference, regulation, etc.\n3. the power to determine action without restraint.",
+    "translation": "อิสรภาพ: 1. ภาวะที่เป็นอิสระ ไม่ถูกกักขังหรือจำกัดทางกาย เช่น เขาได้รับอิสรภาพหลังการพิจารณาคดีใหม่ 2. การพ้นจากการควบคุม การแทรกแซง กฎระเบียบจากภายนอก เป็นต้น 3. อำนาจที่จะกำหนดการกระทำโดยไม่มีข้อจำกัด",
+    "text": "อิสระคือการได้เลือกทางของตัวเอง โดยไม่ถูกควบคุมทุกก้าว",
+    "tags": [
+      "อิสระและการเลือก",
+      "ขอบเขต"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-032",
+    "type": "word-definition",
+    "headword": "SELF-RESPECT",
+    "language": "en",
+    "reading": "เซลฟ์รีสเปกต์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "SELF-RESPECT\n/self ri-spekt/\nChoosing yourself without guilt.",
+    "translation": "การเคารพตนเอง: การเลือกตัวเองโดยไม่รู้สึกผิด",
+    "text": "เลือกยืนข้างตัวเอง โดยไม่ต้องรู้สึกผิดที่ดูแลใจเรา",
+    "tags": [
+      "คุณค่าตนเอง",
+      "ขอบเขต"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-033",
+    "type": "word-definition",
+    "headword": "respect",
+    "language": "en",
+    "reading": "รีสเปกต์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "respect\n/ˌre'spect/ noun\n\ndue regard for the feelings, wishes, or\nrights of others.",
+    "translation": "ความเคารพ: การคำนึงถึงความรู้สึก ความปรารถนา หรือสิทธิของผู้อื่นอย่างเหมาะสม",
+    "text": "การให้พื้นที่กับความรู้สึกและสิทธิของอีกคน แม้เราจะไม่เหมือนกัน",
+    "tags": [
+      "ความสัมพันธ์",
+      "ขอบเขต"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-034",
+    "type": "word-definition",
+    "headword": "sacrifice",
+    "language": "en",
+    "reading": "แซคริไฟซ์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "sacrifice\n/ noun /\nnothing great was ever\naccomplished from the\ncomfort zone and without\nmaking sacrifices",
+    "translation": "การเสียสละ: ไม่มีสิ่งยิ่งใหญ่ใดสำเร็จได้จากการอยู่แต่ในพื้นที่สบายและโดยไม่เสียสละ (คำกล่าวตามต้นฉบับ)",
+    "text": "บางเป้าหมายอาจทำให้เราต้องเลือก ว่าพร้อมแลกอะไรและไม่พร้อมเสียอะไร",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหมายและเป้าหมาย"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-035",
+    "type": "word-definition",
+    "headword": "Textrovert",
+    "language": "en",
+    "reading": null,
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Textrovert (n.)\n\nA person who is expressive and\nfunny in texts but shy in person.",
+    "translation": "คนที่แสดงออกและตลกเวลาส่งข้อความ แต่ขี้อายเมื่อพบกันต่อหน้า",
+    "text": "บางคนเงียบเมื่อเจอกัน แต่มีเรื่องมากมายอยากเล่าเมื่อได้พิมพ์",
+    "tags": [
+      "ตัวตน",
+      "ความเชื่อมโยง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-036",
+    "type": "word-definition",
+    "headword": "hero",
+    "language": "en",
+    "reading": "ฮีโร",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "hero\n[he-ro] noun.\n\none who is admired for their courage,\noutstanding achievements,\nor moral qualities.",
+    "translation": "วีรบุรุษหรือผู้ที่ได้รับการชื่นชม: คนที่ได้รับความชื่นชมจากความกล้าหาญ ผลงานโดดเด่น หรือคุณธรรม",
+    "text": "คนที่ทำให้เรานึกชื่นชม หรือยืนหยัดในสิ่งที่ดี",
+    "tags": [
+      "ความสัมพันธ์",
+      "การเติบโตและความพยายาม"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-037",
+    "type": "word-definition",
+    "headword": "melancholy",
+    "language": "en",
+    "reading": "เมลันคอลี",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "melancholy\n/'melənˌkɒli/noun\n\na quiet, lingering sadness\nthat feels heavy but familiar",
+    "translation": "ความเศร้าหมอง: ความเศร้าเงียบ ๆ ที่ยังคงอยู่ รู้สึกหนักแต่ก็คุ้นเคย",
+    "text": "ความเศร้าเงียบ ๆ ที่อยู่กับเรานาน จนทั้งหนักและคุ้นเคย",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "ตัวตน"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-038",
+    "type": "word-definition",
+    "headword": "Introvert",
+    "language": "en",
+    "reading": "อินโทรเวิร์ต",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Introvert\n/ˌintro vet/ noun\noften thrive in solitude, finding it a source of strength.\"",
+    "translation": "คนเก็บตัว: มักเติบโตได้ดีเมื่ออยู่ลำพัง โดยพบว่าความสันโดษเป็นแหล่งพลัง",
+    "text": "เวลาที่ได้อยู่เงียบ ๆ คนเดียว อาจเป็นที่ที่บางคนได้กลับมามีแรง",
+    "tags": [
+      "ตัวตน",
+      "การพักและดูแลตนเอง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-039",
+    "type": "word-definition",
+    "headword": "joy",
+    "language": "en",
+    "reading": "จอย",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "joy\nnoun (joi)\n\nchoosing happiness even in darkness.\ngladness not based on circumstance.\nthe simple essence of life.",
+    "translation": "ความยินดี: การเลือกความสุขแม้ในความมืด ความยินดีที่ไม่ขึ้นกับสถานการณ์ แก่นเรียบง่ายของชีวิต",
+    "text": "เรายังพบความยินดีบางอย่างได้",
+    "tags": [
+      "ความสุขในชีวิตประจำวัน",
+      "อารมณ์และความรู้สึก"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-040",
+    "type": "word-definition",
+    "headword": "Strength",
+    "language": "en",
+    "reading": "สเตร็งธ์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Strength\n/streNG(k)TH/ noun\n\nThe ability to push oneself one step\nfurther when the going gets tough even\nwhen you think you can’t.\n\nTo have the mental strength and\nendurance to persevere through\nchallenges and become even stronger\nby the process.",
+    "translation": "ความเข้มแข็ง: ความสามารถในการผลักตัวเองไปอีกก้าวเมื่อสถานการณ์ยากลำบาก แม้คิดว่าทำไม่ไหว การมีพลังใจและความอดทนที่จะฝ่าความท้าทายและแข็งแกร่งขึ้นจากกระบวนการนั้น",
+    "text": "แรงที่พาเราไปอีกก้าว ในวันที่ทางข้างหน้าไม่ง่าย",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "คุณค่าตนเอง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-041",
+    "type": "sentence",
+    "headword": "1%\nBetter\nEvery\nDay.\nImprove 1% daily, and in a year, you'll be 37x better. Whether in personal growth, fitness, learning, or productivity, small steps lead to extraordinary results. Progress adds up.",
+    "language": "en",
+    "reading": null,
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "1%\nBetter\nEvery\nDay.\nImprove 1% daily, and in a year, you'll be 37x better. Whether in personal growth, fitness, learning, or productivity, small steps lead to extraordinary results. Progress adds up.",
+    "translation": "ดีขึ้น 1% ทุกวัน: พัฒนาวันละ 1% แล้วในหนึ่งปีจะดีขึ้น 37 เท่า ไม่ว่าจะเป็นการพัฒนาตนเอง ความฟิต การเรียนรู้ หรือประสิทธิภาพ ก้าวเล็ก ๆ นำไปสู่ผลลัพธ์พิเศษ ความก้าวหน้าสะสมได้ (ตัวเลขและข้ออ้างตามต้นฉบับ ยังไม่ได้ตรวจความเหมาะสมของการนำไปใช้)",
+    "text": "ทีละนิดก็เป็นการเดินหน้าได้ โดยไม่ต้องรีบไปให้ไกลในวันเดียว",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหมายและเป้าหมาย"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-042",
+    "type": "word-definition",
+    "headword": "Winner.",
+    "language": "en",
+    "reading": "วินเนอร์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Winner.\n/ˈwɪnər/ noun\nsomeone who does not make excuses.",
+    "translation": "ผู้ชนะ: คนที่ไม่หาข้อแก้ตัว",
+    "text": "บางคนที่แพ้มาตลอดจนครั้งนี้ เค้าชนะ",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "คุณค่าตนเอง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-043",
+    "type": "word-definition",
+    "headword": "music",
+    "language": "en",
+    "reading": "มิวสิก",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "music\n[mju-zik] noun\n\nthe art of ordering tones or sounds that have\nrhythm, harmony and melody.\n“Music can change the world because it can\nchange people”",
+    "translation": "ดนตรี: ศิลปะของการจัดเสียงให้มีจังหวะ เสียงประสาน และทำนอง “ดนตรีเปลี่ยนโลกได้ เพราะเปลี่ยนผู้คนได้”",
+    "text": "เสียงบางเสียงไม่ได้แค่ผ่านหู แต่อาจเปลี่ยนบางอย่างในใจเรา",
+    "tags": [
+      "ความสุขในชีวิตประจำวัน",
+      "ความเชื่อมโยง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-044",
+    "type": "word-definition",
+    "headword": "home",
+    "language": "en",
+    "reading": "โฮม",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "home\n[ hom ] noun\n\na place where you are always welcome\nand surrounded by those who love you.",
+    "translation": "บ้าน: สถานที่ที่คุณได้รับการต้อนรับเสมอ และรายล้อมด้วยคนที่รักคุณ",
+    "text": "ที่ที่เราได้รับการต้อนรับ และมีคนที่รักเราอยู่รอบ ๆ",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความใส่ใจ"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-045",
+    "type": "word-definition",
+    "headword": "Alone",
+    "language": "en",
+    "reading": "อะโลน",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "Alone [ə'lōn]\nAlone refers to a physical or objective state of being separate from other people or things. It describes being by oneself without company, or an action performed without aid.",
+    "translation": "การอยู่ลำพัง: สภาวะทางกายภาพหรือภาวะที่สังเกตได้ของการแยกจากคนหรือสิ่งอื่น หมายถึงการอยู่ด้วยตัวเองโดยไม่มีเพื่อนร่วมอยู่ หรือการกระทำโดยไม่มีความช่วยเหลือ",
+    "text": "การอยู่คนเดียว บอกว่าเราอยู่ลำพัง แต่ยังไม่ได้บอกว่าเรารู้สึกอย่างไร",
+    "tags": [
+      "ตัวตน",
+      "ความเชื่อมโยง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-046",
+    "type": "sentence",
+    "headword": "777",
+    "language": "en",
+    "reading": null,
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "777\n• LUCK •\nWonderful things are about to happen. You are headed in the right direction and you're already aligning with your true self. You're in the right frequency of manifesting your dreams.",
+    "translation": "777 — โชค: สิ่งวิเศษกำลังจะเกิดขึ้น คุณกำลังไปในทิศทางที่ถูกต้องและสอดคล้องกับตัวตนที่แท้จริง คุณอยู่ในคลื่นความถี่ที่เหมาะกับการทำให้ความฝันเป็นจริง (คำกล่าวเชิงความเชื่อตามต้นฉบับ ไม่ใช่ข้อเท็จจริงที่รับรอง)",
+    "text": "บางวัน เราอยากเชื่อว่าเรื่องดี ๆ ยังมีทางมาถึง",
+    "tags": [
+      "ความหวังและศรัทธา",
+      "ความหมายและเป้าหมาย"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-047",
+    "type": "word-definition",
+    "headword": "Sloth.",
+    "language": "en",
+    "reading": "สลอธ",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "Sloth.\nA refusal to act despite ability. You neglect\nduties and growth. You choose comfort over\nresponsibility.",
+    "translation": "ความเกียจคร้าน: การปฏิเสธลงมือทั้งที่มีความสามารถ ละเลยหน้าที่และการเติบโต เลือกความสบายมากกว่าความรับผิดชอบ",
+    "text": "รู้ว่าทำได้ แต่ยังเลือกไม่ลงมือ",
+    "tags": [
+      "ตัวตน",
+      "การเติบโตและความพยายาม"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-048",
+    "type": "word-definition",
+    "headword": "hope",
+    "language": "en",
+    "reading": "โฮป",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "hope\n[hōp] noun\n\nthe feeling that what is wanted can be had or that\nevents will turn out for the best; to believe, desire;\nto place trust; rely",
+    "translation": "ความหวัง: ความรู้สึกว่าสิ่งที่ต้องการอาจได้มา หรือเหตุการณ์จะออกมาดีที่สุด การเชื่อ ปรารถนา วางใจ และพึ่งพา",
+    "text": "ยังมีบางสิ่งที่เราอยากให้เกิดขึ้น และยังอยาสบายใจในวันข้างหน้า",
+    "tags": [
+      "ความหวังและศรัทธา",
+      "อารมณ์และความรู้สึก"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-049",
+    "type": "word-definition",
+    "headword": "Impossible",
+    "language": "en",
+    "reading": "อิมพอสซิเบิล",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "adjective",
+    "original": "Impossible\n[pronunciation not transcribed with confidence] adj.\n\na big word thrown around by small people.",
+    "translation": "เป็นไปไม่ได้: คำใหญ่ที่ถูกโยนไปมาโดยคนเล็ก ๆ (small people เป็นถ้อยคำดูแคลนในต้นฉบับ ไม่ได้หมายถึงขนาดร่างกายโดยตรง)",
+    "text": "บางครั้งคำว่าเป็นไปไม่ได้ อาจเป็นขอบเขตที่คนอื่นวางไว้ให้เรา",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "อิสระและการเลือก"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-050",
+    "type": "word-definition",
+    "headword": "Emotion",
+    "language": "en",
+    "reading": "อิโมชัน",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Emotion\nnoun /ə'mōSHən/\nA powerful feeling that stirs the heart — joy, sorrow, love, or fear — the invisible force that colors every moment of being alive.",
+    "translation": "อารมณ์: ความรู้สึกอันทรงพลังที่กระตุ้นหัวใจ ไม่ว่าจะยินดี เศร้า รัก หรือกลัว เป็นแรงที่มองไม่เห็นซึ่งเติมสีให้ทุกช่วงเวลาของชีวิต",
+    "text": "ความรู้สึกเติมสีให้แต่ละวัน ทั้งสุข เศร้า รัก และกลัว",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "ตัวตน"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-051",
+    "type": "sentence",
+    "headword": "#INTROVERT",
+    "language": "en",
+    "reading": null,
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "I'm a\nThinker\nNot a\nTalker\n#INTROVERT",
+    "translation": "ฉันเป็นนักคิด ไม่ใช่นักพูด #INTROVERT",
+    "text": "บางคนมีความคิดมากมาย แม้จะไม่ได้พูดมันออกมาบ่อยนัก",
+    "tags": [
+      "ตัวตน",
+      "ความเชื่อมโยง"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-052",
+    "type": "word-definition",
+    "headword": "Self love",
+    "language": "en",
+    "reading": "เซลฟ์เลิฟ",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Self love\n/ˌselfˈləv/ noun\n\nThe ability to feel love and\ncompassion for one’s own well-being\nand happiness. Being at peace with\none’s strengths and weakness and\nknowing that you are enough just\nas you are.",
+    "translation": "การรักตนเอง: ความสามารถในการรักและมีเมตตาต่อความเป็นอยู่และความสุขของตนเอง ยอมรับจุดแข็งและจุดอ่อน และรู้ว่าตนเพียงพออย่างที่เป็น",
+    "text": "อยู่ข้างตัวเองได้ ทั้งส่วนที่ถนัดและส่วนที่ยังไม่สมบูรณ์",
+    "tags": [
+      "คุณค่าตนเอง",
+      "ความใส่ใจ"
+    ]
+  },
+  {
+    "id": "catalog-v1:ooca-053",
+    "type": "word-definition",
+    "headword": "hope",
+    "language": "en",
+    "reading": "โฮป",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "hope\n[howp] . noun\n\nthe confident expectation of what God has promised, and the strength in his faithfulness\n[ Jeremiah 29:11 ]",
+    "translation": "ความหวัง: ความคาดหวังอย่างมั่นใจต่อสิ่งที่พระเจ้าทรงสัญญา และพลังจากความสัตย์ซื่อของพระองค์ [เยเรมีย์ 29:11]",
+    "text": "ในวันที่ยังมองไม่เห็นคำตอบ ฉันยังวางใจในคำสัญญาของพระเจ้า",
+    "tags": [
+      "ความหวังและศรัทธา",
+      "ความเชื่อมโยง"
+    ]
+  }
+]

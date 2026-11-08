@@ -1,5 +1,6 @@
 import {test,expect,type Page,type CDPSession} from '@playwright/test';
-test.setTimeout(90000);
+import {deckSize,shownIds,deckTimeout} from './catalog-test-data';
+test.setTimeout(deckTimeout(90000,1000));
 test.use({hasTouch:true,isMobile:true,viewport:{width:360,height:800}});
 const button=(p:Page,name:string)=>p.getByRole('button',{name,exact:true});
 const sessions=new WeakMap<Page,CDPSession>();
@@ -29,7 +30,7 @@ test('swipe: left next, right previous, first boundary, replay and no save',asyn
  await button(page,'เลือกข้อความนี้').click();expect(await id(page)).toBe(second);await button(page,'จบเมื่อพร้อม').first().click();await expect(page.getByRole('heading',{name:'จบรอบนี้แล้ว'})).toBeVisible();
 });
 test('swipe: vertical scroll, short drag and details touch never browse',async({page})=>{
- for(let i=0;i<53&&await id(page)!=='catalog-v1:ooca-042';i++)await button(page,'เปลี่ยนข้อความ').click();const first=await id(page);await swipe(page,-25);expect(await id(page)).toBe(first);
+ for(let i=0;i<deckSize&&await id(page)!=='catalog-v1:ooca-042';i++)await button(page,'เปลี่ยนข้อความ').click();const first=await id(page);await swipe(page,-25);expect(await id(page)).toBe(first);
  await swipe(page,0,-150);expect(await id(page)).toBe(first);await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(0);
  await swipe(page,-140,0,'.source-details summary');expect(await id(page)).toBe(first);
 
@@ -40,14 +41,14 @@ test('touch: native details and select button do not browse',async({page})=>{
  await button(page,'เลือกข้อความนี้').tap();await expect(page.getByRole('heading',{name:'ข้อความที่เราเลือก'})).toBeVisible();expect(await id(page)).toBe(first);
 });
 test('swipe: deck seam and previous/next reuse visited cards',async({page})=>{
- const seen=[await id(page)];for(let i=1;i<53;i++){await button(page,'เปลี่ยนข้อความ').click();seen.push(await id(page));}
- expect(new Set(seen).size).toBe(53);await swipe(page,-140);const next=await id(page);expect(next).not.toBe(seen[52]);
- await swipe(page,140);expect(await id(page)).toBe(seen[52]);await swipe(page,140);expect(await id(page)).toBe(seen[51]);
- await button(page,'เปลี่ยนข้อความ').click();expect(await id(page)).toBe(seen[52]);await swipe(page,-140);expect(await id(page)).toBe(next);
+ const seen=[await id(page)];for(let i=1;i<deckSize;i++){await button(page,'เปลี่ยนข้อความ').click();seen.push(await id(page));}
+ expect(new Set(seen).size).toBe(deckSize);expect([...seen].sort()).toEqual([...shownIds].sort());await swipe(page,-140);const next=await id(page);expect(next).not.toBe(seen[deckSize-1]);
+ await swipe(page,140);expect(await id(page)).toBe(seen[deckSize-1]);await swipe(page,140);expect(await id(page)).toBe(seen[deckSize-2]);
+ await button(page,'เปลี่ยนข้อความ').click();expect(await id(page)).toBe(seen[deckSize-1]);await swipe(page,-140);expect(await id(page)).toBe(next);
 });
 
 test('regression: repeated swipes, vertical scroll, details drag, tap and select in one session',async({page})=>{
- for(let i=0;i<53&&await id(page)!=='catalog-v1:ooca-042';i++)await button(page,'เปลี่ยนข้อความ').click();
+ for(let i=0;i<deckSize&&await id(page)!=='catalog-v1:ooca-042';i++)await button(page,'เปลี่ยนข้อความ').click();
  const first=await id(page);
  for(let round=0;round<3;round++){
   await swipe(page,-140);expect(await id(page)).not.toBe(first);await swipe(page,140);expect(await id(page)).toBe(first);

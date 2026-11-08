@@ -3,6 +3,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 const url=process.argv[2]||'https://vagueslim.github.io/OOCATest/';
 const catalog=JSON.parse(await readFile('src/catalog.json','utf8'));
+const shownCatalog=catalog.filter(q=>q.status===undefined||q.status===1),deckSize=shownCatalog.length;
 const browser=await chromium.launch();const page=await browser.newPage({viewport:{width:360,height:800}});
 const errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('requestfailed',r=>requests.push(r.url()));
 const button=n=>page.getByRole('button',{name:n,exact:true});const key='ooca-demo:saved-quotes:v1';
@@ -14,14 +15,14 @@ try{
  const legacy={id:'legacy',quoteId:'self-rest',quoteText:'วันนี้ขอพักก่อน',focus:null,savedAt:'2025-01-01T00:00:00Z',localDay:'2025-01-01'};
  await page.evaluate(({key,legacy})=>localStorage.setItem(key,JSON.stringify({version:1,entries:[legacy]})),{key,legacy});
  await button('เริ่ม').click();const seen=new Set();
- for(let i=0;i<53;i++){
+ for(let i=0;i<deckSize;i++){
   const card=page.getByTestId('quote');const id=await card.getAttribute('data-quote-id');const q=catalog.find(q=>q.id===id);assert(q,'Live catalog ID exists');seen.add(id);
   assert.equal(await card.locator('.quote-headword').innerText(),q.headword);assert.equal(await card.locator('.quote-thai').innerText(),q.text);assert((await card.innerText()).includes('ร่างยังไม่ตรวจ'));
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   if(id==='catalog-v1:ooca-042'||id==='catalog-v1:ooca-001')await page.screenshot({path:`evidence/catalog-live/${id.endsWith('042')?'mobile-word':'mobile-sentence'}.png`,fullPage:true});
   await button('เปลี่ยนข้อความ').click();
  }
- assert.equal(seen.size,53);checks.push('53 live catalog cards match local data, draft labels, word and Japanese sentence, mobile width');
+ assert.equal(seen.size,deckSize);assert.deepEqual([...seen].sort(),shownCatalog.map(q=>q.id).sort());checks.push(`${deckSize} visible live catalog cards match local data, draft labels, word and Japanese sentence, mobile width`);
  await button('จบได้เลย').click();assert.deepEqual(await read(),[legacy]);checks.push('End before selection preserves old entry');
  await button('เริ่มรอบใหม่').click();await button('เลือกข้อความนี้').click();await page.screenshot({path:'evidence/catalog-live/mobile-reflect.png',fullPage:true});await done();assert.deepEqual(await read(),[legacy]);checks.push('Select, skip all optional actions, end');
  await button('เริ่มรอบใหม่').click();await button('วันนี้ยังไม่เลือก').click();await button('รับกอด').click();await button('จบได้เลย').click();checks.push('No selection, hug, end');

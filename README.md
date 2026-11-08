@@ -1,5 +1,29 @@
 # Peek a word!
 
+Latest release checks and limitations: [journey + 106-card release verification](evidence/release-journey-106.md). Google Calendar remains unconfigured and cannot create real events.
+
+## Latest release: journey and 106-card catalog (2026-11-08)
+
+The local catalog now has **106 cards**, all explicitly set to numeric `status: 1` (shown); `status: 0` excludes a card from new browsing decks. Missing status remains shown for backwards compatibility; invalid status values fail closed. Hiding a card does not remove its previously saved history snapshot.
+
+The 53 user-edited v1 records were compared against the uploaded catalog and preserved exactly, except for adding `status: 1`. Lot2 contained 55 source images: two complete duplicates were skipped and 53 new records were appended as stable IDs 054–106. Existing character mappings are unchanged; each new card has a semantic draft assignment to an existing Mooca pose, with rationale recorded.
+
+All new Thai translations, creative text and generated readings are drafts requiring review. The 058 soul source is truncated, the 091 Japanese source is malformed (reading left null), and 103 has a source pronunciation mark requiring review. These remain status 1 for the owner to decide later. Character matches 081 and 098 are lower-confidence drafts. No language approval or publication is implied.
+
+The final TypeScript/Vite build passed; combined Playwright regression passed 114/114 with no failures or skipped tests. Detailed status semantics, original-preservation proof, source manifest, review flags and final test result: [catalog visibility and lot2 verification](evidence/catalog-visibility/verification.md). Thai review list: [all lot2 cards](evidence/catalog-visibility/lot2-all-entries-th.txt). This snapshot is included in the owner-requested release. See the release verification note below for the latest checks and caveats.
+
+## Button journey and Calendar API
+
+The local flow is browse, select an optional focus, optionally write, and finish. Skipping opens the sky/Heart Hug ending with one Home action. These changes are included in this release.
+
+The calendar action now uses an explicit review-and-confirm flow for Google Calendar API, seven local calendar days later at 13:00–13:15. It requires the user's Google authorization, previews exactly what will be sent, and only claims success after the API confirms the event. The title contains the full selected card headword and text, not the user's private writing or optional focus. Event content is not placed in a query URL. Missing Google client configuration shows a clear setup-required state; it does not simulate success.
+
+Setup and privacy/failure behavior: [Google Calendar API setup](evidence/google-calendar-setup.md). No Google Cloud project, credentials, OAuth grants or real events were created during implementation. See `.env.example` for the public client-ID variable. The app uses browser-only, short-lived tokens and has no background scheduler or persistent token storage.
+
+Existing explicitly saved quote history is unchanged. Calendar-day arithmetic and UTC export preserve 13:00 across DST; the preview refreshes when the local date or time zone changes.
+
+Current verification: [button journey report](evidence/button-journey-verification.md). Screenshots and the latest test report are in evidence/. Older results below are historical.
+
 ## Tap to expand
 
 Tap or click the front card to expand it into a full-height reading view. The back arrow or Escape collapses it to the same card and restores keyboard focus. Swiping remains browsing only; choosing and saving a quote are still separate, explicit actions. The expanded view keeps its select button visible while long content scrolls, supports reduced motion, and preserves the original source disclosure.

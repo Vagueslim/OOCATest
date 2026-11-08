@@ -1,0 +1,752 @@
+LOT2: 53 new draft entries. Thai translation, creative text, readings and character mappings are drafts for review.
+
+catalog-v1:ooca-054 | word-definition | en | status 1
+Headword: gaslighting
+Reading: แกสไลทิง [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 008b05dde02cc3d933bf9baa5b8bf138.jpg
+Original:
+gaslighting
+/GAS-lye-ting/
+noun
+a form of psychological manipulation where someone causes another person to doubt their memory, perception, or reality
+Thai translation draft: การบิดเบือนให้ผู้อื่นสงสัยตัวเอง: รูปแบบหนึ่งของการบงการทางจิตใจที่ทำให้อีกคนสงสัยความทรงจำ การรับรู้ หรือความเป็นจริงของตน
+Thai creative draft: เมื่อใครทำให้เราสงสัยสิ่งที่ตัวเองรับรู้ ลองถอยมาฟังตัวเองอีกครั้ง
+Tags: ขอบเขต | ความสัมพันธ์
+Mooca: Safe Bubble [high] - ภาพฟองปกป้องสอดคล้องกับการรักษาขอบเขตจากการบงการ
+
+catalog-v1:ooca-055 | word-definition | en | status 1
+Headword: Atelophobia
+Reading: อะเทโลโฟเบีย [คำอ่านไทยร่าง]
+Part of speech (printed source only):
+Source: 07d636a9c3eac0b144dee1e9b69b28e9.jpg
+Original:
+Atelophobia
+[A-tel-o-pho-bia]
+The fear of imperfection. The fear of never being good enough.
+Thai translation draft: ความกลัวความไม่สมบูรณ์แบบ ความกลัวว่าจะไม่ดีพอเสมอ
+Thai creative draft: บางครั้งสิ่งที่กลัว ไม่ใช่ความผิดพลาด แต่เป็นความรู้สึกว่าเรายังดีไม่พอ
+Tags: คุณค่าตนเอง | อารมณ์และความรู้สึก
+Mooca: Heart Hug [high] - ท่ากอดหัวใจเหมาะกับการอ่อนโยนต่อตนเองท่ามกลางความกลัวว่าไม่ดีพอ
+Review: ข้อความต้นทางเป็นนิยามเชิงทั่วไป ไม่ใช้วินิจฉัยภาวะทางสุขภาพ
+
+catalog-v1:ooca-056 | word-definition | en | status 1
+Headword: My sleeping pattern
+Reading: มาย สลีพพิง แพตเทิร์น [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 17bf436a1e1e0387ec50c70e33db476f.jpg
+Original:
+My sleeping pattern
+(n.)
+It isn't even a pattern anymore it's a freestyle.
+Thai translation draft: รูปแบบการนอนของฉัน: ตอนนี้ไม่เป็นรูปแบบอะไรแล้ว เป็นฟรีสไตล์ไปแล้ว
+Thai creative draft: ตารางนอนช่วงนี้ ไม่มีรูปแบบ มีแต่ฟรีสไตล์
+Tags: การพักและดูแลตนเอง | ตัวตน
+Mooca: Moon Dreamer [high] - ตัวละครนอนบนดวงจันทร์ตรงกับเรื่องการนอน
+Review: นิยามขำขันจากต้นฉบับ ไม่ใช่คำอธิบายทางการแพทย์
+
+catalog-v1:ooca-057 | word-definition | en | status 1
+Headword: stigma
+Reading: สติกมา [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 1d46beaae6223158bf7cf895de19b682.jpg
+Original:
+stigma
+[stig-muh]
+noun
+a mark of disgrace or a deeply felt scar left by guilt or trauma;
+Thai translation draft: ตราบาป: ร่องรอยแห่งความอับอาย หรือแผลลึกในใจที่ความรู้สึกผิดหรือบาดแผลทางใจทิ้งไว้
+Thai creative draft: บางรอยแผลมองไม่เห็น แต่เรายังรู้สึกถึงมัน
+Tags: อารมณ์และความรู้สึก | คุณค่าตนเอง
+Mooca: Caring Listener [medium] - ท่ารับฟังเหมาะกับความเจ็บปวดและความรู้สึกผิด แม้ภาพไม่แสดงรอยแผล
+
+catalog-v1:ooca-058 | word-definition | en | status 1
+Headword: soul
+Reading: โซล [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 1f4c90966378695295e8192b11f249fd.jpg
+Original:
+soul
+[soʊl]
+noun • English
+Your soul is the part of you that consists of your mind, character, thoughts, and feelings. Many people believe that your soul continues existin...
+Thai translation draft: จิตวิญญาณ: ส่วนหนึ่งของคุณที่ประกอบด้วยจิตใจ บุคลิก ความคิด และความรู้สึก หลายคนเชื่อว่าจิตวิญญาณของคุณยังคงดำรง... (ข้อความในภาพจบที่ “existin...”)
+Thai creative draft: บางสิ่งที่เป็นเรา อยู่ในความคิด ความรู้สึก และตัวตนข้างใน
+Tags: ตัวตน | ความหมายและเป้าหมาย
+Mooca: Glowing Heart [medium] - หัวใจที่เปล่งแสงสื่อถึงตัวตนและความรู้สึกภายใน ไม่ได้ยืนยันความเชื่อเรื่องวิญญาณ
+Review: Image text ends at existin...; do not complete missing wording. | ต้นฉบับตัดจบที่ existin... เก็บเท่าที่มองเห็น ไม่เติมข้อความต่อ
+
+catalog-v1:ooca-059 | sentence | zh | status 1
+Headword: “你要的不是我”
+Reading: nǐ yào de bú shì wǒ [พินอินร่าง]
+Part of speech (printed source only):
+Source: 22ffe96fd8cb0c5a56d3928e09e6f041.jpg
+Original:
+“你要的不是我”
+The one you need isn’t me.
+Thai translation draft: คนที่เธอต้องการไม่ใช่ฉัน
+Thai creative draft: บางครั้งคนที่เขาต้องการ ก็ไม่ใช่เรา
+Tags: ความสัมพันธ์ | อารมณ์และความรู้สึก
+Mooca: Back View [medium] - ท่าหันหลังเหมาะกับความห่างและการไม่ถูกเลือก ไม่มีท่าเศร้าตรงตัว
+Review: Thin cursor-like vertical mark after English sentence excluded.
+
+catalog-v1:ooca-060 | word-definition | en | status 1
+Headword: Blend
+Reading: เบลนด์ [คำอ่านไทยร่าง]
+Part of speech (printed source only): verb
+Source: 297f7996ef64950b7b973e2a2ac1a816.jpg
+Original:
+Blend
+{ blend }
+verb.
+To bring different things together and create something more beautiful than they were alone / A quiet reminder that contrasts can coexist, and that good things often grow in the in-between.
+Thai translation draft: ผสมผสาน: นำสิ่งต่าง ๆ มารวมกันและสร้างสิ่งที่งดงามกว่าตอนอยู่ลำพัง เป็นเครื่องเตือนใจเบา ๆ ว่าความแตกต่างอยู่ร่วมกันได้ และสิ่งดี ๆ มักเติบโตในพื้นที่ระหว่างกัน
+Thai creative draft: ความต่างอาจอยู่ร่วมกัน แล้วกลายเป็นสิ่งงดงามอีกแบบ
+Tags: ความสัมพันธ์ | ความเชื่อมโยง
+Mooca: Sunny Friend [medium] - ภาพอยู่ร่วมกับเพื่อนดวงอาทิตย์สื่อการผสมผสานสิ่งต่างกัน
+
+catalog-v1:ooca-061 | sentence | en | status 1
+Headword: NERD ?
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: 3043738c375f014ce6fe3255702a58cb.jpg
+Original:
+NERD ?
+Yes I am, and proud to be smarter than you.
+Thai translation draft: เด็กเนิร์ดเหรอ? ใช่ ฉันเป็น และภูมิใจที่ฉลาดกว่าเธอ
+Thai creative draft: เรียกเนิร์ดก็ได้ ฉันภูมิใจกับสิ่งที่ตัวเองรู้
+Tags: ตัวตน | คุณค่าตนเอง
+Mooca: Bookworm [high] - ท่าอ่านหนังสือตรงกับภาพลักษณ์คนรักการเรียนรู้
+Review: ต้นฉบับเปรียบว่าฉลาดกว่าอีกฝ่าย ร่างไทยเรียบเรียงลดการดูแคลน จึงควรตรวจน้ำเสียง
+
+catalog-v1:ooca-062 | sentence | zh | status 1
+Headword: 一切都是有原因的
+Reading: yí qiè dōu shì yǒu yuán yīn de [พินอินร่าง]
+Part of speech (printed source only):
+Source: 356368ab026265d2ea3c569ad07a4560.jpg
+Original:
+一切都是有原因的
+Everything has a reason.
+Thai translation draft: ทุกอย่างล้วนมีเหตุผล
+Thai creative draft: ทุกเรื่องอาจมีเหตุผลของมัน แม้ตอนนี้เรายังไม่เข้าใจ
+Tags: ความหมายและเป้าหมาย | ความหวังและศรัทธา
+Mooca: Curious [medium] - ท่าสงสัยเหมาะกับการมองหาเหตุผลและความหมาย
+Review: ร่างสร้างสรรค์ลดถ้อยคำเหมารวมจาก 'ทุกอย่างล้วน' เป็น 'อาจ'
+
+catalog-v1:ooca-063 | word-definition | en | status 1
+Headword: Envy.
+Reading: เอนวี [คำอ่านไทยร่าง]
+Part of speech (printed source only):
+Source: 3589c3a3ad2c10adb3d1bbef5a285d03.jpg
+Original:
+Envy.
+Bitterness toward others’ success or happiness. You compare yourself constantly. You wish to have what others own.
+Thai translation draft: ความอิจฉา: ความขมขื่นต่อความสำเร็จหรือความสุขของผู้อื่น คุณเปรียบเทียบตัวเองอยู่เสมอ และอยากมีสิ่งที่คนอื่นมี
+Thai creative draft: บางครั้งเรามองสิ่งที่คนอื่นมี จนลืมมองสิ่งที่เป็นของเรา
+Tags: อารมณ์และความรู้สึก | คุณค่าตนเอง
+Mooca: Mirror Peek [medium] - ท่ามองกระจกสื่อการมองตัวเองและการเปรียบเทียบ ไม่มีท่าอิจฉาโดยตรง
+
+catalog-v1:ooca-064 | sentence | zh | status 1
+Headword: 答應我.
+Reading: dā yìng wǒ [พินอินร่าง]
+Part of speech (printed source only):
+Source: 38821d48a6999607727638c0227467cf.jpg
+Original:
+答應我.
+“Promise me.”
+Thai translation draft: สัญญากับฉันนะ
+Thai creative draft: สัญญากับฉันได้ไหม
+Tags: ความสัมพันธ์ | ความเชื่อมโยง
+Mooca: Heart Hug [medium] - การกอดหัวใจสื่อความไว้วางใจและความผูกพัน ไม่ใช่ท่าสัญญาตรงตัว
+
+catalog-v1:ooca-065 | word-definition | en | status 1
+Headword: Mindset
+Reading: มายด์เซต [คำอ่านไทยร่าง]
+Part of speech (printed source only):
+Source: 50a23b40a4e087b8387cc32682c3cd72.jpg
+Original:
+Mindset
+The driving force in the quest for success and achievement. A mindset that combines discipline, strength, confidence, and ambition is a powerful mindset. This can achieve anything it sets its sights on.
+
+A powerful mind can achieve anything.
+Thai translation draft: กรอบความคิด: แรงขับในการแสวงหาความสำเร็จและผลสัมฤทธิ์ กรอบความคิดที่รวมวินัย ความเข้มแข็ง ความมั่นใจ และความทะเยอทะยานเป็นกรอบความคิดที่ทรงพลัง ซึ่งสามารถบรรลุทุกสิ่งที่มุ่งหมาย จิตใจที่ทรงพลังทำได้ทุกอย่าง
+Thai creative draft: วินัย ความเชื่อมั่น และความตั้งใจ ช่วยให้เราเดินไปหาเป้าหมาย
+Tags: การเติบโตและความพยายาม | ความหมายและเป้าหมาย
+Mooca: Bookworm [medium] - ภาพอ่านหนังสือสื่อการพัฒนาความคิดและวินัย
+Review: ต้นฉบับใช้ถ้อยคำรับรองผล 'achieve anything'; ร่างสร้างสรรค์ไม่รับรองผลลัพธ์
+
+catalog-v1:ooca-066 | sentence | ja | status 1
+Headword: 私と一緒にいて
+Reading: watashi to issho ni ite [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: 59c4d19b3dfffaa100f7235703dcb1bd.jpg
+Original:
+私と一緒にいて
+stay with me
+Thai translation draft: อยู่กับฉันนะ
+Thai creative draft: อยู่ด้วยกันก่อนนะ
+Tags: ความสัมพันธ์ | ความเชื่อมโยง
+Mooca: Heart Hug [high] - ท่ากอดหัวใจสื่อความต้องการให้ใครอยู่ใกล้
+
+catalog-v1:ooca-067 | word-definition | en | status 1
+Headword: Peace.
+Reading: พีซ [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 5ab573e2999ef9e045a994645657fa35.jpg
+Original:
+Peace.
+/pi:s /
+noun
+something that is sometimes better than “being right”.
+Thai translation draft: ความสงบ: สิ่งที่บางครั้งดีกว่าการเป็นฝ่ายถูก
+Thai creative draft: บางครั้งความสงบสำคัญกว่าการเอาชนะว่าใครถูก
+Tags: ขอบเขต | การพักและดูแลตนเอง
+Mooca: Quiet Moment [high] - ภาพนั่งสงบตรงกับการเลือกความสงบ
+
+catalog-v1:ooca-068 | sentence | en | status 1
+Headword: I need a huge amount of money
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: 5ccd2e4971f267545e214b0fd14c7989.jpg
+Original:
+I need a huge amount of money
+Thai translation draft: ฉันต้องการเงินจำนวนมหาศาล (เล่นตัวอักษรให้ตอนแรกอ่านว่า “ฉันต้องการกอด” ก่อนคำเล็กเติม hug เป็น huge)
+Thai creative draft: อยากได้กอด... หรือเงินจริง ๆ จำนวนมหาศาลก็ได้นะ
+Tags: ตัวตน | ความสุขในชีวิตประจำวัน
+Mooca: Playful Tilt [medium] - ท่าเอียงขี้เล่นเข้ากับมุกเล่นตัวอักษร ไม่มีท่าเงินโดยตรง
+Review: Visual wordplay: large 'I need a hug' plus small 'e amount of money' completes 'huge amount of money'. | การแสดงผลเป็นข้อความล้วนไม่รักษามุกขนาดตัวอักษรทั้งหมด ต้องตรวจงานจัดวาง
+
+catalog-v1:ooca-069 | sentence | ja | status 1
+Headword: 沈黙を楽しんで
+Reading: chinmoku o tanoshinde [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: 5d0eef366dc279bf2b6368486eac07e4.jpg
+Original:
+沈黙を楽しんで
+ENJOY THE SILENCE
+Thai translation draft: เพลิดเพลินกับความเงียบ
+Thai creative draft: ลองอยู่กับความเงียบสักครู่
+Tags: การพักและดูแลตนเอง | อารมณ์และความรู้สึก
+Mooca: Quiet Moment [high] - ท่านั่งสงบตรงกับความเงียบ
+Review: Vertical decorative bars flank Japanese text.
+
+catalog-v1:ooca-070 | sentence | zh | status 1
+Headword: 我是我的魔鬼
+Reading: wǒ shì wǒ de mó guǐ [พินอินร่าง]
+Part of speech (printed source only):
+Source: 6324d6988bf36666dcec9e1028bfa280.jpg
+Original:
+我是我的魔鬼
+i am my demon.
+Thai translation draft: ฉันคือปีศาจของตัวเอง
+Thai creative draft: บางครั้งสิ่งที่ต้องเผชิญ ก็อยู่ในใจเราเอง
+Tags: ตัวตน | อารมณ์และความรู้สึก
+Mooca: Mirror Peek [medium] - ภาพมองตัวเองในกระจกสื่อความขัดแย้งภายใน ไม่มีท่าปีศาจโดยตรง
+Review: ร่างสร้างสรรค์เปลี่ยนจากการเรียกตนว่าปีศาจเป็นการเผชิญสิ่งภายใน
+
+catalog-v1:ooca-071 | sentence | ja | status 1
+Headword: はじめるのが遅くても やらないよりはいい。
+Reading: hajimeru no ga osokute mo yaranai yori wa ii. [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: 72c5c0f468d1c1c59aa9fbf3441df72c.jpg
+Original:
+はじめるのが遅くても やらないよりはいい。
+Better late than never.
+Thai translation draft: แม้จะเริ่มช้า ก็ยังดีกว่าไม่ทำเลย
+Thai creative draft: เริ่มช้าหน่อย ก็ยังดีกว่าไม่เริ่ม
+Tags: การเติบโตและความพยายาม | ความหวังและศรัทธา
+Mooca: Balloon Explorer [high] - ท่าออกเดินทางด้วยบอลลูนตรงกับการเริ่มต้น
+
+catalog-v1:ooca-072 | sentence | en | status 1
+Headword: "THAT'S ME"
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: 7724c76b845e3feedac2342990a7ebbd.jpg
+Original:
+"THAT'S ME"
+Mature by mind, Kid by heart, Rude from outside, Caring from Inside.
+Thai translation draft: นั่นแหละฉัน: ความคิดเป็นผู้ใหญ่ หัวใจเป็นเด็ก ภายนอกดูหยาบกระด้าง แต่ข้างในใส่ใจ
+Thai creative draft: คิดเป็นผู้ใหญ่ ใจยังเป็นเด็ก ภายนอกดูแข็ง แต่ข้างในยังแคร์
+Tags: ตัวตน | ความสัมพันธ์
+Mooca: Mirror Peek [high] - ภาพส่องกระจกตรงกับการบอกว่าตัวเองเป็นอย่างไร
+
+catalog-v1:ooca-073 | word-definition | en | status 1
+Headword: Life
+Reading: ไลฟ์ [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 7aae195e36265acadbdbd348bb55f23b.jpg
+Original:
+Life
+(n.)
+A party, but I'm the piñata.
+Thai translation draft: ชีวิต: งานปาร์ตี้ที่ฉันเป็นปิญาตา (หุ่นที่ถูกตีให้ขนมข้างในหล่นออกมา)
+Thai creative draft: ชีวิตเหมือนงานปาร์ตี้ แต่บางวันเราคือปิญาตาที่โดนตี
+Tags: ตัวตน | อารมณ์และความรู้สึก
+Mooca: Rainy Day [medium] - ร่มในวันฝนตกสื่อการรับมือวันยาก ๆ ไม่มีท่าปิญาตาตรงตัว
+Review: นิยามขำขื่น ไม่ใช่นิยามพจนานุกรม; เปรียบเทียบการถูกตี
+
+catalog-v1:ooca-074 | sentence | en | status 1
+Headword: I'm a 404 human error
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: 7be19bf3f9532c7e9f4617eab35a1699.jpg
+Original:
+I'm a 404 human error
+ERR_NAME_NOT_RESOLVED
+Thai translation draft: ฉันคือข้อผิดพลาดมนุษย์ 404 / ERR_NAME_NOT_RESOLVED
+Thai creative draft: วันนี้ระบบมนุษย์ของฉันขึ้น 404
+Tags: ตัวตน | อารมณ์และความรู้สึก
+Mooca: Curious [medium] - ท่าครุ่นคิดใช้กับอาการงงหรือสถานะผิดพลาด ไม่มีท่า error โดยตรง
+Review: 404 และ ERR_NAME_NOT_RESOLVED เป็นคนละข้อผิดพลาดทางเทคนิค ภาพใช้เป็นมุกและเก็บตามนั้น
+
+catalog-v1:ooca-075 | word-definition | en | status 1
+Headword: Happiness
+Reading: แฮพพิเนส [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 820e63de5ff7ee1ea5339fd008faa8e2.jpg
+Original:
+Happiness
+hap·pi·ness | \ ˈha-pē-nəs \
+noun
+a: a pleasurable or satisfying experience.
+b: the experience of joy, contentment, or positive well-being, combined with a sense that one’s life is good, meaningful, and worthwhile.
+Thai translation draft: ความสุข: ก. ประสบการณ์ที่น่าพอใจหรือให้ความพึงพอใจ ข. ประสบการณ์ของความยินดี ความอิ่มใจ หรือความเป็นอยู่ที่ดี ร่วมกับความรู้สึกว่าชีวิตของตนดี มีความหมาย และคุ้มค่า
+Thai creative draft: ความสุขอาจเป็นทั้งช่วงเวลาที่พอใจ และความรู้สึกว่าชีวิตนี้มีความหมาย
+Tags: ความสุขในชีวิตประจำวัน | ความหมายและเป้าหมาย
+Mooca: Sunny Friend [high] - ตัวละครกับดวงอาทิตย์สื่อความสุขและความอบอุ่น
+
+catalog-v1:ooca-076 | sentence | ja | status 1
+Headword: 夢は美しいが現実は残酷
+Reading: yume wa utsukushii ga genjitsu wa zankoku [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: 8379791b9bb6db3a61db2f183eb56457.jpg
+Original:
+夢は美しいが現実は残酷
+Dream are beautiful but the reality is cruel
+Thai translation draft: ความฝันงดงาม แต่ความจริงโหดร้าย
+Thai creative draft: ความฝันสวยงาม แต่บางวันความจริงก็หนักหนา
+Tags: อารมณ์และความรู้สึก | ความหมายและเป้าหมาย
+Mooca: Rainy Day [medium] - ภาพวันฝนตกสื่อความยากของความจริง ไม่แสดงทั้งฝันและจริงพร้อมกัน
+Review: Source English grammar retained. | ต้นฉบับอังกฤษใช้ 'Dream are' เก็บไวยากรณ์เดิม; ร่างไทยลดถ้อยคำเหมารวม
+
+catalog-v1:ooca-077 | sentence | en | status 1
+Headword: Better than yesterday, that’s the goal.
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: 8b1e85310d9cfaab301576710d5bac9d.jpg
+Original:
+Better than yesterday, that’s the goal.
+Thai translation draft: ดีกว่าเมื่อวาน นั่นคือเป้าหมาย
+Thai creative draft: เป้าหมายวันนี้ คือดีกว่าเมื่อวานของเรา
+Tags: การเติบโตและความพยายาม | ความหมายและเป้าหมาย
+Mooca: Balloon Explorer [high] - บอลลูนเคลื่อนไปข้างหน้าสื่อการเติบโตและเป้าหมาย
+
+catalog-v1:ooca-078 | word-definition | en | status 1
+Headword: LOL
+Reading: แอล โอ แอล [คำอ่านไทยร่าง]
+Part of speech (printed source only): abbreviation
+Source: 8c935500f8bc4d3ad57843b1b95c1aa4.jpg
+Original:
+LOL
+(abbr.)
+I’ve nothing else to say.
+Thai translation draft: LOL: ฉันไม่มีอะไรจะพูดแล้ว (นิยามขำขันในภาพ ไม่ใช่คำขยายมาตรฐานของตัวย่อ)
+Thai creative draft: บางทีที่พิมพ์ LOL ก็แค่ไม่รู้จะพูดอะไรต่อ
+Tags: ตัวตน | ความสัมพันธ์
+Mooca: Playful Tilt [medium] - ท่าขี้เล่นเหมาะกับมุกการตอบแชต
+Review: Humorous source definition; not conventional expansion of LOL. | LOL ในภาพเป็นนิยามเล่นคำ ไม่ใช่ Laughing Out Loud ตามการใช้ทั่วไป
+
+catalog-v1:ooca-079 | word-definition | en | status 1
+Headword: Expectations
+Reading: เอ็กซ์เพกเทชันส์ [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 8ef579f173a8adaa02adfc15e715afa8.jpg
+Original:
+Expectations
+(n.)
+One of the main causes of disappointment.
+Thai translation draft: ความคาดหวัง: หนึ่งในสาเหตุหลักของความผิดหวัง
+Thai creative draft: บางครั้งที่ผิดหวัง เพราะเราเคยคาดหวังไว้มาก
+Tags: อารมณ์และความรู้สึก | ความหวังและศรัทธา
+Mooca: Rainy Day [medium] - วันฝนตกเชื่อมกับความผิดหวังอย่างอ่อนโยน
+Review: เก็บข้อสรุปกว้างของต้นฉบับเป็นความเห็น ไม่ใช่ข้อเท็จจริงทางจิตวิทยา
+
+catalog-v1:ooca-080 | word-definition | en | status 1
+Headword: Missed calls
+Reading: มิสต์ คอลส์ [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 8fbaf42a2a60ca00b85de636bbca4a52.jpg
+Original:
+Missed calls
+(n.)
+I don't miss them. I just stare at it and don't answer.
+Thai translation draft: สายที่ไม่ได้รับ: ฉันไม่ได้พลาดสาย ฉันแค่จ้องมันแล้วไม่รับ
+Thai creative draft: ไม่ได้พลาดสาย แค่ยังไม่อยากรับ
+Tags: ขอบเขต | ตัวตน
+Mooca: Back View [medium] - ท่าหันหลังสื่อการเว้นระยะจากการติดต่อ ไม่มีท่าโทรศัพท์
+
+catalog-v1:ooca-081 | sentence | ja | status 1
+Headword: 知ってる
+Reading: shitteru [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: 960dafafb7d4ed6b1c6dd1343e0b525b.jpg
+Original:
+知ってる
+I know.
+Thai translation draft: รู้แล้ว
+Thai creative draft: ฉันรู้แล้ว
+Tags: ตัวตน | ความสัมพันธ์
+Mooca: Friendly Stand [low] - คำสั้นไม่บอกอารมณ์ชัด จึงเลือกท่ายืนกลาง ๆ; ควรตรวจบริบทก่อนใช้
+
+catalog-v1:ooca-082 | sentence | ja | status 1
+Headword: 美しき残酷な世界
+Reading: utsukushiki zankoku na sekai [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: 99bed88c1b5d458a652377c3bd4acdfb.jpg
+Original:
+美しき残酷な世界
+うつく　ざんこく　せかい
+This beautiful cruel world
+Thai translation draft: โลกที่งดงามและโหดร้ายนี้
+Thai creative draft: โลกใบเดียวกัน มีทั้งความงามและความโหดร้าย
+Tags: อารมณ์และความรู้สึก | ความหมายและเป้าหมาย
+Mooca: Rainy Day [medium] - ท่าถือร่มในวันฝนสื่อทั้งความยากและการดูแลตนเอง ไม่มีภาพโลกตรงตัว
+Review: Kana printed as furigana above 美, 残酷, 世界.
+
+catalog-v1:ooca-083 | sentence | en | status 1
+Headword: Lock tf in and finish out this year strong.
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: 99d88a14af2403ac0dc1aefb601e5129.jpg
+Original:
+Lock tf in and finish out this year strong.
+Thai translation draft: ตั้งใจให้เต็มที่ แล้วปิดท้ายปีนี้อย่างแข็งแกร่ง (tf เป็นตัวย่อคำสบถเพื่อเน้นน้ำเสียง)
+Thai creative draft: กลับมาตั้งใจ แล้วจบปีนี้ให้เต็มที่
+Tags: การเติบโตและความพยายาม | ความหมายและเป้าหมาย
+Mooca: Bookworm [medium] - ท่าอ่านหนังสือสื่อการจดจ่อทำงาน แม้ข้อความไม่จำกัดเรื่องการเรียน
+Review: Source slang 'tf' retained; profanity abbreviation. | ข้อความผูกกับช่วงท้ายปีและมีคำสบถย่อ ร่างไทยตัดคำสบถ
+
+catalog-v1:ooca-084 | word-definition | en | status 1
+Headword: Forgiveness.
+Reading: เฟอร์กิฟเนส [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: 9eb651e6471544025768a1a53e6c8180.jpg
+Original:
+Forgiveness.
+/fərˈɡɪvnəs /
+noun
+a gift you give yourself.
+Thai translation draft: การให้อภัย: ของขวัญที่คุณมอบให้ตัวเอง
+Thai creative draft: บางครั้งการให้อภัย คือของขวัญที่เรามอบให้ตัวเอง
+Tags: ความสัมพันธ์ | การพักและดูแลตนเอง
+Mooca: Heart Hug [high] - ท่ากอดหัวใจสื่อการปลอบและเมตตาต่อตนเอง
+
+catalog-v1:ooca-085 | word-definition | en | status 1
+Headword: I’m fine
+Reading: ไอม์ ไฟน์ [คำอ่านไทยร่าง]
+Part of speech (printed source only): phrase
+Source: aabc9f020d07694c2f7ec80ed4c25578.jpg
+Original:
+I’m fine
+(phr.)
+Not dead, still alive.
+Thai translation draft: ฉันสบายดี: ยังไม่ตาย ยังมีชีวิตอยู่
+Thai creative draft: ที่บอกว่าสบายดี บางทีก็แค่ยังพอไหว
+Tags: อารมณ์และความรู้สึก | การพักและดูแลตนเอง
+Mooca: Bench Break [medium] - ท่านั่งพักเข้ากับการยอมรับว่าเหนื่อยและยังพอไหว
+Review: มุกขำขื่นในภาพ ไม่ใช่การประเมินสภาวะของผู้ใช้; ร่างไทยเรียบเรียงเปลี่ยนจากถ้อยคำเกี่ยวกับความตาย
+
+catalog-v1:ooca-086 | word-definition | en | status 1
+Headword: Hustle
+Reading: ฮัสเซิล [คำอ่านไทยร่าง]
+Part of speech (printed source only): verb
+Source: af2a1814eda1783779761d6bafb70488.jpg
+Original:
+Hustle
+/ˈhəs(ə)l/
+verb
+To have self-belief, courage, determination, and work ethic to put yourself out there to achieve your goals. Often characterized by persisting in the face of adversity.
+Thai translation draft: มุ่งมั่นลงมือทำ: มีความเชื่อในตัวเอง ความกล้า ความตั้งใจ และวินัยในการทำงาน เพื่อออกไปทำตามเป้าหมาย มักแสดงผ่านการไม่ยอมแพ้เมื่อเผชิญอุปสรรค
+Thai creative draft: เชื่อในตัวเอง แล้วค่อย ๆ ลงมือ แม้ระหว่างทางจะไม่ง่าย
+Tags: การเติบโตและความพยายาม | ความหมายและเป้าหมาย
+Mooca: Balloon Explorer [high] - ท่าออกสำรวจสื่อความกล้าและการไปหาเป้าหมาย
+
+catalog-v1:ooca-087 | sentence | ja | status 1
+Headword: 私は恐れた悪魔と踊った。
+Reading: watashi wa osoreta akuma to odotta. [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: b8a416875a637f9eb3604e3724362f4f.jpg
+Original:
+私は恐れた悪魔と踊った。
+I danced with the demons I feared.
+Thai translation draft: ฉันเต้นรำกับปีศาจที่เคยกลัว
+Thai creative draft: ฉันได้เผชิญสิ่งที่เคยหวาดกลัว
+Tags: การเติบโตและความพยายาม | อารมณ์และความรู้สึก
+Mooca: Playful Tilt [medium] - ท่าเอียงคล้ายเคลื่อนไหวเข้ากับภาพเปรียบการเต้นรำ แต่ไม่มีปีศาจในชุดภาพ
+Review: ร่างไทยละภาพเปรียบ 'เต้นรำกับปีศาจ' ควรตรวจว่าจะรักษาน้ำเสียงต้นฉบับหรือไม่
+
+catalog-v1:ooca-088 | sentence | ja | status 1
+Headword: 君はひとりじゃないから
+Reading: kimi wa hitori ja nai kara [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: b99f43f1922034ce28a1355473565210.jpg
+Original:
+君はひとりじゃないから
+You're not alone.
+Thai translation draft: เพราะเธอไม่ได้อยู่คนเดียว / เธอไม่ได้อยู่ลำพัง
+Thai creative draft: เธอไม่ได้อยู่คนเดียวนะ
+Tags: ความสัมพันธ์ | ความใส่ใจ
+Mooca: Sunny Friend [high] - ภาพมีเพื่อนอยู่ข้าง ๆ ตรงกับการไม่อยู่คนเดียว
+
+catalog-v1:ooca-089 | sentence | en | status 1
+Headword: B > (1/n) ∑ᵢ₌₁ⁿ xᵢ
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: bcd37260b7efcf3e515342a20d0a3eb2.jpg
+Original:
+B > (1/n) ∑ᵢ₌₁ⁿ xᵢ
+(be greater than average)
+Thai translation draft: จงเหนือกว่าค่าเฉลี่ย (B เล่นเสียงเป็น be และด้านขวาคือสูตรค่าเฉลี่ยเลขคณิต)
+Thai creative draft: ค่อย ๆ พาตัวเองไปให้ไกลกว่าเดิม
+Tags: การเติบโตและความพยายาม | ความหมายและเป้าหมาย
+Mooca: Bookworm [high] - ท่าอ่านหนังสือเข้ากับการเรียนรู้และมุกสูตรคณิตศาสตร์
+Review: Mathematical fraction and summation rendered in linear text; B is a wordplay on 'be'. | ร่างไทยเปลี่ยนจากการเหนือกว่าค่าเฉลี่ยเป็นการพัฒนาตัวเอง ต้องตรวจความตรงกับเจตนา
+
+catalog-v1:ooca-090 | sentence | zh | status 1
+Headword: “对不起, 让你遇上了我
+Reading: duì bù qǐ, ràng nǐ yù shàng le wǒ [พินอินร่าง]
+Part of speech (printed source only):
+Source: cde32852d0349b731aeccb715397d4f3.jpg
+Original:
+“对不起, 让你遇上了我
+I’m sorry that you met me.”
+Thai translation draft: ขอโทษที่ทำให้เธอได้มาพบฉัน
+Thai creative draft: บางครั้งเราเสียใจ ที่การพบกันไม่ได้เป็นอย่างที่หวัง
+Tags: ความสัมพันธ์ | อารมณ์และความรู้สึก
+Mooca: Rainy Day [medium] - ภาพฝนสื่อความเสียใจจากความสัมพันธ์โดยไม่เพิ่มท่าทางที่ไม่มีในต้นฉบับ
+Review: Opening quote before Chinese and closing quote after English are preserved; quoted span covers both lines. | ร่างไทยเปลี่ยนจากการโทษตัวเองเป็นความเสียใจต่อการพบกัน ควรตรวจน้ำเสียง
+
+catalog-v1:ooca-091 | sentence | ja | status 1
+Headword: きっと僕にわはじめから羽なんて中って
+Reading:  [รอตรวจภาษาญี่ปุ่น]
+Part of speech (printed source only):
+Source: cf3d4546e173e474da09ba127fe53699.jpg
+Original:
+きっと僕にわはじめから羽なんて中って
+Surely right from the start I never had wings.
+Thai translation draft: คงเป็นเพราะฉันไม่เคยมีปีกตั้งแต่แรก (แปลจากอังกฤษในภาพ; ประโยคญี่ปุ่นพิมพ์ผิดและยังไม่แก้)
+Thai creative draft: บางครั้งเรารู้สึกเหมือนไม่เคยมีปีกมาตั้งแต่แรก
+Tags: ตัวตน | อารมณ์และความรู้สึก
+Mooca: Back View [medium] - ท่าหันหลังสื่อการหันกลับมองตัวเองและความเปราะบาง ไม่มีท่าปีกโดยตรง
+Review: Enlarged source image confirms malformed Japanese 'にわ' and '中って' exactly as printed. Do not silently correct. Thai translation is based on the clear English line; Japanese reading left blank pending review. | สำคัญ: ภาพพิมพ์ きっと僕にわはじめから羽なんて中って จริง เก็บตามภาพ ไม่เดาข้อความที่ถูกต้อง; คำอ่านญี่ปุ่นเว้นว่าง คำแปลอิงอังกฤษ
+
+catalog-v1:ooca-092 | word-definition | en | status 1
+Headword: Everything happens for a reason
+Reading: เอฟวรีธิง แฮพเพนส์ ฟอร์ อะ รีซัน [คำอ่านไทยร่าง]
+Part of speech (printed source only): phrase
+Source: d0dd674ff293e38bf547d10e17424f92.jpg
+Original:
+Everything happens for a reason
+(phr.)
+Sometimes the reason is you're stupid and make bad decisions.
+Thai translation draft: ทุกอย่างเกิดขึ้นด้วยเหตุผล: บางครั้งเหตุผลก็คือคุณโง่และตัดสินใจแย่
+Thai creative draft: บางเรื่องที่เกิดขึ้น ก็เริ่มจากการตัดสินใจพลาดของเราเอง
+Tags: ตัวตน | การเติบโตและความพยายาม
+Mooca: Curious [medium] - ท่าครุ่นคิดเข้ากับการทบทวนเหตุผลและการตัดสินใจ
+Review: ต้นฉบับเป็นมุกเสียดสีดูแคลน ร่างไทยลดคำว่าโง่ ควรตรวจการเปลี่ยนน้ำเสียง
+
+catalog-v1:ooca-093 | sentence | ja | status 1
+Headword: 私のせいだ
+Reading: watashi no sei da [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: d2da61777246bbc97a4830118dfb56d9.jpg
+Original:
+私のせいだ
+IT’S MY FAULT
+Thai translation draft: เป็นความผิดของฉัน
+Thai creative draft: เรื่องนี้ ฉันมีส่วนที่ต้องรับผิดชอบ
+Tags: ตัวตน | อารมณ์และความรู้สึก
+Mooca: Mirror Peek [medium] - ท่าส่องกระจกเข้ากับการมองความรับผิดชอบของตัวเอง
+Review: ร่างไทยลดการรับผิดทั้งหมดเป็น 'มีส่วน' ไม่ใช่คำแปลตรง
+
+catalog-v1:ooca-094 | word-definition | en | status 1
+Headword: am i wrong
+Reading: แอม ไอ รอง [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun/phrase
+Source: d61f93df45dc499d481152882f85eda9.jpg
+Original:
+am i wrong
+[am ahy rawng]
+noun/phrase
+a question asked when challenging status quo conformity and societal expectations;
+Thai translation draft: ฉันผิดหรือ: คำถามที่ใช้เมื่อท้าทายการคล้อยตามสภาพที่เป็นอยู่และความคาดหวังของสังคม
+Thai creative draft: เราอาจตั้งคำถามได้ แม้สิ่งนั้นจะเป็นสิ่งที่ใคร ๆ ทำตามกัน
+Tags: อิสระและการเลือก | ตัวตน
+Mooca: Curious [high] - ท่าสงสัยตรงกับการตั้งคำถาม
+
+catalog-v1:ooca-095 | word-definition | en | status 1
+Headword: misanthropy
+Reading: มิแซนธระพี [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: d9c714aa03e6ee4b85c67cd1620ca095.jpg
+Original:
+misanthropy
+/mi-ˈsan(t)-thrə-pē /
+noun
+the general hatred, dislike, or distrust of the human species, human behavior, or human nature.
+Thai translation draft: ความเกลียดชังมนุษย์: ความเกลียด ไม่ชอบ หรือไม่ไว้วางใจเผ่าพันธุ์มนุษย์ พฤติกรรมมนุษย์ หรือธรรมชาติของมนุษย์โดยทั่วไป
+Thai creative draft: บางครั้งความไม่ไว้ใจผู้คน ก็ทำให้เราอยากเว้นระยะ
+Tags: ความสัมพันธ์ | ตัวตน
+Mooca: Back View [medium] - ท่าหันหลังสื่อการเว้นระยะจากผู้คน แต่ไม่ตีความว่าโมโหหรือเกลียดจากภาพ
+Review: ไม่เท่ากับการชอบอยู่คนเดียวหรือ introversion; ร่างไทยเบากว่าความหมายต้นฉบับ
+
+catalog-v1:ooca-096 | sentence | en | status 1
+Headword: Smart people know when to act stupid.
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: dd3f3826b2f12366603911ca811337f7.jpg
+Original:
+Smart people know when to act stupid.
+Thai translation draft: คนฉลาดรู้ว่าเมื่อไรควรทำเป็นไม่ฉลาด
+Thai creative draft: บางครั้งเราก็เลือกไม่แสดงทุกอย่างที่รู้
+Tags: ตัวตน | อิสระและการเลือก
+Mooca: Playful Tilt [medium] - ท่าขี้เล่นเข้ากับน้ำเสียงมีชั้นเชิง ไม่ใช่ท่าหลอกลวงโดยตรง
+Review: ร่างไทยปรับ 'act stupid' เป็นการไม่แสดงสิ่งที่รู้
+
+catalog-v1:ooca-097 | sentence | en | status 1
+Headword: You know my name. Not my story.
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: download.png
+Original:
+You know my name. Not my story.
+Thai translation draft: คุณรู้ชื่อฉัน แต่ไม่รู้เรื่องราวของฉัน
+Thai creative draft: รู้จักชื่อ ไม่ได้แปลว่ารู้จักทั้งเรื่องราว
+Tags: ตัวตน | ขอบเขต
+Mooca: Back View [high] - ท่าหันหลังสื่อส่วนของตัวตนที่คนอื่นยังมองไม่เห็น
+Review: Black scribble below the quotation; obscured content cannot be read and is not inferred. | มีรอยขีดดำใต้ข้อความในภาพ ไม่อนุมานสิ่งที่ถูกปิดบัง
+
+catalog-v1:ooca-098 | word-definition | en | status 1
+Headword: Job interview
+Reading: จอบ อินเทอร์วิว [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: e88dd12275e1cc011cedb6a7583cc552.jpg
+Original:
+Job interview
+(n.)
+A conversation between two liars.
+Thai translation draft: การสัมภาษณ์งาน: บทสนทนาระหว่างคนโกหกสองคน
+Thai creative draft: บทสัมภาษณ์งาน บางทีก็เหมือนต่างฝ่ายต่างเล่าเฉพาะด้านที่ดีที่สุด
+Tags: ตัวตน | ความสัมพันธ์
+Mooca: Curious [low] - ท่ารอฟังคำตอบพอเชื่อมกับการสัมภาษณ์ แต่ไม่มีภาพสัมภาษณ์หรือมุกโกหกตรงตัว
+Review: ต้นฉบับเป็นมุกเสียดสี ร่างไทยเปลี่ยนจากโกหกเป็นเลือกเล่าด้านดี
+
+catalog-v1:ooca-099 | sentence | en | status 1
+Headword: reset. reflect. restart. release. refocus. recenter.
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: e8a4f41655c38e11771dd1310b7ebed8.jpg
+Original:
+reset. reflect. restart. release. refocus. recenter.
+Thai translation draft: ตั้งหลัก ทบทวน เริ่มใหม่ ปล่อยวาง กลับมาจดจ่อ และกลับมาสู่สมดุล
+Thai creative draft: ตั้งหลัก ทบทวน ปล่อยวาง แล้วค่อยเริ่มใหม่
+Tags: การพักและดูแลตนเอง | การเติบโตและความพยายาม
+Mooca: Quiet Moment [high] - ท่านั่งสงบเข้ากับการตั้งหลักและกลับมาหาสมดุล
+
+catalog-v1:ooca-100 | sentence | ja | status 1
+Headword: 気持ちをわかってほしい ♡
+Reading: kimochi o wakatte hoshii [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: ee3f03d73bcf268d788781842d459a19.jpg
+Original:
+気持ちをわかってほしい ♡
+I WANT YOU TO KNOW MY FEELINGS.
+Thai translation draft: อยากให้เธอเข้าใจความรู้สึกของฉัน
+Thai creative draft: อยากให้เธอเข้าใจ ว่าฉันรู้สึกอย่างไร
+Tags: ความสัมพันธ์ | ความเชื่อมโยง
+Mooca: Caring Listener [high] - ท่ารับฟังตรงกับความต้องการให้เข้าใจความรู้สึก
+
+catalog-v1:ooca-101 | sentence | en | status 1
+Headword: I am not shy.
+Reading:  [ยังไม่เสนอร่าง]
+Part of speech (printed source only):
+Source: ee6d028cc26e7f5979a30b8145a98c14.jpg
+Original:
+I am not shy.
+I just don’t like to talk when I have nothing meaningful to say.
+Thai translation draft: ฉันไม่ได้ขี้อาย ฉันแค่ไม่ชอบพูดเมื่อไม่มีอะไรที่มีความหมายจะพูด
+Thai creative draft: ไม่ได้ขี้อาย แค่เลือกพูดเมื่อมีสิ่งที่อยากบอก
+Tags: ตัวตน | อิสระและการเลือก
+Mooca: Quiet Moment [high] - ท่านั่งเงียบเข้ากับการเลือกไม่พูด
+Review: Very faint bottom-right attribution is not confidently readable and is not guessed. Main quote fully readable.
+
+catalog-v1:ooca-102 | word-definition | en | status 1
+Headword: I forgot
+Reading: ไอ เฟอร์กอต [คำอ่านไทยร่าง]
+Part of speech (printed source only): phrase
+Source: f1a0ddaf9b5d347e4eecd4e283b04f7b.jpg
+Original:
+I forgot
+(phr.)
+I do remember, I just don't want to talk about it.
+Thai translation draft: ฉันลืมแล้ว: จริง ๆ ฉันจำได้ แค่ไม่อยากพูดถึงมัน
+Thai creative draft: ที่บอกว่าลืม บางทีก็แค่ยังไม่อยากพูดถึง
+Tags: ขอบเขต | อารมณ์และความรู้สึก
+Mooca: Back View [high] - การหันหลังสื่อการไม่พร้อมเปิดเผยเรื่องหนึ่ง
+
+catalog-v1:ooca-103 | word-definition | en | status 1
+Headword: Genuine
+Reading: เจนยูอิน [คำอ่านไทยร่าง]
+Part of speech (printed source only):
+Source: f22ee13bc3d354554947217b3d4c4b4e.jpg
+Original:
+Genuine
+/ˈjenyōoən/
+"Truly what something is said to be; authentic."
+Thai translation draft: แท้จริง: เป็นอย่างที่กล่าวไว้จริง ๆ ไม่เสแสร้ง
+Thai creative draft: เป็นอย่างที่เราเป็น โดยไม่ต้องเสแสร้ง
+Tags: ตัวตน | คุณค่าตนเอง
+Mooca: Friendly Stand [high] - ท่ายืนเรียบง่ายเป็นธรรมชาติเข้ากับความจริงแท้
+Review: Source pronunciation is reproduced approximately; the macron spanning the oo sound should be checked against the image before publication.
+
+catalog-v1:ooca-104 | sentence | ja | status 1
+Headword: 夢で会えるから夢を見て
+Reading: yume de aeru kara yume o mite [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: f408359dd14b866db66359dc9905d95c.jpg
+Original:
+夢で会えるから夢を見て
+I dream because I can meet you in dreams
+Thai translation draft: ฉันฝัน เพราะสามารถพบเธอในความฝัน (ตามบรรทัดอังกฤษในภาพ)
+Thai creative draft: ในความฝัน ฉันยังได้พบเธอ
+Tags: ความสัมพันธ์ | ความหวังและศรัทธา
+Mooca: Moon Dreamer [high] - ตัวละครหลับบนดวงจันทร์ตรงกับการพบกันในฝัน
+Review: ภาษาญี่ปุ่นใช้รูป 夢を見て ซึ่งไม่ตรงโครงประโยคอังกฤษทั้งหมด; ร่างแปลเลือกความหมายจากอังกฤษ
+
+catalog-v1:ooca-105 | sentence | ja | status 1
+Headword: 呼吸する.
+Reading: kokyū suru [โรมาจิร่าง]
+Part of speech (printed source only):
+Source: f7726e6ccb6249b021cc801f6407918b.jpg
+Original:
+呼吸する.
+“BREATHE.”
+Thai translation draft: หายใจ
+Thai creative draft: ค่อย ๆ หายใจ
+Tags: การพักและดูแลตนเอง | อารมณ์และความรู้สึก
+Mooca: Quiet Moment [high] - ท่านั่งสงบตรงกับการหยุดและหายใจ
+
+catalog-v1:ooca-106 | word-definition | en | status 1
+Headword: Goodnight
+Reading: กูดไนต์ [คำอ่านไทยร่าง]
+Part of speech (printed source only): noun
+Source: fcbbb00e4bafc6be394f8878cf96b9a2.jpg
+Original:
+Goodnight
+(n.)
+You need to stop texting me so I can continue watching the video.
+Thai translation draft: ราตรีสวัสดิ์: คุณต้องหยุดส่งข้อความหาฉัน เพื่อให้ฉันดูวิดีโอต่อได้
+Thai creative draft: ที่บอกฝันดี ก็แค่อยากกลับไปดูวิดีโอต่อ
+Tags: ขอบเขต | ความสุขในชีวิตประจำวัน
+Mooca: Relaxing [medium] - ท่านอนสบายสื่อการพักและดูอะไรต่อ ไม่มีอุปกรณ์ดูวิดีโอในภาพ
+Review: นิยามขำขันในภาพ ไม่ใช่ความหมายตามพจนานุกรม

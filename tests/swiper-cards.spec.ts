@@ -54,7 +54,7 @@ test('cards: selection during movement uses the visible current card, and a new 
  const selected=await id(page);expect(selected).not.toBe(first);
  await button(page,'เลือกข้อความนี้').click();expect(await id(page)).toBe(selected);
  await expect(page.locator('.quote-swiper')).toHaveCount(0);
- await button(page,'จบเมื่อพร้อม').first().click();await button(page,'เริ่มรอบใหม่').click();
+ await button(page,'จบเมื่อพร้อม').first().click();await button(page,'เลือกคำใหม่').click();
  await expect(button(page,'ข้อความก่อนหน้า')).toBeDisabled();
  await expect(page.locator('.swiper-slide-active')).toHaveAttribute('data-deck-index','0');
  expect(await page.evaluate(()=>localStorage.getItem('ooca-demo:saved-quotes:v1'))).toBeNull();

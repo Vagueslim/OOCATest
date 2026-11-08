@@ -1,6 +1,7 @@
 [
   {
     "id": "catalog-v1:ooca-001",
+    "status": 1,
     "type": "sentence",
     "headword": "猿も木から落ちる。",
     "language": "ja",
@@ -9,7 +10,7 @@
     "partOfSpeech": null,
     "original": "猿も木から落ちる。\nNO ONE’S PERFECT.",
     "translation": "แม้แต่ลิงยังตกต้นไม้ได้ / ไม่มีใครสมบูรณ์แบบ",
-    "text": "แม้แต่คนที่เก่ง ก็มีวันที่พลาดได้",
+    "text": "ลิงยังตกต้นไม้",
     "tags": [
       "คุณค่าตนเอง",
       "การเติบโตและความพยายาม"
@@ -17,6 +18,7 @@
   },
   {
     "id": "catalog-v1:ooca-002",
+    "status": 1,
     "type": "word-definition",
     "headword": "CALM",
     "language": "en",
@@ -33,6 +35,7 @@
   },
   {
     "id": "catalog-v1:ooca-003",
+    "status": 1,
     "type": "word-definition",
     "headword": "Weakness",
     "language": "en",
@@ -49,6 +52,7 @@
   },
   {
     "id": "catalog-v1:ooca-004",
+    "status": 1,
     "type": "word-definition",
     "headword": "overthinking",
     "language": "en",
@@ -65,6 +69,7 @@
   },
   {
     "id": "catalog-v1:ooca-005",
+    "status": 1,
     "type": "sentence",
     "headword": "「もう、疲れたの。」",
     "language": "ja",
@@ -81,6 +86,7 @@
   },
   {
     "id": "catalog-v1:ooca-006",
+    "status": 1,
     "type": "word-definition",
     "headword": "SILENCE",
     "language": "en",
@@ -97,6 +103,7 @@
   },
   {
     "id": "catalog-v1:ooca-007",
+    "status": 1,
     "type": "word-definition",
     "headword": "freedom",
     "language": "en",
@@ -113,6 +120,7 @@
   },
   {
     "id": "catalog-v1:ooca-008",
+    "status": 1,
     "type": "word-definition",
     "headword": "dream",
     "language": "en",
@@ -129,6 +137,7 @@
   },
   {
     "id": "catalog-v1:ooca-009",
+    "status": 1,
     "type": "word-definition",
     "headword": "Focus",
     "language": "en",
@@ -137,7 +146,7 @@
     "partOfSpeech": "noun",
     "original": "Focus\n/ˈfōkəs/ noun\nSeeing the light at the end of the tunnel.\nIgnoring the noise. Putting energy into\nwhat is important. Not where you are\nbut where you want to be.",
     "translation": "การจดจ่อ: มองเห็นแสงที่ปลายอุโมงค์ เพิกเฉยต่อเสียงรบกวน ทุ่มแรงให้สิ่งสำคัญ ไม่ใช่จุดที่คุณอยู่ แต่เป็นจุดที่คุณอยากไป",
-    "text": "ค่อย ๆ วางแรงไว้กับสิ่งสำคัญ แม้รอบตัวจะมีเสียงมากมาย",
+    "text": "ค่อย ๆ ใส่ใจกับสิ่งสำคัญ แม้รอบตัวจะมีเสียงมากมาย",
     "tags": [
       "ความหมายและเป้าหมาย",
       "การเติบโตและความพยายาม"
@@ -145,6 +154,7 @@
   },
   {
     "id": "catalog-v1:ooca-010",
+    "status": 1,
     "type": "word-definition",
     "headword": "Kindness",
     "language": "en",
@@ -161,6 +171,7 @@
   },
   {
     "id": "catalog-v1:ooca-011",
+    "status": 1,
     "type": "word-definition",
     "headword": "vision",
     "language": "en",
@@ -177,6 +188,7 @@
   },
   {
     "id": "catalog-v1:ooca-012",
+    "status": 1,
     "type": "word-definition",
     "headword": "Pride.",
     "language": "en",
@@ -193,6 +205,7 @@
   },
   {
     "id": "catalog-v1:ooca-013",
+    "status": 1,
     "type": "word-definition",
     "headword": "the goals",
     "language": "en",
@@ -209,6 +222,7 @@
   },
   {
     "id": "catalog-v1:ooca-014",
+    "status": 1,
     "type": "word-definition",
     "headword": "euphoria",
     "language": "en",
@@ -217,7 +231,7 @@
     "partOfSpeech": "noun",
     "original": "euphoria\n(n.) a feeling or state of intense excitement and happiness.",
     "translation": "ความอิ่มเอมอย่างแรงกล้า: ความรู้สึกหรือภาวะที่ตื่นเต้นและมีความสุขอย่างมาก",
-    "text": "ความสุขบางครั้งก็เอ่อล้น จนอยากเก็บช่วงเวลานั้นไว้นาน ๆ",
+    "text": "ความสุขก็เอ่อล้น จนอยากเก็บช่วงเวลานั้นไว้นาน ๆ",
     "tags": [
       "อารมณ์และความรู้สึก",
       "ความสุขในชีวิตประจำวัน"
@@ -225,6 +239,7 @@
   },
   {
     "id": "catalog-v1:ooca-015",
+    "status": 1,
     "type": "word-definition",
     "headword": "rainy days",
     "language": "en",
@@ -233,7 +248,7 @@
     "partOfSpeech": "noun",
     "original": "rainy days\n/ˌself'ker/ noun\nthe best days in which curling up while watching tv and drinking tea is one of the greatest joys in life",
     "translation": "วันฝนตก: วันที่ดีที่สุดซึ่งการขดตัวดูทีวีและดื่มชาเป็นหนึ่งในความสุขที่ยิ่งใหญ่ของชีวิต",
-    "text": "วันฝนตกที่ได้ดูอะไรเพลิน ๆ กับชาร้อน อาจเป็นวันธรรมดาที่เรารัก",
+    "text": "วันฝนตกที่ได้ดูอะไรเพลิน ๆ อาจเป็นวันธรรมดา",
     "tags": [
       "ความสุขในชีวิตประจำวัน",
       "การพักและดูแลตนเอง"
@@ -241,6 +256,7 @@
   },
   {
     "id": "catalog-v1:ooca-016",
+    "status": 1,
     "type": "word-definition",
     "headword": "friend",
     "language": "en",
@@ -257,6 +273,7 @@
   },
   {
     "id": "catalog-v1:ooca-017",
+    "status": 1,
     "type": "word-definition",
     "headword": "manipulation",
     "language": "en",
@@ -265,7 +282,7 @@
     "partOfSpeech": "noun",
     "original": "manipulation\n/məˌnipyə'lāSHən/noun\nThe action of manipulating someone to get them to act or feel a certain way. If someone blames you and makes you feel guilty for reacting to their lack of respect, you are probably being manipulated.",
     "translation": "การบงการ: การชักใยผู้อื่นให้กระทำหรือรู้สึกตามต้องการ หากใครโทษคุณและทำให้คุณรู้สึกผิดที่ตอบโต้การไม่ให้เกียรติของเขา คุณอาจกำลังถูกบงการอยู่ (คำกล่าวตามต้นฉบับ ไม่ใช่เกณฑ์วินิจฉัย)",
-    "text": "เมื่อใครทำให้เรารู้สึกผิดที่ไม่ยอมตามเขา เราอาจต้องกลับมามองขอบเขตของตัวเอง",
+    "text": "เมื่อใครทำให้เรารู้สึกผิดที่ไม่ยอมตามเขา เราอาจต้องกลับมาทบทวนตัวเอง",
     "tags": [
       "ขอบเขต",
       "ความสัมพันธ์"
@@ -273,6 +290,7 @@
   },
   {
     "id": "catalog-v1:ooca-018",
+    "status": 1,
     "type": "word-definition",
     "headword": "ambition",
     "language": "en",
@@ -289,6 +307,7 @@
   },
   {
     "id": "catalog-v1:ooca-019",
+    "status": 1,
     "type": "word-definition",
     "headword": "Lazy perfectionist",
     "language": "en",
@@ -305,6 +324,7 @@
   },
   {
     "id": "catalog-v1:ooca-020",
+    "status": 1,
     "type": "word-definition",
     "headword": "consistency",
     "language": "en",
@@ -313,7 +333,7 @@
     "partOfSpeech": "noun",
     "original": "consistency\n[kən-si-stən-sē] noun • English\nthe ability to replicate a process or activity with the same level or quality over and over again. the adherence of the same principles in a steadfast way. consistency is what transforms average into excellence.",
     "translation": "ความสม่ำเสมอ: ความสามารถในการทำกระบวนการหรือกิจกรรมซ้ำด้วยระดับหรือคุณภาพเดิม การยึดหลักการเดิมอย่างมั่นคง ความสม่ำเสมอคือสิ่งที่เปลี่ยนความธรรมดาให้เป็นความยอดเยี่ยม",
-    "text": "สิ่งเล็ก ๆ ที่กลับมาทำซ้ำ อาจค่อย ๆ กลายเป็นสิ่งที่เราไว้ใจในตัวเอง",
+    "text": "สิ่งเล็กๆ ที่กลับมาทำซ้ำ อาจค่อยๆ กลายเป็นสิ่งที่เราไว้ใจในตัวเอง",
     "tags": [
       "การเติบโตและความพยายาม",
       "ความหมายและเป้าหมาย"
@@ -321,6 +341,7 @@
   },
   {
     "id": "catalog-v1:ooca-021",
+    "status": 1,
     "type": "sentence",
     "headword": "月って綺麗ですよね？",
     "language": "ja",
@@ -329,7 +350,7 @@
     "partOfSpeech": null,
     "original": "月って綺麗ですよね？\nThe moon is beautiful isn’t it?",
     "translation": "พระจันทร์สวยใช่ไหม",
-    "text": "พระจันทร์คืนนี้สวยนะ เธอเห็นเหมือนกันไหม",
+    "text": "พระจันทร์คืนนี้สวยนะ  ออกไปดูไหม",
     "tags": [
       "ความสุขในชีวิตประจำวัน",
       "ความเชื่อมโยง"
@@ -337,6 +358,7 @@
   },
   {
     "id": "catalog-v1:ooca-022",
+    "status": 1,
     "type": "word-definition",
     "headword": "family",
     "language": "en",
@@ -353,6 +375,7 @@
   },
   {
     "id": "catalog-v1:ooca-023",
+    "status": 1,
     "type": "word-definition",
     "headword": "Success",
     "language": "en",
@@ -361,7 +384,7 @@
     "partOfSpeech": "noun",
     "original": "Success\n/səkˈses/ noun\nSuccess is measured by achieving\nyour own goals and ambitions.\nAlways do your best in everything and\nyou will achieve success. Overcoming\na fear of failure will lead to success in\nthe future. If you believe you can,\nyou will succeed.",
     "translation": "ความสำเร็จ: วัดจากการบรรลุเป้าหมายและความใฝ่ฝันของคุณเอง จงทำทุกอย่างให้ดีที่สุดแล้วคุณจะสำเร็จ การเอาชนะความกลัวความล้มเหลวจะนำไปสู่ความสำเร็จในอนาคต หากเชื่อว่าทำได้ คุณจะสำเร็จ (เป็นคำกล่าวของต้นฉบับ ไม่ใช่การรับรองผล)",
-    "text": "การไปถึงเป้าหมายของตัวเอง อาจมีหน้าตาไม่เหมือนความสำเร็จของใคร",
+    "text": "ฝันไม่ได้มีแค่อย่างเดียว",
     "tags": [
       "การเติบโตและความพยายาม",
       "ความหมายและเป้าหมาย"
@@ -369,6 +392,7 @@
   },
   {
     "id": "catalog-v1:ooca-024",
+    "status": 1,
     "type": "word-definition",
     "headword": "self-care",
     "language": "en",
@@ -385,6 +409,7 @@
   },
   {
     "id": "catalog-v1:ooca-025",
+    "status": 1,
     "type": "word-definition",
     "headword": "philomath",
     "language": "en",
@@ -393,7 +418,7 @@
     "partOfSpeech": "noun",
     "original": "philomath ['fil•uh•math]\n(n.) a lover of learning",
     "translation": "ผู้รักการเรียนรู้",
-    "text": "คนที่ยังอยากรู้อะไรใหม่ ๆ แม้ไม่มีใครสั่งให้เรียน",
+    "text": "คนที่ยังอยากรู้อะไรใหม่ ๆ แม้ไม่มีใครบอกให้เรียน",
     "tags": [
       "ตัวตน",
       "การเติบโตและความพยายาม"
@@ -401,6 +426,7 @@
   },
   {
     "id": "catalog-v1:ooca-026",
+    "status": 1,
     "type": "word-definition",
     "headword": "Home",
     "language": "en",
@@ -417,6 +443,7 @@
   },
   {
     "id": "catalog-v1:ooca-027",
+    "status": 1,
     "type": "sentence",
     "headword": "そばにいてね？",
     "language": "ja",
@@ -433,6 +460,7 @@
   },
   {
     "id": "catalog-v1:ooca-028",
+    "status": 1,
     "type": "word-definition",
     "headword": "faith",
     "language": "en",
@@ -449,6 +477,7 @@
   },
   {
     "id": "catalog-v1:ooca-029",
+    "status": 1,
     "type": "word-definition",
     "headword": "Introvert",
     "language": "en",
@@ -465,6 +494,7 @@
   },
   {
     "id": "catalog-v1:ooca-030",
+    "status": 1,
     "type": "word-definition",
     "headword": "No.",
     "language": "en",
@@ -481,6 +511,7 @@
   },
   {
     "id": "catalog-v1:ooca-031",
+    "status": 1,
     "type": "word-definition",
     "headword": "free·dom",
     "language": "en",
@@ -497,6 +528,7 @@
   },
   {
     "id": "catalog-v1:ooca-032",
+    "status": 1,
     "type": "word-definition",
     "headword": "SELF-RESPECT",
     "language": "en",
@@ -513,6 +545,7 @@
   },
   {
     "id": "catalog-v1:ooca-033",
+    "status": 1,
     "type": "word-definition",
     "headword": "respect",
     "language": "en",
@@ -529,6 +562,7 @@
   },
   {
     "id": "catalog-v1:ooca-034",
+    "status": 1,
     "type": "word-definition",
     "headword": "sacrifice",
     "language": "en",
@@ -545,6 +579,7 @@
   },
   {
     "id": "catalog-v1:ooca-035",
+    "status": 1,
     "type": "word-definition",
     "headword": "Textrovert",
     "language": "en",
@@ -561,6 +596,7 @@
   },
   {
     "id": "catalog-v1:ooca-036",
+    "status": 1,
     "type": "word-definition",
     "headword": "hero",
     "language": "en",
@@ -569,7 +605,7 @@
     "partOfSpeech": "noun",
     "original": "hero\n[he-ro] noun.\n\none who is admired for their courage,\noutstanding achievements,\nor moral qualities.",
     "translation": "วีรบุรุษหรือผู้ที่ได้รับการชื่นชม: คนที่ได้รับความชื่นชมจากความกล้าหาญ ผลงานโดดเด่น หรือคุณธรรม",
-    "text": "คนที่ทำให้เรานึกชื่นชม อาจกล้าหาญ ทำสิ่งสำคัญ หรือยืนหยัดในสิ่งที่ดี",
+    "text": "คนที่ทำให้เรานึกชื่นชม หรือยืนหยัดในสิ่งที่ดี",
     "tags": [
       "ความสัมพันธ์",
       "การเติบโตและความพยายาม"
@@ -577,6 +613,7 @@
   },
   {
     "id": "catalog-v1:ooca-037",
+    "status": 1,
     "type": "word-definition",
     "headword": "melancholy",
     "language": "en",
@@ -593,6 +630,7 @@
   },
   {
     "id": "catalog-v1:ooca-038",
+    "status": 1,
     "type": "word-definition",
     "headword": "Introvert",
     "language": "en",
@@ -609,6 +647,7 @@
   },
   {
     "id": "catalog-v1:ooca-039",
+    "status": 1,
     "type": "word-definition",
     "headword": "joy",
     "language": "en",
@@ -617,7 +656,7 @@
     "partOfSpeech": "noun",
     "original": "joy\nnoun (joi)\n\nchoosing happiness even in darkness.\ngladness not based on circumstance.\nthe simple essence of life.",
     "translation": "ความยินดี: การเลือกความสุขแม้ในความมืด ความยินดีที่ไม่ขึ้นกับสถานการณ์ แก่นเรียบง่ายของชีวิต",
-    "text": "ในวันที่ไม่สว่างทั้งหมด เราอาจยังพบความยินดีบางอย่างได้",
+    "text": "เรายังพบความยินดีบางอย่างได้",
     "tags": [
       "ความสุขในชีวิตประจำวัน",
       "อารมณ์และความรู้สึก"
@@ -625,6 +664,7 @@
   },
   {
     "id": "catalog-v1:ooca-040",
+    "status": 1,
     "type": "word-definition",
     "headword": "Strength",
     "language": "en",
@@ -641,6 +681,7 @@
   },
   {
     "id": "catalog-v1:ooca-041",
+    "status": 1,
     "type": "sentence",
     "headword": "1%\nBetter\nEvery\nDay.\nImprove 1% daily, and in a year, you'll be 37x better. Whether in personal growth, fitness, learning, or productivity, small steps lead to extraordinary results. Progress adds up.",
     "language": "en",
@@ -657,6 +698,7 @@
   },
   {
     "id": "catalog-v1:ooca-042",
+    "status": 1,
     "type": "word-definition",
     "headword": "Winner.",
     "language": "en",
@@ -673,6 +715,7 @@
   },
   {
     "id": "catalog-v1:ooca-043",
+    "status": 1,
     "type": "word-definition",
     "headword": "music",
     "language": "en",
@@ -689,6 +732,7 @@
   },
   {
     "id": "catalog-v1:ooca-044",
+    "status": 1,
     "type": "word-definition",
     "headword": "home",
     "language": "en",
@@ -705,6 +749,7 @@
   },
   {
     "id": "catalog-v1:ooca-045",
+    "status": 1,
     "type": "word-definition",
     "headword": "Alone",
     "language": "en",
@@ -721,8 +766,9 @@
   },
   {
     "id": "catalog-v1:ooca-046",
+    "status": 1,
     "type": "sentence",
-    "headword": "777\n• LUCK •\nWonderful things are about to happen. You are headed in the right direction and you're already aligning with your true self. You're in the right frequency of manifesting your dreams.",
+    "headword": "777",
     "language": "en",
     "reading": null,
     "readingKind": "คำอ่านไทยร่าง",
@@ -737,6 +783,7 @@
   },
   {
     "id": "catalog-v1:ooca-047",
+    "status": 1,
     "type": "word-definition",
     "headword": "Sloth.",
     "language": "en",
@@ -745,7 +792,7 @@
     "partOfSpeech": null,
     "original": "Sloth.\nA refusal to act despite ability. You neglect\nduties and growth. You choose comfort over\nresponsibility.",
     "translation": "ความเกียจคร้าน: การปฏิเสธลงมือทั้งที่มีความสามารถ ละเลยหน้าที่และการเติบโต เลือกความสบายมากกว่าความรับผิดชอบ",
-    "text": "บางครั้งเรารู้ว่าทำได้ แต่ยังเลือกไม่ลงมือ",
+    "text": "รู้ว่าทำได้ แต่ยังเลือกไม่ลงมือ",
     "tags": [
       "ตัวตน",
       "การเติบโตและความพยายาม"
@@ -753,6 +800,7 @@
   },
   {
     "id": "catalog-v1:ooca-048",
+    "status": 1,
     "type": "word-definition",
     "headword": "hope",
     "language": "en",
@@ -761,7 +809,7 @@
     "partOfSpeech": "noun",
     "original": "hope\n[hōp] noun\n\nthe feeling that what is wanted can be had or that\nevents will turn out for the best; to believe, desire;\nto place trust; rely",
     "translation": "ความหวัง: ความรู้สึกว่าสิ่งที่ต้องการอาจได้มา หรือเหตุการณ์จะออกมาดีที่สุด การเชื่อ ปรารถนา วางใจ และพึ่งพา",
-    "text": "ยังมีบางสิ่งที่เราอยากให้เกิดขึ้น และยังอยากวางใจในวันข้างหน้า",
+    "text": "ยังมีบางสิ่งที่เราอยากให้เกิดขึ้น และยังอยาสบายใจในวันข้างหน้า",
     "tags": [
       "ความหวังและศรัทธา",
       "อารมณ์และความรู้สึก"
@@ -769,6 +817,7 @@
   },
   {
     "id": "catalog-v1:ooca-049",
+    "status": 1,
     "type": "word-definition",
     "headword": "Impossible",
     "language": "en",
@@ -785,6 +834,7 @@
   },
   {
     "id": "catalog-v1:ooca-050",
+    "status": 1,
     "type": "word-definition",
     "headword": "Emotion",
     "language": "en",
@@ -801,8 +851,9 @@
   },
   {
     "id": "catalog-v1:ooca-051",
+    "status": 1,
     "type": "sentence",
-    "headword": "I'm a\nThinker\nNot a\nTalker\n#INTROVERT",
+    "headword": "#INTROVERT",
     "language": "en",
     "reading": null,
     "readingKind": "คำอ่านไทยร่าง",
@@ -817,6 +868,7 @@
   },
   {
     "id": "catalog-v1:ooca-052",
+    "status": 1,
     "type": "word-definition",
     "headword": "Self love",
     "language": "en",
@@ -833,6 +885,7 @@
   },
   {
     "id": "catalog-v1:ooca-053",
+    "status": 1,
     "type": "word-definition",
     "headword": "hope",
     "language": "en",
@@ -846,5 +899,906 @@
       "ความหวังและศรัทธา",
       "ความเชื่อมโยง"
     ]
+  },
+  {
+    "id": "catalog-v1:ooca-054",
+    "type": "word-definition",
+    "headword": "gaslighting",
+    "language": "en",
+    "reading": "แกสไลทิง",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "gaslighting\n/GAS-lye-ting/\nnoun\na form of psychological manipulation where someone causes another person to doubt their memory, perception, or reality",
+    "translation": "การบิดเบือนให้ผู้อื่นสงสัยตัวเอง: รูปแบบหนึ่งของการบงการทางจิตใจที่ทำให้อีกคนสงสัยความทรงจำ การรับรู้ หรือความเป็นจริงของตน",
+    "text": "เมื่อใครทำให้เราสงสัยสิ่งที่ตัวเองรับรู้ ลองถอยมาฟังตัวเองอีกครั้ง",
+    "tags": [
+      "ขอบเขต",
+      "ความสัมพันธ์"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-055",
+    "type": "word-definition",
+    "headword": "Atelophobia",
+    "language": "en",
+    "reading": "อะเทโลโฟเบีย",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "Atelophobia\n[A-tel-o-pho-bia]\nThe fear of imperfection. The fear of never being good enough.",
+    "translation": "ความกลัวความไม่สมบูรณ์แบบ ความกลัวว่าจะไม่ดีพอเสมอ",
+    "text": "บางครั้งสิ่งที่กลัว ไม่ใช่ความผิดพลาด แต่เป็นความรู้สึกว่าเรายังดีไม่พอ",
+    "tags": [
+      "คุณค่าตนเอง",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-056",
+    "type": "word-definition",
+    "headword": "My sleeping pattern",
+    "language": "en",
+    "reading": "มาย สลีพพิง แพตเทิร์น",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "My sleeping pattern\n(n.)\nIt isn't even a pattern anymore it's a freestyle.",
+    "translation": "รูปแบบการนอนของฉัน: ตอนนี้ไม่เป็นรูปแบบอะไรแล้ว เป็นฟรีสไตล์ไปแล้ว",
+    "text": "ตารางนอนช่วงนี้ ไม่มีรูปแบบ มีแต่ฟรีสไตล์",
+    "tags": [
+      "การพักและดูแลตนเอง",
+      "ตัวตน"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-057",
+    "type": "word-definition",
+    "headword": "stigma",
+    "language": "en",
+    "reading": "สติกมา",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "stigma\n[stig-muh]\nnoun\na mark of disgrace or a deeply felt scar left by guilt or trauma;",
+    "translation": "ตราบาป: ร่องรอยแห่งความอับอาย หรือแผลลึกในใจที่ความรู้สึกผิดหรือบาดแผลทางใจทิ้งไว้",
+    "text": "บางรอยแผลมองไม่เห็น แต่เรายังรู้สึกถึงมัน",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "คุณค่าตนเอง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-058",
+    "type": "word-definition",
+    "headword": "soul",
+    "language": "en",
+    "reading": "โซล",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "soul\n[soʊl]\nnoun • English\nYour soul is the part of you that consists of your mind, character, thoughts, and feelings. Many people believe that your soul continues existin...",
+    "translation": "จิตวิญญาณ: ส่วนหนึ่งของคุณที่ประกอบด้วยจิตใจ บุคลิก ความคิด และความรู้สึก หลายคนเชื่อว่าจิตวิญญาณของคุณยังคงดำรง... (ข้อความในภาพจบที่ “existin...”)",
+    "text": "บางสิ่งที่เป็นเรา อยู่ในความคิด ความรู้สึก และตัวตนข้างใน",
+    "tags": [
+      "ตัวตน",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-059",
+    "type": "sentence",
+    "headword": "“你要的不是我”",
+    "language": "zh",
+    "reading": "nǐ yào de bú shì wǒ",
+    "readingKind": "พินอินร่าง",
+    "partOfSpeech": null,
+    "original": "“你要的不是我”\nThe one you need isn’t me.",
+    "translation": "คนที่เธอต้องการไม่ใช่ฉัน",
+    "text": "บางครั้งคนที่เขาต้องการ ก็ไม่ใช่เรา",
+    "tags": [
+      "ความสัมพันธ์",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-060",
+    "type": "word-definition",
+    "headword": "Blend",
+    "language": "en",
+    "reading": "เบลนด์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "verb",
+    "original": "Blend\n{ blend }\nverb.\nTo bring different things together and create something more beautiful than they were alone / A quiet reminder that contrasts can coexist, and that good things often grow in the in-between.",
+    "translation": "ผสมผสาน: นำสิ่งต่าง ๆ มารวมกันและสร้างสิ่งที่งดงามกว่าตอนอยู่ลำพัง เป็นเครื่องเตือนใจเบา ๆ ว่าความแตกต่างอยู่ร่วมกันได้ และสิ่งดี ๆ มักเติบโตในพื้นที่ระหว่างกัน",
+    "text": "ความต่างอาจอยู่ร่วมกัน แล้วกลายเป็นสิ่งงดงามอีกแบบ",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความเชื่อมโยง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-061",
+    "type": "sentence",
+    "headword": "NERD ?",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "NERD ?\nYes I am, and proud to be smarter than you.",
+    "translation": "เด็กเนิร์ดเหรอ? ใช่ ฉันเป็น และภูมิใจที่ฉลาดกว่าเธอ",
+    "text": "เรียกเนิร์ดก็ได้ ฉันภูมิใจกับสิ่งที่ตัวเองรู้",
+    "tags": [
+      "ตัวตน",
+      "คุณค่าตนเอง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-062",
+    "type": "sentence",
+    "headword": "一切都是有原因的",
+    "language": "zh",
+    "reading": "yí qiè dōu shì yǒu yuán yīn de",
+    "readingKind": "พินอินร่าง",
+    "partOfSpeech": null,
+    "original": "一切都是有原因的\nEverything has a reason.",
+    "translation": "ทุกอย่างล้วนมีเหตุผล",
+    "text": "ทุกเรื่องอาจมีเหตุผลของมัน แม้ตอนนี้เรายังไม่เข้าใจ",
+    "tags": [
+      "ความหมายและเป้าหมาย",
+      "ความหวังและศรัทธา"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-063",
+    "type": "word-definition",
+    "headword": "Envy.",
+    "language": "en",
+    "reading": "เอนวี",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "Envy.\nBitterness toward others’ success or happiness. You compare yourself constantly. You wish to have what others own.",
+    "translation": "ความอิจฉา: ความขมขื่นต่อความสำเร็จหรือความสุขของผู้อื่น คุณเปรียบเทียบตัวเองอยู่เสมอ และอยากมีสิ่งที่คนอื่นมี",
+    "text": "บางครั้งเรามองสิ่งที่คนอื่นมี จนลืมมองสิ่งที่เป็นของเรา",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "คุณค่าตนเอง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-064",
+    "type": "sentence",
+    "headword": "答應我.",
+    "language": "zh",
+    "reading": "dā yìng wǒ",
+    "readingKind": "พินอินร่าง",
+    "partOfSpeech": null,
+    "original": "答應我.\n“Promise me.”",
+    "translation": "สัญญากับฉันนะ",
+    "text": "สัญญากับฉันได้ไหม",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความเชื่อมโยง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-065",
+    "type": "word-definition",
+    "headword": "Mindset",
+    "language": "en",
+    "reading": "มายด์เซต",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "Mindset\nThe driving force in the quest for success and achievement. A mindset that combines discipline, strength, confidence, and ambition is a powerful mindset. This can achieve anything it sets its sights on.\n\nA powerful mind can achieve anything.",
+    "translation": "กรอบความคิด: แรงขับในการแสวงหาความสำเร็จและผลสัมฤทธิ์ กรอบความคิดที่รวมวินัย ความเข้มแข็ง ความมั่นใจ และความทะเยอทะยานเป็นกรอบความคิดที่ทรงพลัง ซึ่งสามารถบรรลุทุกสิ่งที่มุ่งหมาย จิตใจที่ทรงพลังทำได้ทุกอย่าง",
+    "text": "วินัย ความเชื่อมั่น และความตั้งใจ ช่วยให้เราเดินไปหาเป้าหมาย",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-066",
+    "type": "sentence",
+    "headword": "私と一緒にいて",
+    "language": "ja",
+    "reading": "watashi to issho ni ite",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "私と一緒にいて\nstay with me",
+    "translation": "อยู่กับฉันนะ",
+    "text": "อยู่ด้วยกันก่อนนะ",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความเชื่อมโยง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-067",
+    "type": "word-definition",
+    "headword": "Peace.",
+    "language": "en",
+    "reading": "พีซ",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Peace.\n/pi:s /\nnoun\nsomething that is sometimes better than “being right”.",
+    "translation": "ความสงบ: สิ่งที่บางครั้งดีกว่าการเป็นฝ่ายถูก",
+    "text": "บางครั้งความสงบสำคัญกว่าการเอาชนะว่าใครถูก",
+    "tags": [
+      "ขอบเขต",
+      "การพักและดูแลตนเอง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-068",
+    "type": "sentence",
+    "headword": "I need a huge amount of money",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "I need a huge amount of money",
+    "translation": "ฉันต้องการเงินจำนวนมหาศาล (เล่นตัวอักษรให้ตอนแรกอ่านว่า “ฉันต้องการกอด” ก่อนคำเล็กเติม hug เป็น huge)",
+    "text": "อยากได้กอด... หรือเงินจริง ๆ จำนวนมหาศาลก็ได้นะ",
+    "tags": [
+      "ตัวตน",
+      "ความสุขในชีวิตประจำวัน"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-069",
+    "type": "sentence",
+    "headword": "沈黙を楽しんで",
+    "language": "ja",
+    "reading": "chinmoku o tanoshinde",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "沈黙を楽しんで\nENJOY THE SILENCE",
+    "translation": "เพลิดเพลินกับความเงียบ",
+    "text": "ลองอยู่กับความเงียบสักครู่",
+    "tags": [
+      "การพักและดูแลตนเอง",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-070",
+    "type": "sentence",
+    "headword": "我是我的魔鬼",
+    "language": "zh",
+    "reading": "wǒ shì wǒ de mó guǐ",
+    "readingKind": "พินอินร่าง",
+    "partOfSpeech": null,
+    "original": "我是我的魔鬼\ni am my demon.",
+    "translation": "ฉันคือปีศาจของตัวเอง",
+    "text": "บางครั้งสิ่งที่ต้องเผชิญ ก็อยู่ในใจเราเอง",
+    "tags": [
+      "ตัวตน",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-071",
+    "type": "sentence",
+    "headword": "はじめるのが遅くても やらないよりはいい。",
+    "language": "ja",
+    "reading": "hajimeru no ga osokute mo yaranai yori wa ii.",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "はじめるのが遅くても やらないよりはいい。\nBetter late than never.",
+    "translation": "แม้จะเริ่มช้า ก็ยังดีกว่าไม่ทำเลย",
+    "text": "เริ่มช้าหน่อย ก็ยังดีกว่าไม่เริ่ม",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหวังและศรัทธา"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-072",
+    "type": "sentence",
+    "headword": "\"THAT'S ME\"",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "\"THAT'S ME\"\nMature by mind, Kid by heart, Rude from outside, Caring from Inside.",
+    "translation": "นั่นแหละฉัน: ความคิดเป็นผู้ใหญ่ หัวใจเป็นเด็ก ภายนอกดูหยาบกระด้าง แต่ข้างในใส่ใจ",
+    "text": "คิดเป็นผู้ใหญ่ ใจยังเป็นเด็ก ภายนอกดูแข็ง แต่ข้างในยังแคร์",
+    "tags": [
+      "ตัวตน",
+      "ความสัมพันธ์"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-073",
+    "type": "word-definition",
+    "headword": "Life",
+    "language": "en",
+    "reading": "ไลฟ์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Life\n(n.)\nA party, but I'm the piñata.",
+    "translation": "ชีวิต: งานปาร์ตี้ที่ฉันเป็นปิญาตา (หุ่นที่ถูกตีให้ขนมข้างในหล่นออกมา)",
+    "text": "ชีวิตเหมือนงานปาร์ตี้ แต่บางวันเราคือปิญาตาที่โดนตี",
+    "tags": [
+      "ตัวตน",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-074",
+    "type": "sentence",
+    "headword": "I'm a 404 human error",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "I'm a 404 human error\nERR_NAME_NOT_RESOLVED",
+    "translation": "ฉันคือข้อผิดพลาดมนุษย์ 404 / ERR_NAME_NOT_RESOLVED",
+    "text": "วันนี้ระบบมนุษย์ของฉันขึ้น 404",
+    "tags": [
+      "ตัวตน",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-075",
+    "type": "word-definition",
+    "headword": "Happiness",
+    "language": "en",
+    "reading": "แฮพพิเนส",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Happiness\nhap·pi·ness | \\ ˈha-pē-nəs \\\nnoun\na: a pleasurable or satisfying experience.\nb: the experience of joy, contentment, or positive well-being, combined with a sense that one’s life is good, meaningful, and worthwhile.",
+    "translation": "ความสุข: ก. ประสบการณ์ที่น่าพอใจหรือให้ความพึงพอใจ ข. ประสบการณ์ของความยินดี ความอิ่มใจ หรือความเป็นอยู่ที่ดี ร่วมกับความรู้สึกว่าชีวิตของตนดี มีความหมาย และคุ้มค่า",
+    "text": "ความสุขอาจเป็นทั้งช่วงเวลาที่พอใจ และความรู้สึกว่าชีวิตนี้มีความหมาย",
+    "tags": [
+      "ความสุขในชีวิตประจำวัน",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-076",
+    "type": "sentence",
+    "headword": "夢は美しいが現実は残酷",
+    "language": "ja",
+    "reading": "yume wa utsukushii ga genjitsu wa zankoku",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "夢は美しいが現実は残酷\nDream are beautiful but the reality is cruel",
+    "translation": "ความฝันงดงาม แต่ความจริงโหดร้าย",
+    "text": "ความฝันสวยงาม แต่บางวันความจริงก็หนักหนา",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-077",
+    "type": "sentence",
+    "headword": "Better than yesterday, that’s the goal.",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "Better than yesterday, that’s the goal.",
+    "translation": "ดีกว่าเมื่อวาน นั่นคือเป้าหมาย",
+    "text": "เป้าหมายวันนี้ คือดีกว่าเมื่อวานของเรา",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-078",
+    "type": "word-definition",
+    "headword": "LOL",
+    "language": "en",
+    "reading": "แอล โอ แอล",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "abbreviation",
+    "original": "LOL\n(abbr.)\nI’ve nothing else to say.",
+    "translation": "LOL: ฉันไม่มีอะไรจะพูดแล้ว (นิยามขำขันในภาพ ไม่ใช่คำขยายมาตรฐานของตัวย่อ)",
+    "text": "บางทีที่พิมพ์ LOL ก็แค่ไม่รู้จะพูดอะไรต่อ",
+    "tags": [
+      "ตัวตน",
+      "ความสัมพันธ์"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-079",
+    "type": "word-definition",
+    "headword": "Expectations",
+    "language": "en",
+    "reading": "เอ็กซ์เพกเทชันส์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Expectations\n(n.)\nOne of the main causes of disappointment.",
+    "translation": "ความคาดหวัง: หนึ่งในสาเหตุหลักของความผิดหวัง",
+    "text": "บางครั้งที่ผิดหวัง เพราะเราเคยคาดหวังไว้มาก",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "ความหวังและศรัทธา"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-080",
+    "type": "word-definition",
+    "headword": "Missed calls",
+    "language": "en",
+    "reading": "มิสต์ คอลส์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Missed calls\n(n.)\nI don't miss them. I just stare at it and don't answer.",
+    "translation": "สายที่ไม่ได้รับ: ฉันไม่ได้พลาดสาย ฉันแค่จ้องมันแล้วไม่รับ",
+    "text": "ไม่ได้พลาดสาย แค่ยังไม่อยากรับ",
+    "tags": [
+      "ขอบเขต",
+      "ตัวตน"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-081",
+    "type": "sentence",
+    "headword": "知ってる",
+    "language": "ja",
+    "reading": "shitteru",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "知ってる\nI know.",
+    "translation": "รู้แล้ว",
+    "text": "ฉันรู้แล้ว",
+    "tags": [
+      "ตัวตน",
+      "ความสัมพันธ์"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-082",
+    "type": "sentence",
+    "headword": "美しき残酷な世界",
+    "language": "ja",
+    "reading": "utsukushiki zankoku na sekai",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "美しき残酷な世界\nうつく　ざんこく　せかい\nThis beautiful cruel world",
+    "translation": "โลกที่งดงามและโหดร้ายนี้",
+    "text": "โลกใบเดียวกัน มีทั้งความงามและความโหดร้าย",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-083",
+    "type": "sentence",
+    "headword": "Lock tf in and finish out this year strong.",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "Lock tf in and finish out this year strong.",
+    "translation": "ตั้งใจให้เต็มที่ แล้วปิดท้ายปีนี้อย่างแข็งแกร่ง (tf เป็นตัวย่อคำสบถเพื่อเน้นน้ำเสียง)",
+    "text": "กลับมาตั้งใจ แล้วจบปีนี้ให้เต็มที่",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-084",
+    "type": "word-definition",
+    "headword": "Forgiveness.",
+    "language": "en",
+    "reading": "เฟอร์กิฟเนส",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Forgiveness.\n/fərˈɡɪvnəs /\nnoun\na gift you give yourself.",
+    "translation": "การให้อภัย: ของขวัญที่คุณมอบให้ตัวเอง",
+    "text": "บางครั้งการให้อภัย คือของขวัญที่เรามอบให้ตัวเอง",
+    "tags": [
+      "ความสัมพันธ์",
+      "การพักและดูแลตนเอง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-085",
+    "type": "word-definition",
+    "headword": "I’m fine",
+    "language": "en",
+    "reading": "ไอม์ ไฟน์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "phrase",
+    "original": "I’m fine\n(phr.)\nNot dead, still alive.",
+    "translation": "ฉันสบายดี: ยังไม่ตาย ยังมีชีวิตอยู่",
+    "text": "ที่บอกว่าสบายดี บางทีก็แค่ยังพอไหว",
+    "tags": [
+      "อารมณ์และความรู้สึก",
+      "การพักและดูแลตนเอง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-086",
+    "type": "word-definition",
+    "headword": "Hustle",
+    "language": "en",
+    "reading": "ฮัสเซิล",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "verb",
+    "original": "Hustle\n/ˈhəs(ə)l/\nverb\nTo have self-belief, courage, determination, and work ethic to put yourself out there to achieve your goals. Often characterized by persisting in the face of adversity.",
+    "translation": "มุ่งมั่นลงมือทำ: มีความเชื่อในตัวเอง ความกล้า ความตั้งใจ และวินัยในการทำงาน เพื่อออกไปทำตามเป้าหมาย มักแสดงผ่านการไม่ยอมแพ้เมื่อเผชิญอุปสรรค",
+    "text": "เชื่อในตัวเอง แล้วค่อย ๆ ลงมือ แม้ระหว่างทางจะไม่ง่าย",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-087",
+    "type": "sentence",
+    "headword": "私は恐れた悪魔と踊った。",
+    "language": "ja",
+    "reading": "watashi wa osoreta akuma to odotta.",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "私は恐れた悪魔と踊った。\nI danced with the demons I feared.",
+    "translation": "ฉันเต้นรำกับปีศาจที่เคยกลัว",
+    "text": "ฉันได้เผชิญสิ่งที่เคยหวาดกลัว",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-088",
+    "type": "sentence",
+    "headword": "君はひとりじゃないから",
+    "language": "ja",
+    "reading": "kimi wa hitori ja nai kara",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "君はひとりじゃないから\nYou're not alone.",
+    "translation": "เพราะเธอไม่ได้อยู่คนเดียว / เธอไม่ได้อยู่ลำพัง",
+    "text": "เธอไม่ได้อยู่คนเดียวนะ",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความใส่ใจ"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-089",
+    "type": "sentence",
+    "headword": "B > (1/n) ∑ᵢ₌₁ⁿ xᵢ",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "B > (1/n) ∑ᵢ₌₁ⁿ xᵢ\n(be greater than average)",
+    "translation": "จงเหนือกว่าค่าเฉลี่ย (B เล่นเสียงเป็น be และด้านขวาคือสูตรค่าเฉลี่ยเลขคณิต)",
+    "text": "ค่อย ๆ พาตัวเองไปให้ไกลกว่าเดิม",
+    "tags": [
+      "การเติบโตและความพยายาม",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-090",
+    "type": "sentence",
+    "headword": "“对不起, 让你遇上了我",
+    "language": "zh",
+    "reading": "duì bù qǐ, ràng nǐ yù shàng le wǒ",
+    "readingKind": "พินอินร่าง",
+    "partOfSpeech": null,
+    "original": "“对不起, 让你遇上了我\nI’m sorry that you met me.”",
+    "translation": "ขอโทษที่ทำให้เธอได้มาพบฉัน",
+    "text": "บางครั้งเราเสียใจ ที่การพบกันไม่ได้เป็นอย่างที่หวัง",
+    "tags": [
+      "ความสัมพันธ์",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-091",
+    "type": "sentence",
+    "headword": "きっと僕にわはじめから羽なんて中って",
+    "language": "ja",
+    "reading": null,
+    "readingKind": "รอตรวจภาษาญี่ปุ่น",
+    "partOfSpeech": null,
+    "original": "きっと僕にわはじめから羽なんて中って\nSurely right from the start I never had wings.",
+    "translation": "คงเป็นเพราะฉันไม่เคยมีปีกตั้งแต่แรก (แปลจากอังกฤษในภาพ; ประโยคญี่ปุ่นพิมพ์ผิดและยังไม่แก้)",
+    "text": "บางครั้งเรารู้สึกเหมือนไม่เคยมีปีกมาตั้งแต่แรก",
+    "tags": [
+      "ตัวตน",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-092",
+    "type": "word-definition",
+    "headword": "Everything happens for a reason",
+    "language": "en",
+    "reading": "เอฟวรีธิง แฮพเพนส์ ฟอร์ อะ รีซัน",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "phrase",
+    "original": "Everything happens for a reason\n(phr.)\nSometimes the reason is you're stupid and make bad decisions.",
+    "translation": "ทุกอย่างเกิดขึ้นด้วยเหตุผล: บางครั้งเหตุผลก็คือคุณโง่และตัดสินใจแย่",
+    "text": "บางเรื่องที่เกิดขึ้น ก็เริ่มจากการตัดสินใจพลาดของเราเอง",
+    "tags": [
+      "ตัวตน",
+      "การเติบโตและความพยายาม"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-093",
+    "type": "sentence",
+    "headword": "私のせいだ",
+    "language": "ja",
+    "reading": "watashi no sei da",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "私のせいだ\nIT’S MY FAULT",
+    "translation": "เป็นความผิดของฉัน",
+    "text": "เรื่องนี้ ฉันมีส่วนที่ต้องรับผิดชอบ",
+    "tags": [
+      "ตัวตน",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-094",
+    "type": "word-definition",
+    "headword": "am i wrong",
+    "language": "en",
+    "reading": "แอม ไอ รอง",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun/phrase",
+    "original": "am i wrong\n[am ahy rawng]\nnoun/phrase\na question asked when challenging status quo conformity and societal expectations;",
+    "translation": "ฉันผิดหรือ: คำถามที่ใช้เมื่อท้าทายการคล้อยตามสภาพที่เป็นอยู่และความคาดหวังของสังคม",
+    "text": "เราอาจตั้งคำถามได้ แม้สิ่งนั้นจะเป็นสิ่งที่ใคร ๆ ทำตามกัน",
+    "tags": [
+      "อิสระและการเลือก",
+      "ตัวตน"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-095",
+    "type": "word-definition",
+    "headword": "misanthropy",
+    "language": "en",
+    "reading": "มิแซนธระพี",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "misanthropy\n/mi-ˈsan(t)-thrə-pē /\nnoun\nthe general hatred, dislike, or distrust of the human species, human behavior, or human nature.",
+    "translation": "ความเกลียดชังมนุษย์: ความเกลียด ไม่ชอบ หรือไม่ไว้วางใจเผ่าพันธุ์มนุษย์ พฤติกรรมมนุษย์ หรือธรรมชาติของมนุษย์โดยทั่วไป",
+    "text": "บางครั้งความไม่ไว้ใจผู้คน ก็ทำให้เราอยากเว้นระยะ",
+    "tags": [
+      "ความสัมพันธ์",
+      "ตัวตน"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-096",
+    "type": "sentence",
+    "headword": "Smart people know when to act stupid.",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "Smart people know when to act stupid.",
+    "translation": "คนฉลาดรู้ว่าเมื่อไรควรทำเป็นไม่ฉลาด",
+    "text": "บางครั้งเราก็เลือกไม่แสดงทุกอย่างที่รู้",
+    "tags": [
+      "ตัวตน",
+      "อิสระและการเลือก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-097",
+    "type": "sentence",
+    "headword": "You know my name. Not my story.",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "You know my name. Not my story.",
+    "translation": "คุณรู้ชื่อฉัน แต่ไม่รู้เรื่องราวของฉัน",
+    "text": "รู้จักชื่อ ไม่ได้แปลว่ารู้จักทั้งเรื่องราว",
+    "tags": [
+      "ตัวตน",
+      "ขอบเขต"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-098",
+    "type": "word-definition",
+    "headword": "Job interview",
+    "language": "en",
+    "reading": "จอบ อินเทอร์วิว",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Job interview\n(n.)\nA conversation between two liars.",
+    "translation": "การสัมภาษณ์งาน: บทสนทนาระหว่างคนโกหกสองคน",
+    "text": "บทสัมภาษณ์งาน บางทีก็เหมือนต่างฝ่ายต่างเล่าเฉพาะด้านที่ดีที่สุด",
+    "tags": [
+      "ตัวตน",
+      "ความสัมพันธ์"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-099",
+    "type": "sentence",
+    "headword": "reset. reflect. restart. release. refocus. recenter.",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "reset. reflect. restart. release. refocus. recenter.",
+    "translation": "ตั้งหลัก ทบทวน เริ่มใหม่ ปล่อยวาง กลับมาจดจ่อ และกลับมาสู่สมดุล",
+    "text": "ตั้งหลัก ทบทวน ปล่อยวาง แล้วค่อยเริ่มใหม่",
+    "tags": [
+      "การพักและดูแลตนเอง",
+      "การเติบโตและความพยายาม"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-100",
+    "type": "sentence",
+    "headword": "気持ちをわかってほしい ♡",
+    "language": "ja",
+    "reading": "kimochi o wakatte hoshii",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "気持ちをわかってほしい ♡\nI WANT YOU TO KNOW MY FEELINGS.",
+    "translation": "อยากให้เธอเข้าใจความรู้สึกของฉัน",
+    "text": "อยากให้เธอเข้าใจ ว่าฉันรู้สึกอย่างไร",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความเชื่อมโยง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-101",
+    "type": "sentence",
+    "headword": "I am not shy.",
+    "language": "en",
+    "reading": null,
+    "readingKind": "ยังไม่เสนอร่าง",
+    "partOfSpeech": null,
+    "original": "I am not shy.\nI just don’t like to talk when I have nothing meaningful to say.",
+    "translation": "ฉันไม่ได้ขี้อาย ฉันแค่ไม่ชอบพูดเมื่อไม่มีอะไรที่มีความหมายจะพูด",
+    "text": "ไม่ได้ขี้อาย แค่เลือกพูดเมื่อมีสิ่งที่อยากบอก",
+    "tags": [
+      "ตัวตน",
+      "อิสระและการเลือก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-102",
+    "type": "word-definition",
+    "headword": "I forgot",
+    "language": "en",
+    "reading": "ไอ เฟอร์กอต",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "phrase",
+    "original": "I forgot\n(phr.)\nI do remember, I just don't want to talk about it.",
+    "translation": "ฉันลืมแล้ว: จริง ๆ ฉันจำได้ แค่ไม่อยากพูดถึงมัน",
+    "text": "ที่บอกว่าลืม บางทีก็แค่ยังไม่อยากพูดถึง",
+    "tags": [
+      "ขอบเขต",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-103",
+    "type": "word-definition",
+    "headword": "Genuine",
+    "language": "en",
+    "reading": "เจนยูอิน",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": null,
+    "original": "Genuine\n/ˈjenyōoən/\n\"Truly what something is said to be; authentic.\"",
+    "translation": "แท้จริง: เป็นอย่างที่กล่าวไว้จริง ๆ ไม่เสแสร้ง",
+    "text": "เป็นอย่างที่เราเป็น โดยไม่ต้องเสแสร้ง",
+    "tags": [
+      "ตัวตน",
+      "คุณค่าตนเอง"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-104",
+    "type": "sentence",
+    "headword": "夢で会えるから夢を見て",
+    "language": "ja",
+    "reading": "yume de aeru kara yume o mite",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "夢で会えるから夢を見て\nI dream because I can meet you in dreams",
+    "translation": "ฉันฝัน เพราะสามารถพบเธอในความฝัน (ตามบรรทัดอังกฤษในภาพ)",
+    "text": "ในความฝัน ฉันยังได้พบเธอ",
+    "tags": [
+      "ความสัมพันธ์",
+      "ความหวังและศรัทธา"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-105",
+    "type": "sentence",
+    "headword": "呼吸する.",
+    "language": "ja",
+    "reading": "kokyū suru",
+    "readingKind": "โรมาจิร่าง",
+    "partOfSpeech": null,
+    "original": "呼吸する.\n“BREATHE.”",
+    "translation": "หายใจ",
+    "text": "ค่อย ๆ หายใจ",
+    "tags": [
+      "การพักและดูแลตนเอง",
+      "อารมณ์และความรู้สึก"
+    ],
+    "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-106",
+    "type": "word-definition",
+    "headword": "Goodnight",
+    "language": "en",
+    "reading": "กูดไนต์",
+    "readingKind": "คำอ่านไทยร่าง",
+    "partOfSpeech": "noun",
+    "original": "Goodnight\n(n.)\nYou need to stop texting me so I can continue watching the video.",
+    "translation": "ราตรีสวัสดิ์: คุณต้องหยุดส่งข้อความหาฉัน เพื่อให้ฉันดูวิดีโอต่อได้",
+    "text": "ที่บอกฝันดี ก็แค่อยากกลับไปดูวิดีโอต่อ",
+    "tags": [
+      "ขอบเขต",
+      "ความสุขในชีวิตประจำวัน"
+    ],
+    "status": 1
   }
 ]
