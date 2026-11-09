@@ -27,12 +27,27 @@ export const characters=Object.fromEntries(names.map((name,index)=>[name,{
  name,image:sheet,width:158,height:158,sourceKind:'supplied-character-sheet',
  tile:{x:columns[index%3],y:rows[Math.floor(index/3)],sheetWidth:609,sheetHeight:2048}
 }])) as Record<CharacterName,Character>;
-// The user's SVG includes a higher-resolution, separately embedded Relaxing PNG.
-characters.Relaxing={
- name:'Relaxing',image:new URL('./assets/mooca/relaxing.png',import.meta.url).href,
- width:364,height:225,sourceKind:'supplied-reference',
- sourceNode:'https://www.figma.com/design/3PGPbkxDkElsmp7WXKn5nx/?node-id=2012-2840'
-};
+// Separate PNG artwork supplied by the owner on 2026-11-09.
+// Preserve original pose names; three missing poses continue using the unchanged sheet.
+characters['Balloon Explorer']={name:'Balloon Explorer',image:new URL('./assets/mooca/balloon-explorer.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Bench Break']={name:'Bench Break',image:new URL('./assets/mooca/bench-break.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Bookworm']={name:'Bookworm',image:new URL('./assets/mooca/bookworm.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Caring Listener']={name:'Caring Listener',image:new URL('./assets/mooca/caring-listener.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Cloud Rider']={name:'Cloud Rider',image:new URL('./assets/mooca/cloud-rider.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Cozy Reader']={name:'Cozy Reader',image:new URL('./assets/mooca/cozy-reader.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Curious']={name:'Curious',image:new URL('./assets/mooca/curious.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Friendly Doctor']={name:'Friendly Doctor',image:new URL('./assets/mooca/friendly-doctor.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Friendly Stand']={name:'Friendly Stand',image:new URL('./assets/mooca/friendly-stand.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Glowing Heart']={name:'Glowing Heart',image:new URL('./assets/mooca/glowing-heart.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Mirror Peek']={name:'Mirror Peek',image:new URL('./assets/mooca/mirror-peek.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Moon Dreamer']={name:'Moon Dreamer',image:new URL('./assets/mooca/moon-dreamer.png',import.meta.url).href,width:285,height:285,sourceKind:'supplied-reference'};
+characters['Quiet Moment']={name:'Quiet Moment',image:new URL('./assets/mooca/quiet-moment.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Rainy Day']={name:'Rainy Day',image:new URL('./assets/mooca/rainy-day.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Relaxing']={name:'Relaxing',image:new URL('./assets/mooca/relaxing.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Safe Bubble']={name:'Safe Bubble',image:new URL('./assets/mooca/safe-bubble.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters['Shy Smile']={name:'Shy Smile',image:new URL('./assets/mooca/shy-smile.png',import.meta.url).href,width:290,height:278,sourceKind:'supplied-reference'};
+characters['Sunny Friend']={name:'Sunny Friend',image:new URL('./assets/mooca/sunny-friend.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+characters.Relaxing.sourceNode='https://www.figma.com/design/3PGPbkxDkElsmp7WXKn5nx/?node-id=2012-2840';
 const assignments:CharacterName[]=[
  'Shy Smile','Relaxing','Heart Hug','Curious','Bench Break','Quiet Moment',
  'Balloon Explorer','Moon Dreamer','Bookworm','Caring Listener','Cloud Rider',
@@ -107,3 +122,6 @@ const lot2Assignments:Record<string,CharacterName>={
   "catalog-v1:ooca-106": "Relaxing"
 };
 for(const [id,name] of Object.entries(lot2Assignments))characterByQuote[id]=characters[name];
+
+// Cogito: a curious pose for reflection on thought and existence.
+characterByQuote['catalog-v1:ooca-107']=characters.Curious;

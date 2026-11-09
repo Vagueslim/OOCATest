@@ -1800,5 +1800,22 @@
       "ความสุขในชีวิตประจำวัน"
     ],
     "status": 1
+  },
+  {
+    "id": "catalog-v1:ooca-107",
+    "type": "sentence",
+    "headword": "Cogito, ergo sum",
+    "language": "la",
+    "reading": "โค-กิ-โต แอร์-โก ซุม",
+    "readingKind": "คำอ่านไทยร่าง (ละตินคลาสสิก)",
+    "partOfSpeech": null,
+    "original": "Cogito, ergo sum",
+    "translation": "ฉันคิด ฉันจึงมีอยู่",
+    "text": "ฉันคิด ฉันจึงมีอยู่",
+    "tags": [
+      "ตัวตน",
+      "ความหมายและเป้าหมาย"
+    ],
+    "status": 1
   }
 ]

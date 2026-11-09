@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Balloon Explorer",
+    "source": "preview-balloon-explorer.png",
+    "destination": "balloon-explorer.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "6EB641C8045FB026BFA3BD9A13F8ACF8B81D47DDB5B58E68CFC35E23B9268EFD"
+  },
+  {
+    "name": "Bench Break",
+    "source": "preview-bench-break.png",
+    "destination": "bench-break.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "6CC086D1B563D455BD9F519A32F54568E69AFC63B91857922B74446403B3280D"
+  },
+  {
+    "name": "Bookworm",
+    "source": "preview-bookworm.png",
+    "destination": "bookworm.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "452B2C6098BF9007DC5DA44147119D061BA1C2D6E404073E635C02509C456998"
+  },
+  {
+    "name": "Caring Listener",
+    "source": "preview-caring-listener.png",
+    "destination": "caring-listener.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "F86AFAF63E62C40A2B2739FFEEEA219F3E5BBFC9060CD2BD4FA1951D17F15302"
+  },
+  {
+    "name": "Cloud Rider",
+    "source": "preview-cloud-rider.png",
+    "destination": "cloud-rider.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "243FF4C66C0CE12C881A4CB8D74A7D6A7441B4E01B42F8E6EFD0B077DEA4223B"
+  },
+  {
+    "name": "Cozy Reader",
+    "source": "preview-cozy-reader.png",
+    "destination": "cozy-reader.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "F4F627586FA624DE0F0B02A440A8E37F2E44ED65298D21D5846D8B5BC365947F"
+  },
+  {
+    "name": "Curious",
+    "source": "preview-curious.png",
+    "destination": "curious.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "C7780E07299837ADE0C6D8E98399BD790DFD37A492D5EC6844FE7107DA1C8A60"
+  },
+  {
+    "name": "Friendly Doctor",
+    "source": "preview-friendly-doctor.png",
+    "destination": "friendly-doctor.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "34C359B62A921A96014ACD357BEDBB45C30CFC68BBB4EE0843BA6967A8DFEA78"
+  },
+  {
+    "name": "Friendly Stand",
+    "source": "preview-friendly-stand.png",
+    "destination": "friendly-stand.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "3EA714E7F3DD1C8242B866F5719E63DD58FA0493E49E0515EEE285F296B32FC4"
+  },
+  {
+    "name": "Glowing Heart",
+    "source": "preview-glowing-heart.png",
+    "destination": "glowing-heart.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "9B640B343DB7AC41E9F927E1C4E5A8E483349892684EBCB7AFE0F8B6711D2BB4"
+  },
+  {
+    "name": "Mirror Peek",
+    "source": "preview-mirror-peek.png",
+    "destination": "mirror-peek.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "01ED77127168D813D625FD7120BEE46432F16A35310BBC1891749F845847055E"
+  },
+  {
+    "name": "Moon Dreamer",
+    "source": "preview-moon-dreamer.png",
+    "destination": "moon-dreamer.png",
+    "width": 285,
+    "height": 285,
+    "sha256": "F7B1ED3F85651501AC8ADA479A516CED11497364EF16D7D2650AD32A14970B2F"
+  },
+  {
+    "name": "Quiet Moment",
+    "source": "preview-quiet-moment.png",
+    "destination": "quiet-moment.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "AD1428ADF1B422B8A58AF4CA4995B18F06BDF709643231F8EB90DF1647ED65EB"
+  },
+  {
+    "name": "Rainy Day",
+    "source": "preview-rainy-day.png",
+    "destination": "rainy-day.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "0DF2E158E8B056BD6D1C51260A7F2CA7A32651DC7C5B16D65BC7C1AC4C947752"
+  },
+  {
+    "name": "Relaxing",
+    "source": "preview-relaxing.png",
+    "destination": "relaxing.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "02F08CB760E4A925953A031728C03490014326CC3488C5439B52A9DFCB5B92FF"
+  },
+  {
+    "name": "Safe Bubble",
+    "source": "preview-safe-bubble.png",
+    "destination": "safe-bubble.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "7967EC8191D73DB4357E7DDC611D6137DFD6C2A9F5D6671B8FB05DFC76C760E3"
+  },
+  {
+    "name": "Shy Smile",
+    "source": "preview-shy-smile.png",
+    "destination": "shy-smile.png",
+    "width": 290,
+    "height": 278,
+    "sha256": "36D914586FE2A148E71E905B5FDA033B1D7CB1E54A226130EB4ACE11018F5C78"
+  },
+  {
+    "name": "Sunny Friend",
+    "source": "preview-sunny-friend.png",
+    "destination": "sunny-friend.png",
+    "width": 278,
+    "height": 278,
+    "sha256": "6AA9D0C5801920B51BEC05210066D70A8AEB7DA78AA62D3DF4773A50E4D61A8C"
+  }
+]

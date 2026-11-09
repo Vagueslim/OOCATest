@@ -29,9 +29,9 @@ test('Mooca: CALM uses exact Relaxing asset, keeps original tags and matches exp
  await expect(active(page).locator('.quote-thai')).toHaveText(q.text);
  await expect(active(page).locator('.quote-tags li')).toHaveText(q.tags);
  const img=active(page).getByRole('img',{name:'Mooca Relaxing'});
- await expect.poll(()=>img.evaluate(el=>(el as HTMLImageElement).naturalWidth)).toBe(364);
+ await expect.poll(()=>img.evaluate(el=>(el as HTMLImageElement).naturalWidth)).toBe(278);
  const geometry=await img.evaluate(el=>{const r=el.getBoundingClientRect();return{width:r.width,height:r.height,naturalHeight:(el as HTMLImageElement).naturalHeight};});
- expect(geometry.naturalHeight).toBe(225);expect(geometry.width/geometry.height).toBeCloseTo(364/225,2);
+ expect(geometry.naturalHeight).toBe(278);expect(geometry.width/geometry.height).toBeCloseTo(278/278,2);
  await expect(active(page).locator('.quote-headword')).toHaveText(q.headword);
  const text=await active(page).locator('.quote-thai').boundingBox();
  const picture=await img.boundingBox();expect(text!.y+text!.height).toBeLessThanOrEqual(picture!.y+1);
@@ -52,7 +52,7 @@ test('Mooca: CALM uses exact Relaxing asset, keeps original tags and matches exp
  await expect(active(page)).toHaveAttribute('data-quote-id',q.id);
  for(const width of [320,360,390,1440]){
   await page.setViewportSize({width,height:844});await noOverflow(page);
-  const bounds=await img.boundingBox();expect(bounds!.width/bounds!.height).toBeCloseTo(364/225,2);
+  const bounds=await img.boundingBox();expect(bounds!.width/bounds!.height).toBeCloseTo(278/278,2);
  }
 });
 test('Mooca: long sentence remains complete with its matched character in browse and expanded views',async({page})=>{
