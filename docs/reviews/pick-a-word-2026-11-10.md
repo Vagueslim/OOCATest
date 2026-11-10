@@ -14,6 +14,7 @@ Baseline: `7db818fce71bb2c220697bbd71edab0ad4f699bc`. Source: the owner's review
 | 4 | `1e9d407` — feat(share): export and share quote cards | 11 sharing tests passed; build passed; one html-to-image dependency added |
 | 5 | `44f28fe` — fix(artwork): normalize transparent mascots | 20 targeted cases passed across artwork/Mooca/sharing; build passed |
 | 6 | docs: document workflow and verification | This report, current README, workflow, reading table and selected review images |
+| 7 | fix(test): preserve raw catalog casing in snapshot checks | Follow-up from CI: deterministic lowercase regression and exact persisted headword check |
 
 The existing Swiper EffectCards implementation already matched the approved demo. Its behavior is retained and regression-tested; there is no artificial code-only commit claiming to restore an implementation that was already on main.
 
@@ -28,6 +29,10 @@ The existing Swiper EffectCards implementation already matched the approved demo
 - Favicon: SHA-256 matches the supplied glyph-a.svg exactly. Production output references `/OOCATest/favicon.svg`.
 
 One scoped 107-card traversal was interrupted by Vite reloading after a source comment changed during test preparation. With source frozen, that exact traversal passed on rerun. The final full suite runs with source frozen.
+
+## CI follow-up
+
+The full local suite at 8b7f72c passed 158/158 (no skips or flaky cases). CI then exposed a randomized test assumption: innerText returned the CSS-capitalized Family while the correctly persisted catalog headword was family. A separate seventh commit preserves that audit trail instead of rewriting the six planned commits. The regression now deterministically selects the lowercase family card, reads raw textContent and checks the exact first saved line. It passed three consecutive focused runs. Application behavior and catalog data are unchanged; the latest-head CI reruns all 158 cases.
 
 ## Final verification procedure
 

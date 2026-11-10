@@ -29,18 +29,27 @@ test('catalog: all shown cards, missing readings, Japanese, mobile overflow and 
  expect(seen.size).toBe(deckSize);expect([...seen].sort()).toEqual([...shownIds].sort());expect(errors).toEqual([]);
 });
 test('legacy snapshots survive a catalog save with chosen focus, reload and deletion',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.addInitScript(()=>{Math.random=()=>0.99999;});
  await page.goto(process.env.TEST_BASE_URL||'/');
  const old={id:'legacy',quoteId:'self-rest',quoteText:'วันนี้ขอพักก่อน',focus:null,savedAt:'2025-01-01T00:00:00Z',localDay:'2025-01-01'};
  await page.evaluate(({key,old})=>localStorage.setItem(key,JSON.stringify({version:1,entries:[old]})),{key,old});
- await page.getByRole('button',{name:'เปิดอ่าน',exact:true}).click();await page.getByRole('button',{name:'เลือกข้อความนี้',exact:true}).click();
- const title=await page.locator('.quote-headword').innerText();
+ await page.getByRole('button',{name:'เปิดอ่าน',exact:true}).click();
+ // Exercise a lowercase source headword whose first letter is capitalized by CSS.
+ for(let i=0;i<deckSize&&await page.getByTestId('quote').getAttribute('data-quote-id')!=='catalog-v1:ooca-022';i++)
+  await page.getByRole('button',{name:'เปลี่ยนข้อความ',exact:true}).click();
+ await expect(page.getByTestId('quote')).toHaveAttribute('data-quote-id','catalog-v1:ooca-022');
+ await page.getByRole('button',{name:'เลือกข้อความนี้',exact:true}).click();
+ // innerText includes CSS text-transform; persisted snapshots preserve source casing.
+ const title=await page.locator('.quote-headword').textContent();
+ expect(title).toBe('family');
  await page.getByRole('button',{name:'ต่อไป',exact:true}).click();
  await page.getByRole('button',{name:'กลับไปเลือกมุม',exact:true}).click();
  await page.getByRole('radio',{name:'คนอื่น',exact:true}).check();
  await page.getByRole('button',{name:'ต่อไป',exact:true}).click();
  await page.getByRole('button',{name:'เลือกข้อความนี้',exact:true}).click();
  await page.reload();const data=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),key);
- expect(data.version).toBe(1);expect(data.entries[0]).toEqual(old);expect(data.entries[1].quoteText).toContain(title);expect(data.entries[1].quoteText).toContain('ร่างยังไม่ตรวจ');expect(data.entries[1].focus).toBe('other');
+ expect(data.version).toBe(1);expect(data.entries[0]).toEqual(old);expect(data.entries[1].quoteText.split('\n')[0]).toBe(title);expect(data.entries[1].quoteText).toContain('ร่างยังไม่ตรวจ');expect(data.entries[1].focus).toBe('other');
  await page.getByRole('button',{name:'ดูย้อนหลัง',exact:true}).click();await page.locator('summary').click();await page.getByRole('button',{name:'ลบข้อความ',exact:true}).click();await page.getByRole('button',{name:'ยืนยันลบ',exact:true}).click();
  await page.getByRole('combobox').selectOption('2025-01');await expect(page.locator('.history-snapshot')).toHaveText(old.quoteText);
  expect((await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!).entries,key))).toEqual([old]);
