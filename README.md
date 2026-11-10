@@ -19,6 +19,26 @@ npx playwright test --config=playwright.config.ts
 
 บน Linux ที่ยังไม่มี browser dependencies ใช้ `npx playwright install --with-deps chromium` ชุดทดสอบใช้ Vite dev server พอร์ต 5181 ตาม config ปกติ เพราะบางเคสจำลองข้อมูลผ่าน `/src/*` อย่าชี้ชุดทดสอบทั้งหมดไปยัง production preview หรือเว็บจริง
 
+## ตรวจ build หรือเว็บที่เผยแพร่แล้ว
+
+สคริปต์ F04 ใช้กับ production build โดยตรง ไม่ใช้ module fixtures และไม่อยู่ในชุด `.spec.ts` ข้างต้น เริ่ม preview หลัง `npm run build` ด้วย `npm run preview -- --port 5193 --strictPort` แล้วเปิดอีก terminal รัน:
+
+```sh
+node tests/pages-smoke.mjs http://127.0.0.1:5193/OOCATest/
+node tests/catalog-live.mjs http://127.0.0.1:5193/OOCATest/
+node tests/contrast.mjs http://127.0.0.1:5193/OOCATest/
+```
+
+ทุกคำสั่งต้องระบุ URL เมื่อตรวจเว็บจริง เปลี่ยน URL เป็น `https://vagueslim.github.io/OOCATest/` และเลือกโฟลเดอร์รายงานแยกได้ด้วย argument ถัดไป เช่น `node tests/pages-smoke.mjs https://vagueslim.github.io/OOCATest/ evidence/live-verification/production-pages`
+
+- `pages-smoke`: หน้าแรก/ไฟล์ build, เปลี่ยนการ์ด, อ่านเต็ม, ข้าม, บันทึกกลับสำรับ, ประวัติหลัง reload และกรณีเขียน storage ไม่สำเร็จ
+- `catalog-live`: เทียบการ์ดที่แสดงทั้งหมดกับ `src/catalog.json` ใน checkout นี้ รวมคำอ่าน ป้ายร่างในรายละเอียดต้นฉบับ และประวัติเดิม โดยเทียบตัวพิมพ์ของ headword และข้อความที่บันทึกแบบตรงตัว; เฉพาะข้อความไทยที่แสดงบนการ์ดจะยุบช่องว่าง ASCII ซ้ำตาม UI ปัจจุบัน
+- `contrast`: วัดข้อความปุ่มหลักใน 4 หน้าที่ 360/1440px ทั้ง default/focus/hover และข้อความตัวเลือกมุมที่เลือก รวม 26 ค่าสีและ 8 จุด keyboard focus ไม่ใช่การตรวจ WCAG ทั้งระบบ; Welcome ที่มี gradient, disabled controls และสีเส้น focus อยู่นอกขอบเขต หากค่าสีในขอบเขตวัดไม่ได้ จะบันทึก `not-assessed` และจบด้วย exit code 1
+
+ค่าเริ่มต้นของรายงานคือ `evidence/live-verification/<ชื่อสคริปต์>/results.json` พร้อมภาพประกอบ เมื่อไม่ผ่านจะเขียน `passed:false`, ข้อผิดพลาด และภาพหน้าจอถ้าถ่ายได้ แล้วจบด้วย exit code 1 รายงานมีเวลา/browser/Node และ `sourceCheckoutCommit`/`sourceHasChanges` ของเครื่องที่รัน ซึ่งไม่ใช่หลักฐานว่าเว็บปลายทาง deploy จาก commit นั้น
+
+แต่ละคำสั่งเปิด browser context ใหม่ ข้อมูลทดสอบและการจำลอง storage failure อยู่เฉพาะ context นั้น ไม่ใช้ประวัติใน browser ของผู้ใช้ และไม่เรียก Google Calendar หรือ native share จริง ชุด `.spec.ts` มี regression เพิ่มสำหรับการแยก storage และการเขียนรายงานเมื่อ checker ล้มเหลว
+
 ## พฤติกรรมปัจจุบัน
 
 - ปัดซ้าย/ขวาหรือใช้ปุ่มเพื่อเปลี่ยนการ์ด โดยยังไม่เลือกหรือบันทึกอัตโนมัติ รองรับ reduced motion
