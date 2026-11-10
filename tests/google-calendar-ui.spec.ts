@@ -65,6 +65,55 @@ for(const code of ['popup_closed','scope_denied','token_expired','api_error','un
  if(code==='uncertain'){await button(page,'กลับไปเลือกมุม').click();await button(page,'บอกฉันอีก 7 วัน').click();await expect(panel(page).getByRole('status')).toContainText('กรุณาตรวจ Google Calendar');await expect(button(page,'ตกลง สร้างนัด')).toHaveCount(0);}
 });
 
+test('calendar API UI: midnight confirmation refreshes the reviewed date before requesting renewed consent',async({page})=>{
+ const mock=await mockService(page,{fixture:true});
+ const beforeMidnight=new Date('2026-11-10T16:59:55Z');
+ await page.clock.install({time:beforeMidnight});await page.clock.pauseAt(beforeMidnight);
+ await page.goto(process.env.TEST_BASE_URL||'/');await button(page,'เตือนฉันในอีก 7 วัน').click();
+ await expect(panel(page).locator('time')).toHaveAttribute('datetime','2026-11-17T06:00:00.000Z');
+ await consent(page).check();await expect(button(page,'ตกลง สร้างนัด')).toBeEnabled();
+ // Six seconds crosses local midnight, before the existing 15-second refresh.
+ await page.clock.runFor(6000);await expect(consent(page)).toBeChecked();
+ await button(page,'ตกลง สร้างนัด').click();
+ expect((await mock.state()).calls).toEqual([]);
+ await expect(panel(page).locator('time')).toHaveAttribute('datetime','2026-11-18T06:00:00.000Z');
+ await expect(panel(page).getByRole('status')).toHaveText('ข้อมูลนัดเปลี่ยนแล้ว โปรดตรวจและยินยอมอีกครั้ง');
+ await expect(consent(page)).not.toBeChecked();await expect(button(page,'ตกลง สร้างนัด')).toBeDisabled();
+ await consent(page).check();await button(page,'ตกลง สร้างนัด').click();
+ const {calls}=await mock.state();expect(calls).toHaveLength(1);
+ expect(calls[0].start).toEqual({dateTime:'2026-11-18T06:00:00.000Z',timeZone:'Asia/Bangkok'});
+ expect(calls[0].end).toEqual({dateTime:'2026-11-18T06:15:00.000Z',timeZone:'Asia/Bangkok'});
+ await mock.settle();await expect(panel(page).getByRole('status')).toHaveText('สร้างนัดใน Google Calendar แล้ว');
+ expect(mock.external).toEqual([]);
+});
+
+test.describe('calendar confirmation after a timezone change',()=>{
+ test.use({timezoneId:undefined});
+ test('calendar API UI: timezone confirmation refreshes the reviewed zone before requesting renewed consent',async({page,context})=>{
+  const cdp=await context.newCDPSession(page);
+  await cdp.send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Bangkok'});
+  const mock=await mockService(page,{fixture:true});
+  const frozenTime=new Date('2026-11-10T00:00:00Z');
+  await page.clock.install({time:frozenTime});await page.clock.pauseAt(frozenTime);
+  await page.goto(process.env.TEST_BASE_URL||'/');await button(page,'เตือนฉันในอีก 7 วัน').click();
+  await expect(panel(page).locator('time')).toHaveAttribute('datetime','2026-11-17T06:00:00.000Z');
+  await consent(page).check();await expect(button(page,'ตกลง สร้างนัด')).toBeEnabled();
+  // Change browser timezone without the focus/visibility events that normally refresh.
+  await cdp.send('Emulation.setTimezoneOverride',{timezoneId:'Asia/Tokyo'});
+  await expect(panel(page).locator('.calendar-zone')).toContainText('Asia/Bangkok');
+  await button(page,'ตกลง สร้างนัด').click();
+  expect((await mock.state()).calls).toEqual([]);
+  await expect(panel(page).locator('.calendar-zone')).toContainText('Asia/Tokyo');
+  await expect(panel(page).locator('time')).toHaveAttribute('datetime','2026-11-17T04:00:00.000Z');
+  await expect(consent(page)).not.toBeChecked();await expect(button(page,'ตกลง สร้างนัด')).toBeDisabled();
+  await consent(page).check();await button(page,'ตกลง สร้างนัด').click();
+  const {calls}=await mock.state();expect(calls).toHaveLength(1);
+  expect(calls[0].start).toEqual({dateTime:'2026-11-17T04:00:00.000Z',timeZone:'Asia/Tokyo'});
+  expect(calls[0].end).toEqual({dateTime:'2026-11-17T04:15:00.000Z',timeZone:'Asia/Tokyo'});
+  await mock.settle();expect(mock.external).toEqual([]);await cdp.detach();
+ });
+});
+
 test('calendar API UI: injected content and midnight changes reset consent before any write',async({page})=>{
  const mock=await mockService(page,{fixture:true});await page.clock.install({time:new Date('2026-11-08T16:59:55Z')});await page.goto(process.env.TEST_BASE_URL||'/');await button(page,'เตือนฉันในอีก 7 วัน').click();await expect(panel(page).locator('.calendar-title')).toHaveText('CALM · EXPLICIT PREVIEW TEXT');await consent(page).check();
  await button(page,'Change test content').click();await expect(panel(page).locator('.calendar-title')).toHaveText('RESPECT · CHANGED PREVIEW TEXT');await expect(consent(page)).not.toBeChecked();await expect(button(page,'ตกลง สร้างนัด')).toBeDisabled();await consent(page).check();

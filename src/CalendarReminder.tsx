@@ -51,15 +51,17 @@ export default function CalendarReminder({content,client=googleCalendarClient,se
   setOpen(true);
   if(outcome==='idle'&&!ready)void prepare();
  }
+ function refreshReminder(previous:Reminder|null){
+  const next=createCalendarReminder(new Date(),content);
+  if(previous&&(previous.start.getTime()!==next.start.getTime()||previous.end.getTime()!==next.end.getTime()||previous.timeZone!==next.timeZone||previous.title!==next.title||previous.event.description!==next.event.description)){
+   currentReminder.current=next;setReminder(next);setConsent(false);setStatus('ข้อมูลนัดเปลี่ยนแล้ว โปรดตรวจและยินยอมอีกครั้ง');
+   return true;
+  }
+  return false;
+ }
  useEffect(()=>{
   if(!open||busy||outcome!=='idle')return;
-  function refresh(){
-   const next=createCalendarReminder(new Date(),content);
-   const previous=currentReminder.current;
-   if(previous&&(previous.start.getTime()!==next.start.getTime()||previous.timeZone!==next.timeZone||previous.title!==next.title)){
-    currentReminder.current=next;setReminder(next);setConsent(false);setStatus('ข้อมูลนัดเปลี่ยนแล้ว โปรดตรวจและยินยอมอีกครั้ง');
-   }
-  }
+  const refresh=()=>{refreshReminder(currentReminder.current);};
   refresh();
   const interval=window.setInterval(refresh,15000);
   document.addEventListener('visibilitychange',refresh);window.addEventListener('focus',refresh);
@@ -67,6 +69,8 @@ export default function CalendarReminder({content,client=googleCalendarClient,se
  },[open,busy,outcome,content?.headword,content?.text]);
  async function create(){
   if(!reminder||!consent||!ready||inFlight.current||outcome!=='idle')return;
+  // Compare against the visible, consented preview before starting OAuth.
+  if(refreshReminder(reminder))return;
   inFlight.current=true;setBusy(true);onBusyChange?.(true);setStatus('กำลังรอให้คุณเลือกบัญชีและอนุญาตใน Google');
   try{
    // createEvent starts OAuth before its first await, preserving this explicit click.
