@@ -1,0 +1,2 @@
+# Keep text consistent in Windows checkouts and Linux CI; auto preserves binary files.
+* text=auto eol=lf

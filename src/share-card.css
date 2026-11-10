@@ -1,15 +1,96 @@
-.step-actions.has-share{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.step-actions.has-share>.primary{width:100%}
-.share-card-control{display:contents}
-.share-card-control .share-card-trigger{grid-column:1;grid-row:1;min-height:48px;width:100%;padding:8px 6px;font-size:13px;font-weight:500;line-height:24px;background:#e0f8f6;border:1px solid #72a69f;color:#17615b}
-.share-card-control .share-card-trigger:disabled{opacity:.65;cursor:wait}
-.share-card-control .share-card-status{grid-column:1 / -1;grid-row:2;font-size:12px;line-height:20px;color:#345765;margin:0;text-align:center}
-.share-card-control .share-card-status:empty{display:none}
-.share-card-render-host{position:fixed;left:-10000px;top:0;width:390px;pointer-events:none}
-.share-card-render-host .share-card-surface{position:relative;display:block;width:390px;min-width:390px;max-width:390px;min-height:0;height:auto;margin:0;padding:18px;background:#f7fcfb;box-sizing:border-box}
+.step-actions.has-share {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.step-actions.has-share > .primary {
+  width: 100%;
+}
+.share-card-control {
+  display: contents;
+}
+.share-card-control .share-card-trigger {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 48px;
+  width: 100%;
+  padding: 8px 6px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
+  background: #e0f8f6;
+  border: 1px solid #72a69f;
+  color: #17615b;
+}
+.share-card-control .share-card-trigger:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.share-card-control .share-card-status {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  font-size: 12px;
+  line-height: 20px;
+  color: #345765;
+  margin: 0;
+  text-align: center;
+}
+.share-card-control .share-card-status:empty {
+  display: none;
+}
+.share-card-render-host {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 390px;
+  pointer-events: none;
+}
+.share-card-render-host .share-card-surface {
+  position: relative;
+  display: block;
+  width: 390px;
+  min-width: 390px;
+  max-width: 390px;
+  min-height: 0;
+  height: auto;
+  margin: 0;
+  padding: 18px;
+  background: #f7fcfb;
+  box-sizing: border-box;
+}
 /* The exported card always uses the 390px design, independently of screen width. */
-.share-card-render-host .share-card-surface.journey-screen .quote-card{width:354px;margin:0;padding:24px;background:var(--card-fill);border-radius:16px}
-.share-card-render-host .share-card-surface.journey-screen .quote-card .quote-headword{font-size:36px;line-height:36px}
-.share-card-render-host .share-card-surface.journey-screen .sentence-card .quote-headword{font-size:26px;line-height:1.4}
-.share-card-render-host .share-card-surface.journey-screen .quote-card .quote-thai{font-size:24px;line-height:30px}
-.share-card-render-host .share-card-surface.journey-screen .quote-card .quote-tags li{font-size:14px;line-height:24px}
+.share-card-render-host .share-card-surface.journey-screen .quote-card {
+  width: 354px;
+  margin: 0;
+  padding: 24px;
+  background: var(--card-fill);
+  border-radius: 16px;
+}
+.share-card-render-host
+  .share-card-surface.journey-screen
+  .quote-card
+  .quote-headword {
+  font-size: 36px;
+  line-height: 36px;
+}
+.share-card-render-host
+  .share-card-surface.journey-screen
+  .sentence-card
+  .quote-headword {
+  font-size: 26px;
+  line-height: 1.4;
+}
+.share-card-render-host
+  .share-card-surface.journey-screen
+  .quote-card
+  .quote-thai {
+  font-size: 24px;
+  line-height: 30px;
+}
+.share-card-render-host
+  .share-card-surface.journey-screen
+  .quote-card
+  .quote-tags
+  li {
+  font-size: 14px;
+  line-height: 24px;
+}

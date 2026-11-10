@@ -1,0 +1,20 @@
+# Generated dependencies, builds and reports.
+node_modules/
+dist/
+artifacts/
+test-results*/
+playwright-report/
+blob-report/
+*.tsbuildinfo
+package-lock.json
+
+# Preserve historical evidence, review captures and exported asset bytes.
+evidence/
+docs/reviews/
+README-before-catalog.md
+**/*.svg
+
+# Local configuration and credentials are never formatting inputs.
+.env
+.env.*
+!.env.example

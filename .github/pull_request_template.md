@@ -4,6 +4,7 @@
 
 ## Validation
 
+- [ ] `npm run format:check`
 - [ ] `npm run build`
 - [ ] `npx playwright test --config=playwright.config.ts`
 

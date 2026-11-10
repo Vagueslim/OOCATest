@@ -1,39 +1,39 @@
 /* The dialog is the only scroll container; every action follows the reading. */
 .quote-preview.preview-flow {
- overflow-x:hidden;
- overflow-y:auto;
- overscroll-behavior:contain;
- scroll-padding:16px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-padding: 16px;
 }
 .quote-preview.preview-flow[open] {
- display:block;
+  display: block;
 }
 .quote-preview.preview-flow > .preview-top,
 .quote-preview.preview-flow > .preview-bottom {
- position:static;
+  position: static;
 }
 .quote-preview.preview-flow > .preview-top {
- display:block;
+  display: block;
 }
 .quote-preview.preview-flow .preview-top h2:focus {
- outline:none;
+  outline: none;
 }
 .quote-preview.preview-flow > .preview-reading {
- flex:none;
- min-height:auto;
- overflow:visible;
- overscroll-behavior:auto;
+  flex: none;
+  min-height: auto;
+  overflow: visible;
+  overscroll-behavior: auto;
 }
 .quote-preview.preview-flow > .preview-bottom {
- display:flex;
- flex-direction:column;
- gap:8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .quote-preview.preview-flow .preview-bottom .hint {
- margin:0 0 2px;
+  margin: 0 0 2px;
 }
 .quote-preview.preview-flow .preview-bottom .preview-back {
- justify-content:center;
- width:100%;
- min-height:44px;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
 }
