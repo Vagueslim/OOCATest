@@ -1,14 +1,14 @@
 .quote-character.character-artwork {
- position:relative;
- display:block;
- flex:none;
- overflow:hidden;
- pointer-events:none;
- user-select:none;
+  position: relative;
+  display: block;
+  flex: none;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
 }
 .character-artwork > img {
- position:absolute;
- display:block;
- max-width:none;
- max-height:none;
+  position: absolute;
+  display: block;
+  max-width: none;
+  max-height: none;
 }

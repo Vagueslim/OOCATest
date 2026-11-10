@@ -1,125 +1,648 @@
 /* The button journey keeps one next action per step and secondary exits quiet. */
-.journey-screen{background:#fff}
-.journey-brand{gap:10px;padding:18px 0}
-.journey-mark{font-weight:600;font-size:29px;line-height:1;color:#2479d9}
-.journey-wordmark{font-size:21px;font-weight:600;color:#008d81;letter-spacing:-.04em}
-:is(.journey-screen,.quote-preview) .page{padding:20px 0 28px}
-:is(.journey-screen,.quote-preview) h1:not(.visually-hidden){font-size:21px;color:#234b62;margin:2px 0 8px}
-.browse-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 2px}
-.browse-controls p{font-size:12px;line-height:1.5;color:#1763b6;text-align:center;margin:0}
-.browse-controls p span{font-size:11px;color:#536f78}
-.arrow-button{display:grid;place-items:center;width:44px;min-height:44px;padding:9px;border:0;color:#00897c}
-.arrow-button svg,.back-button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7}
-.arrow-button:disabled{color:#a7c5c1;background:transparent}
-:is(.journey-screen,.quote-preview) .quote-deck{margin-top:8px;margin-bottom:10px}
-.deck-instruction{font-size:11px;text-align:center;color:#647c7a;margin:0 0 16px}
-.browse-actions{justify-items:center;gap:10px}
-.browse-actions .primary{width:min(100%,230px)}
-.browse-actions .text-button{font-size:14px}
-:is(.journey-screen,.quote-preview) .primary{background:#00bead;border-color:#008a7f;color:#173e3a}
-:is(.journey-screen,.quote-preview) .primary:hover{background:#00ac9e}
-:is(.journey-screen,.quote-preview) .finish-primary{background:#2478db;border-color:#1763b6;color:#fff}
-:is(.journey-screen,.quote-preview) .finish-primary:hover{background:#1763b6}
-:is(.journey-screen,.quote-preview) .quote-card{border:0;border-radius:20px;box-shadow:none;padding:25px 24px;background:linear-gradient(130deg,#f6fbfa 5%,#e0f8f6 60%,#f8fbfa)}
-:is(.journey-screen,.quote-preview) .quote-card-content{display:flex;flex-direction:column}
-:is(.journey-screen,.quote-preview) .has-character .quote-header{display:block;margin:0;order:0}
-:is(.journey-screen,.quote-preview) .quote-headword,:is(.journey-screen,.quote-preview) .has-character.long-word-card .quote-headword{font-size:clamp(28px,8vw,36px);line-height:1.3;margin-bottom:8px}
-:is(.journey-screen,.quote-preview) .sentence-card .quote-headword{font-size:25px;line-height:1.6}
-:is(.journey-screen,.quote-preview) .quote-reading{font-size:13px;line-height:1.6;margin-bottom:8px}
-:is(.journey-screen,.quote-preview) .quote-tags{order:1;margin:0 0 10px}
-:is(.journey-screen,.quote-preview) .quote-tags li{background:#dff7f4;font-size:11px}
-:is(.journey-screen,.quote-preview) .card-line{order:2;margin-bottom:18px}
-:is(.journey-screen,.quote-preview) .quote-thai{order:3;font-size:23px;line-height:1.65;margin-bottom:12px}
-:is(.journey-screen,.quote-preview) .quote-status{order:4;font-size:10px;margin-bottom:0;color:#536f78}
-:is(.journey-screen,.quote-preview) .reading-status{order:5;font-size:10px;margin:0;color:#536f78}
-:is(.journey-screen,.quote-preview) .quote-character{order:6;width:146px;height:auto;max-width:146px;margin:22px 0 6px;justify-self:start;align-self:flex-start}
-:is(.journey-screen,.quote-preview) .character-tag{order:7;margin:0 0 8px;font-size:11px;padding:5px 11px}
-:is(.journey-screen,.quote-preview) .source-details{margin-top:10px}
-:is(.journey-screen,.quote-preview) .source-details summary{font-size:11px}
-:is(.journey-screen,.quote-preview) .source-details p{font-size:14px}
-:is(.journey-screen,.quote-preview) .quote-swiper .quote-card{min-height:490px}
-:is(.journey-screen,.quote-preview) .quote-swiper .quote-card-content{flex:1}
-:is(.journey-screen,.quote-preview) .quote-swiper .quote-character{margin-top:auto;padding-top:0}
-:is(.journey-screen,.quote-preview) .quote-swiper .reading-status{margin-bottom:22px}
-:is(.journey-screen,.quote-preview) .card-expand-control{inset:-25px -24px 0}
-.step-navigation{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.back-button{display:inline-flex;align-items:center;gap:4px;border:0;padding:9px 0;font-size:13px;color:#46706b}
-.back-button:hover{background:transparent;color:#007f75}
-.step-count{font-size:12px;color:#536f78;background:#e0f8f6;border-radius:20px;padding:3px 12px}
-.screen-reflect,.screen-write{background:linear-gradient(145deg,#f9fcfb 10%,#e7f9f6 80%,#fff)}
-.screen-reflect .quote-card{margin:12px 0 26px}
-.screen-reflect .quote-character{width:160px;max-width:160px;margin-top:38px}
-.screen-reflect fieldset{margin:20px 0 16px}
-.step-actions{display:grid;gap:6px}
-.step-actions>.text-button{font-size:13px}
-.screen-write .quote-card{margin:12px 0 20px}
-:is(.journey-screen,.quote-preview) .compact-card .quote-character,:is(.journey-screen,.quote-preview) .compact-card .source-details{display:none}
-:is(.journey-screen,.quote-preview) .compact-card .quote-status,:is(.journey-screen,.quote-preview) .compact-card .reading-status{font-size:10px}
-:is(.journey-screen,.quote-preview) .compact-card .character-tag{margin-top:12px;margin-bottom:0}
-.screen-write .writing{margin:22px 0 18px}
-.screen-write textarea{border-radius:12px;background:#ffffffb3;min-height:140px}
-.focus-note{font-size:12px;color:#536f78;padding-left:8px;margin-top:-10px}
-.journey-reassurance{font-size:11px;color:#647c7a;text-align:center;margin:0 0 10px}
-.writing-actions{display:flex;gap:12px}
-.writing-actions>button{flex:1}
-.skip-writing{margin-top:16px;font-size:14px}
-.keep-disclosure{background:transparent;border:0;border-top:1px solid #cfe4df;border-radius:0;padding:8px 0;margin-top:22px}
-.keep-disclosure>summary{font-size:12px;color:#536f78}
-.keep-disclosure .review{margin-top:10px}
-.keep-disclosure .save-section{margin-bottom:0}
-.closing-card{display:flex;flex-direction:column;align-items:center;text-align:center;background:linear-gradient(130deg,#f6fbfa,#e0f8f6 65%,#f8fbfa);border-radius:20px;padding:24px;margin:18px 0 24px}
-.closing-card .quote-character{width:180px;max-width:180px;margin:0 0 12px;align-self:center}
-.closing-card .character-tag{order:0;margin:0 0 10px}
-.closing-card p{font-size:24px;font-weight:600;line-height:1.55;color:#234b62;margin:0}
-.screen-done .saved-note{font-size:13px;color:#17615b}
-.hug-area .quote-character{margin:0 auto 18px}
-@media(min-width:700px){.journey-screen{padding:0 32px}:is(.journey-screen,.quote-preview) .page{padding-top:20px}.screen-done{min-height:740px}}
-@media(max-width:360px){.journey-screen{padding:0 20px}:is(.journey-screen,.quote-preview) .quote-card{padding:22px 20px}:is(.journey-screen,.quote-preview) .card-expand-control{inset:-22px -20px 0}:is(.journey-screen,.quote-preview) .quote-thai{font-size:21px}:is(.journey-screen,.quote-preview) .quote-headword{font-size:29px}}
+.journey-screen {
+  background: #fff;
+}
+.journey-brand {
+  gap: 10px;
+  padding: 18px 0;
+}
+.journey-mark {
+  font-weight: 600;
+  font-size: 29px;
+  line-height: 1;
+  color: #2479d9;
+}
+.journey-wordmark {
+  font-size: 21px;
+  font-weight: 600;
+  color: #008d81;
+  letter-spacing: -0.04em;
+}
+:is(.journey-screen, .quote-preview) .page {
+  padding: 20px 0 28px;
+}
+:is(.journey-screen, .quote-preview) h1:not(.visually-hidden) {
+  font-size: 21px;
+  color: #234b62;
+  margin: 2px 0 8px;
+}
+.browse-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 0 2px;
+}
+.browse-controls p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #1763b6;
+  text-align: center;
+  margin: 0;
+}
+.browse-controls p span {
+  font-size: 11px;
+  color: #536f78;
+}
+.arrow-button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  min-height: 44px;
+  padding: 9px;
+  border: 0;
+  color: #00897c;
+}
+.arrow-button svg,
+.back-button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+.arrow-button:disabled {
+  color: #a7c5c1;
+  background: transparent;
+}
+:is(.journey-screen, .quote-preview) .quote-deck {
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+.deck-instruction {
+  font-size: 11px;
+  text-align: center;
+  color: #647c7a;
+  margin: 0 0 16px;
+}
+.browse-actions {
+  justify-items: center;
+  gap: 10px;
+}
+.browse-actions .primary {
+  width: min(100%, 230px);
+}
+.browse-actions .text-button {
+  font-size: 14px;
+}
+:is(.journey-screen, .quote-preview) .primary {
+  background: #00bead;
+  border-color: #008a7f;
+  color: #173e3a;
+}
+:is(.journey-screen, .quote-preview) .primary:hover {
+  background: #00ac9e;
+}
+:is(.journey-screen, .quote-preview) .finish-primary {
+  background: #2478db;
+  border-color: #1763b6;
+  color: #fff;
+}
+:is(.journey-screen, .quote-preview) .finish-primary:hover {
+  background: #1763b6;
+}
+:is(.journey-screen, .quote-preview) .quote-card {
+  border: 0;
+  border-radius: 20px;
+  box-shadow: none;
+  padding: 25px 24px;
+  background: linear-gradient(130deg, #f6fbfa 5%, #e0f8f6 60%, #f8fbfa);
+}
+:is(.journey-screen, .quote-preview) .quote-card-content {
+  display: flex;
+  flex-direction: column;
+}
+:is(.journey-screen, .quote-preview) .has-character .quote-header {
+  display: block;
+  margin: 0;
+  order: 0;
+}
+:is(.journey-screen, .quote-preview) .quote-headword,
+:is(.journey-screen, .quote-preview)
+  .has-character.long-word-card
+  .quote-headword {
+  font-size: clamp(28px, 8vw, 36px);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+:is(.journey-screen, .quote-preview) .sentence-card .quote-headword {
+  font-size: 25px;
+  line-height: 1.6;
+}
+:is(.journey-screen, .quote-preview) .quote-reading {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+:is(.journey-screen, .quote-preview) .quote-tags {
+  order: 1;
+  margin: 0 0 10px;
+}
+:is(.journey-screen, .quote-preview) .quote-tags li {
+  background: #dff7f4;
+  font-size: 11px;
+}
+:is(.journey-screen, .quote-preview) .card-line {
+  order: 2;
+  margin-bottom: 18px;
+}
+:is(.journey-screen, .quote-preview) .quote-thai {
+  order: 3;
+  font-size: 23px;
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+:is(.journey-screen, .quote-preview) .quote-status {
+  order: 4;
+  font-size: 10px;
+  margin-bottom: 0;
+  color: #536f78;
+}
+:is(.journey-screen, .quote-preview) .reading-status {
+  order: 5;
+  font-size: 10px;
+  margin: 0;
+  color: #536f78;
+}
+:is(.journey-screen, .quote-preview) .quote-character {
+  order: 6;
+  width: 146px;
+  height: auto;
+  max-width: 146px;
+  margin: 22px 0 6px;
+  justify-self: start;
+  align-self: flex-start;
+}
+:is(.journey-screen, .quote-preview) .character-tag {
+  order: 7;
+  margin: 0 0 8px;
+  font-size: 11px;
+  padding: 5px 11px;
+}
+:is(.journey-screen, .quote-preview) .source-details {
+  margin-top: 10px;
+}
+:is(.journey-screen, .quote-preview) .source-details summary {
+  font-size: 11px;
+}
+:is(.journey-screen, .quote-preview) .source-details p {
+  font-size: 14px;
+}
+:is(.journey-screen, .quote-preview) .quote-swiper .quote-card {
+  min-height: 490px;
+}
+:is(.journey-screen, .quote-preview) .quote-swiper .quote-card-content {
+  flex: 1;
+}
+:is(.journey-screen, .quote-preview) .quote-swiper .quote-character {
+  margin-top: auto;
+  padding-top: 0;
+}
+:is(.journey-screen, .quote-preview) .quote-swiper .reading-status {
+  margin-bottom: 22px;
+}
+:is(.journey-screen, .quote-preview) .card-expand-control {
+  inset: -25px -24px 0;
+}
+.step-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  padding: 9px 0;
+  font-size: 13px;
+  color: #46706b;
+}
+.back-button:hover {
+  background: transparent;
+  color: #007f75;
+}
+.step-count {
+  font-size: 12px;
+  color: #536f78;
+  background: #e0f8f6;
+  border-radius: 20px;
+  padding: 3px 12px;
+}
+.screen-reflect,
+.screen-write {
+  background: linear-gradient(145deg, #f9fcfb 10%, #e7f9f6 80%, #fff);
+}
+.screen-reflect .quote-card {
+  margin: 12px 0 26px;
+}
+.screen-reflect .quote-character {
+  width: 160px;
+  max-width: 160px;
+  margin-top: 38px;
+}
+.screen-reflect fieldset {
+  margin: 20px 0 16px;
+}
+.step-actions {
+  display: grid;
+  gap: 6px;
+}
+.step-actions > .text-button {
+  font-size: 13px;
+}
+.screen-write .quote-card {
+  margin: 12px 0 20px;
+}
+:is(.journey-screen, .quote-preview) .compact-card .quote-character,
+:is(.journey-screen, .quote-preview) .compact-card .source-details {
+  display: none;
+}
+:is(.journey-screen, .quote-preview) .compact-card .quote-status,
+:is(.journey-screen, .quote-preview) .compact-card .reading-status {
+  font-size: 10px;
+}
+:is(.journey-screen, .quote-preview) .compact-card .character-tag {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+.screen-write .writing {
+  margin: 22px 0 18px;
+}
+.screen-write textarea {
+  border-radius: 12px;
+  background: #ffffffb3;
+  min-height: 140px;
+}
+.focus-note {
+  font-size: 12px;
+  color: #536f78;
+  padding-left: 8px;
+  margin-top: -10px;
+}
+.journey-reassurance {
+  font-size: 11px;
+  color: #647c7a;
+  text-align: center;
+  margin: 0 0 10px;
+}
+.writing-actions {
+  display: flex;
+  gap: 12px;
+}
+.writing-actions > button {
+  flex: 1;
+}
+.skip-writing {
+  margin-top: 16px;
+  font-size: 14px;
+}
+.keep-disclosure {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid #cfe4df;
+  border-radius: 0;
+  padding: 8px 0;
+  margin-top: 22px;
+}
+.keep-disclosure > summary {
+  font-size: 12px;
+  color: #536f78;
+}
+.keep-disclosure .review {
+  margin-top: 10px;
+}
+.keep-disclosure .save-section {
+  margin-bottom: 0;
+}
+.closing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(130deg, #f6fbfa, #e0f8f6 65%, #f8fbfa);
+  border-radius: 20px;
+  padding: 24px;
+  margin: 18px 0 24px;
+}
+.closing-card .quote-character {
+  width: 180px;
+  max-width: 180px;
+  margin: 0 0 12px;
+  align-self: center;
+}
+.closing-card .character-tag {
+  order: 0;
+  margin: 0 0 10px;
+}
+.closing-card p {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.55;
+  color: #234b62;
+  margin: 0;
+}
+.screen-done .saved-note {
+  font-size: 13px;
+  color: #17615b;
+}
+.hug-area .quote-character {
+  margin: 0 auto 18px;
+}
+@media (min-width: 700px) {
+  .journey-screen {
+    padding: 0 32px;
+  }
+  :is(.journey-screen, .quote-preview) .page {
+    padding-top: 20px;
+  }
+  .screen-done {
+    min-height: 740px;
+  }
+}
+@media (max-width: 360px) {
+  .journey-screen {
+    padding: 0 20px;
+  }
+  :is(.journey-screen, .quote-preview) .quote-card {
+    padding: 22px 20px;
+  }
+  :is(.journey-screen, .quote-preview) .card-expand-control {
+    inset: -22px -20px 0;
+  }
+  :is(.journey-screen, .quote-preview) .quote-thai {
+    font-size: 21px;
+  }
+  :is(.journey-screen, .quote-preview) .quote-headword {
+    font-size: 29px;
+  }
+}
 
-.screen-noSelection{background-image:url('./assets/welcome/sky.png');background-size:cover;background-position:center;min-height:100dvh;padding-top:18px}
-.screen-noSelection .journey-brand{background:#fff;border:0;border-radius:36px;padding:12px 20px;margin:0 0 4px}
-.screen-noSelection .page{padding-top:8px}
-.screen-noSelection .closing-card{margin:16px 8px 24px;padding:28px 18px 34px}
-.screen-noSelection .closing-card .quote-character{width:210px;max-width:100%;margin:0 0 4px}
-.screen-noSelection .closing-card p{font-size:23px}
-.screen-noSelection footer{display:none}
-@media(min-width:700px){.screen-noSelection{min-height:calc(100dvh - 64px);padding-top:18px}}
+.screen-noSelection {
+  background-image: url('./assets/welcome/sky.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100dvh;
+  padding-top: 18px;
+}
+.screen-noSelection .journey-brand {
+  background: #fff;
+  border: 0;
+  border-radius: 36px;
+  padding: 12px 20px;
+  margin: 0 0 4px;
+}
+.screen-noSelection .page {
+  padding-top: 8px;
+}
+.screen-noSelection .closing-card {
+  margin: 16px 8px 24px;
+  padding: 28px 18px 34px;
+}
+.screen-noSelection .closing-card .quote-character {
+  width: 210px;
+  max-width: 100%;
+  margin: 0 0 4px;
+}
+.screen-noSelection .closing-card p {
+  font-size: 23px;
+}
+.screen-noSelection footer {
+  display: none;
+}
+@media (min-width: 700px) {
+  .screen-noSelection {
+    min-height: calc(100dvh - 64px);
+    padding-top: 18px;
+  }
+}
 
-:is(.journey-screen,.quote-preview) .closing-card .quote-character{order:0}:is(.journey-screen,.quote-preview) .closing-card .character-tag{order:1}:is(.journey-screen,.quote-preview) .closing-card p{order:2}
+:is(.journey-screen, .quote-preview) .closing-card .quote-character {
+  order: 0;
+}
+:is(.journey-screen, .quote-preview) .closing-card .character-tag {
+  order: 1;
+}
+:is(.journey-screen, .quote-preview) .closing-card p {
+  order: 2;
+}
 
-.quote-preview .has-character .character-tag{margin-bottom:8px}.quote-preview .quote-card{min-height:0}
+.quote-preview .has-character .character-tag {
+  margin-bottom: 8px;
+}
+.quote-preview .quote-card {
+  min-height: 0;
+}
 
 /* Calendar actions prepare an event only; the calendar app owns confirmation. */
-.calendar-reminder{margin:22px 0 24px}
-.calendar-trigger{display:flex;align-items:center;justify-content:center;gap:9px;background:#e1f6f3;border-color:#72a69f;color:#17615b;font-size:15px}
-.calendar-trigger svg{width:21px;height:21px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
-.calendar-caption{font-size:11px;text-align:center;color:#536f78;margin:7px 0 0}
-.calendar-options{background:#ffffffbd;border:1px solid #c9e3dd;border-radius:18px;padding:18px;margin-top:12px;overflow-wrap:anywhere}
-.calendar-options h2{font-size:16px;margin:0 0 8px;color:#234b62}
-.calendar-date{font-weight:600;font-size:18px;color:#17615b;line-height:1.7;margin:0 0 6px}
-.calendar-zone{font-size:11px;color:#536f78;margin:0 0 14px}
-.calendar-privacy{font-size:13px;color:#405f5a;line-height:1.8;margin:0 0 16px}
-.calendar-actions{display:grid;gap:10px}
-.calendar-actions a,.calendar-actions button{display:flex;align-items:center;justify-content:center;min-height:48px;border:1px solid #698680;border-radius:24px;padding:11px 14px;font-size:13px;text-decoration:none;color:#17615b;line-height:1.5;text-align:center}
-.calendar-actions a{background:#e0f8f6}
-.calendar-actions a:hover{background:#c9f1ec}
-.calendar-actions a:focus-visible{outline:3px solid #1f77df;outline-offset:3px}
-.calendar-help{font-size:11px;color:#536f78;line-height:1.8;margin:14px 0 0}
-.calendar-status{border-top:1px solid #d8e6e4;padding-top:12px;font-size:12px;color:#17615b;margin:14px 0 0}
-@media(max-width:360px){.calendar-options{padding:15px}.calendar-trigger{font-size:14px}}
+.calendar-reminder {
+  margin: 22px 0 24px;
+}
+.calendar-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: #e1f6f3;
+  border-color: #72a69f;
+  color: #17615b;
+  font-size: 15px;
+}
+.calendar-trigger svg {
+  width: 21px;
+  height: 21px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.calendar-caption {
+  font-size: 11px;
+  text-align: center;
+  color: #536f78;
+  margin: 7px 0 0;
+}
+.calendar-options {
+  background: #ffffffbd;
+  border: 1px solid #c9e3dd;
+  border-radius: 18px;
+  padding: 18px;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+.calendar-options h2 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: #234b62;
+}
+.calendar-date {
+  font-weight: 600;
+  font-size: 18px;
+  color: #17615b;
+  line-height: 1.7;
+  margin: 0 0 6px;
+}
+.calendar-zone {
+  font-size: 11px;
+  color: #536f78;
+  margin: 0 0 14px;
+}
+.calendar-privacy {
+  font-size: 13px;
+  color: #405f5a;
+  line-height: 1.8;
+  margin: 0 0 16px;
+}
+.calendar-actions {
+  display: grid;
+  gap: 10px;
+}
+.calendar-actions a,
+.calendar-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 1px solid #698680;
+  border-radius: 24px;
+  padding: 11px 14px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #17615b;
+  line-height: 1.5;
+  text-align: center;
+}
+.calendar-actions a {
+  background: #e0f8f6;
+}
+.calendar-actions a:hover {
+  background: #c9f1ec;
+}
+.calendar-actions a:focus-visible {
+  outline: 3px solid #1f77df;
+  outline-offset: 3px;
+}
+.calendar-help {
+  font-size: 11px;
+  color: #536f78;
+  line-height: 1.8;
+  margin: 14px 0 0;
+}
+.calendar-status {
+  border-top: 1px solid #d8e6e4;
+  padding-top: 12px;
+  font-size: 12px;
+  color: #17615b;
+  margin: 14px 0 0;
+}
+@media (max-width: 360px) {
+  .calendar-options {
+    padding: 15px;
+  }
+  .calendar-trigger {
+    font-size: 14px;
+  }
+}
 
-.calendar-label{font-size:11px;color:#536f78;margin:0 0 5px}
-.calendar-title{font-size:16px;font-weight:600;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;color:#234b62;border-left:3px solid #00bead;padding-left:12px;margin:0 0 20px}
-.calendar-destination{font-size:12px;color:#405f5a;margin:0 0 14px}
-.calendar-description{font-size:11px;white-space:pre-wrap;overflow-wrap:anywhere;color:#536f78;margin:0 0 16px}
-.calendar-consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.8;margin:18px 0;cursor:pointer;color:#234b62}
-.calendar-consent input{width:18px;height:18px;flex:none;margin:3px 0 0;accent-color:#00897c}
-.calendar-consent input:focus-visible{outline:3px solid #1f77df;outline-offset:3px}
-.calendar-setup{background:#fff6dc;border:1px solid #d8c798;border-radius:12px;color:#65501f;font-size:12px;line-height:1.8;padding:12px;margin:16px 0}
-.calendar-options .calendar-actions button:disabled{background:#edf1f0;color:#687975;border-color:#b9c9c5;cursor:not-allowed}
-.calendar-result{display:block;font-size:13px;color:#17615b;text-align:center;padding:12px 8px;min-height:48px;text-underline-offset:3px}
-.calendar-result:focus-visible{outline:3px solid #1f77df;outline-offset:3px}
-.calendar-content-scope{margin:0 0 14px;color:#405f5a}
-.catalog-empty{margin:24px 0;padding:24px 20px;border:1px solid #cfe4df;border-radius:20px;background:#f2fbf9}
-.catalog-empty h2{font-size:20px;color:#234b62;line-height:1.6}
-.catalog-empty p{font-size:14px;color:#536f78;line-height:1.8;margin:12px 0 20px}
+.calendar-label {
+  font-size: 11px;
+  color: #536f78;
+  margin: 0 0 5px;
+}
+.calendar-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #234b62;
+  border-left: 3px solid #00bead;
+  padding-left: 12px;
+  margin: 0 0 20px;
+}
+.calendar-destination {
+  font-size: 12px;
+  color: #405f5a;
+  margin: 0 0 14px;
+}
+.calendar-description {
+  font-size: 11px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #536f78;
+  margin: 0 0 16px;
+}
+.calendar-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 18px 0;
+  cursor: pointer;
+  color: #234b62;
+}
+.calendar-consent input {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin: 3px 0 0;
+  accent-color: #00897c;
+}
+.calendar-consent input:focus-visible {
+  outline: 3px solid #1f77df;
+  outline-offset: 3px;
+}
+.calendar-setup {
+  background: #fff6dc;
+  border: 1px solid #d8c798;
+  border-radius: 12px;
+  color: #65501f;
+  font-size: 12px;
+  line-height: 1.8;
+  padding: 12px;
+  margin: 16px 0;
+}
+.calendar-options .calendar-actions button:disabled {
+  background: #edf1f0;
+  color: #687975;
+  border-color: #b9c9c5;
+  cursor: not-allowed;
+}
+.calendar-result {
+  display: block;
+  font-size: 13px;
+  color: #17615b;
+  text-align: center;
+  padding: 12px 8px;
+  min-height: 48px;
+  text-underline-offset: 3px;
+}
+.calendar-result:focus-visible {
+  outline: 3px solid #1f77df;
+  outline-offset: 3px;
+}
+.calendar-content-scope {
+  margin: 0 0 14px;
+  color: #405f5a;
+}
+.catalog-empty {
+  margin: 24px 0;
+  padding: 24px 20px;
+  border: 1px solid #cfe4df;
+  border-radius: 20px;
+  background: #f2fbf9;
+}
+.catalog-empty h2 {
+  font-size: 20px;
+  color: #234b62;
+  line-height: 1.6;
+}
+.catalog-empty p {
+  font-size: 14px;
+  color: #536f78;
+  line-height: 1.8;
+  margin: 12px 0 20px;
+}
