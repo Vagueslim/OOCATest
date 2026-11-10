@@ -99,13 +99,13 @@ test('share card: a quote change during preparation cannot publish the previous 
  const width=await page.evaluate(async()=>{const bitmap=await createImageBitmap((window as any).__share.files[0]);const width=bitmap.width;bitmap.close();return width;});expect(width).toBe(780);expect(mock.external).toEqual([]);
 });
 
-for(const kind of ['playful-tilt','back-view','native-svg','long-text'])test('share card image evidence: '+kind+' renders complete artwork and text at 2x',async({page})=>{
+for(const kind of ['playful-tilt','back-view','native-svg','heart-hug','caring-listener','long-text'])test('share card image evidence: '+kind+' renders complete artwork and text at 2x',async({page})=>{
  const mock=await mockShare(page);await page.setViewportSize({width:390,height:844});
  await page.route('**/src/main.tsx*',route=>route.fulfill({contentType:'application/javascript',body:`
  import React from '/node_modules/.vite/deps/react.js';import ReactDOM from '/node_modules/.vite/deps/react-dom_client.js';const {createRoot}=ReactDOM;
  import ShareCard from '/src/ShareCard.tsx';import {quotes} from '/src/quotes.ts';import '/src/style.css';import '/src/journey.css';import '/src/stage.css';import '/src/figma.css';
  const kind=${JSON.stringify(kind)};
- const pose=kind==='playful-tilt'?'Playful Tilt':kind==='back-view'?'Back View':kind==='native-svg'?'Quiet Moment':null;
+ const pose=kind==='playful-tilt'?'Playful Tilt':kind==='back-view'?'Back View':kind==='native-svg'?'Quiet Moment':kind==='heart-hug'?'Heart Hug':kind==='caring-listener'?'Caring Listener':null;
  const quote=pose?quotes.find(q=>q.character?.name===pose):quotes.reduce((a,b)=>a.headword.length+a.text.length>b.headword.length+b.text.length?a:b);
  createRoot(document.getElementById('root')).render(React.createElement('main',null,React.createElement(ShareCard,{quote})));
  `}));
@@ -115,7 +115,7 @@ for(const kind of ['playful-tilt','back-view','native-svg','long-text'])test('sh
   const box=node.getBoundingClientRect(),art=node.querySelector('.quote-character')!.getBoundingClientRect();
   return {width:node.clientWidth,height:node.clientHeight,art:{x:(art.left-box.left)*2,y:(art.top-box.top)*2,width:art.width*2,height:art.height*2},quoteId:node.querySelector('.quote-card')!.getAttribute('data-quote-id')};
  });
- expect(bounds.art.width).toBeGreaterThan(200);expect(bounds.art.height).toBeGreaterThan(200);
+ expect(bounds.art.width).toBe(332);expect(bounds.art.height).toBe(352);
  expect(await surface.evaluate(node=>[...node.querySelectorAll('.quote-headword,.quote-thai,.quote-reading')].every(element=>element.scrollWidth<=element.clientWidth+1))).toBe(true);
  await button(page,'แชร์การ์ด').click();
  const image=await page.evaluate(async art=>{

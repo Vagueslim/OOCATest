@@ -1,15 +1,17 @@
-import type {Character} from './characters';
+import type {Character,CharacterName} from './characters';
+import {characterBounds} from './characterBounds';
+import './character-artwork.css';
 
 export default function CharacterArtwork({character}:{character:Character}){
- const shared={className:`quote-character ${character.tile?'character-tile':''}`,'data-character-name':character.name,'data-source-kind':character.sourceKind};
- if(character.tile){
-  const {x,y,sheetWidth,sheetHeight}=character.tile;
-  return <span {...shared} role="img" aria-label={`Mooca ${character.name}`} style={{
-   aspectRatio:`${character.width} / ${character.height}`,
-   backgroundImage:`url("${character.image}")`,
-   backgroundSize:`${sheetWidth/character.width*100}% ${sheetHeight/character.height*100}%`,
-   backgroundPosition:`${x/(sheetWidth-character.width)*100}% ${y/(sheetHeight-character.height)*100}%`
-  }}/>;
- }
- return <img {...shared} src={character.image} width={character.width} height={character.height} alt={`Mooca ${character.name}`} draggable={false}/>;
+ const bounds=characterBounds[character.name as CharacterName]??{x:0,y:0,width:character.width,height:character.height};
+ const width=166,height=176;
+ const scale=Math.min(width/bounds.width,height/bounds.height);
+ // Fit visible artwork, not transparent file padding. Original asset bytes stay intact.
+ return <span className="quote-character character-artwork" data-character-name={character.name} data-source-kind={character.sourceKind} role="img" aria-label={`Mooca ${character.name}`} style={{width,height,maxWidth:width}}>
+  <img src={character.image} width={character.width} height={character.height} alt="" aria-hidden="true" draggable={false} style={{
+   width:character.width*scale,height:character.height*scale,
+   left:(width-bounds.width*scale)/2-bounds.x*scale,
+   top:height-bounds.height*scale-bounds.y*scale,
+  }}/>
+ </span>;
 }

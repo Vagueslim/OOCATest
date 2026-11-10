@@ -18,8 +18,8 @@ test.beforeEach(async({page})=>{
  await page.setViewportSize({width:390,height:844});
  await page.emulateMedia({reducedMotion:'reduce'});
  await page.addInitScript(()=>{Math.random=()=>0.99999;});
- await page.goto('/');await page.evaluate(()=>document.fonts.ready);
- await button(page,'ลองเปิดอ่าน').click();
+ await page.goto(process.env.TEST_BASE_URL||'/');await page.evaluate(()=>document.fonts.ready);
+ await button(page,'เปิดอ่าน').click();
 });
 test('Mooca: CALM uses exact Relaxing asset, keeps original tags and matches expanded view',async({page})=>{
  await browseTo(page,'catalog-v1:ooca-002');
@@ -28,13 +28,15 @@ test('Mooca: CALM uses exact Relaxing asset, keeps original tags and matches exp
  await expect(active(page).locator('.quote-reading')).toHaveText('/ คาล์ม /');
  await expect(active(page).locator('.quote-thai')).toHaveText(q.text);
  await expect(active(page).locator('.quote-tags li')).toHaveText(q.tags);
- const img=active(page).getByRole('img',{name:'Mooca Relaxing'});
+ const artwork=active(page).getByRole('img',{name:'Mooca Relaxing'}),img=artwork.locator('img');
  await expect.poll(()=>img.evaluate(el=>(el as HTMLImageElement).naturalWidth)).toBe(278);
- const geometry=await img.evaluate(el=>{const r=el.getBoundingClientRect();return{width:r.width,height:r.height,naturalHeight:(el as HTMLImageElement).naturalHeight};});
- expect(geometry.naturalHeight).toBe(278);expect(geometry.width/geometry.height).toBeCloseTo(278/278,2);
+ await expect(img).toHaveAttribute('aria-hidden','true');
+ const geometry=await img.evaluate(el=>({naturalHeight:(el as HTMLImageElement).naturalHeight,width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height}));
+ expect(geometry.naturalHeight).toBe(278);expect(geometry.width/geometry.height).toBeCloseTo(1,3);
+ const slot=await artwork.boundingBox();expect(slot!.width).toBe(166);expect(slot!.height).toBe(176);
  await expect(active(page).locator('.quote-headword')).toHaveText(q.headword);
  const text=await active(page).locator('.quote-thai').boundingBox();
- const picture=await img.boundingBox();expect(text!.y+text!.height).toBeLessThanOrEqual(picture!.y+1);
+ const picture=await artwork.boundingBox();expect(text!.y+text!.height).toBeLessThanOrEqual(picture!.y+1);
  const card=await active(page).boundingBox();expect(picture!.x).toBeGreaterThanOrEqual(card!.x);expect(picture!.x+picture!.width).toBeLessThanOrEqual(card!.x+card!.width);
  await noOverflow(page);await page.evaluate(()=>scrollTo(0,0));
  await page.screenshot({path:'evidence/mooca-calm-browse-390.png',fullPage:true});
@@ -42,9 +44,10 @@ test('Mooca: CALM uses exact Relaxing asset, keeps original tags and matches exp
  await page.getByRole('button',{name:'ขยายข้อความ CALM',exact:true}).click();
  const dialog=page.getByRole('dialog');
  await expect(dialog.locator('.character-tag')).toHaveText('Relaxing');
- await expect(dialog.getByRole('img',{name:'Mooca Relaxing'})).toHaveAttribute('src',src!);
+ await expect(dialog.getByRole('img',{name:'Mooca Relaxing'}).locator('img')).toHaveAttribute('src',src!);
  await expect(dialog.locator('.quote-thai')).toHaveText(q.text);
  await expect(dialog.locator('.quote-tags li')).toHaveText(q.tags);
+ await button(page,'เลือกข้อความนี้').scrollIntoViewIfNeeded();
  await expect(button(page,'เลือกข้อความนี้')).toBeInViewport();
  await page.screenshot({path:'evidence/mooca-calm-expanded-390.png'});
  expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBeNull();
@@ -52,7 +55,7 @@ test('Mooca: CALM uses exact Relaxing asset, keeps original tags and matches exp
  await expect(active(page)).toHaveAttribute('data-quote-id',q.id);
  for(const width of [320,360,390,1440]){
   await page.setViewportSize({width,height:844});await noOverflow(page);
-  const bounds=await img.boundingBox();expect(bounds!.width/bounds!.height).toBeCloseTo(278/278,2);
+  const size=await artwork.boundingBox();expect(size!.width).toBe(166);expect(size!.height).toBe(176);
  }
 });
 test('Mooca: long sentence remains complete with its matched character in browse and expanded views',async({page})=>{
@@ -73,6 +76,7 @@ test('Mooca: long sentence remains complete with its matched character in browse
  await expect(dialog.getByRole('img',{name:'Mooca Bookworm'})).toBeVisible();
  await expect(dialog.locator('.quote-thai')).toHaveText(q.text);
  expect(await dialog.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
+ await button(page,'เลือกข้อความนี้').scrollIntoViewIfNeeded();
  await expect(button(page,'เลือกข้อความนี้')).toBeInViewport();
  await page.screenshot({path:'evidence/mooca-long-sentence-expanded-390.png'});
  await dialog.locator('.quote-thai').scrollIntoViewIfNeeded();
@@ -98,19 +102,23 @@ test('Mooca: every catalog card has one matched pose, preserved content tags and
   await expect(card.locator('.quote-thai')).toHaveText(q.text);
   await expect(card.locator('.quote-tags li')).toHaveText(q.tags);
   const image=card.locator('.quote-character'),bounds=(await image.boundingBox())!,outer=(await card.boundingBox())!;
-  expect(bounds.width/bounds.height).toBeCloseTo(character.width/character.height,2);
+  expect(bounds.width).toBe(166);expect(bounds.height).toBe(176);
+  await expect(image).toHaveAttribute('data-source-kind',character.sourceKind);
+  const asset=image.locator('img');await expect(asset).toHaveAttribute('aria-hidden','true');
+  const intrinsic=await asset.evaluate(el=>({width:(el as HTMLImageElement).naturalWidth,height:(el as HTMLImageElement).naturalHeight}));
+  expect(intrinsic).toEqual({width:character.width,height:character.height});
+  const rendered=await asset.boundingBox();expect(rendered!.width/rendered!.height).toBeCloseTo(character.width/character.height,3);
   expect(bounds.x).toBeGreaterThanOrEqual(outer.x);expect(bounds.x+bounds.width).toBeLessThanOrEqual(outer.x+outer.width);
-  if(character.tile){expect(bounds.width).toBeLessThanOrEqual(148);expect(await image.evaluate(el=>getComputedStyle(el).backgroundImage)).toMatch(/character-sheet(?:-[\w-]+)?\.png/);}
   await noOverflow(page);
   if(!captured.has(character.name)){
    await image.screenshot({path:`evidence/character-${character.name.toLowerCase().replaceAll(' ','-')}.png`});captured.add(character.name);
   }
-  const style=await image.getAttribute('style');
+  const src=await asset.getAttribute('src');
   await page.getByRole('button',{name:/^ขยายข้อความ/}).click();
   const dialog=page.getByRole('dialog');
   await expect(dialog.locator('.character-tag')).toHaveText(character.name);
   await expect(dialog.locator('.quote-character')).toHaveAttribute('data-character-name',character.name);
-  if(character.tile)await expect(dialog.locator('.quote-character')).toHaveAttribute('style',style!);
+  await expect(dialog.locator('.quote-character img')).toHaveAttribute('src',src!);
   await expect(dialog.locator('.quote-thai')).toHaveText(q.text);
   await expect(dialog.locator('.quote-tags li')).toHaveText(q.tags);
   await button(page,'กลับไปดูการ์ด').click();
