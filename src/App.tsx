@@ -13,6 +13,7 @@ import WelcomeScreen from './WelcomeScreen';
 import BrandHeader from './BrandHeader';
 import CharacterArtwork from './CharacterArtwork';
 import CalendarReminder from './CalendarReminder';
+import ShareCard from './ShareCard';
 import type {CalendarSession} from './CalendarReminder';
 import {characters} from './characters';
 import arrowBack from './assets/figma/arrow-back.svg';
@@ -128,8 +129,9 @@ export default function App(){
       <input type="radio" name="focus" value={value??''} checked={round.focus===value} onChange={e=>{if(e.target.checked)patch({focus:value});}}/><span>{label}</span>
      </label>)}</div>
     </fieldset>
-    <div className={'step-actions'+(round.focus==='self'?' has-calendar':'')}>
+    <div className={'step-actions'+(round.focus==='self'?' has-calendar':round.focus==='other'?' has-share':'')}>
      {round.focus==='self'&&<CalendarReminder compact content={{headword:quote.headword,text:quote.text}} session={calendarSession} onSession={setCalendarSession} onBusyChange={setCalendarBusy}/>}
+     {round.focus==='other'&&<ShareCard quote={quote}/>}
      <TapButton className="primary" disabled={calendarBusy} onClick={()=>setScreen('write')}>ต่อไป</TapButton>
     </div>
     <TapButton className="text-button reflect-exit" disabled={calendarBusy} onClick={skip}>วันนี้ยังไม่เลือก</TapButton>

@@ -3,7 +3,7 @@ import {TapButton,TapSummary} from './TouchControls';
 import type {Quote} from './quotes';
 import CharacterArtwork from './CharacterArtwork';
 import arrowBack from './assets/figma/arrow-back.svg';
-export default function QuoteCard({quote:q,active=true,compact=false,onExpand}:{quote:Quote;active?:boolean;compact?:boolean;onExpand?:(source:HTMLElement,opener:HTMLElement)=>void}) {
+export default function QuoteCard({quote:q,active=true,compact=false,showSource=true,onExpand}:{quote:Quote;active?:boolean;compact?:boolean;showSource?:boolean;onExpand?:(source:HTMLElement,opener:HTMLElement)=>void}) {
  const tapStart=useRef({x:0,y:0});
  const dragged=useRef(false);
  const reading=(q.reading||q.partOfSpeech)&&<p className="quote-reading">{q.reading&&<span title={q.readingKind}>/ {q.reading} /</span>}{q.reading&&q.partOfSpeech?' ':null}{q.partOfSpeech&&<span lang="en">{q.partOfSpeech}</span>}</p>;
@@ -24,7 +24,7 @@ export default function QuoteCard({quote:q,active=true,compact=false,onExpand}:{
  </>;
  return <article className={`quote-card ${compact?'compact-card':''} ${q.type==='sentence'?'sentence-card':q.headword.length>8?'long-word-card':''} ${q.character?'has-character':''}`} data-testid={active?"quote":undefined} data-quote-id={q.id}>
   <div className="quote-card-content">{content}{onExpand&&<TapButton className="card-expand-control" aria-label={`ขยายข้อความ ${q.headword}`} aria-haspopup="dialog" onPointerDownCapture={event=>{tapStart.current={x:event.clientX,y:event.clientY};dragged.current=false;}} onPointerMoveCapture={event=>{if(event.buttons&&Math.hypot(event.clientX-tapStart.current.x,event.clientY-tapStart.current.y)>12)dragged.current=true;}} onPointerCancelCapture={()=>{dragged.current=true;}} onKeyDownCapture={()=>{dragged.current=false;}} onClick={event=>{if(!dragged.current)onExpand(event.currentTarget.closest('.quote-card') as HTMLElement,event.currentTarget);}}/>}</div>
-  {!compact&&<details className="source-details">
+  {!compact&&showSource&&<details className="source-details">
    <TapSummary><span>{q.headword.toLocaleLowerCase()}<span className="visually-hidden"> · ต้นฉบับและคำแปลร่าง</span></span><img src={arrowBack} width="24" height="24" alt=""/></TapSummary>
    <p className="source-text">{q.original}</p><p>คำแปลไทย (ร่าง): {q.translation}</p>
    <p className="quote-status">ข้อความไทยเรียบเรียง · ร่างยังไม่ตรวจ</p>
