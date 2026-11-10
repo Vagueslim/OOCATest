@@ -1,8 +1,23 @@
 import {test,expect} from '@playwright/test';
 import type {Page} from '@playwright/test';
 import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 
 const catalog=JSON.parse(readFileSync(new URL('../src/catalog.json',import.meta.url),'utf8'));
+type Pronunciation={reading:string|null;readingKind:string};
+type PronunciationUpdate={id:string;before:Pronunciation;after:Pronunciation};
+const pronunciation: {baseline:{commit:string;recordCount:number;ids:string[];canonicalSha256:string};updates:PronunciationUpdate[]}=
+ JSON.parse(readFileSync(new URL('./fixtures/pronunciation-updates.json',import.meta.url),'utf8'));
+const approvedPronunciation=new Map(pronunciation.updates.map(update=>[update.id,update]));
+function restorePronunciation(record:{id:string}&Record<string,unknown>){
+ const update=approvedPronunciation.get(record.id);
+ return update?{...record,...update.before}:record;
+}
+function canonical(value:unknown):unknown{
+ if(Array.isArray(value))return value.map(canonical);
+ if(value!==null&&typeof value==='object')return Object.fromEntries(Object.entries(value).sort(([a],[b])=>a<b?-1:a>b?1:0).map(([key,item])=>[key,canonical(item)]));
+ return value;
+}
 const key='ooca-demo:saved-quotes:v1';
 const base=process.env.TEST_BASE_URL||'/';
 async function fixture(page:Page,getRecords:()=>unknown[]){
@@ -33,9 +48,31 @@ test('catalog visibility: explicit binary status and original user edits remain 
  for(const old of before){
   const current=catalog.find((q:{id:string})=>q.id===old.id);
   expect(current).toBeTruthy();
-  const {status,...content}=current;
+  // Preserve the historical snapshot while allowing only the reviewed pronunciation updates.
+  const {status,...content}=restorePronunciation(current);
   expect(content).toEqual(old);
  }
+});
+
+test('catalog pronunciation: exactly 37 reviewed updates preserve all 107 records and other fields',()=>{
+ expect(pronunciation.baseline.commit).toBe('7db818fce71bb2c220697bbd71edab0ad4f699bc');
+ expect(pronunciation.baseline.recordCount).toBe(107);
+ expect(catalog.map((record:{id:string})=>record.id)).toEqual(pronunciation.baseline.ids);
+ expect(catalog).toHaveLength(pronunciation.baseline.recordCount);
+ expect(pronunciation.updates).toHaveLength(37);
+ expect(approvedPronunciation.size).toBe(37);
+ for(const update of pronunciation.updates){
+  expect(Object.keys(update.before).sort()).toEqual(['reading','readingKind']);
+  expect(Object.keys(update.after).sort()).toEqual(['reading','readingKind']);
+  expect(update.after).not.toEqual(update.before);
+  const record=catalog.find((item:{id:string})=>item.id===update.id);
+  expect(record,update.id).toBeTruthy();
+  expect({reading:record.reading,readingKind:record.readingKind},update.id).toEqual(update.after);
+ }
+ // This independent base hash also covers all non-reading fields and the 70 untouched readings.
+ const restored=catalog.map(restorePronunciation);
+ const hash=createHash('sha256').update(JSON.stringify(canonical(restored)),'utf8').digest('hex');
+ expect(hash).toBe(pronunciation.baseline.canonicalSha256);
 });
 
 test.describe('catalog visibility runtime fixtures',()=>{
