@@ -20,6 +20,7 @@ function expectedSnapshot(quote){
 }
 
 export async function checkCatalogLive({page,result,out,url}){
+ result.integrationScope='Local catalog compared with the target URL in isolated browser storage; Google Calendar and native share are not invoked. Only the actual visible-card count is exercised.';
  const raw=await readFile(new URL('../src/catalog.json',import.meta.url),'utf8');
  const catalog=JSON.parse(raw);
  // Absent status remains visible; zero and malformed values fail closed.

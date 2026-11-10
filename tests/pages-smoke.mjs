@@ -7,6 +7,7 @@ const key='ooca-demo:saved-quotes:v1';
 const privateDraft='PRIVATE LIVE SMOKE DRAFT';
 
 export async function checkPages({page,result,out,url}){
+ result.integrationScope='Isolated browser storage only; Google Calendar and native share are not invoked.';
  const button=name=>page.getByRole('button',{name,exact:true});
  const stored=()=>page.evaluate(key=>JSON.parse(localStorage.getItem(key)||'{"version":1,"entries":[]}'),key);
  const welcome=async()=>{await expect(button('เปิดอ่าน')).toBeVisible();await expect(page).toHaveTitle('Pick a word!');};
@@ -81,7 +82,6 @@ export async function checkPages({page,result,out,url}){
  assert.deepEqual(await stored(),saved);result.checks.push('Failed save retains draft/prior history, reports failure and permits an unsaved exit');
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  assert.equal(new URL(page.url()).pathname,root.pathname);
- result.integrationScope='Isolated browser storage only; Google Calendar and native share are not invoked.';
  result.checks.push('No mobile horizontal overflow or route/base-path drift');
 }
 

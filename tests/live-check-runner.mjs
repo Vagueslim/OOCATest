@@ -12,6 +12,12 @@ export const isMain=moduleUrl=>!!process.argv[1]&&moduleUrl===pathToFileURL(reso
 export async function runLiveCheck(name,check){
  const url=process.argv[2],out=resolve(process.argv[3]||`evidence/live-verification/${name}`);
  const result={name,url,startedAt:new Date().toISOString(),sourceCheckoutCommit:null,sourceHasChanges:null,nodeVersion:process.version,browserVersion:null,viewport:{width:360,height:800},checks:[],runtimeErrors:[],failedRequests:[],assets:[],passed:false};
+ result.limitations=[
+  'Checks use an isolated browser context, never the user browser or its saved history.',
+  'Google Calendar OAuth/event creation and native share are not exercised by these checks.',
+  'sourceCheckoutCommit identifies the local checker/catalog checkout; it does not prove the deployed revision.',
+  'Only the recorded checks are covered; this is not a complete product or accessibility audit.',
+ ];
  let browser,page;
  await mkdir(out,{recursive:true});
  try{

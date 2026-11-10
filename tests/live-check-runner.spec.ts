@@ -14,6 +14,9 @@ test('live checker: a failed assertion replaces stale success evidence and exits
  await runLiveCheck('controlled-failure',async({page})=>{await page.setContent('<h1>Controlled fixture</h1>');throw new Error('deliberate assertion failure');});`);
  expect(child.error).toBeUndefined();expect(child.status,child.stderr).toBe(1);
  const result=await report(out);expect(result.passed).toBe(false);expect(result.error).toContain('deliberate assertion failure');
+ expect(result.limitations.join(' ')).toContain('isolated browser context');
+ expect(result.limitations.join(' ')).toContain('not exercised');
+ expect(result.limitations.join(' ')).toContain('does not prove the deployed revision');
  expect(result.browserVersion).toBeTruthy();expect(result.nodeVersion).toBe(process.version);
  expect(Number.isFinite(Date.parse(result.startedAt))).toBe(true);expect(Number.isFinite(Date.parse(result.finishedAt))).toBe(true);
  expect((await readFile(join(out,'failure.png'))).length).toBeGreaterThan(0);
@@ -37,4 +40,5 @@ test('live checker: invalid target writes an explicit failed report before brows
  const child=execute(`process.argv[2]='not-a-url';process.argv[3]=${JSON.stringify(out)};await runLiveCheck('invalid-target',async()=>{throw new Error('Should not navigate');});`);
  expect(child.error).toBeUndefined();expect(child.status,child.stderr).toBe(1);
  const result=await report(out);expect(result.passed).toBe(false);expect(result.error).toContain('Invalid URL');expect(result.browserVersion).toBeNull();
+ expect(result.limitations.join(' ')).toContain('local checker/catalog checkout');
 });
