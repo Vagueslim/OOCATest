@@ -19,3 +19,14 @@ evidence/lint-*.json
 .DS_Store
 Thumbs.db
 evidence/live/
+
+# Generated test artifacts, including alternate output/report directories.
+test-results*/
+playwright-report/
+blob-report/
+artifacts/
+evidence/*
+# Catalog review inputs are test fixtures and must remain available in clean checkouts.
+!evidence/catalog-visibility/
+!evidence/catalog-visibility/**
+!evidence/build.log
