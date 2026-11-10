@@ -1,0 +1,65 @@
+/* The viewport is the sky; the application is a centered, fluid stage.
+   Keep a narrower reading column rather than stretching cards across a monitor. */
+:root {
+  --stage-max-width: 1024px;
+  --reading-max-width: 620px;
+}
+
+body {
+  min-height: 100dvh;
+  background: linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.3) 42%, rgba(255,255,255,.04)),
+    url('./assets/welcome/sky.png') center top / cover no-repeat #c8e9ff;
+  background-attachment: fixed;
+}
+
+main.welcome-screen,
+main.journey-screen {
+  width: 100%;
+  max-width: var(--stage-max-width);
+  min-height: 100dvh;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.journey-screen > .page {
+  width: 100%;
+  max-width: var(--reading-max-width);
+  margin-inline: auto;
+}
+
+.journey-screen > footer {
+  width: 100%;
+  max-width: var(--reading-max-width);
+  margin-inline: auto;
+}
+
+/* Use the same compact capsule on mobile and desktop, not a desktop divider. */
+.journey-screen > .journey-brand {
+  width: 100%;
+  max-width: var(--reading-max-width);
+  margin: 18px auto 4px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 36px;
+  background: #fff;
+}
+
+.journey-wordmark > span:first-child { color: #008d81; }
+.journey-wordmark > span:last-child { color: #1767a0; }
+
+main.screen-noSelection { padding-top: 0; }
+
+@media (min-width: 700px) {
+  .quote-preview {
+    width: calc(100% - 48px);
+    max-width: 760px;
+  }
+
+  .quote-preview .preview-reading > .quote-card {
+    width: 100%;
+    max-width: var(--reading-max-width);
+    margin-inline: auto;
+  }
+}

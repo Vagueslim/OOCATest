@@ -1,0 +1,36 @@
+{
+  "exportedAt": "2026-11-10",
+  "fileKey": "zi16QrXxTPXniyh9garjI6",
+  "pageId": "0:1",
+  "pageName": "CI",
+  "method": "Native Figma exportAsync SVG_STRING; original artwork node exported without the surrounding preview frame. No SVG path edits.",
+  "assets": [
+    {
+      "name": "Playful Tilt",
+      "file": "playful-tilt.svg",
+      "nodeId": "38:7362",
+      "nodeType": "GROUP",
+      "nodeName": "Mooca / Playful Tilt",
+      "source": "https://www.figma.com/design/zi16QrXxTPXniyh9garjI6/?node-id=38-7362",
+      "width": 219,
+      "height": 230,
+      "sha256": "8E8BA6790D8D4C2A67295C4FC49CE6A6B23392950DB95919E5A121E765DF8F6C"
+    },
+    {
+      "name": "Back View",
+      "file": "back-view.svg",
+      "nodeId": "38:5852",
+      "nodeType": "FRAME",
+      "nodeName": "Mooca / Back View",
+      "source": "https://www.figma.com/design/zi16QrXxTPXniyh9garjI6/?node-id=38-5852",
+      "width": 201,
+      "height": 230,
+      "sha256": "D1C290C1BCDD6C120FA720F815F153D0379BDC059A2694E799B45718E94D4EA1"
+    }
+  ],
+  "verification": {
+    "visual": "Compared local SVG rendering with native Figma node screenshots; both exact poses preserve original paths and transparency.",
+    "alpha": "Both assets have zero alpha at all four corners. Original pale preview backgrounds excluded by selecting inner artwork nodes.",
+    "verificationTest": "tests/character-artwork.spec.ts"
+  }
+}

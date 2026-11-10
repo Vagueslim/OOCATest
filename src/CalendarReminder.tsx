@@ -6,7 +6,7 @@ import {CalendarError,googleCalendarClient} from './googleCalendar';
 import type {CalendarClient,CalendarCreateResult} from './googleCalendar';
 
 export type CalendarSession={reminder:Reminder;outcome:'success'|'uncertain';result?:CalendarCreateResult};
-type Props={content?:CalendarContent;client?:CalendarClient;session:CalendarSession|null;onSession:(session:CalendarSession)=>void;onBusyChange?:(busy:boolean)=>void};
+type Props={content?:CalendarContent;client?:CalendarClient;session:CalendarSession|null;onSession:(session:CalendarSession)=>void;onBusyChange?:(busy:boolean)=>void;compact?:boolean};
 const errorText:Record<string,string>={
  setup_required:'ยังไม่ได้ตั้งค่า Google Calendar สำหรับเดโมนี้ จึงยังสร้างนัดไม่ได้',
  not_ready:'ยังเชื่อมต่อ Google ไม่พร้อม กรุณารอหรือลองเชื่อมต่ออีกครั้ง',
@@ -23,7 +23,7 @@ const errorText:Record<string,string>={
  uncertain:'ยังยืนยันไม่ได้ว่าสร้างนัดสำเร็จหรือไม่ กรุณาตรวจ Google Calendar ก่อนดำเนินการอีกครั้ง แม้รีโหลดหน้าแล้วก็ไม่ควรกดซ้ำทันที',
  in_flight:'กำลังดำเนินการกับ Google กรุณารอ',
 };
-export default function CalendarReminder({content,client=googleCalendarClient,session,onSession,onBusyChange}:Props){
+export default function CalendarReminder({content,client=googleCalendarClient,session,onSession,onBusyChange,compact=false}:Props){
  const [open,setOpen]=useState(false);
  const [reminder,setReminder]=useState<Reminder|null>(session?.reminder??null);
  const [consent,setConsent]=useState(false);
@@ -76,12 +76,12 @@ export default function CalendarReminder({content,client=googleCalendarClient,se
    if(mounted.current){const code=e instanceof CalendarError?e.code:'uncertain';setStatus(errorText[code]??errorText.uncertain);if(code==='uncertain'){setOutcome('uncertain');onSession({reminder,outcome:'uncertain'});}setConsent(false);}
   }finally{inFlight.current=false;if(mounted.current)setBusy(false);onBusyChange?.(false);}
  }
- return <div className="calendar-reminder">
+ return <div className={'calendar-reminder'+(compact?' calendar-reminder-compact':'')} data-open={open}>
   <TapButton className="calendar-trigger full" aria-expanded={open} aria-controls="calendar-options" onClick={toggle} disabled={busy}>
    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4m8-4v4M4 10h16m-12 4h3m-3 3h6"/></svg>
-   เตือนฉันในอีก 7 วัน
+   {compact?'บอกฉันอีก 7 วัน':'เตือนฉันในอีก 7 วัน'}
   </TapButton>
-  {!open&&<p className="calendar-caption">เวลา 13:00 น. · ตรวจข้อมูลก่อนสร้างนัด</p>}
+  {!open&&!compact&&<p className="calendar-caption">เวลา 13:00 น. · ตรวจข้อมูลก่อนสร้างนัด</p>}
   {open&&reminder&&<section className="calendar-options" id="calendar-options" aria-label="เพิ่มนัดในปฏิทิน" aria-busy={busy}>
    <h2>ตรวจนัดก่อนส่ง</h2>
    <p className="calendar-label">ชื่อกิจกรรมที่จะส่ง</p>

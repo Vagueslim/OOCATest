@@ -1,0 +1,22 @@
+{
+  "fileKey": "zi16QrXxTPXniyh9garjI6",
+  "exportedAt": "2026-11-10",
+  "method": "Figma native exportAsync SVG_STRING; source artwork unchanged",
+  "assets": [
+    {
+      "name": "Quiet Moment",
+      "nodeId": "6021:4538",
+      "file": "quiet-moment.svg",
+      "slot": {"width": 166, "height": 176},
+      "svg": {"width": 166, "height": 176}
+    },
+    {
+      "name": "Heart Hug",
+      "nodeId": "6021:4934",
+      "file": "heart-hug.svg",
+      "slot": {"width": 230, "height": 230},
+      "svg": {"width": 230, "height": 232},
+      "note": "Native artwork extends slightly below its 230px frame. Preserve intrinsic SVG dimensions and allow overflow."
+    }
+  ]
+}

@@ -4,7 +4,7 @@ export type Character = {
  width:number;
  height:number;
  sourceNode?:string;
- sourceKind:'supplied-reference'|'supplied-character-sheet';
+ sourceKind:'supplied-reference'|'supplied-character-sheet'|'figma-export'|'figma-native-svg';
  tile?:{x:number;y:number;sheetWidth:number;sheetHeight:number};
 };
 
@@ -27,8 +27,8 @@ export const characters=Object.fromEntries(names.map((name,index)=>[name,{
  name,image:sheet,width:158,height:158,sourceKind:'supplied-character-sheet',
  tile:{x:columns[index%3],y:rows[Math.floor(index/3)],sheetWidth:609,sheetHeight:2048}
 }])) as Record<CharacterName,Character>;
-// Separate PNG artwork supplied by the owner on 2026-11-09.
-// Preserve original pose names; three missing poses continue using the unchanged sheet.
+// // Separate PNG artwork supplied by the owner on 2026-11-09.
+// Preserve original pose names. Missing standalone poses use native Figma exports below.
 characters['Balloon Explorer']={name:'Balloon Explorer',image:new URL('./assets/mooca/balloon-explorer.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
 characters['Bench Break']={name:'Bench Break',image:new URL('./assets/mooca/bench-break.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
 characters['Bookworm']={name:'Bookworm',image:new URL('./assets/mooca/bookworm.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
@@ -47,6 +47,11 @@ characters['Relaxing']={name:'Relaxing',image:new URL('./assets/mooca/relaxing.p
 characters['Safe Bubble']={name:'Safe Bubble',image:new URL('./assets/mooca/safe-bubble.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
 characters['Shy Smile']={name:'Shy Smile',image:new URL('./assets/mooca/shy-smile.png',import.meta.url).href,width:290,height:278,sourceKind:'supplied-reference'};
 characters['Sunny Friend']={name:'Sunny Friend',image:new URL('./assets/mooca/sunny-friend.png',import.meta.url).href,width:278,height:278,sourceKind:'supplied-reference'};
+// Export the original vector artwork without the preview frame's pale backdrop.
+characters['Playful Tilt']={name:'Playful Tilt',image:new URL('./assets/figma-artwork/playful-tilt.svg',import.meta.url).href,width:219,height:230,sourceKind:'figma-export',sourceNode:'https://www.figma.com/design/zi16QrXxTPXniyh9garjI6/?node-id=38-7362'};
+characters['Back View']={name:'Back View',image:new URL('./assets/figma-artwork/back-view.svg',import.meta.url).href,width:201,height:230,sourceKind:'figma-export',sourceNode:'https://www.figma.com/design/zi16QrXxTPXniyh9garjI6/?node-id=38-5852'};
+characters['Quiet Moment']={name:'Quiet Moment',image:new URL('./assets/figma-artwork/quiet-moment.svg',import.meta.url).href,width:166,height:176,sourceKind:'figma-native-svg'};
+characters['Heart Hug']={name:'Heart Hug',image:new URL('./assets/figma-artwork/heart-hug.svg',import.meta.url).href,width:230,height:232,sourceKind:'figma-native-svg'};
 characters.Relaxing.sourceNode='https://www.figma.com/design/3PGPbkxDkElsmp7WXKn5nx/?node-id=2012-2840';
 const assignments:CharacterName[]=[
  'Shy Smile','Relaxing','Heart Hug','Curious','Bench Break','Quiet Moment',

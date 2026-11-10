@@ -13,8 +13,9 @@ for(const viewport of [{width:360,height:800},{width:390,height:844},{width:360,
     await page.setViewportSize(viewport);
     await expect(welcome(page)).toBeVisible();
     await expect(page.locator('.welcome-wordmark')).toHaveText('Pick a word!');
-    await expect(page.locator('.welcome-card-word')).toHaveText('Strength');
+    await expect(page.locator('.welcome-card-word')).toHaveText('coffee');
     await expect(page.locator('.welcome-reassurance')).toHaveText('เลือกได้ ข้ามได้ จบได้เมื่อพร้อม');
+    await expect(page.locator('.app-header').getByRole('button',{name:'ดูย้อนหลัง',exact:true})).toBeVisible();
     await expect(page.getByRole('button')).toHaveCount(2);
     await expect(page.locator('header.brand, footer, .eyebrow, .quote-deck')).toHaveCount(0);
     const img=page.locator('.welcome-envelope>img');
@@ -28,16 +29,16 @@ for(const viewport of [{width:360,height:800},{width:390,height:844},{width:360,
     expect(dimensions.width/dimensions.height).toBeCloseTo(dimensions.ratio,2);
     expect(dimensions.fit).toBe('contain');
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-    for(const name of ['ดูย้อนหลัง','ลองเปิดอ่าน']){
+    for(const name of ['ดูย้อนหลัง','เปิดอ่าน']){
       const b=button(page,name),box=await b.boundingBox();
       expect(box!.height).toBeGreaterThanOrEqual(44);
     }
-    await button(page,'ลองเปิดอ่าน').scrollIntoViewIfNeeded();
-    await expect(button(page,'ลองเปิดอ่าน')).toBeInViewport();
+    await button(page,'เปิดอ่าน').scrollIntoViewIfNeeded();
+    await expect(button(page,'เปิดอ่าน')).toBeInViewport();
     await page.evaluate(()=>scrollTo(0,0));
     await page.mouse.click(5,80);
-    await page.screenshot({path:`evidence/welcome-${viewport.width}x${viewport.height}.png`,fullPage:true});
-    await button(page,'ลองเปิดอ่าน').click();
+    await page.screenshot({path:`evidence/figma-20261110/welcome-${viewport.width}x${viewport.height}.png`,fullPage:true});
+    await button(page,'เปิดอ่าน').click();
     await expect(page.getByRole('heading',{name:'พบข้อความ'})).toBeFocused();
     await expect(page.getByTestId('quote')).toBeVisible();
   });
@@ -55,7 +56,7 @@ test('welcome: history returns here, keyboard controls work, and no storage is c
   await button(page,'กลับ').click();
   await expect(welcome(page)).toBeFocused();
   await page.keyboard.press('Tab');
-  await expect(button(page,'ลองเปิดอ่าน')).toBeFocused();
+  await expect(button(page,'เปิดอ่าน')).toBeFocused();
   await page.keyboard.press('Space');
   await expect(page.getByRole('heading',{name:'พบข้อความ'})).toBeFocused();
   await expect(page.getByTestId('quote').locator('.quote-character')).toBeVisible();
@@ -68,7 +69,7 @@ test('welcome: mobile tap history and start work with reduced motion',async({bro
   const page=await context.newPage();await page.goto('/');
   await button(page,'ดูย้อนหลัง').tap();await expect(page.getByRole('heading',{name:'ข้อความที่เก็บไว้'})).toBeVisible();
   await button(page,'กลับ').tap();await expect(welcome(page)).toBeVisible();
-  await button(page,'ลองเปิดอ่าน').tap();await expect(page.getByRole('heading',{name:'พบข้อความ'})).toBeVisible();
+  await button(page,'เปิดอ่าน').tap();await expect(page.getByRole('heading',{name:'พบข้อความ'})).toBeVisible();
   await page.getByRole('button',{name:/^ขยายข้อความ/}).tap();
   await expect(page.getByRole('dialog')).toBeVisible();
   await button(page,'กลับไปดูการ์ด').tap();
