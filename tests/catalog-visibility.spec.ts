@@ -36,8 +36,7 @@ async function quoteModule(page:Page){
 async function saveCurrent(page:Page){
  await page.locator('.browse-actions .primary').click();
  await page.locator('.step-actions .primary').click();
- await page.locator('.keep-disclosure > summary').click();
- await page.locator('.save-section button').click();
+ await page.locator('.writing-actions .primary').click();
  return page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),key);
 }
 test('catalog visibility: explicit binary status and original user edits remain unchanged by ID',()=>{
@@ -76,7 +75,7 @@ test('catalog pronunciation: exactly 37 reviewed updates preserve all 107 record
 });
 
 test.describe('catalog visibility runtime fixtures',()=>{
- test.skip(!!process.env.TEST_BASE_URL,'Vite module fixtures run locally, without changing production or source files.');
+ test.skip(!!process.env.TEST_BASE_URL&&!/^http:\/\/(127\.0\.0\.1|localhost)(:\d+)?\/?$/.test(process.env.TEST_BASE_URL),'Vite module fixtures run locally, without changing production or source files.');
  test('0 is excluded, absent defaults to shown, invalid status fails closed, all IDs remain available',async({page})=>{
   const records=catalog.slice(0,7).map((q:object,i:number)=>({...q,status:[1,0,undefined,'1',null,false,-1][i]}));
   await fixture(page,()=>records);await page.goto(base);
@@ -127,15 +126,23 @@ test.describe('catalog visibility runtime fixtures',()=>{
   expect(original.quoteId).toBe(records[0].id);expect(original.quoteText).toContain(records[0].text);
   records=records.map((q:{status:number},i:number)=>({...q,status:i===0?0:1}));
   await page.reload();await page.locator('.welcome-history').click();
-  await expect(page.locator('.history-day summary')).toHaveText(original.quoteText);
+  await page.locator('.history-entry-details summary').click();
+  await expect(page.locator('.history-saved-text')).toHaveText(original.quoteText);
   expect(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),key)).toEqual(saved);
   await page.reload();await page.locator('.welcome-start').click();
   await expect(page.getByTestId('quote')).toHaveAttribute('data-quote-id',records[1].id);
   const later=await saveCurrent(page);expect(later.version).toBe(1);
   expect(later.entries[0]).toEqual(original);expect(later.entries[1].quoteId).toBe(records[1].id);
   await page.reload();await page.locator('.welcome-history').click();
-  const hiddenHistory=page.locator('.history-day details').filter({has:page.locator('summary').filter({hasText:original.quoteText})});
-  await hiddenHistory.locator('summary').click();await hiddenHistory.locator('button').click();
+  const details=page.locator('.history-entry-details');
+  await details.locator('summary').click();
+  if(await page.locator('.history-saved-text').innerText()!==original.quoteText){
+   await page.getByRole('button',{name:'ข้อความที่เก็บไว้ถัดไป',exact:true}).click();
+   await details.locator('summary').click();
+  }
+  await expect(page.locator('.history-saved-text')).toHaveText(original.quoteText);
+  const hiddenHistory=details;
+  await hiddenHistory.getByRole('button',{name:'ลบข้อความ',exact:true}).click();
   await hiddenHistory.locator('.confirmation button').first().click();
   const remaining=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),key);
   expect(remaining.entries).toEqual([later.entries[1]]);

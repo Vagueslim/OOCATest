@@ -1,8 +1,6 @@
-import {test,expect,type Page} from '@playwright/test';
+import {test,expect} from '@playwright/test';
 const site='https://vagueslim.github.io/OOCATest/';
-const button=(page:Page,name:string)=>page.getByRole('button',{name,exact:true});
-const panel=(page:Page)=>page.getByRole('region',{name:'เพิ่มนัดในปฏิทิน',exact:true});
-const storage=(page:Page)=>page.evaluate(()=>({local:{...localStorage},session:{...sessionStorage}}));
+// Date/ICS contracts are independent of the reminder moving to the self-focus step.
 const cases=[
  {zone:'Asia/Bangkok',label:'near midnight',input:'2026-11-08T23:59:59',local:'2026-11-15',utc:'20261115T060000Z',end:'20261115T061500Z'},
  {zone:'Asia/Bangkok',label:'month rollover',input:'2026-01-28T01:00:00',local:'2026-02-04',utc:'20260204T060000Z',end:'20260204T061500Z'},

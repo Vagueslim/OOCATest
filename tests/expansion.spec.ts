@@ -12,7 +12,7 @@ test.afterEach(async({page},testInfo)=>{
 
 test.beforeEach(async({page})=>{
  await page.goto(process.env.TEST_BASE_URL||'/');
- await button(page,'ลองเปิดอ่าน').click();
+ await button(page,'เปิดอ่าน').click();
 });
 
 test('expand: front card grows from its position, then returns to the same card without selecting',async({page})=>{
@@ -34,7 +34,7 @@ test('expand: front card grows from its position, then returns to the same card 
  expect(expanded.width).toBeGreaterThan(rect.width);
  expect(expanded.height).toBeGreaterThanOrEqual(page.viewportSize()!.height-2);
  await expect(preview(page).locator('.quote-card')).toHaveAttribute('data-quote-id',first!);
- await expect(preview(page).locator('.source-details')).toHaveAttribute('open','');
+ await expect(preview(page).locator('.source-details')).not.toHaveAttribute('open','');
  expect(await page.evaluate(()=>localStorage.getItem('ooca-demo:saved-quotes:v1'))).toBeNull();
  await page.screenshot({path:'evidence/expanded-card-mobile.png',fullPage:false});
  await button(page,'กลับไปดูการ์ด').click();
@@ -55,14 +55,17 @@ test('expand: selection is explicit and opens the same existing reflection flow'
  await expect(page.getByRole('heading',{name:'ข้อความที่เราเลือก'})).toBeFocused();
  expect(await id(page)).toBe(current);
  await expect(page.getByRole('radio',{name:'ไม่ระบุ',exact:true})).toBeChecked();
+ await expect(active(page).locator('.source-details')).not.toHaveAttribute('open','');
  expect(await page.evaluate(()=>localStorage.getItem('ooca-demo:saved-quotes:v1'))).toBeNull();
  await button(page,'ต่อไป').click();
- await page.locator('.keep-disclosure > summary').click();
- await button(page,'เก็บข้อความไว้').click();
- await expect(page.getByRole('status')).toHaveText('เก็บข้อความไว้แล้ว');
- await button(page,'จบ').click();
- await button(page,'เลือกคำใหม่').click();
- await expect(button(page,'ข้อความก่อนหน้า')).toBeDisabled();
+ await button(page,'เลือกข้อความนี้').click();
+ await expect(page.getByRole('heading',{name:'พบข้อความ'})).toBeFocused();
+ const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('ooca-demo:saved-quotes:v1')!));
+ expect(saved.entries).toHaveLength(1);expect(saved.entries[0].quoteId).toBe(current);
+ expect(await id(page)).toBe(current);
+ await expect(button(page,'ข้อความก่อนหน้า')).toBeEnabled();
+ await button(page,'ดูย้อนหลัง').click();await button(page,'กลับ').click();
+ expect(await id(page)).toBe(current);
 });
 
 test('expand: keyboard, focus trap, Escape, rapid repeated open and interrupted close',async({page})=>{
@@ -70,9 +73,9 @@ test('expand: keyboard, focus trap, Escape, rapid repeated open and interrupted 
  for(let i=0;i<3;i++){
   await open(page).focus();await page.keyboard.press(i%2?'Space':'Enter');
   await expect(preview(page)).toBeVisible();
-  await expect(button(page,'กลับไปดูการ์ด')).toBeFocused();
+  await expect(preview(page).locator('#preview-title')).toBeFocused();
   await page.keyboard.press('Shift+Tab');
-  await expect(button(page,'เลือกข้อความนี้')).toBeFocused();
+  await expect(button(page,'กลับไปดูการ์ด')).toBeFocused();
   await page.keyboard.press('Escape');await page.keyboard.press('Escape');
   await expect(preview(page)).toHaveCount(0);
   await expect(open(page)).toBeFocused();
@@ -82,23 +85,33 @@ test('expand: keyboard, focus trap, Escape, rapid repeated open and interrupted 
  expect(await id(page)).not.toBe(first);
 });
 
-test('expand: details remain independent, desktop and narrow layouts do not overflow',async({page})=>{
- await active(page).locator('summary').click();
- await expect(preview(page)).toHaveCount(0);
+test('expand: source disclosure remains independent inside the preview and layouts do not overflow',async({page})=>{
+ await expect(active(page).locator('.source-details')).not.toBeVisible();
  for(const width of [320,390,1440]){
   await page.setViewportSize({width,height:844});
   await open(page).click();
   await expect(preview(page)).toHaveAttribute('data-phase','open');
+  const disclosure=preview(page).locator('.source-details');
+  await expect(disclosure).not.toHaveAttribute('open','');
+  await disclosure.locator('summary').click();
+  await expect(disclosure).toHaveAttribute('open','');
+  await disclosure.locator('summary').click();
+  await expect(disclosure).not.toHaveAttribute('open','');
+  await disclosure.locator('summary').click();
+  await expect(disclosure).toHaveAttribute('open','');
+  await expect(preview(page)).toBeVisible();
   const bounds=(await preview(page).boundingBox())!;
   expect(bounds.x).toBeGreaterThanOrEqual(0);expect(bounds.x+bounds.width).toBeLessThanOrEqual(width);
   const fit=await preview(page).evaluate(el=>el.scrollWidth<=el.clientWidth);
   expect(fit).toBe(true);
+  await button(page,'เลือกข้อความนี้').scrollIntoViewIfNeeded();
   await expect(button(page,'เลือกข้อความนี้')).toBeInViewport();
+  await button(page,'กลับไปดูการ์ด').scrollIntoViewIfNeeded();
   await expect(button(page,'กลับไปดูการ์ด')).toBeInViewport();
   if(width===1440)await page.screenshot({path:'evidence/expanded-card-desktop.png',fullPage:false});
   await button(page,'กลับไปดูการ์ด').click();await expect(preview(page)).toHaveCount(0);
  }
- await expect(active(page).locator('details')).toHaveAttribute('open','');
+ expect(await page.evaluate(()=>localStorage.getItem('ooca-demo:saved-quotes:v1'))).toBeNull();
 });
 
 test('expand: reduced motion opens and closes immediately and reload resets the preview',async({page})=>{
