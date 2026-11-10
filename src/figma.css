@@ -42,7 +42,8 @@ main.welcome-screen,main.journey-screen{padding:0}
 .screen-discover .browse-actions{gap:28px;margin-top:24px}
 .browse-actions .primary,.writing-actions .primary{width:198px;flex:none}
 .browse-actions .text-button{font-size:16px;line-height:24px}
-:is(.journey-screen,.quote-preview) .primary{height:48px;min-height:48px;padding:11px 16px;border:1px solid #007f75;border-radius:24px;background:#00c4b3;color:#fff;font-size:16px;font-weight:600;line-height:24px}
+:is(.journey-screen,.quote-preview) .primary{height:48px;min-height:48px;padding:11px 16px;border:1px solid #007f75;border-radius:24px;background:#007f75;color:#fff;font-size:16px;font-weight:600;line-height:24px}
+:is(.journey-screen,.quote-preview) .primary:enabled:hover{background:#006568}
 :is(.journey-screen,.quote-preview) .primary:disabled{background:#9ccfc9;color:#355b57}
 :is(.journey-screen,.quote-preview) .quote-card{align-items:stretch;justify-content:flex-start;padding:24px;margin:0;min-height:0;border:0;border-radius:var(--card-radius);background:var(--card-fill);box-shadow:none;text-align:left}
 :is(.journey-screen,.quote-preview) .quote-card-content{display:flex;flex-direction:column;flex:1;min-width:0}
