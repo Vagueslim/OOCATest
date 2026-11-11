@@ -8,7 +8,7 @@
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | ลำดับหน้าจอและข้อมูลรอบปัจจุบัน | `src/App.tsx`: Welcome → Discover → Reflect → Write → Done; Skip และ History                                           |
 | หน้าแรก / หัวแอป                | `src/WelcomeScreen.tsx`, `src/BrandHeader.tsx`, `src/welcome.css`                                                      |
-| หน้าบันทึกสำเร็จ Done           | `src/DoneScreen.tsx`, `src/done.css`: ข้อความยืนยัน ภาพ Quiet Moment ปุ่มกลับสำรับ/ประวัติ และข้อความท้ายหน้า          |
+| หน้าบันทึกสำเร็จ Done           | `src/DoneScreen.tsx`, `src/done.css`: ข้อความยืนยัน Mooca ของการ์ดที่เลือก ปุ่มกลับสำรับ/ประวัติ และข้อความท้ายหน้า    |
 | ปัดการ์ด / ปุ่มก่อนหน้า–ถัดไป   | `src/QuoteDeck.tsx`: Swiper EffectCards และการรักษา timeline; `src/TouchControls.tsx`: touch activation                |
 | การ์ด / อ่านเต็ม                | `src/QuoteCard.tsx`, `src/QuotePreview.tsx`, `src/preview-flow.css`: disclosure, modal, focus และการเลื่อน             |
 | เนื้อหาและสำรับ                 | `src/catalog.json`, `src/quotes.ts`: visibility, shuffle และข้อความ snapshot                                           |
@@ -27,7 +27,7 @@
 - คำแปล ข้อความไทยเรียบเรียง และคำอ่านยังเป็นร่าง รายละเอียดต้นฉบับเริ่มย่อ คงป้ายร่างไว้ การเปลี่ยนคำอ่าน 37 รายการอ้าง [fixture ก่อน–หลัง](../tests/fixtures/pronunciation-updates.json) และ [รายการตรวจ](reviews/pronunciation-updates.md); อย่าแก้ fixture ประวัติเพียงเพื่อให้ test ผ่าน
 - เก็บ raw headword ตาม catalog เช่น `family`; ตัวพิมพ์ที่ CSS แสดงไม่ใช่ข้อมูลใหม่ ใช้ `textContent` เมื่อตรวจ snapshot แบบตรงตัว
 - `storage.ts` ใช้ key `ooca-demo:saved-quotes:v1`, wrapper `{version: 1, entries: [...]}` และ entry มีเพียง `id`, `quoteId`, `quoteText`, `focus`, `savedAt`, `localDay` จำกัด 9 รายการต่อวันตามเวลาท้องถิ่น โดย `DAILY_SAVE_LIMIT` เป็นค่าเดียวที่ใช้ทั้งตรวจโควตาและสร้างข้อความแจ้งเต็ม การเพิ่มเพดานไม่ล้างหรือย้ายประวัติเดิม
-- หน้า Write เก็บเฉพาะ snapshot ของคำและมุม เมื่อสำเร็จให้ล้าง draft แล้วเปิด Done พร้อม Quiet Moment และข้อความ “คิดถึงเค้าแล้ว / คิดถึงเราด้วย” ข้อความที่พิมพ์อยู่ใน React state เท่านั้น ไม่บันทึกหรือแสดงบน Done; save ล้มเหลวหรือเต็มโควตาต้องคงหน้า Write, draft และประวัติเดิม พร้อมข้อความผิดพลาด
+- หน้า Write เก็บเฉพาะ snapshot ของคำและมุม เมื่อสำเร็จให้ล้าง draft แล้วเปิด Done พร้อม Mooca ตัวเดียวกับการ์ดที่บันทึกและข้อความ “คิดถึงเค้าแล้ว / คิดถึงเราด้วย” จดจำ character ใน React state หลัง save สำเร็จ เพื่อรักษาภาพ/ชื่อท่าเมื่อกลับจาก History และเปลี่ยนตามการบันทึกครั้งถัดไป ใช้ `CharacterArtwork` กับขนาดภาพมาตรฐานเดียวกับการ์ด; การ์ดที่ไม่มี character ใช้ Quiet Moment สำรอง ข้อความที่พิมพ์อยู่ใน React state เท่านั้น ไม่บันทึกหรือแสดงบน Done; save ล้มเหลวหรือเต็มโควตาต้องคงหน้า Write, draft และประวัติเดิม พร้อมข้อความผิดพลาด
 - จาก Done ปุ่ม “เลือกคำใหม่” กลับ Discover โดยรักษาสำรับ การ์ดปัจจุบัน และ cursor เดิม ไม่เรียกเริ่มรอบเพื่อสับสำรับใหม่ ปุ่ม “ดูข้อความที่เก็บไว้” เปิด History และ Back กลับ Done โดยไม่บันทึกซ้ำ
 - History ใช้ snapshot ที่เคยบันทึกจริง แม้ catalog เปลี่ยนภายหลัง ลบต้องยืนยัน และเดือนที่เลือกกับรายการต้องตรงกันแม้ลบจนเดือนนั้นว่าง
 - ประวัติอยู่เฉพาะ browser/origin ไม่มีการ sync ระหว่าง localhost, port อื่น และ GitHub Pages การล้างข้อมูลเว็บไซต์ทำให้ประวัติใน origin นั้นหาย
