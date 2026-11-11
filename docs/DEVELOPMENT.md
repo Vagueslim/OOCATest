@@ -6,8 +6,9 @@
 
 | งาน                             | ไฟล์หลักและขอบเขต                                                                                                      |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| ลำดับหน้าจอและข้อมูลรอบปัจจุบัน | `src/App.tsx`: Welcome → Discover → Reflect → Write; Skip และ History                                                  |
+| ลำดับหน้าจอและข้อมูลรอบปัจจุบัน | `src/App.tsx`: Welcome → Discover → Reflect → Write → Done; Skip และ History                                           |
 | หน้าแรก / หัวแอป                | `src/WelcomeScreen.tsx`, `src/BrandHeader.tsx`, `src/welcome.css`                                                      |
+| หน้าบันทึกสำเร็จ Done           | `src/DoneScreen.tsx`, `src/done.css`: ข้อความยืนยัน ภาพ Quiet Moment ปุ่มกลับสำรับ/ประวัติ และข้อความท้ายหน้า          |
 | ปัดการ์ด / ปุ่มก่อนหน้า–ถัดไป   | `src/QuoteDeck.tsx`: Swiper EffectCards และการรักษา timeline; `src/TouchControls.tsx`: touch activation                |
 | การ์ด / อ่านเต็ม                | `src/QuoteCard.tsx`, `src/QuotePreview.tsx`, `src/preview-flow.css`: disclosure, modal, focus และการเลื่อน             |
 | เนื้อหาและสำรับ                 | `src/catalog.json`, `src/quotes.ts`: visibility, shuffle และข้อความ snapshot                                           |
@@ -26,7 +27,8 @@
 - คำแปล ข้อความไทยเรียบเรียง และคำอ่านยังเป็นร่าง รายละเอียดต้นฉบับเริ่มย่อ คงป้ายร่างไว้ การเปลี่ยนคำอ่าน 37 รายการอ้าง [fixture ก่อน–หลัง](../tests/fixtures/pronunciation-updates.json) และ [รายการตรวจ](reviews/pronunciation-updates.md); อย่าแก้ fixture ประวัติเพียงเพื่อให้ test ผ่าน
 - เก็บ raw headword ตาม catalog เช่น `family`; ตัวพิมพ์ที่ CSS แสดงไม่ใช่ข้อมูลใหม่ ใช้ `textContent` เมื่อตรวจ snapshot แบบตรงตัว
 - `storage.ts` ใช้ key `ooca-demo:saved-quotes:v1`, wrapper `{version: 1, entries: [...]}` และ entry มีเพียง `id`, `quoteId`, `quoteText`, `focus`, `savedAt`, `localDay` จำกัด 3 รายการต่อวันตามเวลาท้องถิ่น
-- หน้า Write เก็บเฉพาะ snapshot ของคำและมุม แล้วกลับการ์ดเดิมในสำรับเดิม ข้อความที่พิมพ์อยู่ใน React state เท่านั้น ล้างหลัง save สำเร็จหรือออกจากรอบ; save ล้มเหลวต้องคง draft และประวัติเดิม พร้อมข้อความผิดพลาด
+- หน้า Write เก็บเฉพาะ snapshot ของคำและมุม เมื่อสำเร็จให้ล้าง draft แล้วเปิด Done พร้อม Quiet Moment และข้อความ “คิดถึงเค้าแล้ว / คิดถึงเราด้วย” ข้อความที่พิมพ์อยู่ใน React state เท่านั้น ไม่บันทึกหรือแสดงบน Done; save ล้มเหลวหรือเต็มโควตาต้องคงหน้า Write, draft และประวัติเดิม พร้อมข้อความผิดพลาด
+- จาก Done ปุ่ม “เลือกคำใหม่” กลับ Discover โดยรักษาสำรับ การ์ดปัจจุบัน และ cursor เดิม ไม่เรียกเริ่มรอบเพื่อสับสำรับใหม่ ปุ่ม “ดูข้อความที่เก็บไว้” เปิด History และ Back กลับ Done โดยไม่บันทึกซ้ำ
 - History ใช้ snapshot ที่เคยบันทึกจริง แม้ catalog เปลี่ยนภายหลัง ลบต้องยืนยัน และเดือนที่เลือกกับรายการต้องตรงกันแม้ลบจนเดือนนั้นว่าง
 - ประวัติอยู่เฉพาะ browser/origin ไม่มีการ sync ระหว่าง localhost, port อื่น และ GitHub Pages การล้างข้อมูลเว็บไซต์ทำให้ประวัติใน origin นั้นหาย
 - PNG ใช้เฉพาะ public card ไม่รวม draft, focus หรือประวัติ เตรียมไฟล์ก่อนคลิกแชร์ และไม่ดาวน์โหลดเองเมื่อผู้ใช้ยกเลิก native share
@@ -64,13 +66,13 @@ Linux ที่ยังไม่มี browser dependencies ใช้ `npx play
 
 ระหว่างแก้ เลือก tests ตามผลกระทบ แล้วรันทั้งชุดก่อนส่ง PR:
 
-| ส่วนที่แก้                          | ตัวอย่าง tests                                                                                                    |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Catalog / snapshot / visibility     | `catalog.spec.ts`, `catalog-visibility.spec.ts`, `acceptance.spec.ts`                                             |
-| Flow / preview / swipe / responsive | `figma-flow.spec.ts`, `preview-flow.spec.ts`, `swipe.spec.ts`, `swiper-cards.spec.ts`, `responsive-stage.spec.ts` |
-| Artwork                             | `character-artwork.spec.ts`, `mooca-card.spec.ts`                                                                 |
-| Share / Calendar                    | `share-card.spec.ts`, `calendar.spec.ts`, `google-calendar-service.spec.ts`, `google-calendar-ui.spec.ts`         |
-| Contrast / live-check runner        | `button-contrast.spec.ts`, `live-check-runner.spec.ts`                                                            |
+| ส่วนที่แก้                                 | ตัวอย่าง tests                                                                                                                         |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Catalog / snapshot / visibility            | `catalog.spec.ts`, `catalog-visibility.spec.ts`, `acceptance.spec.ts`                                                                  |
+| Flow / Done / preview / swipe / responsive | `figma-flow.spec.ts`, `done-flow.spec.ts`, `preview-flow.spec.ts`, `swipe.spec.ts`, `swiper-cards.spec.ts`, `responsive-stage.spec.ts` |
+| Artwork                                    | `character-artwork.spec.ts`, `mooca-card.spec.ts`                                                                                      |
+| Share / Calendar                           | `share-card.spec.ts`, `calendar.spec.ts`, `google-calendar-service.spec.ts`, `google-calendar-ui.spec.ts`                              |
+| Contrast / live-check runner               | `button-contrast.spec.ts`, `live-check-runner.spec.ts`                                                                                 |
 
 ตัวอย่างรันเฉพาะจุด: `npx playwright test tests/preview-flow.spec.ts` ผลชุดหลักอยู่ใน `evidence/test-results.json`, `evidence/report/` และ trace ใน test results เมื่อ fail; `npx playwright show-report evidence/report` ใช้เปิดรายงาน HTML
 
@@ -97,9 +99,9 @@ node tests/contrast.mjs http://127.0.0.1:5193/OOCATest/
 node tests/pages-smoke.mjs https://vagueslim.github.io/OOCATest/ evidence/live-verification/production-pages
 ```
 
-- `pages-smoke`: หน้าแรก/font/favicon/base-path assets, ก่อนหน้า–ถัดไป, อ่านเต็มที่เริ่มย่อ, ข้าม, Write-save กลับการ์ดเดิม, ประวัติหลัง reload, draft privacy และ storage failure
-- `catalog-live`: เทียบการ์ดที่แสดงครบกับ catalog ใน checkout นี้ ตรวจ ID/raw headword/คำอ่าน/ต้นฉบับ/ป้ายร่าง, สำรับและ timeline, snapshot+focus, legacy history/month/delete/failure; เฉพาะข้อความไทยบนการ์ดยุบช่องว่าง ASCII ซ้ำตาม UI ส่วน snapshot ตรวจตรงตัว
-- `contrast`: วัด CTA ใน Discover/Preview/Reflect/Write ที่ 360 และ 1440px ทั้ง default/focus/hover พร้อมข้อความมุมที่เลือก รวม 26 ค่าสีและ 8 keyboard-focus checks ใช้เกณฑ์ข้อความ 4.5:1; Welcome gradient, disabled controls, focus-ring contrast และข้อความอื่นอยู่นอกขอบเขต ไม่ใช่การตรวจ WCAG ทั้งระบบ
+- `pages-smoke`: หน้าแรก/font/favicon/base-path assets, ก่อนหน้า–ถัดไป, อ่านเต็มที่เริ่มย่อ, ข้าม, Write-save → Done → กลับการ์ดเดิม, Done → History → กลับ Done, ประวัติหลัง reload, draft privacy และ storage failure
+- `catalog-live`: เทียบการ์ดที่แสดงครบกับ catalog ใน checkout นี้ ตรวจ ID/raw headword/คำอ่าน/ต้นฉบับ/ป้ายร่าง, สำรับและ timeline, Write-save → Done, กลับสำรับเดิม, snapshot+focus, legacy history/month/delete/failure; เฉพาะข้อความไทยบนการ์ดยุบช่องว่าง ASCII ซ้ำตาม UI ส่วน snapshot ตรวจตรงตัว
+- `contrast`: วัด CTA ใน Discover/Preview/Reflect/Write/Done ที่ 360 และ 1440px ทั้ง default/focus/hover พร้อมข้อความมุมที่เลือกและข้อความท้ายหน้า Done (`.done-reassurance`) รวม 34 ค่าสีและ 10 keyboard-focus checks ใช้เกณฑ์ข้อความ 4.5:1; Welcome gradient, disabled controls, focus-ring contrast และข้อความอื่นอยู่นอกขอบเขต ไม่ใช่การตรวจ WCAG ทั้งระบบ
 
 ค่าเริ่มต้นคือ `evidence/live-verification/<ชื่อสคริปต์>/results.json` พร้อมภาพประกอบ ใช้โฟลเดอร์ใหม่เมื่อต้องเก็บแต่ละรอบ เพราะชื่อผลลัพธ์เดิมจะถูกเขียนทับ รายงานมีเวลา, Node/browser, checks, runtime errors, failed requests, asset HTTP status, ข้อจำกัด และ `sourceCheckoutCommit`/`sourceHasChanges` ของเครื่องที่รัน; **ไม่ได้ยืนยันว่า URL ปลายทาง deploy จาก commit นั้น**
 

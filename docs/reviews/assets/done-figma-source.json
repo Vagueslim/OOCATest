@@ -1,0 +1,39 @@
+{
+  "fileKey": "zi16QrXxTPXniyh9garjI6",
+  "nodeId": "6034:6262",
+  "frame": {
+    "width": 390,
+    "height": 844.2
+  },
+  "assets": [
+    {
+      "name": "Sky",
+      "nodeId": "6034:6263",
+      "localFile": "src/assets/welcome/sky.png",
+      "method": "Reused existing PNG; SHA-256 equals Figma download",
+      "sha256": "f0a0ae971088bd99c354976b4d479c9a56c9898d6977c8f3b64eb8db3fd5e4fd"
+    },
+    {
+      "name": "Quiet Moment",
+      "nodeId": "6034:6271",
+      "localFile": "src/assets/mooca/quiet-moment.png",
+      "slot": {
+        "width": 180,
+        "height": 180
+      },
+      "method": "Reused existing PNG; SHA-256 equals Figma download",
+      "sha256": "ad1428adf1b422b8a58af4ca4995b18f06bdf709643231f8eb90df1647ed65eb"
+    },
+    {
+      "name": "Status dot",
+      "nodeId": "6034:6256",
+      "localFile": "src/assets/figma/done-status-dot.svg",
+      "slot": {
+        "width": 6,
+        "height": 6
+      },
+      "method": "Unmodified SVG supplied by Figma design context",
+      "sha256": "4fefc887c8fe59a73d662650fa5c4ea200efc605ef4e0756ac1f9cb301ba4e02"
+    }
+  ]
+}
