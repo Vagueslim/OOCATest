@@ -177,8 +177,9 @@ test('A07 storage retries are idempotent and update focus without rewriting the 
 test('A08 daily cap retains unsaved memo; deleting a saved entry restores capacity', async ({
   page,
 }) => {
+  test.setTimeout(60000);
   await start(page);
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 9; i++) {
     await select(page);
     await save(page);
   }
@@ -186,26 +187,26 @@ test('A08 daily cap retains unsaved memo; deleting a saved entry restores capaci
   await page.getByRole('textbox').fill('still private');
   await btn(page, 'เลือกข้อความนี้').click();
   await expect(page.locator('.save-status')).toHaveText(
-    'วันนี้เก็บครบ 3 ข้อความแล้ว คุณยังจบรอบนี้ได้',
+    'วันนี้เก็บครบ 9 ข้อความแล้ว คุณยังจบรอบนี้ได้',
   );
   await expect(page.getByRole('textbox')).toHaveValue('still private');
-  expect(await entries(page)).toHaveLength(3);
+  expect(await entries(page)).toHaveLength(9);
   await skip(page);
   await btn(page, 'กลับไปหน้าแรก').click();
   await btn(page, 'ดูย้อนหลัง').click();
   await page.locator('.history-entry-details>summary').click();
   await btn(page, 'ลบข้อความ').click();
   await btn(page, 'ยกเลิก').click();
-  expect(await entries(page)).toHaveLength(3);
+  expect(await entries(page)).toHaveLength(9);
   await btn(page, 'ลบข้อความ').click();
   await btn(page, 'ยืนยันลบ').click();
-  expect(await entries(page)).toHaveLength(2);
+  expect(await entries(page)).toHaveLength(8);
   await expect(page.locator('.history-carousel')).toBeFocused();
   await btn(page, 'กลับ').click();
   await start(page);
   await select(page);
   await save(page);
-  expect(await entries(page)).toHaveLength(3);
+  expect(await entries(page)).toHaveLength(9);
 });
 test('A09 month filtering, exact unknown snapshots and last deletion returns keyboard focus to month', async ({
   page,

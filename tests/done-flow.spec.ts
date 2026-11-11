@@ -74,9 +74,10 @@ test('Done confirms one private save, returns from History and resumes the same 
   expect(await entries(page)).toEqual(saved);
 });
 
-test('Done starts fresh selections for the same card; the fourth save stays in Write with its draft', async ({
+test('Done starts fresh selections for the same card; the tenth save stays in Write with its draft', async ({
   page,
 }) => {
+  test.setTimeout(60000);
   await page.clock.setFixedTime(new Date('2026-11-11T05:00:00Z'));
   await page.goto(process.env.TEST_BASE_URL || '/');
   await button(page, 'เปิดอ่าน').click();
@@ -84,7 +85,7 @@ test('Done starts fresh selections for the same card; the fourth save stays in W
     .getByTestId('quote')
     .getAttribute('data-quote-id');
   let previousSaved = await entries(page);
-  for (let index = 0; index < 3; index++) {
+  for (let index = 0; index < 9; index++) {
     await button(page, 'เลือกข้อความนี้').click();
     await expect(
       page.getByRole('radio', { name: 'ไม่ระบุ', exact: true }),
@@ -118,13 +119,51 @@ test('Done starts fresh selections for the same card; the fourth save stays in W
   await expect(page.locator('.screen-write')).toBeVisible();
   await expect(page.locator('.screen-done')).toHaveCount(0);
   await expect(page.locator('.save-status')).toContainText(
-    'วันนี้เก็บครบ 3 ข้อความแล้ว',
+    'วันนี้เก็บครบ 9 ข้อความแล้ว',
   );
   await expect(page.getByRole('textbox')).toHaveValue('PRIVATE QUOTA DRAFT');
   expect(await entries(page)).toEqual(previousSaved);
   await button(page, 'วันนี้ยังไม่เลือก').click();
   await expect(page.locator('.screen-noSelection')).toBeVisible();
   expect(await entries(page)).toEqual(previousSaved);
+});
+
+test('Three existing saved quotes no longer block a fourth save and stay unchanged', async ({
+  page,
+}) => {
+  await page.clock.setFixedTime(new Date('2026-11-11T05:00:00Z'));
+  await page.goto(process.env.TEST_BASE_URL || '/');
+  const existing = await page.evaluate((key) => {
+    const now = new Date();
+    const localDay = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    const saved = Array.from({ length: 3 }, (_, index) => ({
+      id: `existing-${index}`,
+      quoteId: `legacy-${index}`,
+      quoteText: `ข้อความเดิม ${index + 1}`,
+      focus: 'self',
+      savedAt: now.toISOString(),
+      localDay,
+    }));
+    localStorage.setItem(key, JSON.stringify({ version: 1, entries: saved }));
+    return saved;
+  }, key);
+  await button(page, 'เปิดอ่าน').click();
+  const selected = await page
+    .getByTestId('quote')
+    .getAttribute('data-quote-id');
+  await button(page, 'เลือกข้อความนี้').click();
+  await button(page, 'ต่อไป').click();
+  await page.getByRole('textbox').fill('PRIVATE FOURTH DRAFT');
+  await button(page, 'เลือกข้อความนี้').click();
+  await expect(page.locator('.screen-done')).toBeVisible();
+  const saved = await entries(page);
+  expect(saved).toHaveLength(4);
+  expect(saved.slice(0, 3)).toEqual(existing);
+  expect(saved[3]).toMatchObject({ quoteId: selected, focus: null });
+  expect(JSON.stringify(saved)).not.toContain('PRIVATE FOURTH DRAFT');
+  await button(page, 'ดูข้อความที่เก็บไว้').click();
+  await expect(page.locator('.history-view')).toBeVisible();
+  expect(await entries(page)).toEqual(saved);
 });
 
 test('A storage failure after Done preserves earlier history and the current private draft', async ({

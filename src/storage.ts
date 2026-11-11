@@ -9,7 +9,8 @@ export type SavedQuote = {
 };
 export const KEY = 'ooca-demo:saved-quotes:v1';
 export const STORAGE_ERROR = 'ตอนนี้เก็บข้อความในเบราว์เซอร์นี้ไม่ได้';
-export const FULL = 'วันนี้เก็บครบ 3 ข้อความแล้ว คุณยังจบรอบนี้ได้';
+export const DAILY_SAVE_LIMIT = 9;
+export const FULL = `วันนี้เก็บครบ ${DAILY_SAVE_LIMIT} ข้อความแล้ว คุณยังจบรอบนี้ได้`;
 export function localDay(date = new Date()) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
@@ -66,7 +67,7 @@ export function saveQuote(input: Omit<SavedQuote, 'savedAt' | 'localDay'>) {
     return updated;
   }
   const today = localDay();
-  if (entries.filter((e) => e.localDay === today).length >= 3)
+  if (entries.filter((e) => e.localDay === today).length >= DAILY_SAVE_LIMIT)
     throw Error(FULL);
   const entry = {
     ...input,
