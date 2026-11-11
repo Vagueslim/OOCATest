@@ -17,6 +17,7 @@ import ShareCard from './ShareCard';
 import DoneScreen from './DoneScreen';
 import type { CalendarSession } from './CalendarReminder';
 import { characters } from './characters';
+import type { Character } from './characters';
 import arrowBack from './assets/figma/arrow-back.svg';
 
 type Screen =
@@ -63,6 +64,9 @@ export default function App() {
   const [screen, setScreen] = useState<Screen>('welcome');
   const [round, setRound] = useState<Round | null>(null);
   const [message, setMessage] = useState('');
+  const [completedCharacter, setCompletedCharacter] = useState<Character>(
+    characters['Quiet Moment'],
+  );
   const [calendarBusy, setCalendarBusy] = useState(false);
   const [calendarSession, setCalendarSession] =
     useState<CalendarSession | null>(null);
@@ -164,6 +168,7 @@ export default function App() {
         quoteText: snapshotText(selected),
         focus: round.focus,
       });
+      setCompletedCharacter(selected.character ?? characters['Quiet Moment']);
       // Only the selected quote snapshot and focus are saved; the private draft ends here.
       // Done resumes this deck; a later selection starts a fresh save entry.
       patch({
@@ -419,6 +424,7 @@ export default function App() {
         )}
         {screen === 'done' && (
           <DoneScreen
+            character={completedCharacter}
             onChooseAnother={() => setScreen('discover')}
             onHistory={history}
           />
