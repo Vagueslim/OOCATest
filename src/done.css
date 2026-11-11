@@ -46,15 +46,16 @@ main.screen-done .done-card {
 .done-artwork {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 192px;
+  flex: none;
   padding-bottom: 12px;
 }
 
-.done-artwork img {
-  display: block;
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
+main.screen-done .done-artwork .character-artwork {
+  margin: 0;
+  align-self: center;
 }
 
 .done-character-label {

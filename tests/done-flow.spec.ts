@@ -1,4 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
+import { shownCatalog } from './catalog-test-data';
+import { characterByQuote } from '../src/characters';
 
 const key = 'ooca-demo:saved-quotes:v1';
 const button = (page: Page, name: string) =>
@@ -10,6 +12,84 @@ const entries = (page: Page) =>
   );
 
 test.use({ reducedMotion: 'reduce' });
+
+test('Done keeps the selected Mooca across preview, save and History, then follows the next selection', async ({
+  page,
+}) => {
+  const poses = ['Sunny Friend', 'Back View', 'Quiet Moment'];
+  const cards = poses.map((name) =>
+    shownCatalog.find((quote) => characterByQuote[quote.id].name === name)!,
+  );
+  await page.route('**/src/catalog.json*', (route) =>
+    route.fulfill({
+      contentType: 'application/javascript',
+      body: `export default ${JSON.stringify(cards)};`,
+    }),
+  );
+  await page.addInitScript(() => {
+    Math.random = () => 0.999999;
+  });
+  await page.goto('/');
+  await button(page, 'เปิดอ่าน').click();
+  for (const [index, card] of cards.entries()) {
+    await expect(page.getByTestId('quote')).toHaveAttribute(
+      'data-quote-id',
+      card.id,
+    );
+    const artwork = page.getByTestId('quote').locator('.quote-character');
+    await expect(artwork).toHaveAttribute('data-character-name', poses[index]);
+    const source = await artwork.locator('img').getAttribute('src');
+    await page.getByRole('button', { name: /^ขยายข้อความ/ }).click();
+    const dialog = page.getByRole('dialog');
+    await expect(dialog.locator('.quote-character')).toHaveAttribute(
+      'data-character-name',
+      poses[index],
+    );
+    await button(page, 'เลือกข้อความนี้').click();
+    await expect(
+      page.getByTestId('quote').locator('.quote-character img'),
+    ).toHaveAttribute('src', source!);
+    await button(page, 'ต่อไป').click();
+    await page.getByRole('textbox').fill('PRIVATE SAME MOOCA DRAFT');
+    await button(page, 'เลือกข้อความนี้').click();
+    const done = page.locator('.screen-done');
+    await expect(done).toBeVisible();
+    await expect(done.locator('.character-tag')).toHaveText(poses[index]);
+    const completedArt = done.getByRole('img', {
+      name: `Mooca ${poses[index]}`,
+      exact: true,
+    });
+    await expect(completedArt).toBeVisible();
+    await expect(completedArt.locator('img')).toHaveAttribute('src', source!);
+    await completedArt
+      .locator('img')
+      .evaluate((image) => (image as HTMLImageElement).decode());
+    const bounds = (await completedArt.boundingBox())!;
+    expect(bounds.width).toBe(166);
+    expect(bounds.height).toBe(176);
+    const saved = await entries(page);
+    expect(saved).toHaveLength(index + 1);
+    expect(saved[index].quoteId).toBe(card.id);
+    expect(Object.keys(saved[index]).sort()).toEqual(
+      ['id', 'quoteId', 'quoteText', 'focus', 'savedAt', 'localDay'].sort(),
+    );
+    expect(JSON.stringify(saved)).not.toContain('PRIVATE SAME MOOCA DRAFT');
+    await button(page, 'ดูข้อความที่เก็บไว้').click();
+    await button(page, 'กลับ').click();
+    await expect(done.locator('.character-tag')).toHaveText(poses[index]);
+    await expect(done.locator('.quote-character img')).toHaveAttribute(
+      'src',
+      source!,
+    );
+    expect(await entries(page)).toEqual(saved);
+    await button(page, 'เลือกคำใหม่').click();
+    await expect(page.getByTestId('quote')).toHaveAttribute(
+      'data-quote-id',
+      card.id,
+    );
+    if (index < cards.length - 1) await button(page, 'เปลี่ยนข้อความ').click();
+  }
+});
 
 test('Done confirms one private save, returns from History and resumes the same deck', async ({
   page,
@@ -220,12 +300,19 @@ for (const viewport of [
     const selected = await page
       .getByTestId('quote')
       .getAttribute('data-quote-id');
+    const selectedPose = await page
+      .getByTestId('quote')
+      .locator('.character-tag')
+      .textContent();
     await button(page, 'เลือกข้อความนี้').click();
     await button(page, 'ต่อไป').click();
     await button(page, 'เลือกข้อความนี้').click();
     await expect(page.locator('.screen-done h1')).toBeFocused();
     await expect(
-      page.getByRole('img', { name: 'Mooca Quiet Moment', exact: true }),
+      page.getByRole('img', {
+        name: `Mooca ${selectedPose!.trim()}`,
+        exact: true,
+      }),
     ).toBeVisible();
     expect(
       await page.evaluate(

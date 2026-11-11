@@ -286,6 +286,12 @@ export async function checkCatalogLive({ page, result, out, url }) {
   )
     await next();
   await expect(active()).toHaveAttribute('data-quote-id', selected.id);
+  const selectedCharacter = await active()
+    .locator('.quote-character')
+    .getAttribute('data-character-name');
+  const selectedArtwork = await active()
+    .locator('.quote-character img')
+    .getAttribute('src');
   await button('เลือกข้อความนี้').click();
   await page.getByRole('radio', { name: 'คนอื่น', exact: true }).check();
   await page.screenshot({
@@ -298,6 +304,12 @@ export async function checkCatalogLive({ page, result, out, url }) {
   await button('เลือกข้อความนี้').click();
   await expect(page.locator('.screen-done')).toBeVisible();
   await expect(page.locator('.screen-done h1')).toBeFocused();
+  await expect(page.locator('.screen-done .character-tag')).toHaveText(
+    selectedCharacter,
+  );
+  await expect(
+    page.locator('.screen-done .quote-character img'),
+  ).toHaveAttribute('src', selectedArtwork);
   await page
     .locator('.screen-done img')
     .evaluateAll((images) =>
@@ -326,6 +338,12 @@ export async function checkCatalogLive({ page, result, out, url }) {
   await expect(page.locator('.history-view')).toBeVisible();
   await button('กลับ').click();
   await expect(page.locator('.screen-done')).toBeVisible();
+  await expect(page.locator('.screen-done .character-tag')).toHaveText(
+    selectedCharacter,
+  );
+  await expect(
+    page.locator('.screen-done .quote-character img'),
+  ).toHaveAttribute('src', selectedArtwork);
   assert.deepEqual(
     await read(),
     saved,

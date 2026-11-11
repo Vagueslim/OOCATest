@@ -144,6 +144,14 @@ export async function checkPages({ page, result, out, url }) {
     .getByTestId('quote')
     .locator('.quote-headword')
     .textContent();
+  const selectedCharacter = await page
+    .getByTestId('quote')
+    .locator('.quote-character')
+    .getAttribute('data-character-name');
+  const selectedArtwork = await page
+    .getByTestId('quote')
+    .locator('.quote-character img')
+    .getAttribute('src');
   await button('เลือกข้อความนี้').click();
   await page.getByRole('radio', { name: 'ตนเอง', exact: true }).check();
   await button('ต่อไป').click();
@@ -152,6 +160,12 @@ export async function checkPages({ page, result, out, url }) {
   await button('เลือกข้อความนี้').click();
   await expect(page.locator('.screen-done')).toBeVisible();
   await expect(page.locator('.screen-done h1')).toBeFocused();
+  await expect(page.locator('.screen-done .character-tag')).toHaveText(
+    selectedCharacter,
+  );
+  await expect(
+    page.locator('.screen-done .quote-character img'),
+  ).toHaveAttribute('src', selectedArtwork);
   await page
     .locator('.screen-done img')
     .evaluateAll((images) =>
@@ -177,7 +191,7 @@ export async function checkPages({ page, result, out, url }) {
   assert.equal(saved.entries[0].quoteText.split('\n')[0], rawHeadword);
   assert(!JSON.stringify(saved).includes(privateDraft));
   result.checks.push(
-    'Write-save confirms Done and stores quote/focus/metadata, never the private draft',
+    'Write-save confirms Done with the selected Mooca image/name and stores quote/focus/metadata, never the private draft',
   );
 
   await button('ดูข้อความที่เก็บไว้').click();
@@ -194,6 +208,12 @@ export async function checkPages({ page, result, out, url }) {
   });
   await button('กลับ').click();
   await expect(page.locator('.screen-done h1')).toBeFocused();
+  await expect(page.locator('.screen-done .character-tag')).toHaveText(
+    selectedCharacter,
+  );
+  await expect(
+    page.locator('.screen-done .quote-character img'),
+  ).toHaveAttribute('src', selectedArtwork);
   assert.deepEqual(
     await stored(),
     saved,

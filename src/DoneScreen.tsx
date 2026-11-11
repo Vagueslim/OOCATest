@@ -1,30 +1,30 @@
 import { TapButton } from './TouchControls';
-import quietMoment from './assets/mooca/quiet-moment.png';
+import CharacterArtwork from './CharacterArtwork';
+import type { Character } from './characters';
 import statusDot from './assets/figma/done-status-dot.svg';
 import './done.css';
 
 type Props = {
+  character: Character;
   onChooseAnother: () => void;
   onHistory: () => void;
 };
 
-export default function DoneScreen({ onChooseAnother, onHistory }: Props) {
+export default function DoneScreen({
+  character,
+  onChooseAnother,
+  onHistory,
+}: Props) {
   return (
     <>
       <section className="closing-card done-card" aria-label="พักตรงนี้ได้">
         <div className="done-artwork">
-          <img
-            src={quietMoment}
-            width="180"
-            height="180"
-            alt="Mooca Quiet Moment"
-            draggable={false}
-          />
+          <CharacterArtwork character={character} />
         </div>
         <div className="done-character-label">
           <span className="character-tag">
             <img src={statusDot} width="6" height="6" alt="" />
-            Quiet Moment
+            {character.name}
           </span>
         </div>
         <p>
