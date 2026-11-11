@@ -124,7 +124,7 @@ test.beforeEach(async ({ page }) => {
   );
 });
 
-test('Figma flow: memo saves privately and returns to the same card and deck with a fresh selection', async ({
+test('Figma flow: memo saves privately, confirms Done and resumes the same card and deck with a fresh selection', async ({
   page,
 }) => {
   await page.addInitScript(
@@ -153,15 +153,8 @@ test('Figma flow: memo saves privately and returns to the same card and deck wit
   await page.getByRole('textbox').fill('PRIVATE MEMO MUST NOT BE SAVED');
   expect(await entries(page)).toEqual([legacy]);
   await button(page, 'เลือกข้อความนี้').click();
-  await expect(
-    page.getByRole('heading', { name: 'พบข้อความ', exact: true }),
-  ).toBeFocused();
-  await expect(page.locator('.saved-main-status')).toHaveText('เก็บคำไว้แล้ว');
-  await expect(page.getByTestId('quote')).toHaveAttribute(
-    'data-quote-id',
-    chosen.id,
-  );
-  expect(await deckState(page)).toEqual(before);
+  await expect(page.locator('.screen-done')).toBeVisible();
+  await expect(page.locator('.screen-done h1')).toBeFocused();
   const stored = await entries(page);
   expect(stored).toHaveLength(2);
   expect(stored[0]).toEqual(legacy);
@@ -181,7 +174,7 @@ test('Figma flow: memo saves privately and returns to the same card and deck wit
   expect(stored[1].quoteText).toContain(chosen.headword);
   expect(stored[1].quoteText).toContain(chosen.text);
   expect(JSON.stringify(stored)).not.toContain('PRIVATE MEMO');
-  await button(page, 'ดูย้อนหลัง').click();
+  await button(page, 'ดูข้อความที่เก็บไว้').click();
   await expect(
     page.getByRole('combobox', { name: 'เลือกเดือน', exact: true }),
   ).toHaveValue('2026-11');
@@ -190,9 +183,17 @@ test('Figma flow: memo saves privately and returns to the same card and deck wit
     chosen.id,
   );
   await button(page, 'กลับ').click();
+  await expect(page.locator('.screen-done')).toBeVisible();
+  await expect(page.locator('.screen-done h1')).toBeFocused();
+  expect(await entries(page)).toEqual(stored);
+  await button(page, 'เลือกคำใหม่').click();
   await expect(
     page.getByRole('heading', { name: 'พบข้อความ', exact: true }),
   ).toBeFocused();
+  await expect(page.getByTestId('quote')).toHaveAttribute(
+    'data-quote-id',
+    chosen.id,
+  );
   expect(await deckState(page)).toEqual(before);
   await button(page, 'ข้อความก่อนหน้า').click();
   await expect(page.getByTestId('quote')).toHaveAttribute(
@@ -211,6 +212,7 @@ test('Figma flow: memo saves privately and returns to the same card and deck wit
   await button(page, 'ต่อไป').click();
   await expect(page.getByRole('textbox')).toHaveValue('');
   await button(page, 'เลือกข้อความนี้').click();
+  await expect(page.locator('.screen-done')).toBeVisible();
   const secondSave = await entries(page);
   expect(secondSave).toHaveLength(3);
   expect(secondSave[2]).toMatchObject({ quoteId: chosen.id, focus: null });
@@ -242,6 +244,8 @@ test('Figma flow: failed storage write preserves draft and selection without cla
     melancholy.id,
   );
   expect(await entries(page)).toEqual([]);
+  await expect(page.locator('.screen-write')).toBeVisible();
+  await expect(page.locator('.screen-done')).toHaveCount(0);
   await expect(page.locator('.history-view')).toHaveCount(0);
   await button(page, 'กลับไปเลือกมุม').click();
   await expect(
@@ -270,6 +274,8 @@ test('Figma flow: daily limit keeps memo intact and still permits an unsaved exi
     'วันนี้เก็บครบ 3 ข้อความแล้ว',
   );
   await expect(page.getByRole('textbox')).toHaveValue('LIMIT DRAFT');
+  await expect(page.locator('.screen-write')).toBeVisible();
+  await expect(page.locator('.screen-done')).toHaveCount(0);
   expect(await entries(page)).toEqual(full);
   await button(page, 'วันนี้ยังไม่เลือก').click();
   await expect(
@@ -447,13 +453,17 @@ for (const width of [360, 390, 1440])
     await button(page, 'ต่อไป').click();
     await capture(page, `flow-memo-${width}`);
     await button(page, 'เลือกข้อความนี้').click();
+    await expect(page.locator('.screen-done h1')).toBeFocused();
+    await capture(page, `flow-done-${width}`);
+    await button(page, 'ดูข้อความที่เก็บไว้').click();
+    await capture(page, `flow-history-${width}`);
+    await button(page, 'กลับ').click();
+    await expect(page.locator('.screen-done')).toBeVisible();
+    await button(page, 'เลือกคำใหม่').click();
     await expect(
       page.getByRole('heading', { name: 'พบข้อความ', exact: true }),
     ).toBeFocused();
-    await capture(page, `flow-after-save-main-${width}`);
-    await button(page, 'ดูย้อนหลัง').click();
-    await capture(page, `flow-history-${width}`);
-    await button(page, 'กลับ').click();
+    await capture(page, `flow-resume-discover-${width}`);
     await button(page, 'วันนี้ยังไม่เลือก').click();
     await capture(page, `flow-exit-${width}`);
     expect(errors).toEqual([]);

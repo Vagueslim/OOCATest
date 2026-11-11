@@ -76,6 +76,7 @@ async function saveCurrent(page: Page) {
   await page.locator('.browse-actions .primary').click();
   await page.locator('.step-actions .primary').click();
   await page.locator('.writing-actions .primary').click();
+  await expect(page.locator('.screen-done')).toBeVisible();
   return page.evaluate((key) => JSON.parse(localStorage.getItem(key)!), key);
 }
 test('catalog visibility: explicit binary status and original user edits remain unchanged by ID', () => {

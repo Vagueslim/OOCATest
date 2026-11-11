@@ -14,12 +14,19 @@ import BrandHeader from './BrandHeader';
 import CharacterArtwork from './CharacterArtwork';
 import CalendarReminder from './CalendarReminder';
 import ShareCard from './ShareCard';
+import DoneScreen from './DoneScreen';
 import type { CalendarSession } from './CalendarReminder';
 import { characters } from './characters';
 import arrowBack from './assets/figma/arrow-back.svg';
 
 type Screen =
-  'welcome' | 'discover' | 'reflect' | 'write' | 'noSelection' | 'history';
+  | 'welcome'
+  | 'discover'
+  | 'reflect'
+  | 'write'
+  | 'done'
+  | 'noSelection'
+  | 'history';
 type Round = {
   id: string;
   deck: string[];
@@ -36,6 +43,7 @@ const titles: Record<Screen, string> = {
   discover: 'พบข้อความ',
   reflect: 'ข้อความที่เราเลือก',
   write: 'เขียนถึงตัวเอง',
+  done: 'เก็บคำไว้แล้ว',
   noSelection: 'วันนี้ยังไม่เลือก',
   history: 'ข้อความที่เก็บไว้',
 };
@@ -146,7 +154,7 @@ export default function App() {
       };
     });
   }
-  function saveAndReturnToMain() {
+  function saveAndFinish() {
     if (!round?.selectedQuoteId) return;
     const selected = quotes.find((q) => q.id === round.selectedQuoteId)!;
     try {
@@ -157,7 +165,7 @@ export default function App() {
         focus: round.focus,
       });
       // Only the selected quote snapshot and focus are saved; the private draft ends here.
-      // Continue browsing the same deck; a later selection starts a fresh round.
+      // Done resumes this deck; a later selection starts a fresh save entry.
       patch({
         id: crypto.randomUUID(),
         selectedQuoteId: null,
@@ -168,8 +176,8 @@ export default function App() {
       setPreview(null);
       setCalendarSession(null);
       setCalendarBusy(false);
-      setMessage('เก็บคำไว้แล้ว');
-      setScreen('discover');
+      setMessage('');
+      setScreen('done');
     } catch (e) {
       setMessage((e as Error).message);
     }
@@ -202,6 +210,7 @@ export default function App() {
       {screen !== 'reflect' && (
         <BrandHeader
           onHistory={history}
+          showHistory={screen !== 'done'}
           onBack={screen === 'history' ? () => setScreen(origin) : undefined}
           onNavigateBack={
             screen === 'write' ? () => setScreen('reflect') : undefined
@@ -391,7 +400,7 @@ export default function App() {
               <TapButton
                 className="primary"
                 disabled={calendarBusy}
-                onClick={saveAndReturnToMain}
+                onClick={saveAndFinish}
               >
                 เลือกข้อความนี้
               </TapButton>
@@ -407,6 +416,12 @@ export default function App() {
               วันนี้ยังไม่เลือก
             </TapButton>
           </>
+        )}
+        {screen === 'done' && (
+          <DoneScreen
+            onChooseAnother={() => setScreen('discover')}
+            onHistory={history}
+          />
         )}
         {screen === 'noSelection' && (
           <>
@@ -433,7 +448,15 @@ export default function App() {
         )}
         {screen === 'history' && <HistoryView />}
       </div>
-      <footer>เลือกได้ ข้ามได้ จบได้เมื่อพร้อม</footer>
+      <footer>
+        {screen === 'done' ? (
+          <span className="done-reassurance">
+            เลือกได้ ข้ามได้ จบได้เมื่อพร้อม
+          </span>
+        ) : (
+          'เลือกได้ ข้ามได้ จบได้เมื่อพร้อม'
+        )}
+      </footer>
       {preview && (
         <QuotePreview
           {...preview}

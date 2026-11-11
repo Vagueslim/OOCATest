@@ -123,6 +123,9 @@ test('expand: selection is explicit and opens the same existing reflection flow'
   ).toBeNull();
   await button(page, 'ต่อไป').click();
   await button(page, 'เลือกข้อความนี้').click();
+  await expect(page.locator('.screen-done')).toBeVisible();
+  await expect(page.locator('.screen-done h1')).toBeFocused();
+  await button(page, 'เลือกคำใหม่').click();
   await expect(page.getByRole('heading', { name: 'พบข้อความ' })).toBeFocused();
   const saved = await page.evaluate(() =>
     JSON.parse(localStorage.getItem('ooca-demo:saved-quotes:v1')!),

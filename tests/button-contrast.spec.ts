@@ -1,6 +1,6 @@
 import { test, expect, type Locator, type Page } from '@playwright/test';
 
-type Screen = 'discover' | 'preview' | 'reflect' | 'write';
+type Screen = 'discover' | 'preview' | 'reflect' | 'write' | 'done';
 
 // These labels are normal-size text. WCAG 2.2 SC 1.4.3 requires at least 4.5:1.
 // Measure the rendered colors, so changes to tokens or the CSS cascade are covered.
@@ -60,12 +60,19 @@ async function openScreen(page: Page, screen: Screen) {
       .getByRole('dialog')
       .getByRole('button', { name: 'เลือกข้อความนี้', exact: true });
   }
-  if (screen === 'reflect' || screen === 'write')
+  if (screen === 'reflect' || screen === 'write' || screen === 'done')
     await page
       .getByRole('button', { name: 'เลือกข้อความนี้', exact: true })
       .click();
-  if (screen === 'write')
+  if (screen === 'write' || screen === 'done')
     await page.getByRole('button', { name: 'ต่อไป', exact: true }).click();
+  if (screen === 'done') {
+    await page
+      .getByRole('button', { name: 'เลือกข้อความนี้', exact: true })
+      .click();
+    await expect(page.locator('.screen-done')).toBeVisible();
+    return page.getByRole('button', { name: 'เลือกคำใหม่', exact: true });
+  }
   return page.getByRole('button', {
     name: screen === 'reflect' ? 'ต่อไป' : 'เลือกข้อความนี้',
     exact: true,
@@ -74,7 +81,13 @@ async function openScreen(page: Page, screen: Screen) {
 
 test.use({ reducedMotion: 'reduce' });
 for (const width of [360, 1440])
-  for (const screen of ['discover', 'preview', 'reflect', 'write'] as const) {
+  for (const screen of [
+    'discover',
+    'preview',
+    'reflect',
+    'write',
+    'done',
+  ] as const) {
     test(`Primary CTA text remains readable in default, keyboard focus and hover: ${screen} at ${width}px`, async ({
       page,
     }, testInfo) => {
@@ -107,6 +120,15 @@ for (const width of [360, 1440])
       await check('keyboard focus');
       await button.hover();
       await check('hover');
+      if (screen === 'done') {
+        const footer = page.locator('.done-reassurance');
+        await expect(footer).toBeVisible();
+        const sample = await contrast(footer);
+        samples.push({ state: 'Done reassurance', ...sample });
+        expect
+          .soft(sample.ratio, `Done reassurance at ${width}px`)
+          .toBeGreaterThanOrEqual(4.5);
+      }
       await testInfo.attach('rendered-button-contrast', {
         body: JSON.stringify(samples, null, 2),
         contentType: 'application/json',
