@@ -8,6 +8,7 @@ type Props = {
   onNavigateBack?: () => void;
   busy?: boolean;
   welcome?: boolean;
+  showHistory?: boolean;
 };
 export default function BrandHeader({
   onHistory,
@@ -15,6 +16,7 @@ export default function BrandHeader({
   onNavigateBack,
   busy = false,
   welcome = false,
+  showHistory = true,
 }: Props) {
   return (
     <header
@@ -44,14 +46,16 @@ export default function BrandHeader({
           <span>d!</span>
         </p>
       )}
-      <TapButton
-        className="welcome-history"
-        onClick={onHistory}
-        disabled={busy}
-      >
-        <img src={historyIcon} width="25" height="25" alt="" />
-        <span>ดูย้อนหลัง</span>
-      </TapButton>
+      {showHistory && (
+        <TapButton
+          className="welcome-history"
+          onClick={onHistory}
+          disabled={busy}
+        >
+          <img src={historyIcon} width="25" height="25" alt="" />
+          <span>ดูย้อนหลัง</span>
+        </TapButton>
+      )}
     </header>
   );
 }

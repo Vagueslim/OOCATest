@@ -30,9 +30,11 @@ async function select(p: Page) {
 async function save(p: Page) {
   const quote = await p.getByTestId('quote').getAttribute('data-quote-id');
   await btn(p, 'เลือกข้อความนี้').click();
+  await expect(p.locator('.screen-done')).toBeVisible();
+  await expect(p.locator('.screen-done h1')).toBeFocused();
+  await btn(p, 'เลือกคำใหม่').click();
   await expect(p.getByRole('heading', { name: 'พบข้อความ' })).toBeFocused();
   await expect(p.getByTestId('quote')).toHaveAttribute('data-quote-id', quote!);
-  await expect(p.locator('.saved-main-status')).toHaveText('เก็บคำไว้แล้ว');
 }
 async function setFocus(p: Page, name: string) {
   await btn(p, 'กลับไปเลือกมุม').click();

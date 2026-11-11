@@ -296,8 +296,13 @@ export async function checkCatalogLive({ page, result, out, url }) {
   const privateDraft = 'PRIVATE LIVE CHECK — NEVER PERSIST';
   await page.getByRole('textbox').fill(privateDraft);
   await button('เลือกข้อความนี้').click();
-  await expect(page.locator('.screen-discover')).toBeVisible();
-  await expect(page.locator('.saved-main-status')).toHaveText('เก็บคำไว้แล้ว');
+  await expect(page.locator('.screen-done')).toBeVisible();
+  await expect(page.locator('.screen-done h1')).toBeFocused();
+  await page
+    .locator('.screen-done img')
+    .evaluateAll((images) =>
+      Promise.all(images.map((image) => image.decode())),
+    );
   const saved = await read();
   assert.equal(saved.length, 2);
   assert.deepEqual(saved[0], legacy);
@@ -317,6 +322,22 @@ export async function checkCatalogLive({ page, result, out, url }) {
     headword: selected.headword,
     focus: saved[1].focus,
   };
+  await button('ดูข้อความที่เก็บไว้').click();
+  await expect(page.locator('.history-view')).toBeVisible();
+  await button('กลับ').click();
+  await expect(page.locator('.screen-done')).toBeVisible();
+  assert.deepEqual(
+    await read(),
+    saved,
+    'Done/History navigation must not create another entry',
+  );
+  await button('เลือกคำใหม่').click();
+  await expect(active()).toHaveAttribute('data-quote-id', selected.id);
+  assert.deepEqual(
+    await read(),
+    saved,
+    'Resuming the deck must not save again',
+  );
   // Saving ends the selection and clears its draft; the deck remains available.
   await button('เลือกข้อความนี้').click();
   await button('ต่อไป').click();
@@ -324,7 +345,7 @@ export async function checkCatalogLive({ page, result, out, url }) {
   await page.reload({ waitUntil: 'networkidle' });
   assert.deepEqual(await read(), saved);
   checks.push(
-    'Write→save returns to Discover; exact raw-case snapshot + focus saved, private draft excluded and cleared; reload preserves legacy/new entries',
+    'Write→Done→History→Done→Discover keeps the selected card without duplicate saves; exact raw-case snapshot + focus saved, private draft excluded/cleared; reload preserves legacy/new entries',
   );
 
   await button('ดูย้อนหลัง').click();
@@ -383,7 +404,7 @@ export async function checkCatalogLive({ page, result, out, url }) {
   );
   await expect(page.getByRole('textbox')).toHaveValue(failedDraft);
   assert.deepEqual(await read(), [legacy]);
-  await expect(page.locator('.saved-main-status')).toHaveCount(0);
+  await expect(page.locator('.screen-done')).toHaveCount(0);
   await skip();
   assert.deepEqual(await read(), [legacy]);
   await home();

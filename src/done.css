@@ -1,0 +1,121 @@
+/* Figma 6034:6262. Keep the shared accessible primary-button colors. */
+main.screen-done {
+  min-height: 100dvh;
+  padding: 0;
+}
+
+main.screen-done > .journey-brand {
+  width: calc(100% - 48px);
+  max-width: var(--reading-max-width);
+  height: 58.65px;
+  min-height: 58.65px;
+  margin: 18px auto 0;
+  padding: 12px 20px;
+  flex: none;
+}
+
+main.screen-done .app-wordmark {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 34.65px;
+  letter-spacing: -0.84px;
+}
+
+main.screen-done .app-wordmark > span:first-child {
+  color: #008d81;
+}
+
+main.screen-done .app-wordmark > span:not(:first-child) {
+  color: #1767a0;
+}
+
+main.screen-done > .page {
+  width: calc(100% - 48px);
+  max-width: var(--reading-max-width);
+  padding: 24px 0 28px;
+}
+
+main.screen-done .done-card {
+  min-height: 353px;
+  margin: 18px 0 24px;
+  padding: 24px;
+  border-radius: 20px;
+  background: linear-gradient(130deg, #f6fbfa, #e0f8f6 65%, #f8fbfa);
+}
+
+.done-artwork {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.done-artwork img {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.done-character-label {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+main.screen-done .done-card .character-tag {
+  height: 28px;
+  min-height: 28px;
+  margin: 0;
+  padding: 5px 11px;
+  font-size: 11px;
+  line-height: 17.6px;
+}
+
+main.screen-done .done-card p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 37.2px;
+}
+
+.screen-done .done-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.screen-done .done-actions .primary {
+  width: min(100%, 230px);
+}
+
+.screen-done .done-actions .text-button {
+  min-height: 48px;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+main.screen-done > footer {
+  width: calc(100% - 48px);
+  max-width: var(--reading-max-width);
+  margin: 0 auto;
+  padding: 20px 0 26px;
+  font-size: 12px;
+  line-height: 19.8px;
+  color: #686868;
+  flex: none;
+}
+
+/* The sky crop varies with viewport width; keep small text on a solid surface. */
+.screen-done .done-reassurance {
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #686868;
+  background: #f6fbfa;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}

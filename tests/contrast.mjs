@@ -109,12 +109,24 @@ async function openScreen(page, url, screen) {
       .getByRole('dialog')
       .getByRole('button', { name: 'เลือกข้อความนี้', exact: true });
   }
-  if (screen === 'reflect' || screen === 'write')
+  if (screen === 'reflect' || screen === 'write' || screen === 'done')
     await page
       .getByRole('button', { name: 'เลือกข้อความนี้', exact: true })
       .click();
-  if (screen === 'write')
+  if (screen === 'write' || screen === 'done')
     await page.getByRole('button', { name: 'ต่อไป', exact: true }).click();
+  if (screen === 'done') {
+    await page
+      .getByRole('button', { name: 'เลือกข้อความนี้', exact: true })
+      .click();
+    await expect(page.locator('.screen-done')).toBeVisible();
+    await page
+      .locator('.screen-done img')
+      .evaluateAll((images) =>
+        Promise.all(images.map((image) => image.decode())),
+      );
+    return page.getByRole('button', { name: 'เลือกคำใหม่', exact: true });
+  }
   return page.getByRole('button', {
     name: screen === 'reflect' ? 'ต่อไป' : 'เลือกข้อความนี้',
     exact: true,
@@ -124,7 +136,7 @@ async function openScreen(page, url, screen) {
 export async function checkContrast({ page, result, out, url }) {
   result.scope = {
     assessed:
-      'Opaque normal-size primary CTA text in Discover, Preview, Reflect and Write: default, keyboard focus and hover at 360/1440px; selected reflection radio text.',
+      'Opaque normal-size primary CTA text in Discover, Preview, Reflect, Write and Done: default, keyboard focus and hover at 360/1440px; selected reflection radio text and Done reassurance text.',
     limitation:
       'This samples text contrast and keyboard focus activation only; it is not a complete WCAG audit. Welcome has a gradient and is outside this solid-color measurement. Disabled controls, focus-ring contrast and all other text are outside scope.',
     minimumContrast,
@@ -141,7 +153,7 @@ export async function checkContrast({ page, result, out, url }) {
   };
   for (const width of [360, 1440]) {
     await page.setViewportSize({ width, height: 800 });
-    for (const screen of ['discover', 'preview', 'reflect', 'write']) {
+    for (const screen of ['discover', 'preview', 'reflect', 'write', 'done']) {
       const button = await openScreen(page, url, screen);
       await page.evaluate(() => document.fonts.ready);
       await button.scrollIntoViewIfNeeded();
@@ -168,6 +180,11 @@ export async function checkContrast({ page, result, out, url }) {
       await capture(button, `${screen} ${width}px keyboard focus`);
       await button.hover();
       await capture(button, `${screen} ${width}px hover`);
+      if (screen === 'done') {
+        const footer = page.locator('.done-reassurance');
+        await expect(footer).toBeVisible();
+        await capture(footer, `Done reassurance ${width}px`);
+      }
       if (screen === 'reflect') {
         const selected = page.locator('.choices input:checked+span');
         await expect(selected).toBeVisible();

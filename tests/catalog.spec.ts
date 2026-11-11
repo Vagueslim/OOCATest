@@ -103,6 +103,7 @@ test('legacy snapshots survive a catalog save with chosen focus, reload and dele
   await page
     .getByRole('button', { name: 'เลือกข้อความนี้', exact: true })
     .click();
+  await expect(page.locator('.screen-done')).toBeVisible();
   await page.reload();
   const data = await page.evaluate(
     (key) => JSON.parse(localStorage.getItem(key)!),

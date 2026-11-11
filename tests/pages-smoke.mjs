@@ -150,12 +150,17 @@ export async function checkPages({ page, result, out, url }) {
   await page.getByRole('textbox').fill(privateDraft);
   assert.deepEqual((await stored()).entries, []);
   await button('เลือกข้อความนี้').click();
-  await expect(page.locator('.screen-discover')).toBeVisible();
-  await expect(page.getByTestId('quote')).toHaveAttribute(
-    'data-quote-id',
-    selected,
-  );
-  await expect(page.locator('.saved-main-status')).toHaveText('เก็บคำไว้แล้ว');
+  await expect(page.locator('.screen-done')).toBeVisible();
+  await expect(page.locator('.screen-done h1')).toBeFocused();
+  await page
+    .locator('.screen-done img')
+    .evaluateAll((images) =>
+      Promise.all(images.map((image) => image.decode())),
+    );
+  await page.screenshot({
+    path: resolve(out, 'mobile-done.png'),
+    fullPage: true,
+  });
   const saved = await stored();
   assert.equal(saved.version, 1);
   assert.equal(saved.entries.length, 1);
@@ -172,10 +177,10 @@ export async function checkPages({ page, result, out, url }) {
   assert.equal(saved.entries[0].quoteText.split('\n')[0], rawHeadword);
   assert(!JSON.stringify(saved).includes(privateDraft));
   result.checks.push(
-    'Write-save returns to the same Discover card and stores quote/focus/metadata, never the private draft',
+    'Write-save confirms Done and stores quote/focus/metadata, never the private draft',
   );
 
-  await button('ดูย้อนหลัง').click();
+  await button('ดูข้อความที่เก็บไว้').click();
   await page.locator('.history-entry-details summary').click();
   await expect(page.locator('.history-saved-text')).toHaveText(
     saved.entries[0].quoteText,
@@ -187,6 +192,24 @@ export async function checkPages({ page, result, out, url }) {
     path: resolve(out, 'mobile-history.png'),
     fullPage: true,
   });
+  await button('กลับ').click();
+  await expect(page.locator('.screen-done h1')).toBeFocused();
+  assert.deepEqual(
+    await stored(),
+    saved,
+    'Returning from History must not save again',
+  );
+  await button('เลือกคำใหม่').click();
+  await expect(page.locator('.screen-discover')).toBeVisible();
+  await expect(page.getByTestId('quote')).toHaveAttribute(
+    'data-quote-id',
+    selected,
+  );
+  assert.deepEqual(
+    await stored(),
+    saved,
+    'Resuming Discover must not save again',
+  );
   await page.reload({ waitUntil: 'networkidle' });
   await welcome();
   assert.deepEqual(await stored(), saved);
@@ -197,7 +220,7 @@ export async function checkPages({ page, result, out, url }) {
   );
   await expect(page.getByText(privateDraft, { exact: true })).toHaveCount(0);
   result.checks.push(
-    'History and focus survive reload without private writing',
+    'Done→History→Back returns to Done; choosing a new word resumes the same Discover card without another save; history/focus survive reload without private writing',
   );
 
   await page.reload({ waitUntil: 'networkidle' });
@@ -218,7 +241,7 @@ export async function checkPages({ page, result, out, url }) {
   await expect(page.getByRole('textbox')).toHaveValue(privateDraft);
   await expect(page.locator('.screen-write')).toBeVisible();
   assert.deepEqual(await stored(), saved);
-  await expect(page.getByText('เก็บคำไว้แล้ว', { exact: true })).toHaveCount(0);
+  await expect(page.locator('.screen-done')).toHaveCount(0);
   await skip();
   await button('กลับไปหน้าแรก').click();
   await welcome();

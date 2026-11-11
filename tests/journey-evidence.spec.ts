@@ -13,7 +13,7 @@ async function capture(page: Page, name: string) {
     fullPage: true,
   });
 }
-test('journey: Figma browse, reflect, memo, saved history and exit across narrow/wide layouts', async ({
+test('journey: Figma browse, reflect, memo, Done, saved history and exit across narrow/wide layouts', async ({
   page,
 }) => {
   test.setTimeout(60000);
@@ -36,15 +36,9 @@ test('journey: Figma browse, reflect, memo, saved history and exit across narrow
       .getByTestId('quote')
       .getAttribute('data-quote-id');
     await button(page, 'เลือกข้อความนี้').click();
-    await expect(
-      page.getByRole('heading', { name: 'พบข้อความ' }),
-    ).toBeFocused();
-    await expect(page.getByTestId('quote')).toHaveAttribute(
-      'data-quote-id',
-      current!,
-    );
-    await capture(page, `after-save-main-${width}`);
-    await button(page, 'ดูย้อนหลัง').click();
+    await expect(page.locator('.screen-done h1')).toBeFocused();
+    await capture(page, `done-${width}`);
+    await button(page, 'ดูข้อความที่เก็บไว้').click();
     await expect(
       page.getByRole('heading', { name: 'ข้อความที่เก็บไว้' }),
     ).toBeVisible();
@@ -56,10 +50,16 @@ test('journey: Figma browse, reflect, memo, saved history and exit across narrow
     expect(data.entries[0].focus).toBe('self');
     expect(JSON.stringify(data)).not.toContain('วันนี้ค่อย ๆ ให้เวลากับตัวเอง');
     await button(page, 'กลับ').click();
+    await expect(page.locator('.screen-done')).toBeVisible();
+    await button(page, 'เลือกคำใหม่').click();
+    await expect(
+      page.getByRole('heading', { name: 'พบข้อความ' }),
+    ).toBeFocused();
     await expect(page.getByTestId('quote')).toHaveAttribute(
       'data-quote-id',
       current!,
     );
+    await capture(page, `resume-discover-${width}`);
     await button(page, 'วันนี้ยังไม่เลือก').click();
     await expect(button(page, 'กลับไปหน้าแรก')).toBeInViewport();
     await capture(page, `skip-${width}`);
