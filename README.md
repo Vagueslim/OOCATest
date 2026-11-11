@@ -109,7 +109,7 @@ node tests/contrast.mjs https://vagueslim.github.io/OOCATest/
 
 ## ข้อมูลที่เก็บ และสิ่งที่ยังไม่พร้อมรับรอง
 
-- ประวัติใช้ localStorage key `ooca-demo:saved-quotes:v1` เก็บ `id`, `quoteId`, `quoteText`, `focus`, `savedAt`, `localDay` จำกัด 3 รายการต่อวันตามเวลาท้องถิ่น ไม่มีการ sync ข้ามอุปกรณ์หรือระหว่าง localhost กับ Pages
+- ประวัติใช้ localStorage key `ooca-demo:saved-quotes:v1` เก็บ `id`, `quoteId`, `quoteText`, `focus`, `savedAt`, `localDay` จำกัด 9 รายการต่อวันตามเวลาท้องถิ่น ไม่มีการ sync ข้ามอุปกรณ์หรือระหว่าง localhost กับ Pages
 - ข้อความที่พิมพ์เป็น state ชั่วคราว ไม่ลงประวัติ ไม่อยู่ใน PNG หรือ Calendar เมื่อบันทึกสำเร็จจะล้าง draft แล้วเปิด Done; หากบันทึกล้มเหลวหรือเต็มโควตารายวัน จะคงหน้า Write และ draft ไว้ให้ผู้ใช้ตัดสินใจต่อ
 - ประวัติแสดง snapshot ณ วันที่เก็บ การแก้ catalog ภายหลังไม่เขียนทับข้อความในประวัติเดิม
 - คำแปล ข้อความไทยเรียบเรียง และคำอ่านยังมีสถานะ **ร่าง** การปรับคำอ่าน 37 รายการไม่ได้หมายถึงอนุมัติภาษา ดู [รายการก่อน–หลัง](docs/reviews/pronunciation-updates.md)

@@ -256,7 +256,7 @@ test('Figma flow: failed storage write preserves draft and selection without cla
 test('Figma flow: daily limit keeps memo intact and still permits an unsaved exit', async ({
   page,
 }) => {
-  const full = [0, 1, 2].map((index) => ({
+  const full = Array.from({ length: 9 }, (_, index) => ({
     ...legacy,
     id: `full-${index}`,
     savedAt: `2026-11-10T0${index}:00:00.000Z`,
@@ -271,7 +271,7 @@ test('Figma flow: daily limit keeps memo intact and still permits an unsaved exi
   await page.getByRole('textbox').fill('LIMIT DRAFT');
   await button(page, 'เลือกข้อความนี้').click();
   await expect(page.locator('.save-status')).toContainText(
-    'วันนี้เก็บครบ 3 ข้อความแล้ว',
+    'วันนี้เก็บครบ 9 ข้อความแล้ว',
   );
   await expect(page.getByRole('textbox')).toHaveValue('LIMIT DRAFT');
   await expect(page.locator('.screen-write')).toBeVisible();
